@@ -1,10 +1,233 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 
 <head>
     <title>Электроника. Схемы</title>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Inter', Tahoma, Arial, sans-serif;
+            background: #f4f6f9 url(assets/images/bg_pattern.png);
+            color: #222;
+        }
+
+        #container {
+            width: 900px;
+            margin: 10px auto;
+            background: #ffffff;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        /* HEADER */
+        #top {
+            height: 170px;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 40px;
+            position: relative;
+        }
+
+        #logo img {
+            width: 130px;
+            height: 130px;
+            border-radius: 12px;
+        }
+
+        #topname {
+            text-align: center;
+        }
+
+        #topname h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            letter-spacing: -1px;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        }
+
+        #topname h2 {
+            font-size: 18px;
+            font-weight: 400;
+            margin: 0;
+            opacity: 0.95;
+        }
+
+        #toppic img {
+            width: 135px;
+            border-radius: 10px;
+        }
+
+        /* NAVIGATION */
+        #navcontainer {
+            background: #1e3a8a;
+        }
+
+        #navcontainer ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        #navcontainer ul li {
+            display: inline-block;
+        }
+
+        #navcontainer ul li a {
+            display: block;
+            padding: 18px 30px;
+            color: #e0f2fe;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.25s;
+        }
+
+        #navcontainer ul li a:hover,
+        #navcontainer ul li#active a {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* CONTENT */
+        #content {
+            padding: 45px 55px;
+            font-size: 17.5px;
+            line-height: 1.75;
+        }
+
+        #content h1 {
+            font-size: 32px;
+            text-align: center;
+            color: #1e40af;
+            margin: 0 0 30px 0;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+
+        #content h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 1em 0 0.5em 0;
+            color: #1e40af;
+        }
+
+        #content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 1em 0 0.5em 0;
+            color: #2563eb;
+        }
+
+        #content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 8px 0 3px 0;
+            color: #3b82f6;
+        }
+
+        #content p {
+            margin-bottom: 20px;
+        }
+
+        /* Nav table */
+        .cap1 {
+            font-weight: bold;
+            text-align: center;
+            background-color: #1e40af;
+            border-radius: 8px;
+            padding: 8px 0;
+        }
+
+        .cap1 a:link, .cap1 a:visited {
+            color: #ffffff;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .cap1 a:hover {
+            color: #bfdbfe;
+        }
+
+        /* Topic blocks */
+        .tema1 {
+            background-color: #f0f4ff;
+            border: 1px solid #d1d5db;
+            padding: 18px 20px 12px 20px;
+            border-radius: 12px;
+            margin: 0 0 16px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .tema1 h2 {
+            font-size: 22px;
+            font-weight: 700;
+            text-align: left;
+            margin: 0 0 8px 0;
+            color: #1e40af;
+        }
+
+        .tema1 h3 {
+            font-size: 20px;
+            font-weight: 600;
+            text-align: left;
+            margin: 12px 0 6px 0;
+            color: #2563eb;
+        }
+
+        .tema1 h4 {
+            font-size: 18px;
+            font-weight: 600;
+            text-align: left;
+            margin: 8px 0 6px 0;
+            color: #3b82f6;
+        }
+
+        .tema1 ul {
+            font-size: 16px;
+            text-align: left;
+            margin: 0 0 12px 20px;
+            padding: 0;
+        }
+
+        .tema1 a:link, .tema1 a:visited {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .tema1 a:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+        #footer {
+            background: #1e3a8a;
+            color: #bfdbfe;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14.5px;
+        }
+
+        a:link, a:visited {
+            color: #2563eb;
+        }
+
+        a:hover {
+            color: #1d4ed8;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,20 +239,17 @@
                         src="assets/images/logo.png" /></a>
             </div>
             <div id="topname">
-                <h1>Электроника</h1>
+                <h1>АЗБУКА ЭЛЕКТРОНИКИ</h1>
                 <h2>учебно-справочное пособие</h2>
             </div>
-            <div id="toppic"><img src="assets/images/banner1.png" /></div>
         </div>
         <div id="navcontainer">
             <ul id="navlist">
-                <li id="active"><a href="index.html">Главная</a></li>
+                <li><a href="index.html">Главная</a></li>
                 <li><a href="teorie.html">Теория</a></li>
                 <li><a href="praktik.html">Практика</a></li>
                 <li><a href="help.html">Справочники</a></li>
-                <li><a href="sheme.html">Схемы</a></li>
-                <li><a href="arduino.html">Arduino</a></li>
-                <li><a href="tests.html">Тесты</a></li>
+                <li id="active"><a href="sheme.html">Схемы</a></li>
             </ul>
         </div>
 
@@ -76,7 +296,7 @@
                     </li>
                     <li><a href="sheme/generator/generator-4.html">Простой генератор синусоидального сигнала</a></li>
                 </ul>
-                <!--<a href="#top1"><img src="assets/images/up.png" width="24" height="24"></a>  
+                <!--<a href="#top1"><img src="assets/images/slide-up.png" width="24" height="24"></a>
  -->
             </div>
 
@@ -104,7 +324,7 @@
                     <li><a href="sheme/bp/bp-universal.html">Универсальный блок питания</a></li>
                 </ul>
 
-                <a href="#top1"><img src="assets/images/up.png" width="24" height="24"></a>
+                <a href="#top1"><img src="assets/images/slide-up.png" width="24" height="24"></a>
             </div>
 
 
@@ -143,7 +363,7 @@
                     <li><a href="sheme/regulyator/plavnoe-vkluch.html">Устройства плавного включения ламп</a></li>
                 </ul>
 
-                <a href="#top1"><img src="assets/images/up.png" width="24" height="24"></a>
+                <a href="#top1"><img src="assets/images/slide-up.png" width="24" height="24"></a>
             </div>
 
 
@@ -162,8 +382,8 @@
                     <li><a href="sheme/migalka/migalka-ne555.html">Мигалка на микросхеме NE555</a></li>
                     <li><a href="sheme/migalka/migalka-6.html">Мини-гирлянда</a></li>
                     <li><a href="sheme/migalka/migalka-8.html">Бегущие огни на ТТЛ микросхемах</a></li>
-                    <li><a href="sheme/migalka/avtomat-propeller.html">Автомат световых эффектов “Пропеллер”</a></li>
-                    <li><a href="sheme/migalka/avtomat-sun.html">Автомат световых эффектов “Солнышко”</a></li>
+                    <li><a href="sheme/migalka/avtomat-propeller.html">Автомат световых эффектов "Пропеллер"</a></li>
+                    <li><a href="sheme/migalka/avtomat-sun.html">Автомат световых эффектов "Солнышко"</a></li>
                     <li><a href="sheme/migalka/elka-1.html">Переключатель трех светодиодных гирлянд</a></li>
                 </ul>
 
@@ -194,7 +414,7 @@
                             5)</a></li>
                     <li><a href="sheme/cmu/electron-medalon.html">Электронный медальон</a></li>
                 </ul>
-                <a href="#top1"><img src="assets/images/up.png" width="24" height="24"></a>
+                <a href="#top1"><img src="assets/images/slide-up.png" width="24" height="24"></a>
             </div>
 
 
@@ -212,7 +432,7 @@
                     <li><a href="sheme/sound/sound-imitator-1.html">Имитаторы звуков</a></li>
                     <li><a href="sheme/sound/sirena-1.html">Имитатор звука сирены</a></li>
                 </ul>
-                <a href="#top1"><img src="assets/images/up.png" width="24" height="24"></a>
+                <a href="#top1"><img src="assets/images/slide-up.png" width="24" height="24"></a>
             </div>
 
 
@@ -226,7 +446,7 @@
                     <li><a href="sheme/usilitel/usilitel-tda2005.html">Усилитель звука на микросхеме ТДА2005</a></li>
                     <li><a href="sheme/usilitel/usilitel-vt-1.html">Усилитель звука на транзисторах</a></li>
                 </ul>
-                <a href="#top1"><img src="assets/images/up.png" width="24" height="24"></a>
+                <a href="#top1"><img src="assets/images/slide-up.png" width="24" height="24"></a>
             </div>
 
 
@@ -257,7 +477,7 @@
                     <li><a href="sheme/tester/v-metr1.html">Цифровой вольтметр</a></li>
                 </ul>
 
-                <a href="#top1"><img src="assets/images/up.png" width="24" height="24"></a>
+                <a href="#top1"><img src="assets/images/slide-up.png" width="24" height="24"></a>
             </div>
 
 
@@ -271,7 +491,7 @@
                     <li><a href="sheme/game/ruletka.html">Игровое устройство "Рулетка"</a></li>
                 </ul>
 
-                <a href="#top1"><img src="assets/images/up.png" width="24" height="24"></a>
+                <a href="#top1"><img src="assets/images/slide-up.png" width="24" height="24"></a>
             </div>
 
 
@@ -282,7 +502,7 @@
                     <li><a href="sheme/storog/storog.html">Сторожевое устройство на одном транзисторе</a></li>
                     <li><a href="sheme/storog/storog-3.html">Сторожевое устройства с самоблокировкой</a></li>
                 </ul>
-                <a href="#top1"><img src="assets/images/up.png" width="24" height="24"></a>
+                <a href="#top1"><img src="assets/images/slide-up.png" width="24" height="24"></a>
             </div>
 
 
@@ -295,7 +515,7 @@
                     <li><a href="sheme/indicator/indicator-vody-2.html">Индикатор уровня воды на микросхеме</a></li>
                     <li><a href="sheme/indicator/termometr-1.html">Трехуровневый датчик температуры</a></li>
                 </ul>
-                <a href="#top1"><img src="assets/images/up.png" width="24" height="24"></a>
+                <a href="#top1"><img src="assets/images/slide-up.png" width="24" height="24"></a>
             </div>
 
 
@@ -309,7 +529,7 @@
                     <li><a href="sheme/svet/led-fonar.html">Светодиодный фонарь</a></li>
 
                 </ul>
-                <a href="#top1"><img src="assets/images/up.png" width="24" height="24"></a>
+                <a href="#top1"><img src="assets/images/slide-up.png" width="24" height="24"></a>
             </div>
 
             <div class="tema1">
@@ -319,7 +539,7 @@
                     <li><a href="sheme/raznoe/sheme-1.html">Простые схемы для начинающих</a></li>
                     <li><a href="sheme/raznoe/sheme-2.html">Простые схемы для начинающих-2</a></li>
                     <li><a href="sheme/raznoe/radio-1.html">Простое радио на одном транзисторе</a></li>
-                    <li><a href="sheme/raznoe/pergovornoe.html">Простое переговорное устройство</a></li>
+                    <li><a href="sheme/разноe/pergovornoe.html">Простое переговорное устройство</a></li>
                     <li><a href="sheme/raznoe/zacsh-lamp.html">Защита электроосветительных приборов</a></li>
                     <li><a href="sheme/raznoe/motor-1.html">Управление двигателем постоянного тока</a></li>
                     <li><a href="sheme/raznoe/metall-find.html">Металлоискатель-1</a></li>
@@ -327,18 +547,18 @@
                     <li><a href="sheme/raznoe/metall-find3.html">Металлоискатель-3</a></li>
                 </ul>
 
-                <a href="#top1"><img src="assets/images/up.png" width="24" height="24"></a>
+                <a href="#top1"><img src="assets/images/slide-up.png" width="24" height="24"></a>
             </div>
 
 
             <!--
-		  <li><a href="sheme/"></a></li> 
+		  <li><a href="sheme/"></a></li>
 
 -->
         </div>
 
         <div id="footer">
-            <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2024</p>
+            <p>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2026</p>
         </div>
 
     </div>

@@ -1,26 +1,198 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 
 <head>
     <title>Электроника</title>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Inter', Tahoma, Arial, sans-serif;
+            background: #f4f6f9 url(assets/images/bg_pattern.png);
+            color: #222;
+        }
+
+        #container {
+            width: 900px;
+            margin: 10px auto;
+            background: #ffffff;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        /* HEADER */
+        #top {
+            height: 170px;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 40px;
+            position: relative;
+        }
+
+        #logo img {
+            width: 130px;
+            height: 130px;
+            border-radius: 12px;
+        }
+
+        #topname {
+            text-align: center;
+        }
+
+        #topname h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            letter-spacing: -1px;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        }
+
+        #topname h2 {
+            font-size: 18px;
+            font-weight: 400;
+            margin: 0;
+            opacity: 0.95;
+        }
+
+        #toppic img {
+            width: 135px;
+            border-radius: 10px;
+        }
+
+        /* NAVIGATION */
+        #navcontainer {
+            background: #1e3a8a;
+        }
+
+        #navcontainer ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        #navcontainer ul li {
+            display: inline-block;
+        }
+
+        #navcontainer ul li a {
+            display: block;
+            padding: 18px 30px;
+            color: #e0f2fe;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.25s;
+        }
+
+        #navcontainer ul li a:hover,
+        #navcontainer ul li#active a {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* CONTENT */
+        #content {
+            padding: 45px 55px;
+            font-size: 17.5px;
+            line-height: 1.75;
+        }
+
+        #content h2 {
+            font-size: 32px;
+            text-align: center;
+            color: #1e40af;
+            margin: 0 0 30px 0;
+        }
+
+        #content p {
+            margin-bottom: 20px;
+        }
+
+        .popov-link {
+            display: block;
+            text-align: center;
+            margin: 30px 0 40px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .popov-link:hover {
+            text-decoration: none;
+        }
+
+        .popov-link img {
+            width: 220px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: all 0.4s ease;
+        }
+
+        .popov-link img:hover {
+            transform: scale(1.04);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.22);
+        }
+
+        .popov-caption {
+            margin-top: 14px;
+            font-size: 18.5px;
+            color: #1e40af;
+            font-weight: 500;
+        }
+
+        .kanifol-img {
+            display: block;
+            margin: 30px auto;
+            width: 520px;
+            height: 392px;
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        /* FOOTER */
+        #footer {
+            background: #1e3a8a;
+            color: #bfdbfe;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14.5px;
+        }
+
+        a:link, a:visited {
+            color: #2563eb;
+        }
+
+        a:hover {
+            color: #1d4ed8;
+        }
+    </style>
 </head>
 
 <body>
     <div id="container">
         <div id="top">
-            <a name="top1"></a>
             <div id="logo">
-                <a target="_blank" href="../about/cdutt-str.html"><img width="130" height="130"
-                        src="assets/images/logo.png"></a>
+                <a target="_blank" href="../about/cdutt-str.html">
+                    <img src="assets/images/logo.png" alt="Лого">
+                </a>
             </div>
             <div id="topname">
-                <h1>Электроника</h1>
+                <h1>АЗБУКА ЭЛЕКТРОНИКИ</h1>
                 <h2>учебно-справочное пособие</h2>
             </div>
-            <div id="toppic"><img src="assets/images/banner1.png" /></div>
         </div>
+
         <div id="navcontainer">
             <ul id="navlist">
                 <li id="active"><a href="../index.html">Главная</a></li>
@@ -28,29 +200,31 @@
                 <li><a href="praktik.html">Практика</a></li>
                 <li><a href="help.html">Справочники</a></li>
                 <li><a href="sheme.html">Схемы</a></li>
-                <li><a href="arduino.html">Arduino</a></li>
-                <li><a href="tests.html">Тесты</a></li>
             </ul>
         </div>
 
         <div id="content">
             <h2>Добро пожаловать!</h2>
-            <a href="teorie/popov.html"><img src="assets/images/popov.jpg" title="Попов Александр Степанович"></a>
+
+            <a href="popov.html" class="popov-link">
+                <img src="assets/images/popov.jpg" title="Попов Александр Степанович" alt="А.С. Попов">
+                <div class="popov-caption">Попов Александр Степанович</div>
+            </a>
+
             <p>Приветствуем Вас на сайте для начинающих радиолюбителей.</p>
             <p>Вы уже приготовили Ваш главный инструмент - паяльник?</p>
-            <p>Но не спешите, наберитесь терпения и изучите материалы нашего сайта. Здесь найдется много полезной
-                информации для Вашей будущей деятельности. </p>
-            <img src="assets/images/kanifol.jpg" width="520" height="392">
+            <p>Но не спешите, наберитесь терпения и изучите материалы нашего сайта. Здесь найдется много полезной информации для Вашей будущей деятельности. </p>
+
+            <img src="assets/images/kanifol.jpg" class="kanifol-img" alt="Канифоль">
+
             <p>&nbsp;</p>
             <h4>Ссылки на сайты <a href="link.html">об электронике</a></h4>
-
         </div>
+
         <div id="footer">
-            <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2025</p>
+            <p>Электроника © ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2026</p>
         </div>
-
     </div>
-
 </body>
 
 </html>
