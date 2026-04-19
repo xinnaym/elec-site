@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Расчёт стабилизатора напряжения</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Расчёт стабилизатора напряжения (источника опорного напряжения)</h1>
+	
+	<div class="ris"><img src="raschet-stab_files/shema-stab.gif" height="150" width="180"></div>
+	
+   <p>Для   расчёта стабилизатора, как правило, используются только два параметра — <span class="formula2"><em>U</em><sub>ст</sub></span> (напряжение стабилизации), <span class="formula2"><em>I</em><sub>ст</sub> </span>(ток стабилизации), при условии что   ток нагрузки равен или меньше тока стабилизации.</p>
+    <p>Для простого расчета стабилизатора на примере будем использовать следующие параметры:</p>
+    <ul>
+      <li>Входное напряжение 10 В.</li>
+      <li>Выходное напряжение 6,8 В.</li>
+      <li>Ток нагрузки 10 мА.</li>
+    </ul>
+    <p>Из справочника выбираем близкий по параметрам стабилитрон КС168А со следующими параметрами </p>
+    <table border="1" align="center" cellpadding="3" cellspacing="0">
+      <tr>
+        <th><span class="formula2"><em>U</em><sub>ст</sub></span>, В</th>
+        <th><span class="formula2"><em>I</em><sub>ст</sub></span>, мА</th>
+        <th><span class="formula2"><em>Р</em><sub>max</sub></span>, мВт</th>
+        <th><span class="formula2"><em>U</em><sub>ст min</sub></span>, B</th>
+        <th><span class="formula2"><em>U</em><sub>ст max</sub></span>, B</th>
+        <th><span class="formula2"><em>I</em><sub>ст min</sub></span>, мА</th>
+        <th><span class="formula2"><em>I</em><sub>ст max</sub></span>, мА</th>
+        <th><span class="formula2"><em>Т</em><sub>к max</sub></span>, °С</th>
+      </tr>
+      <tr>
+        <td>6,8</td>
+        <td>10</td>
+        <td>300 </td>
+        <td>6,12</td>
+        <td>7,48</td>
+        <td>3</td>
+        <td>45</td>
+        <td>125</td>
+      </tr>
+    </table>
+
+    <h4>Порядок расчета:</h4>
+    <ol>
+      <li>Вычисляем напряжение падающее на балластном резисторе R1:
+			<p class="formula"><em>U</em><sub>r1</sub> = <em>U</em><sub>вx</sub> — <em>U</em><sub>выx</sub> = 10 — 6,8 = 3,2 [В]</p>
+			</li>
+      <li>Определяем сопротивление R1:
+			<p class="formula"><em>R</em><sub>1</sub> = <em>U</em><sub>r1</sub> / <em>I</em><sub>ст</sub> = 3,2 / 0,01 = 320 [Ом]</p>
+			</li>
+      <li>Вычисляют минимальную мощность резистора:
+			 <p class="formula"><em>Р</em><sub>r1</sub> = <em>U</em><sub>r1</sub> &middot; <em>I</em><sub>ст</sub> = 3,2 &middot; 0,010 = 0,064 [Вт]</p>			 
+			</li>
+      <li>Следует учитывать, что кроме тока стабилитрона через резистор   протекает еще и ток нагрузки, поэтому, мощность резистора выбирают в два   раза большую:
+			<p class="formula"><em>Р</em><sub>r1</sub> = 0,064 &middot; 2 =  0,128 [Вт]</p>
+    <p>По ближайшему номинальному ряду (в большую сторону) это соответствует мощности 0,25 Вт.</p>
+			</li>
+    </ol>
+
+  <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	<hr>
+<h3>Источники:</h3>
+<p><a href="http://rcl-radio.ru/?p=29455">rcl-radio.ru</a></p>
+<p><a href="http://radiohlam.ru/?p=1165">radiohlam.ru</a></p>
+<p><a href="http://www.meanders.ru/stabilizator.shtml">meanders.ru</a></p>
+
+
+<!--
+<p><a href=""></a></p>
+ -->
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

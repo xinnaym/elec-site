@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Металлоискатель-2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+    <h1>Металлоискатель-3</h1>
+		
+<p>В основе металлоискателя (рис. 1) - два генератора на логических элементах 2И-НЕ. На элементах DD1.1 и DD1.3 собран генератор. Частота генератора - 465 кГц. Выбор такой рабочей частоты не случаен - сама частота задается последовательным колебательным контуром L1C2, а сам контур для простоты взят из тракта ПЧ радиоприемника.</p>
+    <p>На элементах D1.2 и D1.4 собран второй генератор. Частота его работы задается переменным конденсатором C1  и катушкой L2.</p>
+    <div class="ris"><img src="metall-find3_files/metall-find3.jpg" width="825" height="445">
+    <p>Рис. 1 - Схема металлоискателя</p>
+</div>
+    <p><br>
+    Катушка L2  служит датчиком-антенной: она наматывается на каркасе диаметром 200 мм проводом ПЭЛ-0,4.</p>
+    <p>Сигнал с обеих генераторов смешивается и поступает на схему умножения на диодах VD1, VD2 и непосредственно на головной телефон (наушник) BF1.</p>
+    <p>При появлении металлического предмета возле катушки L2 произойдет смещение частоты генератора и следовательно на смесителе возникнут биения, которые и отобразятся в наушниках.</p>
+    <p> Для напряжения 9 В можно использовать микросхему К176ЛА7  КМОП-технологий   (они более экономичные), для напряжения 5 В - ТТЛ-микросхему К155ЛА3.</p>
+    <p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Перечень  элементов</caption>
+  <tr>
+    <th>Обозначение</th>
+    <th>Наименование</th>
+    <th>Номинал</th>
+    <th>Кол-во</th>
+    <th>Примечание</th>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">BF1</td>
+    <td align="left" valign="middle">Головной телефон </td>
+    <td align="center" valign="middle">&nbsp;</td>
+    <td align="center" valign="middle">1</td>
+    <td align="left" valign="middle">сопротивление не менее 2 кОм</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">C1</td>
+    <td align="left" valign="middle">Конденсатор переменный </td>
+    <td align="center" valign="middle">25-150 пФ</td>
+    <td align="center" valign="middle">1</td>
+    <td align="left" valign="middle">КПК-2 </td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">C2 </td>
+    <td align="left" valign="middle">Конденсатор</td>
+    <td align="center" valign="middle">200 пФ</td>
+    <td align="center" valign="middle">1</td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">C3-C5</td>
+    <td align="left" valign="middle">Конденсатор</td>
+    <td align="center" valign="middle">1000 пФ </td>
+    <td align="center" valign="middle">3</td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">DD1</td>
+    <td align="left" valign="middle">Микросхема</td>
+    <td align="center" valign="middle">К176ЛА7</td>
+    <td align="center" valign="middle">1</td>
+    <td align="left" valign="middle">при напряжении питания 9 В </td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">&nbsp;</td>
+    <td align="left" valign="middle">&nbsp;</td>
+    <td align="center" valign="middle">К155ЛА3</td>
+    <td align="center" valign="middle">&nbsp;</td>
+    <td align="left" valign="middle">при напряжении питания 5 В </td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">L1</td>
+    <td align="left" valign="middle">Катушка индуктивности </td>
+    <td align="center" valign="middle">500 мкГн </td>
+    <td align="center" valign="middle">1</td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">L2</td>
+    <td align="left" valign="middle">Катушка индуктивности </td>
+    <td align="center" valign="middle">&nbsp;</td>
+    <td align="center" valign="middle">1</td>
+    <td align="left" valign="middle">самодельная</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">R1, R2</td>
+    <td align="left" valign="middle">Резистор  постоянный</td>
+    <td align="center" valign="middle">180 Ом   / 0,25 Вт</td>
+    <td align="center" valign="middle">2</td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" scope="row">VD1, VD2</td>
+    <td align="left">Диод</td>
+    <td align="center" valign="middle">КД521Б</td>
+    <td align="center" valign="middle">2</td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+</table>
+
+
+  <br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+<hr>
+<h3>Источники:</h3>
+<p><a href="http://radio-uchebnik.ru/shem/nachinayushchim/8-nachinayushchim/106-prostoj-metalloiskatel">radio-uchebnik.ru - Простой металлоискатель</a></p>
+
+
+<!--
+<p><a href=""></a></p>
+ -->
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2020</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

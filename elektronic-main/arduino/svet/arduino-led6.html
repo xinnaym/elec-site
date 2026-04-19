@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Мигалка из трех светодиодов на Arduino UNO</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Мигалка из трех светодиодов на Arduino UNO</h1>
+
+<p>Компоненты:</p>
+<ul>
+  <li>Микроконтроллер Arduino UNO.</li>
+  <li>Макетная плата. </li>
+  <li>Светодиоды - 3 шт.</li>
+  <li>Резистор сопротивлением 200-300 Ом - 3 шт.. </li>
+  <li>USB-кабель.</li>
+  <li>Соединительные провода. </li>
+</ul>
+	
+<p>Порядок работы светодиодов: сначала по очереди загораются все светодиоды, а потом они все одновременно гаснут.</p>
+<figure><img src="arduino-led6_files/shema-led6.png" width="540" height="271">
+    <figcaption>Рис. 1 - Схема с тремя светодиодами</figcaption>
+</figure>
+<h3>Сборка схемы</h3>
+
+<ol>
+  <li>Устанавливаем на макетную плату резисторы (рис. 2).
+<figure><a href="arduino-led6_files/led6-1.png" target="_blank"><img src="arduino-led6_files/led6-1.png" width="270" height="284" border="0"></a>
+    <figcaption>Рис. 2 - Установка резисторов</figcaption>
+</figure>
+	</li>
+  <li>Устанавливаем на макетную плату светодиоды: катоды вставляем в одну шину с резистором, аноды - на другую (рис. 3).
+<figure><a href="arduino-led6_files/led6-2.png" target="_blank"><img src="arduino-led6_files/led6-2.png" width="270" height="280" border="0"></a>
+    <figcaption>Рис. 3 - Установка светодиодов</figcaption>
+</figure>	
+	</li>
+  <li>Соединяем светодиоды с платой Arduino: анод зеленого светодиода соединяем с выводом 10, анод красного светодиода - с выводом 11, анод желтого светодиода - с выводом 12 (рис. 4).
+    <figure><a href="arduino-led6_files/led6-3.png" target="_blank"><img src="arduino-led6_files/led6-3.png" width="690" height="330" border="0"></a>
+    <figcaption>Рис. 4 - Подключение светодиодов к плате Arduino</figcaption>
+    </figure></li>
+  <li>Соединяем вывод GND платы Arduino  с шиной &quot;&#8212;&quot; макетной платы (рис. 5).
+    <figure><a href="arduino-led6_files/led6-4.png" target="_blank"><img src="arduino-led6_files/led6-4.png" width="690" height="345" border="0"></a>
+    <figcaption>Рис. 5 - Соединение GND платы Arduino с макетной платой</figcaption>
+</figure>	
+	</li>
+</ol>
+
+
+<h3>Скетч</h3>
+<div class="kod">
+  <pre>
+<span class="ar-type">int</span> greenPin = 10;    <span class="ar-comment">// зеленый светодиод на выводе 10</span>
+<span class="ar-type">int</span> redPin = 11;      <span class="ar-comment">// красный светодиод на выводе 11</span>
+<span class="ar-type">int</span> yellowPin = 12;   <span class="ar-comment">// желтый светодиод на выводе 12</span>
+<span class="ar-type">int</span> pause_time1=1000; <span class="ar-comment">// пауза после включением светодиода</span>
+<span class="ar-type">int</span> pause_time2=500;  <span class="ar-comment">//  пауза перед включением светодиодов</span>
+
+<span class="ar-type">void</span> <span class="ar-oper">setup</span>() {
+  <span class="ar-func">pinMode</span>(redPin, <span class="ar-const">OUTPUT</span>);        <span class="ar-comment">// вывод 11 в режиме вывода</span>
+  <span class="ar-func">pinMode</span>(greenPin, <span class="ar-const">OUTPUT</span>);      <span class="ar-comment">// вывод 10 в режиме вывода</span>
+  <span class="ar-func">pinMode</span>(yellowPin, <span class="ar-const">OUTPUT</span>);     <span class="ar-comment">// вывод 12 в режиме вывода </span> 
+}
+
+<span class="ar-type">void</span> <span class="ar-oper">loop</span>() {
+
+  <span class="ar-func">digitalWrite</span>(greenPin, <span class="ar-const">HIGH</span>); <span class="ar-comment">// включаем зеленый светодиод</span>
+  <span class="ar-func">delay</span>(pause_time1);
+  <span class="ar-func">digitalWrite</span>(redPin, <span class="ar-const">HIGH</span>);   <span class="ar-comment">// включаем красный светодиод</span>
+  <span class="ar-func">delay</span>(pause_time1);  
+  <span class="ar-func">digitalWrite</span>(yellowPin, <span class="ar-const">HIGH</span>);<span class="ar-comment">// включаем синий светодиод</span>
+  <span class="ar-func">delay</span>(pause_time1);
+  
+  <span class="ar-comment">// выключаем все светодиоды одновременно</span>
+  <span class="ar-func">digitalWrite</span>(redPin, <span class="ar-const">LOW</span>);      
+  <span class="ar-func">digitalWrite</span>(greenPin, <span class="ar-const">LOW</span>);
+  <span class="ar-func">digitalWrite</span>(yellowPin, <span class="ar-const">LOW</span>);
+  <span class="ar-func">delay</span>(pause_time2);
+}</pre>
+</div>
+
+<p>Загрузите скетч в Arduino и убедитесь, что все работает правильно. </p>
+	
+	
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://developer.alexanderklimov.ru/arduino/leds.php"  target="_blank">alexanderklimov.ru - Работаем с множеством светодиодов</a></p>
+
+  <p><a href="https://oarduino.ru/voprosi-i-otveti/upravlenie-svetodiodnoj-lentoj-cherez-arduino"  target="_blank">oarduino.ru - Мигалка на Ардуино: как сделать скетч по схеме из светодиода</a></p>
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2023</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

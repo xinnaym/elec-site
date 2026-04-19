@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Исследование работы параметрического стабилизатора</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Исследование работы параметрического стабилизатора</h1>
+
+
+<p>Для исследования работы параметрического стабилизатора нам понадобятся:</p>
+<ul>
+  <li>регулируемый источник питания;</li>
+  <li>резистор номиналом в 1,5 кОм;</li>
+  <li>стабилитрон с напряжением стабилизации 5,1 В (можно взять любой другой стабилитрон);</li>
+  <li>мультиметр;</li>
+  <li>соединительные провода. </li>
+</ul>
+<div class="ris">
+<img src="test_stabilitron_files/shema1.jpg" height="200" width="440">
+<p>Рис. 1 - Схема параметрического стабилизатора<br>
+<span class="formula2"><em>U</em><sub>вх</sub></span> - входное напряжение, <span class="formula2"><em>U</em><sub>вых.ст.</sub></span> - выходное стабилизированное напряжение
+</p>
+
+</div>
+
+<p>Рассмотрим схему параметрического стабилизатора (рис. 1). Резистор и стабилитрон образуют <em>делитель напряжения</em>: входное напряжение равняется сумме напряжений на стабилитроне и на резисторе:</p>
+<p class="formula"><em>U</em><sub>вх</sub>= <em>U</em><sub>вых ст</sub> + <em>U</em><sub>R</sub>.</p>
+
+
+
+<p>Cоберем схему, взяв резистор номиналом в 1,5 кОм и стабилитрон на напряжение стабилизации 5,1 В (можно взять любой другой стабилитрон), как показано на рис. 2. Слева подаем напряжение от блока питания, а справа измеряем мультиметром полученное напряжение.</p>
+
+<div class="ris">
+  <a href="test_stabilitron_files/IMG_1681.JPG" target="_blank"><img src="test_stabilitron_files/IMG_1681.JPG" width="425" height="275" border="0"></a>
+	<p>Рис. 2 - Подключение элементов для исследования</p>
+	</div>
+
+<p>Изменяя входное напряжение следим за показаниями мультиметра и вольтметра блока питания. При подаче на схему напряжения 4 В выходное напряжение почти равно входному напряжению (рис. 3). </p>
+
+<div class="ris"><a href="test_stabilitron_files/IMG_1680.JPG" target="_blank">
+<img src="test_stabilitron_files/IMG_1680.JPG" width="350" height="380" border="0"></a>
+	<p>Рис. 3 - Выходное напряжение почти равно входному напряжению</p>
+</div>
+
+<p>При входном напряжении  5,5 В выходное напряжение равно 5,13 В. Так как напряжение стабилизации стабилитрона 5,1&nbsp;В, то как мы видим, он прекрасно стабилизирует.</p>
+
+<div class="ris">
+  <a href="test_stabilitron_files/IMG_1687.JPG" target="_blank"><img src="test_stabilitron_files/IMG_1687.JPG" width="300" height="380" border="0"></a>
+	<p>Рис. 4 - При U<sub>вх</sub>=5,5 В выходное напряжение почти равно напряжению стабилизации </p>
+	</div>
+
+<p>Добавим напряжение на выходе источника питания. Входное напряжение 9 В, а на стабилитроне&nbsp; 5,17 В.</p>
+
+<div class="ris">
+  <a href="test_stabilitron_files/IMG_1692.JPG" target="_blank"><img src="test_stabilitron_files/IMG_1692.JPG" width="300" height="380" border="0"></a>
+	<p>Рис. 5 - При U<sub>вх</sub>=9 В выходное напряжение почти равно напряжению стабилизации </p>
+	</div>
+
+<p>Повышаем входное напряжение до 20 В,&nbsp; и на выходе получаем 5,2 В. Отклонение 0,1 В&nbsp; - это  очень маленькая погрешность, которой  в некоторых случаях пренебречь.</p>
+
+<div class="ris">
+  <a href="test_stabilitron_files/IMG_1694.JPG" target="_blank"><img src="test_stabilitron_files/IMG_1694.JPG" width="290" height="355" border="0"></a>	
+	<p>Рис. 6 - При U<sub>вх</sub>=20 В выходное напряжение почти равно напряжению стабилизации </p>
+</div>
+
+
+
+
+<p>&nbsp;</p>
+
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	<hr>
+	
+	
+<h3>Источники:</h3>
+<p><a href="http://hamlab.net/begun/stab.html"  target="_blank">hamlab.net - Стабилизаторы напряжения</a></p>
+<p><a href="https://www.ruselectronic.com/news/printsip-raboty-stabilitrona/">ruselectronic.com - Принцип работы стабилитрона</a></p>
+<p><a href="http://fb.ru/article/301651/stabilitron---eto-chto-takoe-i-dlya-chego-on-nujen">fb.ru - Стабилитрон - это что такое и для чего он нужен?</a></p>
+
+
+<!--
+<p><a href=""></a></p>
+ -->
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

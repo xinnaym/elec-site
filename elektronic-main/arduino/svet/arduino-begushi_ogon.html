@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Бегущие огни на Arduino UNO</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Бегущие огни на Arduino UNO</h1>
+
+<p>Схема для создания эффекта бегущего огня из 5 светодиодов показана на рис 1. </p>
+
+<figure>
+  <img src="arduino-begushi_ogon_files/shema-beg.png" width="675" height="270">
+	<figcaption>Рис. 1 - Схема бегущего огня из 5 светодиодов</figcaption>
+</figure>
+
+<figure>
+  <a href="arduino-begushi_ogon_files/montag-beg.png" target="_blank"><img src="arduino-begushi_ogon_files/montag-beg.png" width="770" height="345" border="0"></a>
+	<figcaption>Рис. 2 - Схема бегущего огня из 5 светодиодов на макетной плате</figcaption>
+</figure>
+
+<p>Для управления светодиодами будем использовать манипуляции с портами Arduino: будем напрямую записывать данные в порты Arduino. Это позволит установить значения для светодиодов при помощи одной лишь операции.</p>
+<p>У Arduino UNO имеется 3 порта:</p>
+<ul>
+  <li> B - цифровые входы/выходы с 8 по 13;</li>
+  <li> C - аналоговые входы;</li>
+  <li> D - цифровые входы/выходы с 0 по 7.</li>
+</ul>
+<p>Каждый порт управляется 3 регистрами: </p>
+<ul>
+  <li>Регистр <strong>DDR</strong> определяет режим работы вывода  - вход или выход. </li>
+  <li>Регистр <strong>PORT</strong>  устанавливает вывод в состояние HIGH или LOW. </li>
+  <li>Регистр <strong>PIN</strong> позволяет считывать состояния выводов Arduino в режиме вход.</li>
+</ul>
+<p>Так как светодиоды подключены к выводам 0-4  будем использовать порт D. Эти выводы должны быть установлены в режим цифрового вывода (OUTPUT). Для этого биты 0-4 регистра   DDRD должны быть установлены в 1: </p>
+<p><span class="kod3">DDRD = B00111110;</span></p>
+
+<p>Чтобы зажечь  светодиод необходимо соответствующий бит регистра PORTD установить в 1. Например, чтобы зажечь  первый и четвертый светодиоды:</p>
+<p><span class="kod3">PORTD = B00001001;</span></p>
+
+<!--<p>Рассмотрим операторы сдвига.</p>
+
+<p>Есть 2 оператора двоичного сдвига: оператор сдвига влево &quot;<span class="kod2">&lt;&lt;</span>&quot; и оператор сдвига вправо &quot;<span class="kod2">&gt;&gt;</span>&quot;. Оператор сдвига влево &quot;<span class="kod2">&lt;&lt;</span>&quot; заставляет все биты сдвигаться влево, соответственно оператор сдвига вправо &quot;<span class="kod2">&gt;&gt;</span>&quot; сдвигает биты вправо.</p>
+
+<p>Пример:<br>
+  <span class="kod3">var A = 1; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 00000001<br>
+  var A = 1 &lt;&lt; 0; // 00000001<br>
+  var A = 1 &lt;&lt; 1; // 00000010<br>
+  var A = 1 &lt;&lt; 2; // 00000100</span></p>
+ -->
+
+
+<h3>Скетч:</h3>
+<div class="kod">
+<pre><span class="ar-type">unsigned int</span> updown=1;<span class="ar-comment">// updown=1 - увеличиваем номер светодиода</span> 
+<span class="ar-comment">                      // updown=0 - уменьшаем номер светодиода</span>
+<span class="ar-type">unsigned int</span> shift=0; <span class="ar-comment">// сдвиг равен 0</span>
+ 
+<span class="ar-type">void</span> <span class="ar-oper">setup</span>() {                
+  DDRD=B00011111;  <span class="ar-comment">// устанавливаем регистры 0-4 порт D как выход</span> 
+  PORTD=B00000000;
+}
+ 
+<span class="ar-type">void</span> <span class="ar-oper">loop</span>() {
+  <span class="ar-oper">if</span>(updown==1) <span class="ar-comment"> // если увеличиваем номер светодиода, </span>
+  {
+    shift++;<span class="ar-comment">     // то сдвиг увеличиваем на 1</span>
+    <span class="ar-oper">if</span>(shift>=4) <span class="ar-comment">//если достигнут наибольший номер светодиода,</span>
+      updown=0;  <span class="ar-comment">//то в следующем цикле идем вниз</span>
+  }
+    <span class="ar-oper">else</span> <span class="ar-comment">        // иначе увеличиваем номер светодиода, </span>
+    {
+      shift--;   <span class="ar-comment">// сдвиг уменьшаем</span>
+        <span class="ar-oper">if</span>(shift==0) <span class="ar-comment">// если достигнут наименьший номер светодиода, </span>
+          updown=1;  <span class="ar-comment">//то в следующем цикле идем вверх</span>    
+    }
+  PORTD = B00000001 &lt;&lt; shift;  <span class="ar-comment">//сдвиг на величину shift</span>
+  <span class="ar-func">delay</span>(200);                  <span class="ar-comment">// пауза 200 мс</span>
+}</pre>
+</div>
+<p>Переменная <span class="kod2">updown</span> содержит значение куда двигаться - вверх или вниз, а переменная <span class="kod2">shift</span> - какие светодиоды зажигать.</p>
+
+<p>В главном цикле программы <span class="kod2">loop()</span>, светодиоды по очереди загораются вверх путем увеличения переменной <span class="kod2">shift</span>, а когда доходит до самого верхнего, то переменной <span class="kod2">updown</span> присваивается 0 и светодиоды загораются вниз по очереди.</p>
+
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="http://cxem.net/arduino/arduino6.php"  target="_blank">cxem.net - Arduino UNO урок 4 - Бегущий огонь</a></p>
+
+  <p><a href="https://arduino.ru/Tutorial/Upravlenie_portami_cherez_registry"  target="_blank">arduino.ru - Управление портами через регистры Atmega</a></p>
+
+  <p><a href="https://webhamster.ru/mytetrashare/index/mtb0/16381701645i535rbhml"  target="_blank">webhamster.ru - Быстрая массовая и единичная установка режимов и значений пинов на Arduino. Обозначение портов (регистров)</a></p>
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2023</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

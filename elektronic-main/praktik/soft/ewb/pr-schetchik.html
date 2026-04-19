@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Исследование двоичного счетчика</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cdutt-str.ru/"><img width="130" height="130" src="../../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../../index.html">Главная</a></li>
+      <li><a href="../../../teorie.html">Теория</a></li>
+      <li><a href="../../../praktik.html">Практика</a></li>
+      <li><a href="../../../help.html">Справочники</a></li>
+      <li><a href="../../../sheme.html">Схемы</a></li>
+      <li><a href="../../../arduino.html">Arduino</a></li>
+      <li><a href="../../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+
+<h2 class="ewb">Electronics Workbench</h2>
+
+<h1>Исследование двоичного счетчика<br>в программе Electronics Workbench</h1>
+
+
+<p>Подробнее о триггерах можно узнать <a href="../../../teorie/dt/ct.html" target="_blank">здесь</a>.</p>
+
+<h3>1. Исследование работы двоичного счетчика на на D-триггерах с помощью индикаторов</h3>
+<ol>
+  <li>В программе Electronics Workbench cоберите модель для исследования двоичного счетчика (рис. 1).	
+    <div class="ris">
+  <img src="pr-schetchik_files/model2.png" width="813" height="574">
+  <p>Рис. 1 - Модель схемы для исследования двоичного счетчика на D-триггерах с помощью индикаторов</p>
+	<p style="border:#FF0000 solid 2px; text-align:left; padding:5px;">1. Верхнее по схеме положение переключателя SA1 соответствует подаче логической «1», нижнее положение - логического «0».<br>
+2. Положение переключателя SA1 изменяется при нажатии на клавиатуре клавиши  <nobr>«С»</nobr>.<br>
+3. Белый цвет индикаторов HL1-HL3 соответствует логическому «0», красный цвет - <nobr>логической «1»</nobr>.<br>
+	4. Для подачи  счетного импульса необходимо нажатием на клавиатуре клавиши  <nobr>«С»</nobr> переключатель SA1 перевести с нижнего на верхнее положение (0&rarr;1). </p>
+</div>
+</li>
+  <li>Установите свойства элементов схемы (табл. 1).<br>
+    Для установки свойств:
+		<ul>
+		<li>сделайте двойной щелчок на элементе;</li>
+		<li>откройте вкладку (Label, Value или Models);</li>
+		<li>установите значения.</li>
+		</ul>
+    <p class="tab_num">Таблица 1 </p>
+
+	<table border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>
+	Свойства элементов схемы
+	(рис. 2) 
+	</caption>
+  <tr>
+    <th>Наименование</th>
+    <th>Обозначение <br>
+      элемента </th>
+    <th>Вкладка Label<br>
+      (Свойство:Значение)</th>
+    <th>Вкладка Value<br>
+(Свойство:Значение) </th>
+    </tr>
+  <tr>
+    <td align="left" valign="middle">Нагрузочный резистор, 
+      подключенный<br> 
+      к плюсовому выводу источника постоянного <br>
+      напряжения</td>
+    <td align="center" valign="middle">G1</td>
+    <td align="left" valign="middle">Label: G1</td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">Индикатор</td>
+    <td align="center" valign="middle">HL1</td>
+    <td align="left" valign="middle">Label: HL1</td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">Индикатор</td>
+    <td align="center" valign="middle">HL2</td>
+    <td align="left" valign="middle">Label: HL2</td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">Индикатор</td>
+    <td align="center" valign="middle">HL3</td>
+    <td align="left" valign="middle">Label: HL3</td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">Семисегментный индикатор</td>
+    <td align="center" valign="middle">HL4</td>
+    <td align="left" valign="middle">Label: HL4</td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">Семисегментный индикатор</td>
+    <td align="center" valign="middle">HL5</td>
+    <td align="left" valign="middle">Label: HL5</td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">D-триггер </td>
+    <td align="center" valign="middle">DD1</td>
+    <td align="left" valign="middle">Label: DD1</td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">D-триггер </td>
+    <td align="center" valign="middle">DD2</td>
+    <td align="left" valign="middle">Label: DD2</td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">D-триггер </td>
+    <td align="center" valign="middle">DD3</td>
+    <td align="left" valign="middle">Label: DD3</td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">Переключатель</td>
+    <td align="center" valign="middle">SA1</td>
+    <td align="left" valign="middle">Label: SA1</td>
+    <td align="center" valign="middle">Key: C </td>
+  </tr>
+</table>
+	 </li>
+  <li>Щелкните мышкой на кнопке <img src="btn.jpg" alt="btn.jpg" width="45" height="23" align="absmiddle"> в верхнем правом углу, чтобы включить схему. </li>
+  <li>Если индикаторы  HL1-HL3 не погашены, нажимайте на клавишу <span class="ramka2">«С»</span> до тех пор, пока они не погаснут. </li>
+  <li>Подавая счетные импульсы, определите состояния выходов при помощи логических пробников HL1-HL3 и семисегментных индикаторов HL4-HL5.  Результат запишите в табл. 2  в рабочей тетради.
+    <p class="tab_num">Таблица 2 </p>
+    <table border="1" align="center" cellpadding="0" cellspacing="0">
+		<caption>
+		Таблица состояний двоичного счетчика на 
+		D-триггерах
+		</caption>
+      <tr>
+        <th>№ импульса </th>
+        <th>С</th>
+        <th>Q1 (HL1)</th>
+        <th>Q2 (HL2)</th>
+        <th>Q3 (HL3)</th>
+        <th>HL4</th>
+        <th>HL5</th>
+      </tr>
+      <tr>
+        <td>0 (исходное состояние) </td>
+        <td>&nbsp;</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>0&rarr;1</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>0&rarr;1</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>0&rarr;1</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>0&rarr;1</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>0&rarr;1</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>0&rarr;1</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>0&rarr;1</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>0&rarr;1</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </li>
+  <li>Щелкните мышкой на кнопке <img src="btn.jpg" alt="btn.jpg" width="45" height="23" align="absmiddle"> в верхнем правом углу, чтобы выключить схему.</li>
+</ol>
+
+<h3>2. Исследование работы двоичного счетчика на на D-триггерах с помощью осциллографа </h3>
+<ol>
+  <li>В программе Electronics Workbench cоберите модель для исследования работы двоичного счетчика  на <nobr>D-триггерах</nobr> с помощью осциллографа (рис. 2).	
+    <div class="ris">
+  <img src="pr-schetchik_files/model3.png" width="764" height="258">
+  <p>Рис. 2 - Модель    для исследования работы двоичного счетчика  <br>
+    на <nobr>D-триггерах</nobr> с помощью осциллографа</p>
+</div>
+</li>
+
+  <li>Закрасьте  провод идущий к  каналу <strong>А</strong> осциллографа в <span style="color:#009900">зеленый</span> цвет: сделайте двойной щелчок на проводе  и выберите <span style="color:#009900">зеленый</span> цвет. На экране осциллографа осциллограмма  входного сигнала будет окрашен в <span style="color:#009900">зеленый</span> цвет. </li>
+  <li>Закрасьте  провод идущий к каналу <strong>B</strong> осциллографа в <span style="color:#ff0000">красный</span> цвет. Осциллограмма выходного сигнала будет окрашен в <span style="color:#ff0000">красный</span> цвет.</li>
+  <li>Установите параметры функционального генератора (рис. 3):
+	  <ul>
+	  <li>вид сигнала - прямоугольные импульсы;</li>
+	  <li>частота - 100 Гц (Frequency - 100 Hz);</li>
+	  <li>амплитуда - 3 В (Amplitude - 3 V);</li>
+	  <li>коэффициент заполнения - 50% (Duty cycle - 50%) ;</li>
+    <li>смещение - 3 В (Offset - 3 V).</li>
+    <div class="ris">
+  <img src="pr-schetchik_files/setup-gen.png" width="213" height="167">
+  <p>Рис. 3 - Настройка функционального генератора</p>
+</div>
+	</ul>
+	</li>
+  <li>Сделайте двойной щелчок на осциллографе, чтобы открыть расширенную модель осциллографа.</li>
+  <li>Щелкните мышкой на кнопке <img width="45" height="23" src="btn.jpg" alt="btn.jpg"> в верхнем правом углу, чтобы включить схему. Через 3-5 секунд повторно щелкните мышкой на кнопке <img width="45" height="23" src="btn.jpg" alt="btn.jpg">, чтобы выключить схему.</li>
+  <li>Подберите шаг развертки (<strong>Time base</strong>) и чувствительности каналов (<strong>Channel A</strong>/<strong>Channel B</strong>) для получения полного изображения одного периода выходного сигнала (рис. 4).
+    <div class="ris">
+  <img src="pr-schetchik_files/setup-osc.png" width="599" height="450">
+  <p>Рис. 4 - Настройка шага развертки и чувствительности каналов</p>
+</div>
+	</li>
+  <li>Зарисуйте осциллограммы (снимите скриншот) на каналах <strong>А</strong> и  <strong>В</strong>.</li>
+  <li>По осциллограмме определите период и частоту выходного сигнала.</li>
+  <li>Щелкните мышкой на кнопке <img src="btn.jpg" alt="btn.jpg" width="45" height="23" align="absmiddle"> в верхнем правом углу, чтобы выключить схему.</li>
+  </ol>
+
+  <br>
+  <p>Сделайте выводы по результатам эксперимента.</p>
+  <br>
+
+<br>		
+<hr>
+
+
+<br>
+<a href="#top1"><img src="../../../images/up.png" width="24" height="24"></a>
+	
+  </div>
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2020</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

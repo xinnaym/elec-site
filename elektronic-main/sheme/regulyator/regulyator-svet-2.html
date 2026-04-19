@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Светорегуляторы</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Светорегулятор на тиристорах</h1>
+
+			
+
+  <p>&nbsp;</p>
+<p> Схема светорегулятора на тиристорах (рис. 1) немного отличается <a href="regulyator-svet-1.html">от светорегулятора на симисторах</a>, тем что для каждой полуволны стоит свой тиристор, и тем самым свой динистор для каждого ключа.</p>
+
+<a name="na-tiristorah"></a>
+<div class="ris">
+<img src="regulyator-svet-2_files/tiristor-dimmer.jpg" width="376" height="267">
+<p>Рис. 1 - Схема светорегулятора на тиристорах</p>
+</div>
+
+<p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+  <caption>
+    Перечень элементов
+  </caption>
+  <thead>
+    <tr>
+      <th>Обозначение</th>
+      <th>Наименование</th>
+      <th>Номинал</th>
+      <th>Количество</th>
+      <th>Примечание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left">C1,C2</td>
+      <td align="left">Конденсатор </td>
+      <td align="center">0,22 мкФ/400 В</td>
+      <td align="center">2</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R1-R4</td>
+      <td align="left">Резистор постоянный </td>
+      <td align="center">51 Ом/0,5 Вт </td>
+      <td align="center">4</td>
+      <td align="left">МЛТ-0,5</td>
+    </tr>
+    <tr>
+      <td align="left">R5</td>
+      <td align="left">Резистор  переменный</td>
+      <td align="center"> 270 кОм</td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">VS1, VS2</td>
+      <td align="left"> Тринистор</td>
+      <td align="center">КУ201</td>
+      <td align="center">2</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">VS3, VS4</td>
+      <td align="left">Динистор</td>
+      <td align="center">КН102А</td>
+      <td align="center">2</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+<p>Во время положительной полуволны емкость C1 заряжается через цепочку R5, R4, R3. При достижении порога открывания динистора VS3, ток через него попадает на управляющий электрод VS1. Ключ открывается пропуская положительную полуволну через себя. При отрицательной фазе тиристор запирается, а процесс повторяется для другого ключа VS2, заряжаясь через цепочку R1, R2, R5.</p>
+
+<p>Фазные регуляторы-димеры можно использовать  также для регулирования скорости вращения вентилятора,  температуры  жала паяльника, оборотов дрели.</p>
+
+<p class="warning">Данный способ регулирования не подходит для работы с люминесцентными, экономными компактными и светодиодными лампами.</p>
+
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://samelectrik.ru/5-sxem-sborki-samodelnogo-svetoregulyatora.html"  target="_blank">samelectrik.ru - 5 схем сборки самодельного светорегулятора</a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

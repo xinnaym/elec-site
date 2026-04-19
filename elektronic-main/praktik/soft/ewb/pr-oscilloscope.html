@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Исследование сигналов в программе Electronics Workbench</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../../index.html">Главная</a></li>
+      <li><a href="../../../teorie.html">Теория</a></li>
+      <li><a href="../../../praktik.html">Практика</a></li>
+      <li><a href="../../../help.html">Справочники</a></li>
+      <li><a href="../../../sheme.html">Схемы</a></li>
+      <li><a href="../../../arduino.html">Arduino</a></li>
+      <li><a href="../../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+
+<h2 class="ewb">Electronics Workbench</h2>
+
+	<h1>Исследование сигналов с помощью осциллографа в программе Electronics Workbench</h1>
+
+<h4>1. Исследование параметров синусоидального сигнала </h4>
+
+<ol>
+  <li>Запустите программу Electronics Workbench.</li>
+  <li> Разместите  на рабочем поле функциональный генератор и осциллограф из панели контрольно-измерительных приборов (Instruments).</li>
+  <li>Соедините генератор и осциллограф как показано на рис. 1.
+<div class="ris">
+  <img src="pr-oscilloscope_files/pic 1.png" width="444" height="279">
+  <p>Рис. 1 - Соединение генератора и осциллографа</p>
+</div>
+	</li>
+  <li>Сделайте двойной щелчок для вызова увеличенных изображений генератора и осциллографа (рис. 2) 
+<div class="ris"><img src="pr-oscilloscope_files/fg-1.png" width="385" height="171">
+  <img src="pr-oscilloscope_files/osc-1.png" width="494" height="185">
+  <p>Рис. 2 - Увеличенные изображения генератора и осциллографа</p>
+</div>
+	</li>
+  <li> Установите на генераторе частоту 100 Гц (Frequency 100 Hz) и амплитуду 5 В (Amplitude 5 V) синусоидального сигнала (рис. 2).</li>
+  <li>Включите схему на 2-3 секунды, щелкнув на кнопке <em><strong>Activate simulation</strong></em>.</li>
+  <li>Выключите схему.</li>
+  <li>Щелкните на кнопке <strong>EXPAND</strong> на простой модели осциллографа, чтобы открыть расширенную модель осциллографа (рис. 3).
+<div class="ris"><img src="pr-oscilloscope_files/osc-2.png" width="599" height="448">
+  <p>Рис. 3 - Расширенная модель осциллографа</p>
+</div>
+	</li>
+  <li>Установите шаг развертки 2 мс/дел (Time base - 2 ms/div) и чувствительность 2 В/дел (Channel A - 2 V/div) для получения четкого изображения сигнала.
+<div class="ris"><img src="pr-oscilloscope_files/osc-3.png" width="600" height="447">
+  <p>Рис. 4 - Синусоидальный сигнал на экрана осциллографа</p>
+</div>
+	</li>
+  <li>В рабочей тетради зарисуйте изображение синусоидального сигнала. Масштаб: 1 см в тетради равен 1 делению экрана осциллографа.</li>
+  <li>Измерьте амплитуду сигнала:
+	  <ul>
+		  <li>установите красный маркер на вершине "горба" сигнала (рис. 5);</li>
+			<li>значение поля VA1 покажет значение амплитуды сигнала. Запишите это значение в рабочей тетради.</li>
+	  </ul>
+<div class="ris"><img src="pr-oscilloscope_files/osc-4.png" width="599" height="445">
+  <p>Рис. 5 - Измерение амалитуды синусоидального сигнала</p>
+</div>
+	</li>
+  <li>Измерьте период сигнала (рис. 6):
+	  <ul>
+		  <li>установите красный маркер к точке сигнала в которой происходит переход от положительных значений к отрицательным значениям;</li>
+			<li>установите синий маркер к следующей такой же точке сигнала. Чем ближе будут значения на полях VA1 и VA2, тем точнее будет результат измерения;</li>
+      <li>значение поля Т2-Т1 покажет значение периода сигнала. Запишите это значение в рабочей тетради.</li>
+	  </ul>
+<div class="ris"><img src="pr-oscilloscope_files/osc-5.png" width="597" height="447">
+  <p>Рис. 6 - Измерение периода синусоидального сигнала</p>
+</div>
+	</li>
+</ol>
+	
+
+<h4>2. Исследование параметров прямоугольных импульсов</h4>
+	
+<ol>
+  <li>Установите на генераторе частоту 1 кГц (Frequency 1 kHz) и амплитуду 2 В (Amplitude 2 V) сигнала прямоугольных импульсов (рис. 7).
+<div class="ris"><img src="pr-oscilloscope_files/fg-2.png" width="388" height="171">
+  <p>Рис. 7 - Настройки генератора для прямоугольных импульсов</p>
+</div>	
+	</li>
+  <li>Включите схему на 2-3 секунды, щелкнув на кнопке <em><strong>Activate simulation</strong></em>.</li>
+  <li>Выключите схему.</li>
+  <li>На расширенной модели осциллографа (рис. 8). Установите шаг развертки 0,2 мс/дел (Time base - 0,2 ms/div) и чувствительность 1 В/дел (Channel A - 1 V/div) для получения четкого изображения сигнала.
+<div class="ris"><img src="pr-oscilloscope_files/osc-6.png" width="601" height="449">
+  <p>Рис. 8 - Синусоидальный сигнал на экрана осциллографа</p>
+</div>
+	</li>
+  <li>В рабочей тетради зарисуйте изображение прямоугольных импульсов. Масштаб: 1 см в тетради равен 1&nbsp;делению экрана осциллографа.</li>  
+  <li>Измерьте длительность импульса, амплитуду и период сигнала.
+
+<div class="ris"><img src="pr-oscilloscope_files/osc-8.png" width="601" height="448">
+  <p>Рис. 9 - Измерение длительности прямоугольных импульсов</p>
+</div>
+
+<div class="ris"><img src="pr-oscilloscope_files/osc-7.png" width="601" height="448">
+  <p>Рис. 10 - Измерение периода прямоугольных импульсов</p>
+</div>
+
+	</li>
+  <li>На генераторе установите скважность импульсов 25%.
+<div class="ris"><img src="pr-oscilloscope_files/fg-3.png" width="215" height="168">
+  <p>Рис. 11 - Установка скважности импульсов</p>
+</div>
+	</li>
+  <li>В рабочей тетради зарисуйте изображение прямоугольных импульсов. Масштаб: 1 см в тетради равен 1&nbsp;делению экрана осциллографа.</li>
+  <li>Измерьте длительность импульса, амплитуду и период сигнала. </li>
+  <li>Проанализируйте полученные результаты и сделайте выводы. </li>
+</ol>	
+		
+<hr>
+
+
+<br>
+<a href="#top1"><img src="../../../images/up.png" width="24" height="24"></a>
+	
+<!--<hr>
+<h3>Источники</h3>	
+  <p><a href="http://cxem.net/arduino/arduino188.php"  target="_blank">cxem.net - Курс Arduino - Звук</a></p>
+ -->
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2020</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

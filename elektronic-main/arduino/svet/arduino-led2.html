@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Регулировка яркости светодиода двумя кнопками</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Регулировка яркости светодиода двумя кнопками</h1>
+
+	
+<p>Рассмотрим управление яркостью светодиода с помощью ШИМ (широтно-импульсная модуляция) каналов (рис. 1). В Arduino UNO ШИМ можно реализовать на цифровых выводах, обозначенных "PWM" или "~". На плате Arduino Uno это D03, D05, D06, D10, D11. Скважность импульса задается в пределах от 0 до 255.</p>
+
+<figure>
+<img src="arduino-led2_files/led2-shema.png" alt="" width="608" height="292">
+    <figcaption>Рис. 1 - Схема электрическая принципиальная  управления светодиодом двумя кнопками</figcaption>
+</figure>
+
+	<p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+  <caption>
+  Перечень элементов схемы управления светодиодом двумя кнопками
+  </caption>
+  <thead>
+    <tr>
+		  <th>Обозначение</th>
+			<th>Наименование</th>
+			<th>Номинал</th>
+			<th>Количество</th>
+			<th>Примечание</th>
+		</tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left">HL1</td>
+			<td align="left">Светодиод</td>
+			<td align="center">&nbsp;</td>
+			<td align="center">1</td>
+			<td align="left">&nbsp;</td>
+		</tr>
+    <tr>
+      <td align="left">R1</td>
+      <td align="left">Резистор постоянный </td>
+      <td align="center">1 кОм</td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R2, R3</td>
+      <td align="left">Резистор постоянный </td>
+      <td align="center">100 кОм</td>
+      <td align="center">2</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+		<tr>
+		  <td align="left">SB1, SB2</td>
+		  <td align="left">Кнопочный выключатель </td>
+		  <td align="center">&nbsp;</td>
+		  <td align="center">2</td>
+		  <td align="left">без фиксации </td>
+		  </tr>
+  </tbody>
+</table>
+
+<figure>
+  <a href="arduino-led2_files/montag-led2.jpg"><img src="arduino-led2_files/montag-led2.jpg" alt="" width="860" border="0"></a>
+    <figcaption>Рис. 2 - Монтажная схема управления светодиодом двумя кнопками</figcaption>
+</figure>
+
+<p>Интенсивность свечения будет регулироваться от 0 до 254 единиц, где 0 - светодиод выключен, а 254 - горит максимально (Например при 127 яркость будет на 50%).
+</p>
+
+<p>Светодиод подключаются через резистор сопротивлением  200 Ом ... 1 кОм (подбирается в зависимости от  рабочего напряжения и тока светодиода). </p>
+<p>Управление яркостью реализуется с помощью двух  кнопок без фиксации. Кнопки подключаются  через  резисторы сопротивлением 10-100&nbsp;кОм.</p>
+<h3>Скетч</h3>
+
+<div class="kod">
+<pre><span class="kod-type">int</span> <span class="kod-var">led</span> = 11;     <span class="comment1">// Номер вывода к которому подключен светодиод</span>   
+<span class="kod-type">int</span> <span class="kod-var">b</span> =0;<span class="comment1">// Переменная в которой хранится уровень яркости (От 0 до 254)</span>    
+<span class="kod-type">int</span> <span class="kod-var">s</span> = 5;<span class="comment1">// шаг изменения яркости</span>
+
+<span class="kod-type">int</span> <span class="kod-var">bPlus</span>=3; <span class="comment1">// Номер вывода к которому подключена кнопка "+"</span>     
+<span class="kod-type">int</span> <span class="kod-var">bMinus</span>=2;<span class="comment1">// Номер вывода к которому подключена кнопка "-"</span>  
+
+void <span class="kod-func">setup</span>()  {     
+  pinMode(<span class="kod-var">led</span>, OUTPUT); <span class="comment1">// Порт 11 (led) будет работать как Выход.</span>   
+} 
+
+void <span class="kod-func">loop</span>()  { <span class="comment1">//Цикл будет выполняться бесконечное количество раз</span>    
+  <span class="kod-oper">if</span> (digitalRead(<span class="kod-var">bPlus</span>) == HIGH) {<span class="comment1">//если нажата </span><span class="comment1">кнопка "+"</span>
+    <span class="kod-var">b</span> += <span class="kod-var">s</span>; <span class="comment1">// Увеличиваем значение переменной яркости на s единиц</span>
+  }       
+  <span class="kod-var">if</span> (digitalRead(<span class="kod-var">bMinus</span>) == HIGH) {<span class="comment1">//если нажата </span><span class="comment1">кнопка "-" </span>
+    <span class="kod-var">b</span> -= <span class="kod-var">s</span>;<span class="comment1">//Уменьшаем значение переменной яркости на s единиц</span>
+  }         
+  <span class="kod-var">b</span> = constrain(<span class="kod-var">b</span>, 0, 254);     
+  analogWrite(<span class="kod-var">led</span>, <span class="kod-var">b</span>);    <span class="comment1">// Устанавливаем яркость светодиода</span>     
+  delay(50); <span class="comment1">// Пауза 50 миллисекунд.</span>
+} 
+</pre>
+</div>
+
+<p>Функция<span class="kod3"> constrain(b, 0, 254)</span> контролирует, чтобы  переменная <span class="kod3">b</span> не стала больше 254 и меньше 0. Если значение выходит за границу то функция возвращает 0 или 254.</p>
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://lesson.iarduino.ru/page/urok-1-reguliruem-dvumya-knopkami-yarkost-svetodioda/"  target="_blank">lesson.iarduino.ru - Урок №1. Регулируем двумя кнопками яркость светодиода </a></p>
+  <p><a href="http://publicatorbar.ru/regulirovka-yarkosti-svetodioda-shim-dvumya-knopkami/"  target="_blank">publicatorbar.ru - Регулировка яркости светодиода ШИМ двумя кнопками</a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2024</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

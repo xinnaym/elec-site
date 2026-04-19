@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Подключение кнопки к Arduino</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"></a>		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+
+  
+  <div id="content">
+	<h1>Подключение кнопки к Arduino</h1>
+
+
+<h2>Виды кнопок </h2>
+<p>Назначение кнопки – физическое соединение или разрыв проводников. </p>
+<div class="ris">
+  <img src="arduino-knopka_files/1.png" alt="Виды кнопок" width="528" height="392">
+  <p>Рис. 1 - Виды кнопок, их внешний вид и обозначение на электрической схеме</p>
+</div>
+
+<p>Некоторые кнопки после нажатия оставляют проводники соединёнными (фиксирующиеся кнопки), другие – сразу же после отпускания размыкают цепь (нефиксирующиеся кнопки).</p>
+<p>Также кнопки делят на:</p>
+
+<ul>
+<li>нормально разомкнутые - при нажатии замыкают цепь,</li>
+<li>нормально замкнутые - при нажатии размыкают цепь.</li>
+</ul>
+<p>В наборах с Arduino чаще всего имеются нормально разомкнутые кнопки без фиксации.
+Ниже приведены основные способы подключения таких кнопок к  Arduino.</p>.
+
+
+<h2>Схема с подтягивающим резистором</h2>
+
+<p>В данной схеме (рис. 2)через резистор 10-100 кОм к цифровому контакту "подтянули" напряжение питания +5В. Таким образом, когда кнопка отжата на цифровом контакту устанавливается состояние логической "1" (HIGH).</p>
+
+<figure>
+  <img src="arduino-knopka_files/btn-shema-pod.png" alt="Схема подключения кнопки к Arduino по схеме с подтягивающим резистором" width="340" height="220">
+  <figcaption>Рис. 2 - Схема подключения кнопки к Arduino по схеме с подтягивающим резистором</figcaption>
+</figure>
+
+<p>Когда кнопка будет нажата, потенциал +5В будет стянут к общему проводнику GND и на цифровом контакте установится значение LOW. Чтобы определить нажата кнопка или нет, необходимо отслеживать состояние контакта и если оно равняется LOW, то кнопка нажата и можно выполнить нужные действия.</p>
+
+
+<p>Соберем схему  с подтягивающим резистором на макетной плате (рис. 2) и загрузим в Arduino  скетч №1. Результат  работы скетча будем наблюдать в Мониторе порта.</p>
+<!--<p>Сначала подключим к Arduino кнопку по схеме с подтягивающим резистором. Для этого один контакт кнопки соединим с землёй, второй – с цифровым выходом "2". Цифровой выход "2" также подключим через резистор номиналом 10&nbsp;кОм к питанию +5&nbsp;В.</p> -->
+
+<figure>
+  <img src="arduino-knopka_files/btn-shema-pod-montag.png" alt="Схема с подтягивающим резистором" width="770" height="430">
+  <figcaption>Рис. 3 - Схема подключения кнопки к Arduino по схеме с подтягивающим резистором на монтажной плате</figcaption>
+</figure>
+
+ 
+<h4>Скетч №1 </h4>
+<div class="kod">
+<pre>
+<span class="comment1">// Задаём номера выводов:</span>
+<span class="ar-type">int</span> <span class="kod-var">buttonPin</span> = 2; 
+<span class="ar-type">void</span> <span class="kod-func">setup()</span> {
+  <span class="ar-func">pinMode</span>(<span class="kod-var">buttonPin</span>, <span class="ar-const">INPUT</span>);
+  <span class="ar-func"><strong>Serial</strong>.begin</span>(9600);
+}
+
+<span class="ar-type">void </span><span class="ar-func">loop()</span> {
+  <span class="kod-type">int</span> <span class="kod-var">buttonState</span> = <span class="ar-func">digitalRead</span>(<span class="kod-var">buttonPin</span>); <span class="ar-comment">// считываем состояние кнопки</span>
+  <span class="ar-func"><strong>Serial</strong>.println</span>(<span class="kod-var">buttonState</span>); <span class="ar-comment">// выводим состояние кнопки</span>
+  <span class="ar-func">delay</span>(1000);
+}
+</pre>
+</div>
+
+<p>Когда кнопка нажата в Монитор порта выводится "1", т.е. на цифровом контакте присутствует сигнал высокого уровня (логическая "1"). При нажатии на кнопку в Монитор порта будет выводиться значение "0". При отпускании кнопки в Мониторе порта снова выводиться "1".</p>
+<p>Ниже представлен скетч №2 с примером обработки нажатия кнопки.</p>
+
+<h4>Скетч №2</h4>
+<div class="kod">
+<pre>
+<span class="ar-type">int</span> sb1 = 2; 
+<span class="ar-type">int</span> ledPin =  5; 
+<span class="ar-type">int</span> state;
+<span class="ar-type">int</span> i;
+<span class="ar-type">void</span> setup() {
+  <span class="ar-func">pinMode</span>(ledPin, <span class="ar-const">OUTPUT</span>);
+  <span class="ar-func">pinMode</span>(sb1, <span class="ar-const">INPUT</span>);
+}
+
+<span class="ar-type">void</span> loop() {
+  state = <span class="ar-func">digitalRead</span>(sb1); <span class="ar-comment">// считываем состояние кнопки</span>
+  <span class="ar-oper">if</span> (state == <span class="ar-const">LOW</span>) {
+    <span class="ar-oper">for</span>(i=1;i&lt;4;i++)
+    {
+      <span class="ar-func">digitalWrite</span>(ledPin, <span class="ar-const">HIGH</span>); <span class="ar-comment">// зажигаем светодиод</span>
+      <span class="ar-func">delay</span>(500);
+      <span class="ar-func">digitalWrite</span>(ledPin, <span class="ar-const">LOW</span>); <span class="ar-comment">// гасим светодиод </span>
+      <span class="ar-func">delay</span>(500);
+    }
+  }
+}
+</pre>
+</div>
+
+
+
+<h2>Схема со стягивающим резистором</h2>
+
+<p>В схеме со стягивающим резистором через резистор номиналом 10-100&nbsp;кОм цифровой контакт "стянут" к GND. Таким образом, когда кнопка разомкнута, на цифровом контакте  — логический ноль (~0V) или состояние LOW.</p>
+
+<p>Если нажать кнопку, то на цифровом контакте установится почти +5В, то есть логическая «1» (HIGH).В этом случае  на цифровом контакте нужно отслеживать HIGH.</p>
+
+
+<figure>
+  <img src="arduino-knopka_files/btn-shema-styag.png" alt="Схема со стягивающим резистором" width="240" height="275">
+  <figcaption>Рис. 4 - Схема подключения кнопки к Arduino по схеме со стягивающим резистором</figcaption>
+</figure>
+
+
+<figure>
+  <img src="arduino-knopka_files/btn-shema-styag-montag.png" alt="Подключение кнопки к Arduino по схеме со стягивающим резистором" width="760" height="420" border="0">
+  <figcaption>Рис. 5 - Схема подключения кнопки к Arduino по схеме со стягивающим резистором на монтажной плате</figcaption>
+</figure>
+<p>В скетче №3 приведен пример обработки нажатия кнопки подключенной к Arduino по схеме со стягивающим резистором. Она отличается лишь условием в операторе <span class="kod2">if</span>.</p> 
+
+<h4>Скетч №3</h4>
+<div class="kod">
+<pre>
+<span class="ar-type">int</span> sb1 = 2; 
+<span class="ar-type">int</span> ledPin =  5; 
+<span class="ar-type">int</span> state;
+<span class="ar-type">int</span> i;
+<span class="ar-type">void</span> setup() {
+  <span class="ar-func">pinMode</span>(ledPin, <span class="ar-const">OUTPUT</span>);
+  <span class="ar-func">pinMode</span>(sb1, <span class="ar-const">INPUT</span>);
+}
+
+<span class="ar-type">void</span> loop() {
+  state = <span class="ar-func">digitalRead</span>(sb1); <span class="ar-comment">// считываем состояние кнопки</span>
+  <span class="ar-oper">if</span> (state == <span class="ar-const">HIGH</span>) {
+    <span class="ar-oper">for</span>(i=1;i&lt;4;i++)
+    {
+      <span class="ar-func">digitalWrite</span>(ledPin, <span class="ar-const">HIGH</span>); <span class="ar-comment">// зажигаем светодиод</span>
+      <span class="ar-func">delay</span>(500);
+      <span class="ar-func">digitalWrite</span>(ledPin, <span class="ar-const">LOW</span>); <span class="ar-comment">// гасим светодиод </span>
+      <span class="ar-func">delay</span>(500);
+    }
+  }
+}
+</pre>
+</div>
+
+<!--
+<h2>Дребезг контактов </h2>
+<p>При нажатии на кнопку и при её отпускании возникает т.н. «дребезг» ("bounce" по-английски). Это многократное переключение состояния кнопки за короткий промежуток времени (порядка нескольких миллисекунд), прежде чем она примет установившееся состояние. Это нежелательное явление возникает в момент переключения кнопки из-за упругости материалов кнопки или из-за возникающих при электрическом контакте микроискр.</p>
+
+<div class="ris">
+  <img src="arduino-knopka_files/2.png" alt="Дребезг контактов в момент нажатия и отпускания кнопки" width="680" height="316">
+<p>Рис. 2 - Дребезг контактов в момент нажатия и отпускания кнопки</p>
+</div>	
+	
+ -->
+<!--
+<p>Сейчас нашёл широкое применение тип кнопок, которые называют «тактовые кнопки». Этим ошибочным термином называют кнопки, которые при нажатии замыкают электрическую цепь, а при отпускании – размыкают, т.е. это нефиксирующиеся, нормально разомкнутые кнопки.</p>
+
+
+
+<h2>Некорректное подключение кнопки</h2>
+<p>Чтобы подключить нормально разомкнутую тактовую кнопку к Arduino, можно поступить самым простым способом: один свободный проводник кнопки соединить с питанием или землёй, другой – с цифровым выводом Arduino. Но, вообще говоря, это неправильно. Дело в том, что в моменты, когда кнопка не замкнута, на цифровом выводе Ардуино будут появляться электромагнитные наводки, и из-за этого возможны ложные срабатывания.</p>
+<div class="ris">
+  <a href="arduino-knopka_files/3.png"><img src="arduino-knopka_files/3.png" alt="Неправильное подключение кнопки к Arduino" width="385" height="270" border="0"></a>
+<p>Рис. 3 - Неправильное подключение кнопки к Arduino</p>
+</div>
+<p>Чтобы избежать наводок, цифровой вывод обычно подключают через достаточно большой резистор (10&nbsp;кОм) либо к земле, либо к питанию. В первом случае это называется <strong>«схема с подтягивающим резистором»</strong>, во втором – <strong>«схема со стягивающим резистором»</strong>.</p>
+ --> 
+ <br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://soltau.ru/index.php/arduino/item/376-kak-podklyuchit-knopku-k-arduino"  target="_blank">soltau.ru - Как подключить кнопку к Arduino</a></p>
+  <p><a href="https://rxtx.su/mikrokontrollery/arduino/prostye-sxemy-s-platoj-arduino/podklyuchenie-knopok-k-arduino/"  target="_blank">rxtx.su - Подключение кнопок к ардуино</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2023</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

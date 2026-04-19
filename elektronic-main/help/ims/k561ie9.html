@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Микросхемы К561ИЕ9, ЭК561ИЕ9</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Микросхемы К561ИЕ9, ЭК561ИЕ9</h1>
+	
+<p>Микросхемы К561ИЕ9 и ЭК561ИЕ9 представляют собой счетчик-делитель на  восемь. В ИС используется восьмеричный код Джонсона (когда счетчик переходит к  следующему логическому состоянию, меняется только одна логическая переменная).  В качестве одного разряда счетчика используется тактируемый MS-триггер типа D с непосредственным входом  установки 0. Содержат 168  интегральных элементов.</p>
+
+<div class="ris">
+<img src="k561ie9_files/K561IE9.png" height="230" width="120">
+<p>Рис. 1 - Условное графическое обозначение микросхем К561ИЕ9, ЭК561ИЕ9</p>
+</div>
+<h3>Назначение выводов</h3>
+<p>1 — выход 1;<br> 
+2 — выход 0;<br> 
+3 — выход 2;<br> 
+4 — выход 5;<br> 5 — выход 6;<br> 6 — свободный;<br> 7 — выход 3;<br> 
+8 — общий (&quot;-&quot;);<br>
+ 9 — свободный;<br> 10 —  выход 7;<br> 11 —  выход 4;<br> 12 —  выход переноса;<br> 13 —  разрешение синхронизации;<br> 14 —  вход синхронизации;<br> 15 —  установка нуля;<br> 
+16 —  &quot;+&quot; напряжение питания.</p>
+<p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Электрические параметры микросхем К561ИЕ9 и ЭК561ИЕ9</caption>
+  <tr>
+    <td align="left">Напряжение питания</td>
+    <td>3…15 В</td>
+  </tr>
+  <tr>
+    <td align="left">Выходное  напряжение низкого уровня при  воздействии  помехи при U<sub>п</sub>= 10  В</td>
+    <td>&le;1 В</td>
+  </tr>
+  <tr>
+    <td align="left">Выходное  напряжение высокого уровня при  воздействии  помехи при U<sub>п</sub>= 10  В</td>
+    <td>&ge;9 В</td>
+  </tr>
+  <tr>
+    <td align="left">Ток  потребления при U<sub>п</sub>= 15В</td>
+    <td>&le;20 мкА</td>
+  </tr>
+  <tr>
+    <td align="left">Входной  ток низкого (высокого) уровня при&nbsp; U<sub>п</sub>= 15В</td>
+    <td>&le;0,3 мкА</td>
+  </tr>
+  <tr>
+    <td align="left">Выходной  ток низкого (высокого) уровня при&nbsp; U<sub>п</sub>= 10В</td>
+    <td>&ge;0,35 мА</td>
+  </tr>
+  <tr>
+    <td align="left">Время задержки распространения при  включении (выключении) при U<sub>п</sub>= 10 В по выводам:<br>
+      от 14 до выходов 0-9; от 13 до  выходов 0-9;от 14 до 12; от 13 до 2<br></td>
+    <td>&le;350 нс</td>
+  </tr>
+  <tr>
+    <td align="left">Время  задержки распространения при включении при U<sub>п</sub>= 10 В по  выводам от 15 до выходов 1-9</td>
+    <td>&le;350 нс</td>
+  </tr>
+  <tr>
+    <td align="left">Время  задержки распространения при выключении при U<sub>п</sub>= 10В  
+      по  выводам от 15 до 3, 12</td>
+    <td>&le;350 нс</td>
+  </tr>
+  <tr>
+    <td align="left">Максимальная  тактовая частота при U<sub>п</sub>=  10В</td>
+    <td>3 МГц</td>
+  </tr>
+</table>
+<br>
+
+<p class="tab_num">Таблица 2</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Предельно  допустимые режимы эксплуатации микросхем К561ИЕ9 и ЭК561ИЕ9</caption>
+  <tr>
+    <td align="left">Напряжение  между выводами 8 и 16, 7 и 16</td>
+    <td>3…15 В</td>
+  </tr>
+  <tr>
+    <td align="left">Входное  напряжение</td>
+    <td>-0,2…(U<sub>п</sub>+0,2)  В</td>
+  </tr>
+  <tr>
+    <td align="left">Максимальный  ток по любому выводу</td>
+    <td>10 мА</td>
+  </tr>
+  <tr>
+    <td align="left">Максимальная  мощность на выход</td>
+    <td>100 мВт</td>
+  </tr>
+  <tr>
+    <td align="left">Максимальная  рассеиваемая мощность</td>
+    <td>200 мВт</td>
+  </tr>
+  <tr>
+    <td align="left">Максимальная  емкость нагрузки</td>
+    <td>3000  пФ</td>
+  </tr>
+  <tr>
+    <td align="left">Максимальное  время фронта и среза тактовых импульсов</td>
+    <td>15 мкс</td>
+  </tr>
+  <tr>
+    <td align="left">
+Минимальная  длительность импульсов установки в ноль:</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;при U<sub>п</sub>= 5 В</td>
+    <td>500 нс</td>
+  </tr>
+  <tr>
+    <td align="left"> &nbsp;&nbsp;&nbsp;&nbsp;при U<sub>п</sub>= 10 В</td>
+    <td>165 нс</td>
+  </tr>
+  <tr>
+    <td align="left">Температура  окружающей среды</td>
+    <td>.-45…+85 °С</td>
+  </tr>
+</table>
+
+
+<p class="tab_num">Таблица 3</p>
+
+<div class="ris">
+<p><strong> Таблица  истинности</strong></p>	
+		<img src="k561ie9_files/K561IE9_table.png" width="638" height="893">		</div>
+
+
+<br>
+  <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+      
+    <hr>
+<h3>Источники</h3>	
+  <p><a href=""  target="_blank"></a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

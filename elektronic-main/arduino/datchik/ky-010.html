@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Модуль KY-010</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cdutt-str.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+<h1>Модуль  с оптическим прерывателем KY-010</h1>
+
+
+<p>Модуль KY-010 представляет собой оптический датчик, позволяющий засечь прохождение частей конструкции через инфракрасное излучение. Датчик состоит из фотоприемника и светодиода, направленного в него, а также двух резисторов на обратной стороне (1 кОм и 33 Ом). Когда какой-либо непрозрачный предмет перекрывает прохождение света к фотоприемнику, уровень логического сигнала на выходе датчика меняется.</p>
+<figure>
+  <a href="ky-010_files/ky-010-foto.jpg" target="_blank"><img src="ky-010_files/ky-010-foto.jpg" width="290" height="275" border="0"></a>
+  <figcaption>Рис. 1 - Внешний вид модуля KY-010</figcaption>
+</figure>
+	
+<p>Модуль KY-010 применяется для считывания оборотов движущихся частей,  в качестве датчика пересечения области.</p>
+
+<figure>
+	<img src="ky-010_files/ky-010-circut.png" width="385" height="300" border="0">
+  <figcaption>Рис. 2 - Принципиальная схема  модуля KY-010</figcaption>
+</figure>
+<h4>Технические характеристики KY-010:</h4>
+ <ul>
+   <li>Рабочее напряжение &#8212; 5 В.</li>
+   <li>Ток потребления &#8212; от 13 мА.</li>
+   <li>Размеры &#8212; 20&times;15&times;8 мм.</li>
+ </ul>
+
+ <p>Назначение выводов (рис. 1) представлено в таблице 1.</p>
+ <p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+  <tr>
+    <th>Контакт</th>
+    <th>Назначение</th>
+  </tr>
+  <tr>
+    <th align="center">S</th>
+    <td align="left"> Выходной сигнал</td>
+  </tr>
+  <tr>
+    <th align="center">+5V</th>
+    <td align="left">+5 В </td>
+  </tr>
+  <tr>
+    <th align="center">&#8212; (GND) </th>
+    <td align="left">Общий минусовой контакт</td>
+  </tr>
+</table>
+<p class="warning">Внимание! На некоторых модулях может быть нанесена неправильная разметка контактов.</p>
+
+
+<figure>
+	<img src="ky-010_files/ky-010-connect.jpg" width="740" height="670" border="0">
+  <figcaption>Рис. 3 - Схема подключения модуля KY-010 к Arduino UNO</figcaption>
+</figure>
+
+<h3>Скетч №1 </h3>
+<p>Когда перекрывается прохождение света к фотоприемнику встроенный светодиод светится. Если свет проходит к фотоприемнику встроенный светодиод не светится</p>
+<div class="kod">
+<pre><span class="ar-type">int</span> led=13 ;  <span class="comment1">// назначение вывода для светодиода</span>
+<span class="ar-type">int</span> dat=10;   <span class="comment1">// назначение вывода для фотодатчика</span>
+<span class="ar-type">int</span> v;         <span class="comment1">// переменная для хранения состояния фотодатчика</span>
+
+<span class="ar-type">void</span> <span class="ar-oper">setup</span>()
+{
+  <span class="ar-func">pinMode</span>(led, <span class="ar-type">OUTPUT</span>);  <span class="comment1">// вывод светодиода работает как выход</span>
+  <span class="ar-func">pinMode</span>(dat, <span class="ar-type">INPUT</span>);   <span class="comment1">// вывод фотодатчика работает как вход</span>
+}
+
+<span class="ar-type">void</span> <span class="ar-oper">loop</span>()
+{
+  v=<span class="ar-func">digitalRead</span>(dat);   <span class="comment1">// чтение состояния фотодатчика</span>
+    <span class="ar-oper">if</span> (v==<span class="ar-type">HIGH</span>)        <span class="comment1">// если с фотодатчика появляется высокий уровень</span> 
+  {
+    <span class="ar-func">digitalWrite</span>(led, <span class="ar-type">HIGH</span>); <span class="comment1">// то светодиод светится</span>
+  }
+  <span class="ar-oper">else</span>
+  {
+    <span class="ar-func">digitalWrite</span>(led, <span class="ar-type">LOW</span>); <span class="comment1">// иначе светодиод не светится</span>
+  }
+}
+</pre>
+</div>
+
+
+ <p>&nbsp;</p>
+
+<br>
+    <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+
+ <hr>
+<h3>Источники</h3>	
+<!-- -->   
+<p><a href="https://tehdoc-study.ru/product/modul-s-opticheskim-preryvatelem-ky-010/"  target="_blank">tehdoc-study.ru - Модуль с оптическим прерывателем KY-010</a></p>
+ 
+<p><a href="https://arduino-tex.ru/news/42/ky-010---modul-s-opticheskim-preryvatelem-podklyuchenie-k.html"  target="_blank">arduino-tex.ru - KY-010 – модуль с оптическим прерывателем. Подключение к Arduino.</a></p>
+
+<p><a href="https://umnyjdomik.ru/ky-010-modul-s-opticheskim-preryvatelem-dlya-arduino.html"  target="_blank">umnyjdomik.ru - "KY-010" – модуль с оптическим прерывателем для ARDUINO</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2022</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

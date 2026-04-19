@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Модуль KY-033</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+<h1>Модуль датчика линии KY-033</h1>
+
+
+<p>Модуль датчика линии KY-033 представляет собой датчик отражения инфракрасного излучения близко расположенным препятствием. Благодаря работе фотоэлемента в инфракрасном диапазоне излучения
+восприятие оттенков становится более контрастным, чем в видимом диапазоне света. Это
+облегчает применять модуль KY-033 для различения белых и черных участков поверхности.
+Конструктивные особенности позволяют использовать модуль датчика линии в классической
+задаче учебной робототехники – движение вдоль линии на полу. Если нанести полоски на
+вращающийся диск то датчик можно использовать для измерения скорости оборотов вала
+двигателя, колеса и других вращающихся деталей.</p>
+
+<figure>
+  <img src="ky-033_files/ky-033-foto2.png" width="600" height="351" border="0">
+  <figcaption>Рис. 1 - Внешний вид модуля KY-033</figcaption>
+</figure>
+
+<p>Инфракрасный светодиод и фототранзистор входят в компонент модуля TCRT5000L. Его сигнал
+поступает на вход микросхемы LM393YD . Переменным резистором выполняется настройка. В
+зависимости от применения модуля KY-033 выбирается режим работы. Благодаря настройке
+модуль датчика линии имеет широкий круг применения. Требуемая чувствительность зависит от
+расстояния до поверхности, оттенка светлых и темных участков. При работе в составе тахометра
+настройка проводится под ширину линий на вращающейся поверхности.</p>
+<p>При подаче питания на модуль, инфракрасный светодиод начинает излучать свет, который отражаясь от белой поверхности попадает на фототранзистор. В таком режиме на выводе <strong>OUT (SIGNAL)</strong> будет установлена логическая единица. Как только в зону видимости датчика попадает чёрный объект, световой поток, поглощаясь этим самым объектом, перестаёт доходить до фототранзистора и компаратор переключает вывод <strong>OUT (SIGNAL)</strong> в логический ноль. (рис. 2).  Настройка схемы для наибольшей разности уровней
+приводит к смещению напряжения выхода для каждого случая. Поэтому сигнал датчика подают
+на вход АЦП, а программу настраивают на наиболее надежное различение высокого и низкого
+уровней сигнала.</p>
+
+<figure>
+	<img src="ky-033_files/ky-033-princip.png" width="650" height="404" border="0">
+  <figcaption>Рис. 2 - <em>Логика работы </em> модуля KY-033</figcaption>
+</figure>
+
+<h4>Технические характеристики KY-033:</h4>
+ <ul>
+   <li>Тип используемого ИК датчика &#8212; TCRT5000.</li>
+	 <li>Длина волны излучения &#8212; 950 нм.</li>
+   <li>Напряжение питания &#8212; 3,3...5,5 В.</li>
+	 <li>Потребляемый ток  &#8212; 20 мА.</li>
+	 <li>Максимальная нагрузка на выход компаратора &#8212; 15 мА.</li>
+	 <li>Расстояние уверенного определения препятствия &#8212; 1-25 мм;</li>
+	 <li>Угол обзора  &#8212; 35&deg;.</li>
+	 <li>Рабочая температура &#8212; 0 – 50&deg;C.</li>
+   <li>Размеры (мм) &#8212; 77&times;48&times;12.</li>
+ </ul>
+<!-- -->
+
+
+ <p>Назначение выводов модуля KY-033 (рис. 1) представлено в таблице 1.</p>
+ <p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+  <tr>
+    <th>Контакт</th>
+    <th>Назначение</th>
+  </tr>
+  <tr>
+    <th align="center">OUT</th>
+    <td align="left">Сигнальный выход </td>
+  </tr>
+  <tr>
+    <th align="center"> VСС</th>
+    <td align="left">Напряжение питания </td>
+  </tr>
+  <tr>
+    <th align="center"><strong>GND</strong></th>
+    <td align="left">Общий минусовой контакт </td>
+  </tr>
+</table>
+<br>
+
+<figure>
+	<a href="ky-031_files/ky-031-circuit.jpg" target="_blank"><img src="ky-033_files/ky-033-connect.png" width="600" height="385" border="0"></a>
+  <figcaption>Рис. 3 - Схема подключения модуля KY-033 к Arduino UNO</figcaption>
+</figure>
+<!-- -->
+<h4>Скетч: </h4>
+
+<div class="kod">
+<pre><span class="ar-oper">#define</span> PIN_SENSOR 2  <span class="comment1">//Макроопределение для подключения датчика линии к выводу 2 Arduino</span>
+<span class="ar-type">void</span> <span class="ar-oper">setup</span>() {  
+  <span class="ar-func"><strong>Serial</strong>.begin</span>(9600); <span class="comment1">//Инициализация монитора порта</span>
+  <span class="ar-func">pinMode</span>(PIN_SENSOR, <span class="ar-type">INPUT</span>); <span class="comment1">//Настраиваем на ввод вывод, к которому подключен датчик</span>
+}
+
+<span class="ar-type">void</span> <span class="ar-oper">loop</span>() {
+  <span class="comment1">// Контролируем датчик с периодичностью около 200мс</span>
+  <span class="ar-oper">if</span>(<span class="ar-func">digitalRead</span>(PIN_SENSOR)) { <span class="comment1">// если датчик не срабатывает</span>
+    <span class="ar-func"><strong>Serial</strong>.println</span>("<span class="ar-type">LIGHT</span>");
+  }
+  <span class="ar-oper">else</span> { <span class="comment1">//иначе датчик срабатывает</span>
+    <span class="ar-func"><strong>Serial</strong>.println</span>("<span class="ar-type">BLACK</span>");
+  }
+  <span class="ar-func">delay</span>(200);
+}
+</pre>
+</div>
+
+<br>
+<br>
+    <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+
+ <hr>
+<h3>Источники</h3>
+<p><a href="https://umnyjdomik.ru/ky-033-modul-datchika-otslezhivajushhego-liniju-dlya-arduino.html"  target="_blank">umnyjdomik.ru - "KY-033" – датчик отслеживающий линию для ARDUINO</a></p>
+
+<p><a href="http://developer.alexanderklimov.ru/arduino/sensors/hunt.php"  target="_blank">alexanderklimov.ru - Датчик линии</a></p>
+
+<p><a href="https://arcadepub.ru/2020/04/23/%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA-%D0%BF%D1%80%D0%B5%D0%BF%D1%8F%D1%82%D1%81%D1%82%D0%B2%D0%B8%D0%B9-ky-033/"  target="_blank">arcadepub.ru - Инфракрасный датчик препятствий KY-033</a></p>
+<!--
+--> 
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2021</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

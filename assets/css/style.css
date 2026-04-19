@@ -103,6 +103,10 @@ html, body {
     line-height: 1.75;
 }
 
+td {
+    vertical-align: top;
+}
+
 #content h1 {
     font-size: 32px;
     text-align: center;
@@ -113,10 +117,11 @@ html, body {
 }
 
 #content h2 {
-    font-size: 32px;
+    font-size: 24px;
     text-align: center;
     color: #1e40af;
-    margin: 0 0 30px 0;
+    margin: 0 0 10px 0;
+    line-height: 35px;
 }
 
 #content h2.section-title {
@@ -133,7 +138,7 @@ html, body {
 }
 
 #content h3 {
-    font-size: 24px;
+    font-size: 18px;
     color: #1e40af;
     margin: 20px 0 10px 0;
 }
@@ -338,8 +343,8 @@ hr {
 /* FOOTER */
 #footer {
     background: #1e3a8a;
-    color: #bfdbfe;
+    color: whitesmoke;
     text-align: center;
     padding: 20px 0;
-    font-size: 14.5px;
+    font-size: 16px;
 }

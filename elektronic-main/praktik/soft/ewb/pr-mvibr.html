@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Исследование работы симметричного мультивибратора</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cdutt-str.ru/"><img width="130" height="130" src="../../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../../index.html">Главная</a></li>
+      <li><a href="../../../teorie.html">Теория</a></li>
+      <li><a href="../../../praktik.html">Практика</a></li>
+      <li><a href="../../../help.html">Справочники</a></li>
+      <li><a href="../../../sheme.html">Схемы</a></li>
+      <li><a href="../../../arduino.html">Arduino</a></li>
+      <li><a href="../../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+
+<h2 class="ewb">Electronics Workbench</h2>
+
+	<h1>Исследование работы<br> симметричного мультивибратора <br>в программе
+	  Electronics Workbench</h1>
+
+<p>Изучите принципы работы симметричного мультивибратора <a href="../../../teorie/shemotehnika/multivibrator.html" target="_blank">здесь</a>.</p>
+
+<ol>
+  <li>Запустите программу Electronics Workbench.</li>
+  <li>Соберите модель схемы симметричного мультивибратора (рис. 1). 
+    <div class="ris">
+  <img src="pr-mvibr_files/model9.png" width="620" height="320">
+  <p>Рис. 1 - Модель  схемы симметричного мультивибратора </p>
+</div>
+</li>
+  <li>Установите свойства элементов схемы (табл. 1). <br>
+    Для установки свойств:
+		<ul>
+		<li>сделайте двойной щелчок на элементе;</li>
+		<li>откройте вкладку (Label, Value или Models);</li>
+		<li>установите значения.</li>
+		</ul>
+		
+<p class="tab_num">Таблица 1</p>
+	<table border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>Свойства элементов схемы</caption>
+  <tr>
+    <th>Обозначение <br>
+      элемента </th>
+    <th>Вкладка Label<br>
+      (Свойство:Значение)</th>
+    <th>Вкладка Value<br>
+(Свойство:Значение) </th>
+    <th>Вкладка Models <br>
+(Свойство:Значение) </th>
+    </tr>
+  <tr>
+    <td align="center" valign="middle">GB1</td>
+    <td align="left" valign="middle">Label: GB1</td>
+    <td align="left" valign="middle">Voltage (V): 12 V </td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">&nbsp;C1,<br>C2</td>
+    <td align="left" valign="middle">Label: C1<br>Label: C2</td>
+    <td align="left" valign="middle">Capacitance (C): 1 &micro;F</td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">&nbsp;R1,<br>R4</td>
+    <td align="left" valign="middle">Label: R1<br>Label: R4</td>
+    <td align="left" valign="middle">Resistance (R): 1 k&Omega;</td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">&nbsp;R2,<br>
+      R3</td>
+    <td align="left" valign="middle">Label: R2<br>Label: R3</td>
+    <td align="left" valign="middle">Resistance (R): 10 k&Omega;<br></td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">VT1,<br>
+      VT2</td>
+    <td align="left" valign="middle">Label: VT1<br>Label: VT2</td>
+    <td align="center" valign="middle">&#8212;</td>
+    <td align="left" valign="middle">Library: ewb <br>
+      Model: QPL </td>
+  </tr>
+</table>
+	
+	 </li>
+  <li>Закрасьте  провод идущий к  каналу <strong>А</strong> осциллографа в <span style="color:#009900">зеленый</span> цвет: сделайте двойной щелчок на проводе  и выберите <span style="color:#009900">зеленый</span> цвет. На экране осциллографа осциллограмма  сигнала с коллектора транзистора VT2 будет окрашен в <span style="color:#009900">зеленый</span> цвет. </li>
+  <li>Закрасьте  провод идущий к каналу <strong>B</strong> осциллографа в <span style="color:#ff0000">красный</span> цвет. Осциллограмма сигнала с базы транзистора VT2  будет окрашен в <span style="color:#ff0000">красный</span> цвет.</li>
+  <li>Сделайте двойной щелчок на осциллографе, чтобы открыть расширенную модель осциллографа. </li>
+  <li>Щелкните мышкой на кнопке <img width="45" height="23" src="btn.jpg" alt="btn.jpg"> в верхнем правом углу, чтобы включить схему. Через 10-12 секунд повторно щелкните мышкой на кнопке <img width="45" height="23" src="btn.jpg" alt="btn.jpg">, чтобы выключить схему.</li>
+  <li>Подберите шаг развертки (<strong>Time base</strong>) и чувствительности каналов (<strong>Channel A</strong>/<strong>Channel B</strong>) для получения четкого изображения не менее 3-х периодов сигналов (рис. 2).
+    <div class="ris">
+  <img src="pr-mvibr_files/oscil1.png" width="598" height="443">
+  <p>Рис. 2 - Настройка шага развертки и чувствительности каналов</p>
+</div>
+	</li>
+  <li>Зарисуйте осциллограммы (снимите скриншот) на каналах <strong>А</strong> и  <strong>В</strong>.</li>
+  <li>Определите амплитуды выходного сигнала <span class="formula2">U<sub>m</sub></span>:
+	  <ul>
+		<li>подведите красный маркер к вершине зеленой осциллограммы;</li>
+		<li>значение в поле VA1 покажет амплитуды выходного сигнала (рис. 3).
+      <div class="ris">
+      <img src="pr-mvibr_files/oscil2.png" width="596" height="423">
+      <p>Рис. 3 - Определение амплитуды выходного сигнала</p>
+    </div>
+		</li>
+	  </ul>
+	</li>
+  <li>Определите длительность импульса выходного сигнала <span class="formula2">t<sub>имп</sub></span>:
+	  <ul>
+		<li>подведите синий маркер к конечной точке импульса на зеленой осциллограмме;</li>
+		<li>подведите красный маркер к начальной точке импульса на зеленой осциллограмме;</li>
+		<li>значение в поле T2-T1 покажет длительность импульса выходного сигнала (рис. 4).
+      <div class="ris">
+      <img src="pr-mvibr_files/oscil3.png" width="596" height="420">
+      <p>Рис. 4 - Определение длительности импульса выходного сигнала</p>
+    </div>
+		</li>
+	  </ul>
+	</li>
+  <li>Определите период выходного сигнала <span class="formula2">T</span>:
+	  <ul>
+		<li>подведите синий маркер к конечной точке импульса на зеленой осциллограмме;</li>
+		<li>подведите красный маркер к конечной точке соседнего импульса на зеленой осциллограмме;</li>
+		<li>значение в поле T2-T1 покажет период выходного сигнала (рис. 5).
+      <div class="ris">
+      <img src="pr-mvibr_files/oscil4.png" width="597" height="421">
+      <p>Рис. 5 - Определение периода выходного сигнала</p>
+    </div>
+		</li>
+	  </ul>
+	</li>
+  <li>Вычислите  частоту импульсов <span class="formula2">f</span> по формуле:
+	  <p class="formula">f<sub></sub> =1<sub> </sub>/ T.</p> 
+  </li>
+  <li>Результаты запишите в рабочей тетради (табл. 2).</li>
+
+  <li>Установите ёмкости конденсаторов 2 мкФ и выполните пункты 7-14.</li>
+  <li>Установите ёмкости конденсаторов 4 мкФ и выполните пункты 7-14.</li>
+  <li>Проанализируйте полученные результаты. </li>
+  <li>Оформите отчет по проделанной работе.</li>
+</ol>
+
+
+<p class="tab_num">Таблица 2</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Результаты эксперимента</caption>
+  <tr>
+    <td align="left" valign="middle">№ измерения</td>
+    <th width="40" valign="middle">1</th>
+    <th width="40" valign="middle">2</th>
+    <th width="40" valign="middle">3</th>
+    </tr><tr>
+    <td align="left" valign="middle">Ёмкость конденсаторов С1 и С4, мкФ </td>
+    <td width="40" align="center" valign="middle">1</td>
+    <td width="40" align="center" valign="middle">2</td>
+    <td width="40" align="center" valign="middle">4</td>
+    </tr>
+      <td align="left" valign="middle">Амплитуда выходного сигнала <span class="formula2">U<sub>m</sub></span>, В</td>
+        <td width="40" valign="middle">&nbsp;</td>
+    <td width="40" valign="middle">&nbsp;</td>
+    <td width="40" valign="middle">&nbsp;</td>
+    </tr>
+  <tr>
+    <td align="left" valign="middle">Длительность  импульса выходного сигнала <span class="formula2">t<sub>имп</sub></span>, мс </td>
+    <td width="40" valign="middle">&nbsp;</td>
+    <td width="40" valign="middle">&nbsp;</td>
+    <td width="40" valign="middle">&nbsp;</td>
+    </tr>
+  <tr>
+    <td align="left" valign="middle">Период выходного сигнала <span class="formula2">T, мс</span></td>
+    <td width="40" valign="middle">&nbsp;</td>
+    <td width="40" valign="middle">&nbsp;</td>
+    <td width="40" valign="middle">&nbsp;</td>
+    </tr>
+      <td align="left" valign="middle">Частота выходного сигнала <span class="formula2">f</span>, Гц</td>
+    <td width="40" valign="middle">&nbsp;</td>
+    <td width="40" valign="middle">&nbsp;</td>
+    <td width="40" valign="middle">&nbsp;</td>
+    </tr>
+</table>
+
+		
+<hr>
+
+
+<br>
+<a href="#top1"><img src="../../../images/up.png" width="24" height="24"></a>
+	
+  </div>
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2020</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

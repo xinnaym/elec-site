@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Мини-гирлянда</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Мини-гирлянда</h1>
+
+    <p>Условно схему мини-гирлянды можно разделить на три части: </p>
+    <ul>
+      <li>генератор тактовых импульсов на DD1.1, </li>
+      <li>"силовая" часть на транзисторах   VT2-VT4, которым подключается нагрузка (светодиоды),</li>
+      <li>"переключатели" на DD1.2-DD1.4 с RC-цепочками R5C2, R7C3 между ними для   задержки включения транзисторов.</li>
+    </ul>
+    <p>Схема работает следующим образом: генератор подает импульсы,   DD1.2 сразу срабатывает и открывает транзистор VT2, затем заряжается C2 и   как только напряжение на нём достигнет такого уровня, что оно будет   принято за "1", то на выходе логического элемента "И" DD1.3 появится также   логическая "1", которая и откроет VT3. Тоже самое происходит с DD1.4. В результате создается   ощущение бегущих огней. Частота переключения регулируется подбором C1. </p>
+      
+    <div class="ris">
+      <img src="migalka-6_files/migalka-6_shema.JPG" height="503" width="858">
+			<p>Рис. 1 - Схема электрическая принципиальная мини-гирлянды</p>
+		</div>
+		
+		<p class="tab_num">Таблица 1 </p>
+  <table border="1" align="center" cellpadding="3" cellspacing="0">
+    <caption>
+    Перечень элементов
+    </caption>
+    <thead><tr><th>Обозначение</th>
+				    <th>Наименование</th>
+				    <th>Номинал</th>
+				    <th>Количество</th>
+				    <th>Примечание</th>
+</tr>
+      </thead>
+    <tbody>
+      <tr>
+				<td align="left">C1 </td>
+				<td align="left">Конденсатор электролитический </td>
+				<td align="center">100 мкФ/10В </td>
+				<td align="center">1</td>
+				<td>&nbsp;</td>
+			</tr>
+      <tr>
+        <td align="left">C2-С4 </td>
+        <td align="left">Конденсатор электролитический </td>
+        <td align="center">220 мкФ/10В </td>
+        <td align="center">3</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+      <td align="left">R1, R4, R6, R8 </td>
+			    <td align="left">Резистор постоянный </td>
+			    <td align="center"> 3,9 кОм</td>
+			    <td align="center">4</td>
+			    <td>&nbsp;</td>
+		    </tr>
+			<tr>
+			  <td align="left">R2</td>
+			  <td align="left">Резистор постоянный</td>
+			  <td align="center"> 18 кОм</td>
+			  <td align="center">1</td>
+			  <td>&nbsp;</td>
+			  </tr>
+			<tr>
+			  <td align="left">R3</td>
+			  <td align="left">Резистор постоянный </td>
+			  <td align="center"> 8,2 кОм</td>
+			  <td align="center">1</td>
+			  <td>&nbsp;</td>
+			  </tr>
+			<tr>
+			  <td align="left">R5, R7,R9 </td>
+			  <td align="left">Резистор постоянный</td>
+			  <td align="center"> 1 кОм</td>
+			  <td align="center">1</td>
+			  <td>&nbsp;</td>
+			  </tr>
+			<tr>
+			  <td align="left">R10</td>
+			  <td align="left">Резистор постоянный</td>
+			  <td align="center"> 1,2 кОм</td>
+			  <td align="center">1</td>
+			  <td>&nbsp;</td>
+	      </tr>
+      <tr>
+        <td align="left">R11</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center"> 39 Ом</td>
+        <td align="center">1</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left">VD1-VD25</td>
+        <td align="left">Светодиод</td>
+        <td align="center"><a href="../../help/vd/al307.html">АЛ307БМ</a></td>
+        <td align="center">25</td>
+        <td>&nbsp;</td>
+      </tr>
+			<tr>
+			  <td align="left">VT1-VT4</td>
+			  <td align="left">Биполярный транзистор</td>
+			  <td align="center"><a href="../../help/vt/kt315.html">КТ315А</a></td>
+			  <td align="center">4</td>
+			  <td><a href="../../help/vt/kt315.html">КТ315Б</a>, <a href="../../help/vt/kt315.html">КТ315B</a></td>
+			  </tr>
+      </tbody>
+  </table>
+			
+
+
+<br>
+  <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	<hr>
+<h3>Источники:</h3>
+<p><a href="http://mp16.ru/blog/mini-girlyanda-dlya-detej/" target="_blank">mp16.ru - Мини-гирлянда</a></p>
+
+
+<!--
+<p><a href=""></a></p>
+ -->
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

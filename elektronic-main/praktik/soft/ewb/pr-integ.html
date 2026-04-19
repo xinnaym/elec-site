@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Исследование интегрирующей RC-цепи</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cdutt-str.ru/"><img width="130" height="130" src="../../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../../index.html">Главная</a></li>
+      <li><a href="../../../teorie.html">Теория</a></li>
+      <li><a href="../../../praktik.html">Практика</a></li>
+      <li><a href="../../../help.html">Справочники</a></li>
+      <li><a href="../../../sheme.html">Схемы</a></li>
+      <li><a href="../../../arduino.html">Arduino</a></li>
+      <li><a href="../../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+
+<h2 class="ewb">Electronics Workbench</h2>
+
+	<h1>Исследование интегрирующей RC-цепи<br>в программе
+	  Electronics Workbench</h1>
+
+
+<p>Изучить принципы работы интегрирующей RC-цепи можно <a href="../../../teorie/shemotehnika/rc1.html" target="_blank">здесь</a>.</p>
+
+<ol>
+  <li>Запустите программу Electronics Workbench.</li>
+  <li>Соберите модель схемы интегрирующей RC–цепи: (рис. 1).	
+    <div class="ris">
+  <img src="pr-integ_files/model-rc.png" width="561" height="358">
+  <p>Рис. 1 - Модель  схемы интегрирующей <em>RC</em>–цепи </p>
+</div>
+</li>
+  <li>Установите свойства элементов схемы (табл. 1). <br>
+    Для установки свойств:
+		<ul>
+		<li>сделайте двойной щелчок на элементе;</li>
+		<li>откройте вкладку (Label, Value или Models);</li>
+		<li>установите значения.</li>
+		</ul>
+<p>Таблица 1</p>
+	<table border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>Свойства элементов схемы</caption>
+  <tr>
+    <th>Обозначение <br>
+      элемента </th>
+    <th>Вкладка Label<br>
+      (Свойство:Значение)</th>
+    <th>Вкладка Value<br>
+(Свойство:Значение) </th>
+    </tr>
+  <tr>
+    <td align="center" valign="middle">&nbsp;C1</td>
+    <td align="left" valign="middle">Label: C1</td>
+    <td align="left" valign="middle">Capacitance (C): 100 nF</td>
+    </tr>
+  <tr>
+    <td align="center" valign="middle">&nbsp;R1</td>
+    <td align="left" valign="middle">Label: R1</td>
+    <td align="left" valign="middle">Resistance (R): 1 k&Omega;</td>
+    </tr>
+</table>
+		
+	 </li>
+  <li>Закрасьте  провод идущий к  каналу <strong>А</strong> осциллографа в <span style="color:#009900">зеленый</span> цвет: сделайте двойной щелчок на проводе  и выберите <span style="color:#009900">зеленый</span> цвет. На экране осциллографа осциллограмма  входного сигнала будет окрашен в <span style="color:#009900">зеленый</span> цвет. </li>
+  <li>Закрасьте  провод идущий к каналу <strong>B</strong> осциллографа в <span style="color:#ff0000">красный</span> цвет. Осциллограмма выходного сигнала будет окрашен в <span style="color:#ff0000">красный</span> цвет.</li>
+  <li>Установите параметры функционального генератора:
+	<ul>
+	  <li>вид сигнала - прямоугольные импульсы;</li>
+	  <li>частота - 500 Гц (Frequency - 500 Hz);</li>
+	  <li>амплитуда - 6 В (Amplitude - 6 V);</li>
+	  <li>коэффициент заполнения - 50% (Duty cycle - 50%) ;</li>
+    <li>смещение - 0 В (Offset - 0 V).</li>
+    <div class="ris">
+  <img src="pr-integ_files/gen-setup.png" width="210" height="165">
+  <p>Рис. 2 - Настройка функционального генератора</p>
+</div>
+	</ul>
+	</li>
+  <li>Сделайте двойной щелчок на осциллографе, чтобы открыть расширенную модель осциллографа.</li>
+  <li>Щелкните мышкой на кнопке <img width="45" height="23" src="elcase5_files/btn.jpg" alt="Mchs1"> в верхнем правом углу, чтобы включить схему. Через 10-12 секунд повторно щелкните мышкой на кнопке <img width="45" height="23" src="elcase5_files/btn.jpg" alt="Mchs1">, чтобы выключить схему.</li>
+  <li>Подберите шаг развертки (<strong>Time base</strong>) и чувствительности каналов (<strong>Channel A</strong>/<strong>Channel B</strong>) для получения полного изображения одного периода сигналов (рис. 3).
+    <div class="ris">
+  <img src="pr-integ_files/ocl-1.png" width="595" height="442">
+  <p>Рис. 3 - Настройка шага развертки и чувствительности каналов</p>
+</div>
+	</li>
+  <li>Зарисуйте осциллограммы (снимите скриншот) на каналах <strong>А</strong> и  <strong>В</strong>.</li>
+  <li>Определите амплитуды выходного сигнала <span class="formula2">U<sub>m</sub></span>:
+	  <ul>
+		<li>подведите красный маркер к наивысшей точке красной осциллограммы;</li>
+		<li>значение в поле VB1 покажет амплитуды выходного сигнала (рис. 4).
+      <div class="ris">
+      <img src="pr-integ_files/ocl-2.png" width="600" height="449">
+      <p>Рис. 4 - Определение амплитуды выходного сигнала</p>
+    </div>
+		</li>
+	  </ul>
+	</li>
+  <li>Вычислите уровень напряжения соответствующее изменению выходного напряжения до 63% от максимального <span class="formula2">U<sub>&tau;</sub></span> по формуле:<br>
+	<p class="formula">U<sub>&tau;</sub>=<span>0,63</span>&middot;U<sub>m</sub></p>
+  <p><em>Пример</em>: На рис. 4 амплитуда сигнала 12 В. Следовательно <span class="formula2">U<sub>&tau;</sub> = <span>0,63</span>&middot;U<sub>m</sub> = 0,63&middot;12 = 7,56 </span>[В].</p>
+ </li>
+  <li>Определите экспериментальное значение постоянной времени цепи <span class="formula2">&tau;</span>:
+    <ul>
+      <li>подведите красный маркер к  точке, где начинается подъем красной осциллограммы (начало фронта импульса);</li>
+		    <li>подведите синий маркер к  точке на красной осциллограмме, в которой напряжение приблизительно равно <span class="formula2">U<sub>&tau;</sub></span> . Значение напряжения контролируется по значению в поле VB2;</li>
+		    <li>значение в поле T2-T1 покажет экспериментальное значение постоянной времени цепи <span class="formula2">&tau;</span> (рис. 5).
+		      <div class="ris">
+		        <img src="pr-integ_files/ocl-3.png" width="598" height="447">
+		        <p>Рис. 5 - Определение экспериментального значения постоянной времени цепи <br>
+(<span class="formula2">&tau;</span>=102,313 мкс&asymp;0,1мс)</p>
+		        </div>
+		    </li>
+		    </ul>
+  </li>
+  <li>Вычислите теоретическое значение постоянной времени цепи <span class="formula2">&tau;</span> по формуле:<br>
+	<p class="formula">&tau;=R&middot;C</p>
+	<p><em>Пример</em>: Для С1=100 нФ и R1=1 кОм</p> 
+	<p class="formula">&tau; =<span> 1000&middot;0,0000001 <sub></sub>= 0,0001 [c] = 0,1 [мс] = 100[мкс] </span>.</p>
+  </li>
+  <li>Результаты запишите в рабочей тетради (табл. 2).</li>
+
+  <li>Установите сопротивление резистора R1=2 кОм и выполните пункты 9-15.</li>
+  <li>Установите сопротивление резистора R1=4 кОм и выполните пункты 9-15.</li>
+  <li>Проанализируйте полученные результаты. </li>
+</ol>
+
+<p class="tab_num">Таблица 2</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Результаты эксперимента</caption>
+  <tr>
+    <td align="left" valign="middle">№ измерения</td>
+    <th width="40" valign="middle">1</th>
+    <th width="40" valign="middle">2</th>
+    <th width="40" valign="middle">3</th>
+    </tr><tr>
+    <td align="left" valign="middle">Ёмкость конденсатора С1, нФ </td>
+    <td width="40" align="center" valign="middle">100</td>
+    <td width="40" align="center" valign="middle">100</td>
+    <td width="40" align="center" valign="middle">100</td>
+    </tr>
+      <tr>
+        <td align="left" valign="middle">Сопротивление резистора R1, кОм</td>
+        <td align="center" valign="middle">1</td>
+        <td align="center" valign="middle">2</td>
+        <td align="center" valign="middle">4</td>
+      </tr>
+      <td align="left" valign="middle">Амплитуда выходного сигнала <span class="formula2">U<sub>m</sub></span>, В</td>
+        <td width="40" valign="middle">&nbsp;</td>
+    <td width="40" valign="middle">&nbsp;</td>
+    <td width="40" valign="middle">&nbsp;</td>
+    </tr>
+      <tr>
+        <td align="left" valign="middle">Напряжения соответствующее изменению<br>
+        выходного напряжения на 63% от максимального <span class="formula2">U<sub>&tau;</sub></span>, В</td>
+        <td valign="middle">&nbsp;</td>
+        <td valign="middle">&nbsp;</td>
+        <td valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+    <td align="left" valign="middle">Теоретическое значение постоянной времени цепи <span class="formula2">&tau;<sub>теор</sub></span>, мс </td>
+    <td width="40" valign="middle">&nbsp;</td>
+    <td width="40" valign="middle">&nbsp;</td>
+    <td width="40" valign="middle">&nbsp;</td>
+    </tr>
+  <tr>
+    <td align="left" valign="middle">Экспериментальное значение постоянной времени цепи <span class="formula2">&tau;<sub>эксп</sub></span>, мс </td>
+    <td width="40" valign="middle">&nbsp;</td>
+    <td width="40" valign="middle">&nbsp;</td>
+    <td width="40" valign="middle">&nbsp;</td>
+    </tr>
+</table>
+
+
+
+
+		
+<hr>
+
+
+<br>
+<a href="#top1"><img src="../../../images/up.png" width="24" height="24"></a>
+	
+  </div>
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2020</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Управление семисегментным индикатором</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+
+<h1>Управление семисегментным индикатором</h1>
+
+
+<p>Семисегментный индикатор состоит из семи элементов (или сегментов) индикации, каждый
+из которых можно включать и выключать независимо от других. Включая сегменты в разных
+комбинациях, можно составить упрощенные изображения арабских цифр и некоторых букв.
+Каждый сегмент — это отдельный светодиод. Между собой светодиоды могут соединяться 
+катодами («с общим катодом») или анодами («с общим анодом») (рис. 1). </p>
+
+<figure>
+  <img src="upr-7indicator_files/7segment-1.png">
+  <figcaption>Рис. 1 - Структура семисегментного индикатора</figcaption>
+</figure>
+
+<p>На рисунке 2 показаны нумерация выводов и условное графическое обозначение семисегментного индикатора с общим катодом. Выводы индикатора нумеруются последовательно, против часовой стрелки, начиная с нижнего левого.</p>
+
+<figure>
+  <img src="upr-7indicator_files/7segment-2a.jpg" height="244">
+  <img src="upr-7indicator_files/7segment-2b.png">
+  <img src="upr-7indicator_files/7segment-2c.png" height="244">
+  <figcaption>Рис. 2 - Нумерация выводов (вид с лицевой стороны) и условное графическое обозначение семисегментного индикатора</figcaption>
+</figure>
+
+<p>Для проверки работы семисегментного индикатора соберем на макетной плате простую схему (рис. 3). На макетную плату установите семисегментный индикатор и подключите вывод 3 к шине «-». Один вывод резистора сопротивлением 560 Ом установите на шине «+», другой – на свободное поле.	Один конец гибкого соединительного провода присоедините к свободному выводу резистора сопротивлением 560 Ом. Свободный конец соединительного провода поочередно соединяйте с выводами (кроме 8) семисегментного индикатора. Соответствующие сегменты индикатора при этом дожны светиться.</p>
+
+<figure>
+  <img src="upr-7indicator_files/7segment-3.png" height="244">
+  <figcaption>Рис. 3 - Монтажная схема для проверки семисегментного индикатора</figcaption>
+</figure>
+
+<p>Чтобы отобразить конкретную цифру, необходимо включить отдельные сегменты, как показано в таблице 1.</p>
+
+<p class="tab_num">Таблица 1</p>
+
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Включение сегментов индикатора<br>для отображения цифр</caption>
+  <tr>
+    <th rowspan="2">Цифра</th>
+    <th colspan="7">Сегменты</th>
+    </tr>
+  <tr>
+    <th>a</th>
+    <th>b</th>
+    <th>c</th>
+    <th>d</th>
+    <th>e</th>
+    <th>f</th>
+    <th>g</th>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td>выкл</td>	
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>выкл</td>	
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td>выкл</td>	
+    <td>выкл</td>	
+    <td>выкл</td>	
+    <td>выкл</td>	
+  </tr>
+  <tr>
+    <td>2</td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td>выкл</td>	
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td>выкл</td>	
+    <td><strong>вкл</strong></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td>выкл</td>
+    <td>выкл</td>	
+    <td><strong>вкл</strong></td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>выкл</td>	
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+	<td>выкл</td>
+	<td>выкл</td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td><strong>вкл</strong></td>
+    <td>выкл</td>	
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+	<td>выкл</td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td><strong>вкл</strong></td>
+    <td>выкл</td>	
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td>выкл</td>	
+    <td>выкл</td>	
+    <td>выкл</td>	
+    <td>выкл</td>	
+  </tr>
+  <tr>
+    <td>8</td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+    <td>выкл</td>	
+    <td><strong>вкл</strong></td>
+    <td><strong>вкл</strong></td>
+  </tr>
+</table>
+
+
+
+<p>В электронных схемах, чаще всего, цифровые индикаторы используют с двоично-семисегментным дешифратором. Микросхема двоично-семисегментного дешифратора (декодера) содержит в себе логическую схему, преобразующую 4-х битное число (от 0000 до 1001) в десятичное (от 0 до 9), а десятичное в 7 сигналов для семисегментного цифрового индикатора, который отобразит, одну из цифр от 0 до 9. </p>
+<p>На рис. 4 представлено условное графическое обозначение микросхемы двоично-семисегментного дешифратора CD4511BE.
+</p>
+<figure>
+  <img src="upr-7indicator_files/cd4511be.png" height="300">
+  <figcaption>Рис. 4 - Условное графическое обозначение микросхемы двоично-семисегментного дешифратора CD4511BE</figcaption>
+</figure>
+
+<p class="tab_num">Таблица 2</p>
+
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Назначение выводов микросхемы CD4511BE</caption>
+  <tr>
+    <th>Номер вывода</th>
+    <th>Назначение</th>
+    <th bgcolor="#000000">&nbsp;</th>
+    <th>Номер вывода</th>
+    <th>Назначение</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td align="left">Вход A1</td>
+    <td bgcolor="#000000">&nbsp;</td>
+    <td>9</td>
+    <td align="left">Сегмент «е»</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td align="left">Вход A2</td>
+    <td bgcolor="#000000">&nbsp;</td>
+    <td>10</td>
+    <td align="left">Сегмент «d»</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td align="left">Тест индикатора</td>
+    <td bgcolor="#000000">&nbsp;</td>
+    <td>11</td>
+    <td align="left">Сегмент «c»</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td align="left">Гашение</td>
+    <td bgcolor="#000000">&nbsp;</td>
+    <td>12</td>
+    <td align="left">Сегмент «b»</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td align="left">Разрешение загрузки</td>
+    <td bgcolor="#000000">&nbsp;</td>
+    <td>13</td>
+    <td align="left">Сегмент «a»</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td align="left">Вход A3</td>
+    <td bgcolor="#000000">&nbsp;</td>
+    <td>14</td>
+    <td align="left">Сегмент «g»</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td align="left">Вход A0</td>
+    <td bgcolor="#000000">&nbsp;</td>
+    <td>15</td>
+    <td align="left">Сегмент «f»</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td align="left">«-» питания (общий)</td>
+    <td bgcolor="#000000">&nbsp;</td>
+    <td>16</td>
+    <td align="left">«+» питания</td>
+  </tr>
+</table>
+
+<p>Четырехразрядный двоичный код подается на входы A0-A3. Микросхема CD4511BE содержит дополнительный 4-х битный регистр-защёлку, который может запоминать код отображаемого числа в независимости от состояния на входах A0, A1, A2, A3. Запоминание числа выставленного на входах A0-A3 в регистре-защёлке происходит в момент перехода сигнала на управляющем входе LE от низкого уровня к высокому.</p>
+<p>Когда на входе LE микросхемы CD4511BE установлен сигнал низкого уровня, микросхема CD4511BE непосредственно преобразует двоичный код на входе в код для семисегментного цифрового индикатора на выходе.
+У микросхемы CD4511BE есть два инверсных входа: LT - включить все сегменты индикатора (Lamp Test) и BL - выключить индикатор (BLanking). При низком уровне сигнала на выводе LT, индикатор должен зажечь все свои сегменты. Низкий уровень сигнала на входе BL гасит индикатор, но при этом в регистре микросхемы загруженное число сохраняется. При логической «1» микросхема работает от входа A0-А1.</p>
+<p>Питание микросхемы осуществляется постоянным током напряжением 3…18 В. Максимальный выходной ток до 25 мА.</p>
+
+<p>Схема управления семисегментным индикатором с помощью дешифратора двоичного кода CD4511BE показана на рис. 5.</p>
+
+<figure>
+  <img src="upr-7indicator_files/7segment-shema.png">
+  <figcaption>Рис. 5 - Схема электрическая принципиальная управления семисегментным индикатором с помощью дешифратора двоичного кода CD4511BE</figcaption>
+</figure>
+
+<p class="tab_num">Таблица 3</p>
+
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Перечень элементов схемы управления семисегментным индикатором с помощью CD4511BE</caption>
+  <tr>
+    <th>Позиционное обозначение</th>
+    <th>Наименование</th>
+    <th>Кол-во</th>
+  </tr>
+  <tr>
+    <td align="left">DD1</td>
+    <td align="left">Микросхема CD4511BE</td>
+    <td align="center">1</td>
+  </tr>
+  <tr>
+    <td align="left">GB1</td>
+    <td align="left">Батарейка «Крона» 9 В</td>
+    <td align="center">1</td>
+  </tr>
+  <tr>
+    <td align="left">HG1</td>
+    <td align="left">Семисегментный индикатор</td>
+    <td align="center">1</td>
+  </tr>
+  <tr>
+    <td align="left">R1-R4</td>
+    <td align="left">Резистор сопротивлением 1,2 кОм</td>
+    <td align="center">4</td>
+  </tr>
+  <tr>
+    <td align="left">R5-R11	</td>
+    <td align="left">Резистор сопротивлением 560 Ом</td>
+    <td align="center">7</td>
+  </tr>
+  <tr>
+    <td align="left">SB1-SB4</td>
+    <td align="left">Кнопка</td>
+    <td align="center">4</td>
+  </tr>
+</table>
+<p>Резисторы R1-R4 обеспечивают на входах А0-А3 низкий уровень, при отсутствии сигнала. Без них показания на индикаторе могут отображаться некорректно. При нажатии на кнопки SB1-SB4 на входы дешифратора подается логическая единица от плюса питания. </p> 
+<p>Резисторы R5-R11 ограничивают рабочий ток светодиодных элементов. Сопротивление этих резисторов должно обеспечивать необходимую яркость сегментов. Резисторы обязательно включать последовательно с каждым сегментом индикатора.</p>
+<p>При отсутствии сигнала отображается цифра ноль. Для отображения на индикаторе чисел 1, 2, 4 и 8 требуется нажатие лишь одной из кнопок SB1-SB4.   Для отображения других цифр требуется нажатие комбинации кнопок (таблица 4).</p>
+<p class="tab_num">Таблица 4</p>
+
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption></caption>
+  <tr>
+    <th rowspan="2">Цифра</th>
+    <th colspan="4">Входы</th>
+    </tr>
+  <tr>
+    <th>A3</th>
+    <th>A2</th>
+    <th>A1</th>
+    <th>A0</th>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+  </tr>
+</table>
+<p>Чтобы отобразить цифру "3" необходимо логическую единицу подать на вход D0 и D1. <span>Если подать сигнал на D0 и D2, то отобразится цифра "5"</span> (рис.6).</p>
+
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="http://cxem.net/beginner/beginner131.php"  target="_blank">cxem.net - Управление семисегментным индикатором</a></p>
+  <p>Тихонов Р.В. Методические рекомендации для проведения занятий в кружках Национальной киберфизической платформы по программе «Основы схемотехники» — М.: Ассоциация участников технологических кружков, 2023. — 104 с.</p>
+  <p><a href="https://habr.com/ru/companies/timeweb/articles/721488/"  target="_blank">habr.com - Старый добрый семисегментный индикатор</a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2024</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

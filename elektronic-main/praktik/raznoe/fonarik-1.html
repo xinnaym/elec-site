@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Фонарик с регулируемой яркостью</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Фонарик с регулируемой яркостью</h1>
+	
+  <p> <strong>Задача</strong>: Необходимо с помощью  сделать   фонарик, который мог бы светиться на полную яркость или в пол-накала, в   зависимости от положения выключателя. </p>
+  <p> Чтобы лампочка светилась в полный   накал - надо подавать на нее питание непосредственно с батарейки. Чтобы   она светилась в пол-накала, надо ограничить ток, идущий через нее. То   есть - подать на нее питание через резистор. </p>
+  <p> Нарисуем для каждого режима свою схему: </p>
+  <ol>
+    <li> Полный накал (рис. 1,а). </li>
+    <li> Неполный накал  (рис. 1,б). </li>
+  </ol>
+  <div class="ris"><table border="0" align="center" cellpadding="4" cellspacing="4">
+  <tr>
+    <td align="center" valign="middle"><img src="fonarik-1_files/6_01.gif" alt="Схема для 1-го режима" width="79" height="115"></td>
+    <td align="center" valign="middle"><img src="fonarik-1_files/6_02.gif" alt="Схема для 2-го режима" width="155" height="131" border="0"></td>
+  </tr>
+  <tr>
+    <td align="center"><em>а)</em></td>
+    <td align="center"><em>б)</em></td>
+  </tr>
+</table>
+
+	  <p>Рис. 1 - Схемы фонарика</p>
+	</div>
+	
+	
+	
+  <p>Чтобы их объединить, надо поставить второй выключатель, который будет   пускать ток либо через резистор, либо в обход него (рис. 2). </p>
+	
+  <div class="ris">
+  <img src="fonarik-1_files/6_03.gif" alt="Полная схема" width="164" height="179">
+	  <p>Рис. 2 - Полная схема фонарика</p>
+	</div>
+	
+  <p> Теперь, когда выключатель SB2 замкнут, ток течет в обход резистора R1,   то есть, подается на лампочку без ограничений. Когда SB2 разомкнут -   току  течет через резистор. </p>
+  <p> Теперь надо рассчитать сопротивление резистора R1.</p>
+  <p> Нам известно, что батарейка выдает напряжение 9 В, лампочка при этом потребляет ток 0,33 А. Лампочка должна гореть в пол-накала, иными словами - напряжение   на ней должно быть в два раза меньше, чем отдает батарейка, то есть -   4,5 В. Оставшиеся 4,5 В должен взять на себя резистор. Очевидно, что   сопротивление резистора должно быть равно сопротивлению лампочки.   </p>
+  <div class="ris">
+  <img src="fonarik-1_files/6_04.gif" alt="Направление токов" width="159" height="127">
+	  <p>Рис. 3 - Направления токов в фонарике</p>
+	</div>
+	
+  <p> Токи<span class="formula2"> <em>I</em><sub>1</sub>, <em>I</em><sub>2</sub>, <em>I</em><sub>3</sub>, <em>I</em><sub>4</sub></span> (рис. 3) равны между собой, потому что это, по сути - один и   тот же ток.  Значит, через лампочку и резистор   течет один и тот же ток: </p>
+  <p class="formula"> <em>I</em><sub>л</sub> = <em>I</em><sub>R1</sub> </p>
+  <p>По закону Ома для резистора:</p>
+  <p class="formula"><em>I</em><sub>R1</sub> = <em>U</em><sub>R1</sub>/<em>R</em><sub>1,</sub></p>
+  <p>для лампочки:</p>
+  <p class="formula"><em>I</em><sub>л</sub> = <em>U</em><sub>л</sub>/<em>R</em><sub>л</sub></p>
+  <p>Поскольку токи и напряжения в обеих формулах равны, то значит - и сопротивления будут равны!</p>
+  <p>Вычисляем сопротивление лампочки. Мы знаем её   напряжение питания - 9 В, знаем ток потребления - 0,33 А (когда она   включена без резистора). По закону Ома находим сопротивление.</p>
+  <p align="center" class="formula"> <em>R</em> = <em>U</em>/<em>I</em> = 9/0,33 = 27 [Ом].</p>
+  <p> Сопротивление резистора равно сопротивлению лампочки. То есть, оно   составляет тоже 27 Ом.</p>
+  <p>&nbsp;</p>
+  <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	<hr>
+<h3>Источники:</h3>
+<p><a href="http://www.chipinfo.ru/schems/junior/junior6.html">chipinfo.ru</a></p>
+
+<!--
+<p><a href=""></a></p>
+ -->
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Электронный кубик</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Электронный кубик</h1>
+	
+<p>Всем знакомы игры, в которых 
+  перед началом хода требуется бросать небольшой пластмассовый кубик, на шести 
+  гранях которого нанесено от одной до шести точек (очков). Бросая по очереди 
+  кубик, играющие суммируют очки: кто больше набрал, тот и выиграл.</p>  
+<p>Можно изготовить электронное 
+  устройство, заменяющее такой кубик. На передней панели устройства должны быть 
+  шесть светодиодов, кнопка и тумблер включения. Стоит нажать кнопку - и количество 
+  светящихся светодиодов покажет число набранных в очередном туре очков.</p>  
+<p>Принципиальная схема электронного 
+  кубика представлена на рис. 1. На трех логических элементах 2И-НЕ микросхемы 
+  DD1 собран генератор, а на шести D-триггерах (микросхемы DD2-DD4) -кольцевой 
+  счетчик.</p>  
+<p>Генератор представляет собой трехкаскадный усилитель, охваченный положительной обратной 
+  связью через конденсатор С1 и отрицательной - через резистор R1. При наличии 
+  таких связей в усилителе возникают автоколебания, частота которых определяется 
+  произведением R1C1. При этом контакты кнопки SB1 должны быть разомкнуты. Запомните 
+  эту схему - в дальнейшем она будет использоваться во многих устройствах.</p>  
+
+  <p>Рассмотрим работу счетчика. 
+    Как видно из схемы, все синхронизирующие входы D-триггеров соединены между собой, 
+    а вход D последующего триггера соединен с прямым выходом предыдущего D-триггера. 
+    Вход же D первого триггера (DD2.1) соединен с инверсным выходом последнего триггера 
+    (DD4.2). Работу цепи триггеров (ее еще называют кольцевым триггерным счетчиком) 
+    удобно проанализировать по таблице истинности (табл. 2). Выходы Q1-Q6 - это 
+    прямые выходы триггеров. Допустим, в исходный момент все триггеры находятся 
+    в нулевом состоянии. Тогда на входе D первого триггера - напряжение высокого 
+    уровня, поступающее с инверсного выхода шестого триггера. После поступления 
+    первого импульса триггер DD2.1 переключается в единичное состояние, и с его 
+    прямого выхода напряжение высокого уровня поступает на вход D триггера DD2.2. 
+     Поэтому после поступление импульса № 2 второй триггер переключается в единичное 
+    состояние.</p>  
+  <div class="ris">    
+<img src="el-kubik_files/elkubik-shema.gif" alt="3-11.jpg" width="634" height="382">
+<p>Рис. 1 - Схема электрическая принципиальная электронного кубика </p>
+</div>
+<p>По мере поступления на входы С шести, импульсов все триггеры переключаются в единичное 
+  состояние. При этом светятся все светодиоды, подключенные к инверсным выходам 
+  триггеров. На вход D первого триггера теперь подано напряжение низкого уровня, 
+  и при подаче последующих шести импульсов триггеры последовательно переключаются 
+  в нулевое состояние. Из табл. 2 видно, что период работы кольцевого счетчика 
+  равен 12 тактам.</p>  
+<p>При нажатии кнопки SB1 &quot;Пуск&quot; импульсы частотой 1...2 МГц с генератора поступают на вход 
+  кольцевого счетчика. Последний за время удержания кнопки (1...2 с) многократно 
+  переполняется, поэтому после отпускания кнопки состояния триггеров DD2.1 -DD4.2, 
+  отображаемые горящими светодиодами HL1-HL6, практически случайны. Сколько светодиодов 
+  зажглось, столько очков и записывают в актив игроку.</p>  
+
+  
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+  <tr>
+    <th>Номер импульса </th>
+    <th>Q1</th>
+    <th>Q2</th>
+    <th>Q3</th>
+    <th>Q4</th>
+    <th>Q5</th>
+    <th>Q6</th>
+  </tr>
+  <tr>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td align="center">2</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td align="center">3</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td align="center">4</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td align="center">5</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td align="center">6</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+  </tr>
+  <tr>
+    <td align="center">7</td>
+    <td align="center">0</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+  </tr>
+  <tr>
+    <td align="center">8</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+  </tr>
+  <tr>
+    <td align="center">9</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+  </tr>
+  <tr>
+    <td align="center">10</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+  </tr>
+  <tr>
+    <td align="center">11</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">1</td>
+  </tr>
+  <tr>
+    <td align="center">12</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+  </tr>
+</table>
+<p>Питаются микросхемы от 
+  батареи GB1, потребляя ток 50...100 мА.</p>  
+<p>Все элементы устройства, 
+  кроме SB1, Q1 и GB1, расположены на печатной плате (рис. 2). Выключатель 
+  питания Q1 (он может быть типов П2Т, МТ1, П2К) и кнопка SB1 (она может быть 
+  типов КМ1, МП1 или любого другого типа) расположены на верхней крышке. Здесь 
+  же просверлены отверстия для светодиодов HL1-HL6. Плата с деталями крепится 
+  с помощью винтов с ограничивающими втулками. </p>
+	  <div class="ris">    
+<img src="el-kubik_files/elkubik-psb.jpg" alt="3-11.jpg" width="546" height="220">
+<p>Рис. 2 - Расположение печатных проводников и деталей на плате </p>
+</div>
+
+<p>Батарея GB1 может быть типа 3336 
+  &quot;Рубин&quot;; светодиоды HL1-HL6 - типов АЛ102, АЛ307 АЛ310 с любыми буквенными 
+  индексами; конденсатор С1 - типов КЛС, КМ-5, К10-7в, К10-23; резисторы - типа МЛТ-0,25.</p>
+<p>Электронный кубик в налаживании не нуждается.</p> 
+<p>Начинающие радиолюбители могут &quot;увидеть&quot;, как переключаются триггеры при поступлении импульсов 
+  генератора. Для этого параллельно конденсатору С1 необходимо подключить оксидный 
+  конденсатор емкостью 200...500 мкФ на напряжение 6...10 В отрицательной обкладкой 
+  к выводам 1, 2 логического элемента DD1.1. При этом частота генератора уменьшится 
+  до 0,5...2 Гц, и по зажиганию соответствующих светодиодов можно проследить последовательность 
+  переключения триггеров. Разумеется, кнопка SB1 должна быть постоянно нажата. </p>
+
+
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	<hr>
+<h3>Источники:</h3>
+<p><a href="https://radiolabs.ru/index.php?controller=post&action=view&id_post=229">radiolabs.ru - Электронный кубик</a></p>
+
+
+<!--
+<p><a href=""></a></p>
+ -->
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

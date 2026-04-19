@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Подключение термистора к Arduino</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Подключение термистора к Arduino</h1>
+
+
+    <p>Термистор (терморезистор, термосопротивление) – это резистор, сопротивление которого сильно зависит от температуры. Термисторы изготавливаются таким образом, чтобы сопротивление изменялось на значительную величину в зависимости от температуры - около 100 Ом и даже больше при изменении температуры на 1&deg;C.</p>
+		
+    <figure>
+		<img src="arduino-termistor_files/rt-5.jpg" alt="термисторы" width="300" height="300" title="термисторы">
+		<figcaption>Рис. 1 - Термисторы</figcaption>
+		</figure>
+		
+    <p>Термисторы бывают двух типов: </p>
+    <ul>
+      <li>с положительным  температурным коэффициентом  (PTC, positive temperature coefficient) &#8212; при повышении температуры сопротивление возрастает,</li>
+      <li>отрицательным температурным коэффициентом (NTC - negative temperature coefficient) &#8212; при повышении температуры сопротивление уменьшается.</li>
+    </ul>
+    <p> В большинстве случаев для измерения температуры используются NTC-термисторы. PTC-термисторы часто используются в качестве предохранителей - с увеличением температуры растет сопротивление, это приводит к тому, что через них проходит большая сила тока, они нагреваются и срабатывают как предохранители. </p>
+    <p>Основные преимущества термисторов: </p>
+    <ul>
+      <li>дешевле чем датчики температуры,</li>
+      <li>проще использовать в условиях повышенной влажности,</li>
+      <li>работают с любым напряжением (цифровые датчики требуют 3 В или 5 В питания логики),</li>
+      <li>не нужен усилитель сигнала, чтобы считывать данные  (можно использовать  любой микроконтроллер).</li>
+      <li>высокое соотношение точность показаний/цена. Например, термистор 10 кОм 1% может производить измерения температуры с точностью &plusmn;0,25&deg;C. </li>
+      <li>практически невозможно  повредить.</li>
+    </ul>
+    <p>Недостаток:  диапазон температур, который можно измерить с помощью термисторов не такой широкий как у термопар и их настройка для снятия показаний тоже немного сложнее. </p>
+    <h3>Подключение термистора к Arduino</h3>
+    <p>Схема подключения представляет собой простейший резистивный делитель на двух резисторах одинакового номинала. R1 - это  NTC термистор номиналом 10 кОм подключенный к GND, R2 - обычный резистор с номиналом 10 кОм подключенный к +5V. Со средней точки включения R1 и R2 снимаются показания на аналоговый вход A0 Arduino. Так как сопротивление термистора достаточно высокое (около 10 кОм), сопротивление проводников практически не повлияет на результаты измерений.</p>
+
+    <figure>
+		<img src="arduino-termistor_files/shema1.jpg" width="150" height="236">
+		<figcaption>Рис. 2 - Схема подключения термистора к Arduino</figcaption>
+		</figure>
+		
+		
+<h3>Методика считывания аналогового напряжения</h3>
+
+<p>Для определения температуры, необходимо измерить сопротивление. Так как в Arduino нет встроенного измерителя сопротивления, но  есть возможность считывать напряжение с помощью аналогово-цифрового конвертера.  Для этого  в схеме есть резистор R2=10кОм. </p>
+<p>Напряжение <span class="formula2">U<sub>0</sub></span> на выводе A0, которое мы будем передавать Arduino, будет равно:</p>
+<p class="formula">U<sub>0</sub> = R<sub>t</sub> /(R<sub>t</sub> + R<sub>2</sub>) &middot; U<sub>cc</sub>,</p>
+<p>где <span class="formula2">U<sub>cc</sub></span> - напряжение источника питания (3,3 В или 5 В),</p>
+<p><span class="formula2">R<sub>t</sub></span> &#8212; сопротивление термистора.</p>
+<p>При  измерении напряжения (<span class="formula2">U<sub>i</sub></span>) с использованием АЦП на Arduino, мы получим числовое значение</p>
+<p class="formula">D<sub>u</sub>= U<sub>i</sub>&middot;1023 / U<sub>cc</sub></p>
+<p>Отсюда получаем :</p>
+<p class="formula">D<sub>u</sub> = R<sub>t</sub> /(R<sub>t</sub> + R<sub>2</sub>) &middot; U<sub>cc</sub>&middot; 1023 / U<sub>cc</sub></p>
+
+<p>Сократив <span class="formula2">U<sub>cc</sub></span> получаем: </p>
+<p class="formula">D<sub>u</sub> = R<sub>t</sub> /(R<sub>t</sub> + R<sub>2</sub>) &middot; 1023.</p>
+
+<p>Данная формула показывае, что полученное значение не зависит от  напряжения питания.</p>
+<p>Выполнив еще одно преобразование получим выражение для <span class="formula2">R<sub>t</sub></span> :</p>
+<p class="formula">R<sub>t</sub> = R<sub>2</sub> / (1023/D<sub>u</sub> - 1)</p>
+		
+		
+<h3>Скетч №1 </h3>   
+<!--<p>Используется библиотеку math.h которая уже есть в поставляемом софте от Arduino, а так же небольшие вычисления для получения нужных значений.</p>
+ -->
+<div class="kod">
+<pre>
+<span class="ar-type">int</span> R2=10000; <span class="comment1">// значение резистора R2</span>
+<span class="ar-type">int</span> Tpin=A0;  <span class="comment1">// вывод к которму подключаен термистор</span>
+<span class="ar-type">float</span> Du;     <span class="comment1">//считываемое напряжение</span>
+<span class="ar-type">float</span> RT;     <span class="comment1">//сопротивление термистора</span>
+
+<span class="ar-type">void</span> <span class="ar-func">setup</span>() 
+{
+  <span class="ar-func"><strong>Serial</strong>.begin</span>(9600);
+}
+
+<span class="ar-type">void</span> <span class="ar-func">loop</span>() 
+{
+  Du = <span class="ar-func">analogRead</span>(Tpin);
+  <span class="ar-func"><strong>Serial</strong>.print</span>("U1=");
+  <span class="ar-func"><strong>Serial</strong>.println</span>(Du);
+  RT = R2/(1023/Du - 1); <span class="comment1">//преобразуем Du в сопротивление</span>
+  <span class="ar-func"><strong>Serial</strong>.print</span>("RT=");
+  <span class="ar-func"><strong>Serial</strong>.println</span>(RT);
+  <span class="ar-func">delay</span>(2000);
+}
+</pre>
+</div>
+
+    <p>Загружаем в Arduino скетч. Открыв монитор порта  увидим считываемое значение и сопротивление термистора <nobr>(рис. 3).</nobr> Если прижать пальцем термистор, то температура начнет изменяться и сопротивление уменьшается. Если палец убрать, термистор остывает и сопротивление начинает увеличиваться. </p>
+
+    <figure>
+		<img src="arduino-termistor_files/message1.png" width="500" height="508">
+		<figcaption>Рис. 3 - Результат выполнения скетча</figcaption>
+		</figure>
+		
+		
+    <h3>Преобразовывание сопротивления термистора в температуру</h3>
+    <p> Для получения фактического значения температуры можно использовать уравнение Стейнхарта-Харта:</p>
+    <p class="formula"><img src="arduino-termistor_files/f1.jpg" width="256" height="41"></p>
+    <p>Уравнение достаточно сложное и требует большого количества переменных-параметров, которых может не быть для конкретного термистора. Вместо этого уравнения можно использовать упрощенное уравнение.</p>
+    <p class="formula"><img src="arduino-termistor_files/f2.jpg" width="180" height="44"></p>
+    <p>Для этой зависимости нам надо знать  <span class="formula2"><strong>T<sub>0</sub></strong></span> (для комнатной температуры (25&deg;C) <span class="formula2"><strong> T<sub>0</sub></strong></span>= 298,15K), <strong>B</strong> (коэффициент, который зависит от используемого термистора, в данном  случае  <strong>B=</strong>3950), и <span class="formula2"><strong>R<sub>0</sub></strong></span> (сопротивление при комнатной температуре (<span class="formula2"><strong>R<sub>0</sub></strong></span>=10 кОм)). Подставляем R=RT (измеренное сопротивление) и получаем значение T (температура по Кельвину), которую преобразовываем в &deg;C.</p>
+
+		
+<h3>Скетч №2</h3>   
+
+<div class="kod">
+<pre>
+<span class="ar-type">int</span> R2=10000; <span class="comment1">// значение резистора R2</span>
+<span class="ar-type">int</span> Tpin=A0;  <span class="comment1">// вывод к которму подключаен термистор</span>
+<span class="ar-type">float</span> Du;     <span class="comment1">//считываемое напряжение</span>
+<span class="ar-type">float</span> RT;     <span class="comment1">//сопротивление термистора</span>
+<span class="ar-type">float</span> logR2, T;
+<span class="comment1">//c1, c2, c3 - коэффициенты Штейнхарта-Харта для термистора</span>
+<span class="ar-type">float</span> c1 = 0.001129148, c2 = 0.000234125, c3 = 0.0000000876741; 
+
+<span class="ar-type">void</span> <span class="ar-func">setup</span>() 
+{
+  <span class="ar-func"><strong>Serial</strong>.begin</span>(9600);
+}
+
+<span class="ar-type">void</span> <span class="ar-func">loop</span>() 
+{
+  Du = <span class="ar-func">analogRead</span>(Tpin);
+  <span class="ar-func"><strong>Serial</strong>.print</span>("U1=");
+  <span class="ar-func"><strong>Serial</strong>.print</span>(Du);
+  RT = R2/(1023/Du - 1); <span class="comment1">//преобразуем Du в сопротивление</span>
+  <span class="ar-func"><strong>Serial</strong>.print</span>("RT=");
+  <span class="ar-func"><strong>Serial</strong>.print</span>(RT);
+  logR2 = log(RT);
+  T = (1.0 / (c1 + c2*logR2 + c3*logR2*logR2*logR2)); <span class="comment1">//температура в Кельвине</span>
+  T = T - 273.15; <span class="comment1">//преобразование Кельвина в Цельсия</span>
+  <span class="ar-func"><strong>Serial</strong>.print</span>(&quot;, T=&quot;); 
+  <span class="ar-func"><strong>Serial</strong>.print</span>(T);
+  <span class="ar-func"><strong>Serial</strong>.println</span>(&quot;C&quot;);
+  <span class="ar-func">delay</span>(2000);
+}
+</pre>
+</div>
+	
+
+<p>При измерении температуры имеются погрешности самого термистора и аналоговой электрической цепи. </p>
+<p>Можно аппроксимировать ожидаемую погрешность, если учесть ошибку сопротивления самого термистора. Например, на термисторе указано 1%. Это значит, что при 25&deg;C он может выдать показания в диапазоне от 10,100 до 9900 Ом. При 25&deg;C разница в показаниях в 450 Ом соответствует 1&deg;C, так что погрешность 1% составляет около &plusmn;0,25&deg;C (можно провести калибровку термистора при 0&deg;C и исключить отклонения). Также можно использовать термистор с погрешностью 0,1%. Это поможет уменьшить ошибку в показаниях до &plusmn;0,03&deg;C</p>
+<p>Есть вторая погрешность, которая возникает при аналогово-цифровом преобразовании. Каждый некорректно прочитанный бит может давать отклонения около 50 Ом. В принципе эта погрешность меньше, чем ошибка самого термистора &plusmn;(0,1&deg;C), но, используя Arduino Uno или Arduino Pro Mini, уменьшить эту погрешность невозможно. Если вас такая точность не устраивает, необходимо использовать более "продвинутые" модели Arduino, которые обеспечат 12-16 бит вместо 10 при аналогово-цифровом преобразовании.</p>
+<p>В общем, термисторы обеспечивают большую точность при измерении температуры по сравнению с термопарами и большинством недорогих цифровых датчиков температуры, но, используя Arduino и термистор, вы не получите измерения с точностью более чем &plusmn;0.1&deg;C. Используя 1% термистор, показания не будут точнее &plusmn;0.5&deg;C.</p>
+
+  <br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://radioprog.ru/post/185"  target="_blank">radioprog.ru - Измерение температуры с помощью термистора NTC</a></p>
+  <p><a href="http://arduino-diy.com/arduino-thermistor"  target="_blank">arduino-diy.com - Термистор и Arduino</a></p>
+  <p><a href="http://digitrode.ru/computing-devices/mcu_cpu/484-arduino-i-termistor-princip-raboty-shema-podklyucheniya-kod.html"  target="_blank">digitrode.ru - Arduino и термистор: принцип работы, схема подключения, код</a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2022</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

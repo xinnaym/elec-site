@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Маркировка импортных конденсаторов</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Маркировка импортных конденсаторов</h1>
+	
+	<h3>Маркировка емкости тремя цифрами</h3>
+
+	<ul>
+    <li>Первая цифра означает первую цифру емкости</li>
+	  <li>Вторая цифра - вторую цифру емкости</li>
+	  <li>Третья цифра означает число нулей, чтобы показать значение емкости конденсатора в pF.</li>
+	  <li>Буква после цифр обозначает допуск и напряжение (табл. 1).</li>
+	  </ul>
+  <p>Если емкость конденсатора менее 10 пФ, то последняя цифра может быть &quot;9&quot;. При емкостях меньше 1 пФ первая цифра &quot;0&quot;.  Например: &quot;010&quot; означает 1 пФ. </p>
+  <p class="tab_num">Таблица 1</p>
+
+<!--  <h3>Допуск керамических конденсаторов</h3>
+ -->
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Коды маркировки допусков емкости конденсаторов</caption>
+    <tr>
+      <tH>Код</th>
+      <th>Допуск, %</th>
+      <th rowspan="10">&nbsp;</th>
+      <th>Код</th>
+      <th>Допуск, %</th>
+    </tr>
+    <tr>
+      <td align="center">E</td>
+      <td align="center">0,005</td>
+      <td align="center">H</td>
+      <td align="center">2,5</td>
+    </tr>
+    <tr>
+      <td align="center">L</td>
+      <td align="center">0,01</td>
+      <td align="center">J</td>
+      <td align="center">5</td>
+    </tr>
+    <tr>
+      <td align="center">P</td>
+      <td align="center">0,02</td>
+      <td align="center">K</td>
+      <td align="center">10</td>
+    </tr>
+    <tr>
+      <td align="center">W</td>
+      <td align="center">0,05</td>
+      <td align="center">M</td>
+      <td align="center">20</td>
+    </tr>
+    <tr>
+      <td align="center">B</td>
+      <td align="center">0,1</td>
+      <td align="center">N</td>
+      <td align="center">30</td>
+    </tr>
+    <tr>
+      <td align="center">C</td>
+      <td align="center">0,25</td>
+      <td align="center">Q</td>
+      <td align="center">-10 ... +30 </td>
+    </tr>
+    <tr>
+      <td align="center">D</td>
+      <td align="center">0,5</td>
+      <td align="center">T</td>
+      <td align="center">-10 ... +50</td>
+    </tr>
+    <tr>
+      <td align="center">F</td>
+      <td align="center">1</td>
+      <td align="center">S</td>
+      <td align="center">-20 ... +50</td>
+    </tr>
+    <tr>
+      <td align="center">G</td>
+      <td align="center">2</td>
+      <td align="center">Z</td>
+      <td align="center">-20 ... +80</td>
+    </tr>
+  </table>
+
+
+<p class="tab_num">Таблица 2</p>
+	<table width="300" border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>Коды маркировки номинального напряжения  конденсаторов</caption>
+    <tr>
+      <tH>Код</th>
+      <th>Напряжение</th>
+    </tr>
+    <tr>
+      <td align="center">m</td>
+      <td align="center">25 В </td>
+    </tr>
+    <tr>
+      <td align="center">l</td>
+      <td align="center">40(50) В </td>
+    </tr>
+    <tr>
+      <td align="center">a</td>
+      <td align="center">63 В </td>
+    </tr>
+    <tr>
+      <td align="center">b</td>
+      <td align="center">100 В </td>
+    </tr>
+    <tr>
+      <td align="center">c</td>
+      <td align="center">160 В </td>
+    </tr>
+    <tr>
+      <td align="center">d</td>
+      <td align="center">250 В</td>
+    </tr>
+    <tr>
+      <td align="center">e</td>
+      <td align="center">400 В </td>
+    </tr>
+    <tr>
+      <td align="center">f</td>
+      <td align="center">630 В </td>
+    </tr>
+    <tr>
+      <td align="center">h</td>
+      <td align="center">1000 В </td>
+    </tr>
+    <tr>
+      <td align="center">i</td>
+      <td align="center">1600 в </td>
+    </tr>
+    <tr>
+      <td align="center">нет маркировки </td>
+      <td align="center">500 В </td>
+    </tr>
+  </table>
+
+<p class="tab_num">Таблица 3 </p>
+  <table border="1" align="center" cellpadding="3" cellspacing="0">
+    <caption>
+      Примеры маркировки емкости конденсаторов
+      тремя цифрами 
+    </caption>
+    <tbody>
+      <tr>
+        <th>код</th>
+        <th>пикофарады, пФ, pF</th>
+        <th>нанофарады, нФ, nF</th>
+        <th>микрофарады, мкФ, &micro;F</th>
+      </tr>
+      <tr>
+        <td><strong>109</strong></td>
+        <td>1,0 пФ</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>159</strong></td>
+        <td>1,5 пФ</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>229</strong></td>
+        <td>2,2 пФ</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>339</strong></td>
+        <td>3,3 пФ</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>479</strong></td>
+        <td>4,7 пФ</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>689</strong></td>
+        <td>6,8 пФ</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>100</strong></td>
+        <td>10 пФ</td>
+        <td>0,01 нФ</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>150</strong></td>
+        <td>15 пФ</td>
+        <td>0,015 нФ</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>220</strong></td>
+        <td>22 пФ</td>
+        <td>0,022 нФ</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>330</strong></td>
+        <td>33 пФ</td>
+        <td>0,033 нФ</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>470</strong></td>
+        <td>47 пФ</td>
+        <td>0,047 нФ</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>680</strong></td>
+        <td>68 пФ</td>
+        <td>0,068 нФ</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>101</strong></td>
+        <td>100 пФ</td>
+        <td>0,1 нФ</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>151</strong></td>
+        <td>150 пФ</td>
+        <td>0,15 нФ</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>221</strong></td>
+        <td>220 пФ</td>
+        <td>0,22 нФ</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>331</strong></td>
+        <td>330 пФ</td>
+        <td>0,33 нФ</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>471</strong></td>
+        <td>470 пФ</td>
+        <td>0,47 нФ</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>681</strong></td>
+        <td>680 пФ</td>
+        <td>0,68 нФ</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>102</strong></td>
+        <td>1000 пФ</td>
+        <td>1 нФ</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>152</strong></td>
+        <td>1500 пФ</td>
+        <td>1,5 нФ</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>202</strong></td>
+        <td>2000 пФ</td>
+        <td>2 нФ</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><strong>222</strong></td>
+        <td>2200 пФ</td>
+        <td>2,2 нФ</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>332</strong></td>
+        <td>3300 пФ</td>
+        <td>3,3 нФ</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>472</strong></td>
+        <td>4700 пФ</td>
+        <td>4,7 нФ</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>512</strong></td>
+        <td> 5100 пФ</td>
+        <td>5,1 нФ</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><strong>682</strong></td>
+        <td>6800 пФ</td>
+        <td>6,8 нФ</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><strong>103</strong></td>
+        <td>10000 пФ</td>
+        <td>10 нФ</td>
+        <td>0,01 мкФ</td>
+      </tr>
+      <tr>
+        <td><strong>153</strong></td>
+        <td> 15000 пФ</td>
+        <td>15 нФ</td>
+        <td>0,015 мкФ</td>
+      </tr>
+      <tr>
+        <td><strong>223</strong></td>
+        <td> 22000 пФ</td>
+        <td>22 нФ</td>
+        <td>0,022 мкФ</td>
+      </tr>
+      <tr>
+        <td><strong>333</strong></td>
+        <td> 33000 пФ</td>
+        <td>33 нФ</td>
+        <td>0,033 мкФ</td>
+      </tr>
+      <tr>
+        <td><strong>473</strong></td>
+        <td> 47000 пФ</td>
+        <td>47 нФ</td>
+        <td>0,047 мкФ</td>
+      </tr>
+      <tr>
+        <td><strong>683</strong></td>
+        <td> 68000 пФ</td>
+        <td>68 нФ</td>
+        <td>0,068 мкФ</td>
+      </tr>
+      <tr>
+        <td><strong>104</strong></td>
+        <td>100000 пФ</td>
+        <td>100 нФ</td>
+        <td>0,1 мкФ</td>
+      </tr>
+      <tr>
+        <td><strong>154</strong></td>
+        <td>150000 пФ</td>
+        <td>150 нФ</td>
+        <td>0,15 мкФ</td>
+      </tr>
+      <tr>
+        <td><strong>224</strong></td>
+        <td>220000 пФ</td>
+        <td>220 нФ</td>
+        <td>0,22 мкФ</td>
+      </tr>
+      <tr>
+        <td><strong>334</strong></td>
+        <td>330000 пФ</td>
+        <td>330 нФ</td>
+        <td>0,33 мкФ</td>
+      </tr>
+      <tr>
+        <td><strong>474</strong></td>
+        <td>470000 пФ</td>
+        <td>470 нФ</td>
+        <td>0,47 мкФ</td>
+      </tr>
+      <tr>
+        <td><strong>684</strong></td>
+        <td>680000 пФ</td>
+        <td>680 нФ</td>
+        <td>0,68 мкФ</td>
+      </tr>
+      <tr>
+        <td><strong>105</strong></td>
+        <td>1000000 пФ</td>
+        <td>1000 нФ</td>
+        <td>1 мкФ</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3><strong>Маркировка емкости четырьмя цифрами.</strong></h3>
+  <p>Эта маркировка аналогична описанной выше, но в этом случае первые три цифры определяют цифры емкости, а последняя — количество нулей для получения емкости в пикофарадах. Например: 1622 = 16200 пФ =  16.2 нФ.</p>
+  <h3><strong>Буквенно-цифровая маркировка </strong><strong>емкости</strong></h3>
+  <p>На некоторых типах значение емкости конденсатора напечатано   непосредственно на корпусе без всякого множителя. В этом случае буквы p, n, µ, m заменяют десятичные запятые и соответствующую приставку:</p>
+<ul>
+  <li>p - пико,</li>
+  <li>n - нано, </li>
+  <li>µ - микро,</li>
+  <li>m - милли.  </li>
+</ul>
+<p> Буква &quot;R&quot; используется в качестве десятичной запятой. Если перед буквой &quot;R&quot; стоит ноль, то  емкость выражается в пикофарадах. Если перед буквой &quot;R&quot; не стоит ноль, то емкость выражается в микрофарадах.</p>
+<p>Примеры такой кодировки приведены в таблице 4.</p>
+<p class="tab_num">Таблица 4</p>
+	<table width="300" border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>
+	Примеры кодовой маркировки конденсаторов
+	</caption>
+  <tr>
+    <th>Код</th>
+    <th>Емкость</th>
+  </tr>
+  <tr>
+    <td align="center">0R5</td>
+    <td align="center">0,5 пФ</td>
+  </tr>
+  <tr>
+    <td align="center">p50</td>
+    <td align="center">0,5 пФ </td>
+  </tr>
+  <tr>
+    <td align="center">1p5</td>
+    <td align="center">1,5 пФ </td>
+  </tr>
+  <tr>
+    <td align="center">15p</td>
+    <td align="center">15 пФ </td>
+  </tr>
+  <tr>
+    <td align="center">150p</td>
+    <td align="center">150 пФ </td>
+  </tr>
+  <tr>
+    <td align="center">1n5</td>
+    <td align="center">1,5 нФ </td>
+  </tr>
+  <tr>
+    <td align="center">10n</td>
+    <td align="center">10 нФ </td>
+  </tr>
+  <tr>
+    <td align="center">150n</td>
+    <td align="center">150 нФ </td>
+  </tr>
+  <tr>
+    <td align="center">R47</td>
+    <td align="center">0,47 мкФ</td>
+  </tr>
+  <tr>
+    <td align="center">1&micro;5</td>
+    <td align="center">1,5 мкФ </td>
+  </tr>
+  <tr>
+    <td align="center">6R8</td>
+    <td align="center">6,8 мкФ</td>
+  </tr>
+  <tr>
+    <td align="center">15&micro;</td>
+    <td align="center">15 мкФ</td>
+  </tr>
+  <tr>
+    <td align="center">150&micro;</td>
+    <td align="center">150 мкФ</td>
+  </tr>
+  <tr>
+    <td align="center">1m5</td>
+    <td align="center">1,5 мФ</td>
+  </tr>
+  <tr>
+    <td align="center">15m</td>
+    <td align="center">15 мФ</td>
+  </tr>
+</table>
+
+<br>
+	<div class="ris">
+	<img src="import-cap-mark_files/c-2.jpg">
+	<img src="import-cap-mark_files/c-3.jpg">
+	<p>Рис. 1 -  Примеры кодовой маркировки конденсаторов</p>
+	</div>
+
+
+<h3>Цветовая маркировка</h3>
+<p>Цветовая маркировка конденсаторов (табл. 5) в настоящее время она считается устаревшей, но всё ещё используется.  Первые две цифры - емкость, третья - количество нулей, четвёртая - допуск, пятая - номинальное напряжение. </p>
+
+<p class="tab_num">Таблица 5</p>
+	<table width="300" border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>
+	Цветовая маркировка конденсаторов
+	</caption>
+    <tbody>
+      <tr>
+        <th width="50%">Цвет</th>
+        <th>Значение</th>
+      </tr>
+      <tr>
+        <td style="color:#FFFFFF; background-color:#000000">Чёрный</td>
+        <td align="center">0</td>
+      </tr>
+      <tr>
+        <td style="color:#FFFFFF; background-color:#960">Коричневый</td>
+        <td align="center">1</td>
+      </tr>
+      <tr>
+        <td style="color:#000; background-color:#f33">Красный</td>
+        <td align="center">2</td>
+      </tr>
+      <tr>
+        <td style="color:#000; background-color:#f93">Оранжевый</td>
+        <td align="center">3</td>
+      </tr>
+      <tr>
+        <td style="color:#000; background-color:#ff0">Жёлтый</td>
+        <td align="center">4</td>
+      </tr>
+      <tr>
+        <td style="color:#000; background-color:#0c0">Зелёный</td>
+        <td align="center">5</td>
+      </tr>
+      <tr>
+        <td style="color:#000; background-color:#06f">Голубой</td>
+        <td align="center">6</td>
+      </tr>
+      <tr>
+        <td style="color:#000; background-color:#f0f">Фиолетовый</td>
+        <td align="center">7</td>
+      </tr>
+      <tr>
+        <td style="color:#000; background-color:#999">Серый</td>
+        <td align="center">8</td>
+      </tr>
+      <tr>
+        <td>Белый</td>
+        <td align="center">9</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+<div class="ris">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center"><img src="import-cap-mark_files/stripes1.gif"></td>
+      <td width="10" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+      <td align="center"><img src="import-cap-mark_files/stripes2.gif"></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top"><strong>коричневый, чёрный, оранжевый</strong> -<br>
+10000 пФ = 10 нФ = 0,01 мкФ </td>
+      <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
+      <td align="center" valign="top"><strong>широкий красный, жёлтый</strong> -<br>
+220 нФ = 0,22 мкФ</td>
+    </tr>
+  </table> 
+<p>Рис. 2 - Пример цветовой маркировки конденсаторов<br>
+Между полосами нет никаких промежутков.   Поэтому два одинаковых соседних цвета фактически образовывают широкую полосу</p>
+  </div>
+
+
+
+	
+		<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+<hr>
+  <h3>Источники:</h3>
+  <p><a href="http://www.joyta.ru/7571-markirovka-keramicheskix-kondensatorov/">joyta.ru - Маркировка керамических конденсаторов</a></p>
+  <p><a href="http://radiohlam.ru/?p=849">radiohlam.ru - Маркировка конденсаторов</a></p>
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2021</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

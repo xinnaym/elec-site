@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Операторы сравнения и логические операторы</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+
+  
+  <div id="content">
+	<h1>Функции математических вычислений</h1>
+
+  <ul>
+    <li> <a href="#m_min">min()</a></li>
+    <li> <a href="#m_ax">max()</a></li>
+    <li> <a href="#m_abs">abs()</a></li>
+    <li> <a href="#m_csn">constrain()</a></li>
+    <li> <a href="#m_map">map()</a></li>
+    <li> <a href="#m_pow">pow()</a></li>
+    <li> <a href="#m_sqrt">sqrt()</a></li>
+    <li> <a href="#m_sq">sq()</a></li>
+  </ul>
+
+	
+<a name="m_min"></a>
+<h3 class="lenta">min()</h3>
+
+<h4>Описание</h4>
+<p>Фунция <span class="kod3">min()</span> вычисляет минимальное значение из двух чисел. Возвращаемое значение &#8212; меньшее из двух чисел.</p>
+<h4>Синтаксис</h4>
+<p class="kod2">min(число 1, число2)</p>
+<h4>Параметры</h4>
+<p><span class="kod3">число1</span>, <span class="kod3">число2</span> &#8212; числа любого типа данных.</p>
+
+<h4>Пример</h4>
+<div class="kod">
+<pre>
+x = min(x, 60);  //переменной x присваивается меньшее из чисел x и 60
+</pre>
+</div>
+
+<p class="warning" style="text-align:left">Реализация функции min() запрещает указывать другие функции в качестве параметров в скобках — это приведет к некорректным результатам:<br>
+Неправильно:<br>
+<span class="kod-oper">b = min(a++, 100); </span><br>
+Правильно:<br>
+<span class="kod-oper">a++;<br>  
+b = min(a, 100);</span></p>
+<!-- ----------------------------- -->
+
+<a name="m_max"></a>
+<h3 class="lenta">max()</h3>
+
+<h4>Описание</h4>
+<p>Фунция <span class="kod3">max()</span> вычисляет максимальное значение из двух чисел. Возвращаемое значение &#8212; большее из двух чисел.</p>
+
+<h4>Синтаксис</h4>
+<p class="kod2">max(число 1, число2)</p>
+
+<h4>Параметры</h4>
+<p><span class="kod3">число1</span>, <span class="kod3">число2</span> &#8212; числа любого типа данных.</p>
+
+<h4>Пример</h4>
+<p>переменной x присваивается меньшее из чисел x и 10</p>
+<div class="kod">
+<pre>
+x = max(x, 10);
+</pre>
+</div>
+
+<p class="warning" style="text-align:left">Реализация функции max() запрещает указывать другие функции в качестве параметров в скобках — это приведет к некорректным результатам:<br>
+Неправильно:<br>
+<span class="kod-oper">b = max(a--, 5);</span> <br>
+Правильно:<br>
+<span class="kod-oper">a--;<br>  
+b = max(a, 5);</span></p>
+<!-- ----------------------------- -->
+<a name="m_abs"></a>
+<h3 class="lenta">abs()</h3>
+
+<h4>Описание</h4>
+<p>Фунция <span class="kod3">abs()</span> вычисляет абсолютную величину (модуль) числа.<br>
+  Возвращаемое значение:</p>
+  <ul>
+    <li><span class="kod3">x</span> &#8212; если <span class="kod-var">x</span> больше или равен 0.</li>
+    <li><span class="kod3">-x</span> &#8212; если <span class="kod-var">x</span> меньше 0.</li>
+  </ul>
+  <h4>Синтаксис</h4>
+<p class="kod2">max(<em class="kod3">число</em>)</p>
+
+<h4>Параметры</h4>
+<p><span class="kod3"><em>число</em></span> &#8212; число любого типа данных.</p>
+
+<h4>Пример</h4>
+<p>переменной <span class="kod-var">x</span> присваивается абсолютная величина числа <span class="kod-var">y</span>.</p>
+<div class="kod">
+<pre>
+x = abs(y);</pre>
+</div>
+
+<p class="warning" style="text-align:left">Реализация функции abs() запрещает указывать другие функции в качестве параметров в скобках — это приведет к некорректным результатам:<br>
+Неправильно:<br>
+<span class="kod-oper">b = abs(x++);</span> <br>
+Правильно:<br>
+<span class="kod-oper">x++;<br>  
+b = abs(x);</span></p>
+
+<!-- ----------- constrain ------------------ -->
+<a name="m_csn"></a>
+<h3 class="lenta">constrain()</h3>
+
+<h4>Описание</h4>
+<p>Фунция <span class="kod3">constrain()</span> ограничивает значение переменной заданными пределами.<br>
+  Возвращаемое значение:</p>
+  <ul>
+    <li><span class="kod3">x</span> &#8212; если <span class="kod-var">x</span> лежит в пределах между a и b.</li>
+    <li><span class="kod3">a</span> &#8212; если <span class="kod-var">x</span> меньше a.</li>
+    <li><span class="kod3">b</span> &#8212; если <span class="kod-var">x</span> больше b.</li>
+  </ul>
+	
+  <h4>Синтаксис</h4>
+<p class="kod2">constrain(<em>x</em>, <em>a</em>, <em>b</em>)</p>
+
+
+<h4>Параметры</h4>
+<ul>
+  <li><span class="kod3"><em>x</em></span> &#8212; переменная, значение которой необходимо ограничить, любой тип данных.</li>
+  <li><span class="kod3"><em>a</em></span> &#8212; нижний предел, любой тип данных.</li>
+  <li><span class="kod3"><em>b</em></span> &#8212; верхний предел, любой тип данных.</li>
+</ul>
+
+<h4>Пример</h4>
+<p>числовые значения переменной <span class="kod-var">v</span> ограничены диапазоном от 10 до 20.</p>
+<div class="kod">
+<pre>
+v = constrain(v, 10, 20);</pre>
+</div>
+
+<!-- ----------- map ------------------ -->
+<a name="m_map"></a>
+<h3 class="lenta">map()</h3>
+  <h4>Синтаксис</h4>
+<p class="kod2">map(value, fromLow, fromHigh, toLow, toHigh)</p>
+
+<h4>Описание</h4>
+<p>Фунция <span class="kod3">map()</span> преобразовывает значение переменной из одного диапазона в другой. Т.е. значение переменной <span class="kod3">value</span>, равное<span class="kod3"> fromLow</span>, будет преобразовано в число <span class="kod3">toLow</span>, а значение <span class="kod3">fromHigh</span> — в <span class="kod3">toHigh</span>. Все промежуточные значения <span class="kod3">value</span> масштабируются относительного нового диапазона <span class="kod3">[toLow; toHigh]</span>.</p>
+<p> Возвращаемое значение: преобразованное значение.</p>
+<ul>
+    <li><span class="kod3">x</span> &#8212; если <span class="kod3">x</span> лежит в пределах между a и b.</li>
+    <li><span class="kod3">a</span> &#8212; если <span class="kod3">x</span> меньше <span class="kod3">a</span>.</li>
+    <li><span class="kod3">b</span> &#8212; если <span class="kod3">x</span> больше <span class="kod3">b</span>.</li>
+  </ul>
+
+<h4>Параметры</h4>
+<ul>
+  <li><span class="kod3"><em>value</em></span> &#8212; переменная, значение которой необходимо преобразовать.</li>
+  <li><span class="kod3"><em>fromLow</em></span> &#8212; нижний предел текущего диапазона переменной <span class="kod3">value</span>.</li>
+  <li><span class="kod3"><em>fromHigh</em></span> &#8212; верхний предел текущего диапазона переменной <span class="kod3">value</span>.</li>
+  <li><span class="kod3"><em>toLow</em></span> &#8212; нижний предел нового диапазона переменной <span class="kod3">value</span>.</li>
+  <li><span class="kod3"><em>toHigh</em></span> &#8212; верхний предел нового диапазона переменной <span class="kod3">value</span>.</li>	
+</ul>
+<p>Функция не ограничивает значение переменной заданными пределами, поскольку ее значения вне указанного диапазона иногда несут полезную информацию. Для ограничения диапазона необходимо использовать функцию <span class="kod3">constrain()</span> либо до, либо после функции <span class="kod3">map()</span>.</p>
+<p>Нижние пределы указываемых диапазонов <span class="kod3">(fromLow, toLow)</span> численно могут быть больше верхних пределов <span class="kod3">(fromHigh, toHigh)</span>. В этом случае функция <span class="kod3">map()</span> может использоваться для создания обратного диапазона чисел, например:</p>
+<p class="kod3">y = map(x, 1, 50, 50, 1);</p>
+<p>Функция может обрабатывать отрицательные числа, например:</p>
+<p class="kod3"> y = map(x, 1, 50, 50, -80); </p>
+<p> Функция <span class="kod3">map()</span> использует целочисленные вычисления, поэтому не возвращает дробных значений. При этом дробная часть числа просто отбрасывается, без округления или вычисления средних значений. </p>
+<h4>Пример</h4>
+<p>Преобразование аналогового значения в 8-битное число (от 0 до 255)</p>
+
+<div class="kod">
+<pre>
+int v = analogRead(0);
+v = map(v, 0, 1023, 0, 255);
+analogWrite(9, v);
+</pre>
+</div>
+
+<!-- ----------- pow ------------------ -->
+<a name="m_pow"></a>
+<h3 class="lenta">pow()</h3>
+
+<h4>Описание</h4>
+<p>Фунция <span class="kod3">pow()</span> вычисляет значение числа, возведенного в степень. Функция <span class="kod3">pow()</span> может использоваться для возведения числа в дробную степень.</p>
+	
+<h4>Синтаксис</h4>
+<p class="kod2">pow(<em>x</em>, <em>n</em>)</p>
+
+<h4>Параметры</h4>
+<ul>
+  <li><span class="kod3"><em>x</em></span> &#8212; число, тип float.</li>
+  <li><span class="kod3"><em>n</em></span> &#8212; показатель степени, в которую необходимо возвести число, тип <span class="kod-type">float</span>).</li>
+</ul>
+
+<p>Возвращаемое значение: результат возведения в степень (тип <span class="kod-type">double</span>).</p>
+
+<h4>Пример</h4>
+<p>Числовые значения переменной <span class="kod-var">a</span> возводится в степень 5.</p>
+<div class="kod">
+<pre>
+a = pow(a, 5);</pre>
+</div>
+
+<!-- ----------- sqrt ------------------ -->
+<a name="m_sqrt"></a>
+<h3 class="lenta">sqrt()</h3>
+
+<h4>Описание</h4>
+<p>Фунция <span class="kod3">sqrt()</span> вычисляет квадратный корень числа.</p>
+	
+<h4>Синтаксис</h4>
+<p class="kod2">sqrt(<em>x</em>)</p>
+
+<h4>Параметры</h4>
+<ul>
+  <li><span class="kod3"><em>x</em></span> &#8212; число, любой тип данных.</li>
+</ul>
+
+<p>Возвращаемое значение: квадратный корень числа, тип <span class="kod-type">double</span>.</p>
+
+<h4>Пример</h4>
+<p>Вычисление квадратного  корня числового значения переменной <span class="kod-var">a</span> возводится в степень 5.</p>
+<div class="kod">
+<pre>
+b = sqrt(a);</pre>
+</div>
+
+<!-- ----------- sq ------------------ -->
+<a name="m_sq"></a>
+<h3 class="lenta">sq()</h3>
+
+<h4>Описание</h4>
+<p>Фунция <span class="kod3">sq()</span> вычисляет квадрат числа.</p>
+	
+<h4>Синтаксис</h4>
+<p class="kod2">sq(<em>x</em>)</p>
+
+<h4>Параметры</h4>
+<ul>
+  <li><span class="kod3"><em>x</em></span> &#8212; число, любой тип данных.</li>
+</ul>
+
+<p>Возвращаемое значение: квадрат числа.</p>
+
+<h4>Пример</h4>
+<p>Вычисление квадрата числового значения переменной <span class="kod-var">b</span>.</p>
+<div class="kod">
+<pre>
+x = sq(b);</pre>
+</div>
+
+<!-- ----------------------------- -->
+<!--
+-->	
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://all-arduino.ru/programmirovanie-arduino/"  target="_blank">all-arduino.ru - Программирование Arduino</a></p>
+
+</div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2020</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

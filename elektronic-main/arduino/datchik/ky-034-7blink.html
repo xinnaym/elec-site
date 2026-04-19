@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Модуль KY-034</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+<h1>Модуль 7-цветного мигающего светодиода<br> 
+  KY-034 (5 мм)</h1>
+  <p> В основе модуля KY-034 (5 мм) лежит светодиод со встроенной микросхемой и автоматической сменой цвета. Достаточно добавить источник питания и светодиодный модуль будет мигать всеми цветами радуги в разных комбинациях. Это происходит  за счёт миниатюрной микросхемы, которая встроена в светодиод.</p>
+  <p>Программирования не требуется. </p>
+  <p>Технические характеристики модуля KY-034:</p>
+
+<ul>
+  <li>Напряжение питания &#8212;  3…5 В.</li>
+  <li>Ток &#8212; 40 мА.</li>
+  <li>Цвет &#8212; желтый, зеленый, синий, красный, розовый, фиолетовый, оранжевый.</li>
+  <li>Угол обзора &#8212; 150&deg;.</li>
+  <li>Длина волны (нм):
+	  <ul>
+		<li>розовый, желтый &#8212; 590;</li>
+		<li>зеленый &#8212; 525...530.</li>
+		</ul>
+	</li>
+  <li>Сила света (мкд):
+	  <ul>
+		  <li>розовый &#8212; 200;</li>
+			<li>желтый &#8212;  600;</li>
+			<li>зеленый &#8212; 1600.</li>
+		</ul>
+	</li>
+  <li>Размеры (мм):
+	  <ul>
+		<li>длина &#8212; 25</li>
+		<li>длина с выводами &#8212; 30</li>
+		<li>ширина &#8212; 15</li>
+		<li>высота &#8212; 5</li>
+		</ul>
+	</li>
+</ul>
+
+
+<figure>
+    <img src="ky-034-7blink_files/ky-0034_foto.png" width="355" height="215">
+    <figcaption>Рис. 1 - Внешний вид модуля KY-034</figcaption>
+  </figure>
+ 
+ <p>Назначение выводов представлено в таблице 1.</p>
+ <p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+  <tr>
+    <th>Контакт</th>
+    <th>Назначение</th>
+  </tr>
+  <tr>
+    <td align="center"><strong>S</strong></td>
+    <td align="left">+5 В - Питание положительный полюс</td>
+  </tr>
+  <tr>
+    <td align="center">&nbsp;</td>
+    <td align="left">Общий (GND) </td>
+  </tr>
+  <tr>
+    <td align="center"><strong>&#8212;</strong></td>
+    <td align="left">не используется</td>
+  </tr>
+</table>
+ <!--<p> Для работы с модулем KY-022 используется библиотека <strong>IRremote_master</strong>.</p> -->
+
+
+ <p>Если вывод S подключить к цифровому выводу Arduino, можно управлять включением и выключением светодиода.</p>
+
+ <p>&nbsp;</p>
+ <br>
+    <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+
+ <hr>
+<h3>Источники</h3>	
+
+  <p><a href="https://kulibin.su/catalog/radiodetali/arduino-moduli/svetodiody-lazery/modul-7-mi-tsvetnogo-migayushchego-svetodioda-ky-034-5-mm.html"  target="_blank">kulibin.su - Модуль 7-ми цветного мигающего светодиода KY-034 (5 мм)</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2021</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

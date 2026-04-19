@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cтабилизаторы серии LM78ХХ</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Cтабилизаторы серии LM78ХХ</h1>
+	
+
+      <p>Серия 78ХХ выпускаются в металлических корпусах  ТО-3 и в   пластмассовых корпусах ТО-220 (рис. 1). Такие стабилизаторы имеют три вывода: вход,  общий (земля) и выход.</p>
+
+ <div class="ris">
+ <a href="stab-78_files/7805_foto.JPG">
+   <img src="stab-78_files/7805_foto.JPG" height="300" border="0"></a>
+ <a href="stab-78_files/7812_foto.JPG" target="_blank">
+   <img src="stab-78_files/7812_foto.JPG" height="300" border="0" ></a>
+ <img src="stab-78_files/to-220.jpg" height="273" width="441">
+          <p>Рис. 1 - Внешний вид стабилизаторов серии LM78ХХ в корпусе ТО-220 </p>
+    </div>
+		
+ <p>Вместо   "ХХ" изготовители указывают напряжение стабилизации, которое     выдает этот стабилизатор. Например, стабилизатор 7805 на выходе будет   выдавать 5 В, 7812 соответственно 12 Вт, а 7815 - 15 В. </p>
+      <p>Типовая  схема подключения  стабилизаторов серии 78ХХ показана на рис. 2.</p>
+      
+			<div class="ris"><img src="stab-78_files/cheme-7805.JPG" height="193" width="552">
+			<p>Рис. 2 - Типовая  схема подключения стабилизаторов серии LM78ХХ</p>
+		</div>
+			
+      <p>Два   конденсатора, которые устанавливаются с каждой стороны, требуются для уменьшения пульсаций  по входу и   по выходу. На схеме указаны минимальные   значения конденсаторов. Желательно поставить большего   номинала. </p>
+      <p>Рассеиваемая   мощность на стабилизаторе может достигать до 15 Вт. Поэтому его надо установить через термопасту на радиатор. Чем больше ток на выходе, тем больше по габаритам должен быть радиатор. Если    радиатор  обдувается кулером, будет ещё лучше.</p>
+      <div class="ris">
+      <img src="stab-78_files/radiator.jpg" height="240" width="263">
+			<p>Рис. 3 - Стабилизатор на радиаторе</p>
+</div>
+
+<p class="tab_num">Таблица 1</p>
+      <table border="1" align="center" cellpadding="3" cellspacing="0">
+			<caption>Электрические параметры LM7805</caption>
+        <tbody>
+          <tr>
+            <th rowspan="2">Параметр</th>
+            <th colspan="3">Значение</th>
+          </tr>
+          <tr>
+            <th>Мин.</th>
+            <th>Ном.</th>
+            <th>Макс.</th>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Выходное напряжение, В </td>
+            <td align="center">4,80</td>
+            <td align="center">5,00</td>
+            <td align="center">5,20</td>
+          </tr>
+          <tr>
+            <td>4,75</td>
+            <td>5,00</td>
+            <td>5,25</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Линейное регулирование, мВ</td>
+            <td align="center">—</td>
+            <td align="center">4,0</td>
+            <td align="center">100,0</td>
+          </tr>
+          <tr>
+            <td align="center">—</td>
+            <td align="center">1,6</td>
+            <td align="center">50,0</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Регулирование нагрузки, мВ</td>
+            <td align="center">—</td>
+            <td align="center">9,0</td>
+            <td align="center">100,0</td>
+          </tr>
+          <tr>
+            <td align="center">—</td>
+            <td align="center">4,0</td>
+            <td align="center">50,0</td>
+          </tr>
+          <tr>
+            <td align="left">Ток покоя, мА</td>
+            <td align="center">—</td>
+            <td align="center">5</td>
+            <td align="center">8</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Изменение тока покоя, мА</td>
+            <td align="center">—</td>
+            <td align="center">0,03</td>
+            <td align="center">0,50</td>
+          </tr>
+          <tr>
+            <td align="center">—</td>
+            <td align="center">0,30</td>
+            <td align="center">1,30</td>
+          </tr>
+          <tr>
+            <td align="left">Дрейф выходного напряжения, мВ/°C</td>
+            <td align="center">—</td>
+            <td align="center">-0,8</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Выходное напряжение шума, мкВ</td>
+            <td align="center">—</td>
+            <td align="center">42</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Подавление пульсаций, Дб</td>
+            <td align="center">62</td>
+            <td align="center">73</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Напряжение выключения, В</td>
+            <td align="center">—</td>
+            <td align="center">2</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Выходное сопротивление, мОм</td>
+            <td align="center">—</td>
+            <td align="center">15</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Ток короткого замыкания, мА</td>
+            <td align="center">—</td>
+            <td align="center">230</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Пиковый ток, А</td>
+            <td align="center">—</td>
+            <td align="center">2,2</td>
+            <td align="center">—</td>
+          </tr>
+        </tbody>
+    </table>
+<br>
+
+<p class="tab_num">Таблица 2</p>
+      <table border="1" align="center" cellpadding="3" cellspacing="0">
+			<caption>Электрические параметры LM7806</caption>
+        <tbody>
+          <tr>
+            <th rowspan="2">Параметр</th>
+            <th colspan="3">Значение</th>
+          </tr>
+          <tr>
+            <th>Мин.</th>
+            <th>Ном.</th>
+            <th>Макс.</th>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Выходное напряжение, В</td>
+            <td align="center">5,75</td>
+            <td align="center">6,00</td>
+            <td align="center">6,25</td>
+          </tr>
+          <tr>
+            <td>5,70</td>
+            <td>6,00</td>
+            <td>6,30</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Линейное регулирование, мВ</td>
+            <td align="center">—</td>
+            <td align="center">5,0</td>
+            <td align="center">120,0</td>
+          </tr>
+          <tr>
+            <td align="center">—</td>
+            <td align="center">1,5</td>
+            <td>60,0</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Регулирование нагрузки, мВ</td>
+            <td align="center">—</td>
+            <td align="center">9,0</td>
+            <td align="center">120,0</td>
+          </tr>
+          <tr>
+            <td align="center">—</td>
+            <td align="center">3,0</td>
+            <td>60,0</td>
+          </tr>
+          <tr>
+            <td align="left">Ток покоя, мА</td>
+            <td align="center">—</td>
+            <td align="center">5</td>
+            <td align="center">8</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Изменение тока покоя, мА</td>
+            <td align="center">—</td>
+            <td align="center">—</td>
+            <td align="center">0,5</td>
+          </tr>
+          <tr>
+            <td align="center">—</td>
+            <td align="center">—</td>
+            <td>1,3</td>
+          </tr>
+          <tr>
+            <td align="left">Дрейф выходного напряжения, мВ/°C</td>
+            <td align="center">—</td>
+            <td align="center">-0,8</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Выходное напряжение шума, мкВ</td>
+            <td align="center">—</td>
+            <td align="center">45</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Подавление пульсаций, Дб</td>
+            <td align="center">62</td>
+            <td align="center">73</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Напряжение выключения, В</td>
+            <td align="center">—</td>
+            <td align="center">2</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Выходное сопротивление, мОм</td>
+            <td align="center">—</td>
+            <td align="center">19</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Ток короткого замыкания, мА</td>
+            <td align="center">—</td>
+            <td align="center">250</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Пиковый ток, А</td>
+            <td align="center">—</td>
+            <td align="center">2,2</td>
+            <td align="center">—</td>
+          </tr>
+        </tbody>
+      </table>
+<br>
+			
+<p class="tab_num">Таблица 3</p>
+      <table border="1" align="center" cellpadding="3" cellspacing="0">
+			<caption>Электрические параметры LM7808</caption>
+        <tbody>
+          <tr>
+            <th rowspan="2">Параметр</th>
+            <th colspan="3">Значение</th>
+          </tr>
+          <tr>
+            <th>Мин.</th>
+            <th>Ном.</th>
+            <th>Макс.</th>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Выходное напряжение, В</td>
+            <td align="center">7,7</td>
+            <td align="center">8,0</td>
+            <td align="center">8,3</td>
+          </tr>
+          <tr>
+            <td>7,6</td>
+            <td>8,0</td>
+            <td>8,4</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Линейное регулирование, мВ</td>
+            <td align="center">—</td>
+            <td align="center">5</td>
+            <td align="center">160</td>
+          </tr>
+          <tr>
+            <td>—</td>
+            <td>2</td>
+            <td>80</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Регулирование нагрузки, мВ</td>
+            <td align="center">—</td>
+            <td align="center">10</td>
+            <td align="center">160</td>
+          </tr>
+          <tr>
+            <td>—</td>
+            <td>5</td>
+            <td>80</td>
+          </tr>
+          <tr>
+            <td align="left">Ток покоя, мА</td>
+            <td align="center">—</td>
+            <td align="center">5</td>
+            <td align="center">8</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Изменение тока покоя, мА</td>
+            <td align="center">—</td>
+            <td align="center">0,05</td>
+            <td align="center">0.50</td>
+          </tr>
+          <tr>
+            <td>—</td>
+            <td>0,5</td>
+            <td>1,0</td>
+          </tr>
+          <tr>
+            <td align="left">Дрейф выходного напряжения, мВ/°C</td>
+            <td align="center">—</td>
+            <td align="center">-0,8</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Выходное напряжение шума, мкВ</td>
+            <td align="center">—</td>
+            <td align="center">52</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Подавление пульсаций, Дб</td>
+            <td align="center">56</td>
+            <td align="center">73</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Напряжение выключения, В</td>
+            <td align="center">—</td>
+            <td align="center">2</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Выходное сопротивление, мОм</td>
+            <td align="center">—</td>
+            <td align="center">17</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Ток короткого замыкания, мА</td>
+            <td align="center">—</td>
+            <td align="center">230</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Пиковый ток, А</td>
+            <td align="center">—</td>
+            <td align="center">2,2</td>
+            <td align="center">—</td>
+          </tr>
+        </tbody>
+    </table>
+			
+			<br>
+
+<p class="tab_num">Таблица 4</p>
+      <table border="1" align="center" cellpadding="3" cellspacing="0">
+			<caption>Электрические параметры LM7809</caption>
+        <tbody>
+          <tr>
+            <th rowspan="2">Параметр</th>
+            <th colspan="3">Значение</th>
+          </tr>
+          <tr>
+            <th>Мин.</th>
+            <th>Ном.</th>
+            <th>Макс.</th>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Выходное напряжение, В</td>
+            <td>8,65</td>
+            <td>9,00</td>
+            <td>9,35</td>
+          </tr>
+          <tr>
+            <td>8,60</td>
+            <td>9,00</td>
+            <td>9,40</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Линейное регулирование, мВ</td>
+            <td>—</td>
+            <td>6</td>
+            <td>180</td>
+          </tr>
+          <tr>
+            <td>—</td>
+            <td>2</td>
+            <td>90</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Регулирование нагрузки, мВ</td>
+            <td>—</td>
+            <td>12</td>
+            <td>180</td>
+          </tr>
+          <tr>
+            <td>—</td>
+            <td>4</td>
+            <td>90</td>
+          </tr>
+          <tr>
+            <td align="left">Ток покоя, мА</td>
+            <td>—</td>
+            <td>5</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Изменение тока покоя, мА</td>
+            <td>—</td>
+            <td>—</td>
+            <td>0,5</td>
+          </tr>
+          <tr>
+            <td>—</td>
+            <td>—</td>
+            <td>1,3</td>
+          </tr>
+          <tr>
+            <td align="left">Дрейф выходного напряжения, мВ/°C</td>
+            <td>—</td>
+            <td>-1</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td align="left">Выходное напряжение шума, мкВ</td>
+            <td>—</td>
+            <td>58</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td align="left">Подавление пульсаций, Дб</td>
+            <td>56</td>
+            <td>71</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td align="left">Напряжение выключения, В</td>
+            <td>—</td>
+            <td>2</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td align="left">Выходное сопротивление, мОм</td>
+            <td>—</td>
+            <td>17</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td align="left">Ток короткого замыкания, мА</td>
+            <td>—</td>
+            <td>250</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td align="left">Пиковый ток, А</td>
+            <td>—</td>
+            <td>2,2</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+
+			
+
+
+			<br>
+
+<p class="tab_num">Таблица 5</p>
+      <table border="1" align="center" cellpadding="3" cellspacing="0">
+			<caption>Электрические параметры LM7810</caption>
+        <tbody>
+          <tr>
+            <th rowspan="2">Параметр</th>
+            <th colspan="3">Значение</th>
+          </tr>
+          <tr>
+            <th>Мин.</th>
+            <th>Ном.</th>
+            <th>Макс.</th>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Выходное напряжение, В</td>
+            <td>9,6</td>
+            <td>10,0</td>
+            <td>10,4</td>
+          </tr>
+          <tr>
+            <td>9,5</td>
+            <td>10,0</td>
+            <td>10,5</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Линейное регулирование, мВ</td>
+            <td>—</td>
+            <td>10</td>
+            <td>200</td>
+          </tr>
+          <tr>
+            <td>—</td>
+            <td>3</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Регулирование нагрузки, мВ</td>
+            <td>—</td>
+            <td>12</td>
+            <td>200</td>
+          </tr>
+          <tr>
+            <td>—</td>
+            <td>4</td>
+            <td>400</td>
+          </tr>
+          <tr>
+            <td align="left">Ток покоя, мА</td>
+            <td>—</td>
+            <td>5,1</td>
+            <td>8,0</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Изменение тока покоя, мА</td>
+            <td>—</td>
+            <td>&nbsp;</td>
+            <td>0,5</td>
+          </tr>
+          <tr>
+            <td>—</td>
+            <td>&nbsp;</td>
+            <td>1,0</td>
+          </tr>
+          <tr>
+            <td align="left">Дрейф выходного напряжения, мВ/°C</td>
+            <td>—</td>
+            <td>-1</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td align="left">Выходное напряжение шума, мкВ</td>
+            <td>—</td>
+            <td>58</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td align="left">Подавление пульсаций, Дб</td>
+            <td>56</td>
+            <td>71</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td align="left">Напряжение выключения, В</td>
+            <td>—</td>
+            <td>2</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td align="left">Выходное сопротивление, мОм</td>
+            <td>—</td>
+            <td>17</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td align="left">Ток короткого замыкания, мА</td>
+            <td>—</td>
+            <td>250</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td align="left">Пиковый ток, А</td>
+            <td>—</td>
+            <td>2,2</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+			<br>
+
+<p class="tab_num">Таблица 6</p>
+      <table border="1" align="center" cellpadding="3" cellspacing="0">
+			<caption>Электрические параметры LM7812</caption>
+        <tbody>
+          <tr>
+            <th rowspan="2">Параметр</th>
+            <th colspan="3">Значение</th>
+          </tr>
+          <tr>
+            <th>Мин.</th>
+            <th>Ном.</th>
+            <th>Макс.</th>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Выходное напряжение, В</td>
+            <td align="center">11,5</td>
+            <td align="center">12,0</td>
+            <td align="center">12,5</td>
+          </tr>
+          <tr>
+            <td>11,4</td>
+            <td>12,0</td>
+            <td>12,6</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Линейное регулирование, мВ</td>
+            <td align="center">—</td>
+            <td align="center">10</td>
+            <td align="center">240</td>
+          </tr>
+          <tr>
+            <td>—</td>
+            <td>3</td>
+            <td>120</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Регулирование нагрузки, мВ</td>
+            <td align="center">—</td>
+            <td align="center">11</td>
+            <td align="center">240</td>
+          </tr>
+          <tr>
+            <td>—</td>
+            <td>5</td>
+            <td>120</td>
+          </tr>
+          <tr>
+            <td align="left">Ток покоя, мА</td>
+            <td align="center">—</td>
+            <td align="center">5,1</td>
+            <td align="center">8,0</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Изменение тока покоя, мА</td>
+            <td align="center">—</td>
+            <td align="center">0,1</td>
+            <td align="center">0,5</td>
+          </tr>
+          <tr>
+            <td>—</td>
+            <td>0,5</td>
+            <td>1,0</td>
+          </tr>
+          <tr>
+            <td align="left">Дрейф выходного напряжения, мВ/°C</td>
+            <td align="center">—</td>
+            <td align="center">-1</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Выходное напряжение шума, мкВ</td>
+            <td align="center">—</td>
+            <td align="center">76</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Подавление пульсаций, Дб</td>
+            <td align="center">55</td>
+            <td align="center">71</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Напряжение выключения, В</td>
+            <td align="center">—</td>
+            <td align="center">2</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Выходное сопротивление, мОм</td>
+            <td align="center">—</td>
+            <td align="center">18</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Ток короткого замыкания, мА</td>
+            <td align="center">—</td>
+            <td align="center">230</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Пиковый ток, А</td>
+            <td align="center">—</td>
+            <td align="center">2,2</td>
+            <td align="center">—</td>
+          </tr>
+        </tbody>
+      </table>
+			<br>
+
+<p class="tab_num">Таблица 7</p>
+      <table border="1" align="center" cellpadding="3" cellspacing="0">
+			<caption>Электрические параметры LM7815</caption>
+        <tbody>
+          <tr>
+            <th rowspan="2">Параметр</th>
+            <th colspan="3">Значение</th>
+          </tr>
+          <tr>
+            <th>Мин.</th>
+            <th>Ном.</th>
+            <th>Макс.</th>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Выходное напряжение, В</td>
+            <td align="center">14,40</td>
+            <td align="center">15,0</td>
+            <td align="center">15,60</td>
+          </tr>
+          <tr>
+            <td>14,25</td>
+            <td>15,0</td>
+            <td>15,75</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Линейное регулирование, мВ</td>
+            <td align="center">—</td>
+            <td align="center">11</td>
+            <td align="center">300</td>
+          </tr>
+          <tr>
+            <td align="center">—</td>
+            <td align="center">3</td>
+            <td align="center">150</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Регулирование нагрузки, мВ</td>
+            <td align="center">—</td>
+            <td align="center">12</td>
+            <td align="center">300</td>
+          </tr>
+          <tr>
+            <td align="center">—</td>
+            <td align="center">4</td>
+            <td align="center">150</td>
+          </tr>
+          <tr>
+            <td align="left">Ток покоя, мА</td>
+            <td align="center">—</td>
+            <td align="center">5,2</td>
+            <td align="center">8,0</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Изменение тока покоя, мА</td>
+            <td align="center">—</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">0,5</td>
+          </tr>
+          <tr>
+            <td align="center">—</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">1,0</td>
+          </tr>
+          <tr>
+            <td align="left">Дрейф выходного напряжения, мВ/°C</td>
+            <td align="center">—</td>
+            <td align="center">-1</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Выходное напряжение шума, мкВ</td>
+            <td align="center">—</td>
+            <td align="center">90</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Подавление пульсаций, Дб</td>
+            <td align="center">54</td>
+            <td align="center">70</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Напряжение выключения, В</td>
+            <td align="center">—</td>
+            <td align="center">2</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Выходное сопротивление, мОм</td>
+            <td align="center">—</td>
+            <td align="center">19</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Ток короткого замыкания, мА</td>
+            <td align="center">—</td>
+            <td align="center">250</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Пиковый ток, А</td>
+            <td align="center">—</td>
+            <td align="center">2,2</td>
+            <td align="center">—</td>
+          </tr>
+        </tbody>
+      </table>
+			<br>
+
+<p class="tab_num">Таблица 8</p>
+      <table border="1" align="center" cellpadding="3" cellspacing="0">
+			<caption>Электрические параметры LM7818</caption>
+        <tbody>
+          <tr>
+            <th rowspan="2">Параметр</th>
+            <th colspan="3">Значение</th>
+          </tr>
+          <tr>
+            <th>Мин.</th>
+            <th>Ном.</th>
+            <th>Макс.</th>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left" valign="middle">Выходное напряжение, В</td>
+            <td align="center">17,3</td>
+            <td align="center">18,0</td>
+            <td align="center">18,7</td>
+          </tr>
+          <tr>
+            <td>17,1</td>
+            <td>18,0</td>
+            <td>18,9</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left" valign="middle">Линейное регулирование, мВ</td>
+            <td align="center">—</td>
+            <td align="center">15</td>
+            <td align="center">360</td>
+          </tr>
+          <tr>
+            <td align="center">—</td>
+            <td align="center">5</td>
+            <td align="center">180</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left" valign="middle">Регулирование нагрузки, мВ</td>
+            <td align="center">—</td>
+            <td align="center">15</td>
+            <td align="center">360</td>
+          </tr>
+          <tr>
+            <td align="center">—</td>
+            <td align="center">5</td>
+            <td align="center">180</td>
+          </tr>
+          <tr>
+            <td align="left" valign="middle">Ток покоя, мА</td>
+            <td align="center">—</td>
+            <td align="center">5,2</td>
+            <td align="center">8,0</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left" valign="middle">Изменение тока покоя, мА</td>
+            <td align="center">—</td>
+            <td align="center">—</td>
+            <td align="center">0,5</td>
+          </tr>
+          <tr>
+            <td align="center">—</td>
+            <td align="center">—</td>
+            <td align="center">1,0</td>
+          </tr>
+          <tr>
+            <td align="left" valign="middle">Дрейф выходного напряжения, мВ/°C</td>
+            <td align="center">—</td>
+            <td align="center">-1</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left" valign="middle">Выходное напряжение шума, мкВ</td>
+            <td align="center">—</td>
+            <td align="center">110</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left" valign="middle">Подавление пульсаций, Дб</td>
+            <td align="center">53</td>
+            <td align="center">69</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left" valign="middle">Напряжение выключения, В</td>
+            <td align="center">—</td>
+            <td align="center">2</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left" valign="middle">Выходное сопротивление, мОм</td>
+            <td align="center">—</td>
+            <td align="center">22</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left" valign="middle">Ток короткого замыкания, мА</td>
+            <td align="center">—</td>
+            <td align="center">250</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left" valign="middle">Пиковый ток, А</td>
+            <td align="center">—</td>
+            <td align="center">2,2</td>
+            <td align="center">—</td>
+          </tr>
+        </tbody>
+      </table>
+			<br>
+
+<p class="tab_num">Таблица 9</p>
+      <table border="1" align="center" cellpadding="3" cellspacing="0">
+			<caption>Электрические параметры LM7824</caption>
+        <tbody>
+          <tr>
+            <th rowspan="2">Параметр</th>
+            <th colspan="3">Значение</th>
+          </tr>
+          <tr>
+            <th>Мин.</th>
+            <th>Ном.</th>
+            <th>Макс.</th>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Выходное напряжение, В</td>
+            <td align="center">23,00</td>
+            <td align="center">24,00</td>
+            <td align="center">25,00</td>
+          </tr>
+          <tr>
+            <td>22,80</td>
+            <td>24,00</td>
+            <td>25,25</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Линейное регулирование, мВ</td>
+            <td align="center">—</td>
+            <td align="center">17</td>
+            <td align="center">480</td>
+          </tr>
+          <tr>
+            <td align="center">—</td>
+            <td align="center">6</td>
+            <td align="center">240</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Регулирование нагрузки, мВ</td>
+            <td align="center">—</td>
+            <td align="center">15</td>
+            <td align="center">480</td>
+          </tr>
+          <tr>
+            <td align="center">—</td>
+            <td align="center">5</td>
+            <td align="center">240</td>
+          </tr>
+          <tr>
+            <td align="left">Ток покоя, мА</td>
+            <td align="center">—</td>
+            <td align="center">5,2</td>
+            <td align="center">8,0</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="left">Изменение тока покоя, мА</td>
+            <td align="center">—</td>
+            <td align="center">0,1</td>
+            <td align="center">0,5</td>
+          </tr>
+          <tr>
+            <td align="center">—</td>
+            <td align="center">0,5</td>
+            <td align="center">1,0</td>
+          </tr>
+          <tr>
+            <td align="left">Дрейф выходного напряжения, мВ/°C</td>
+            <td align="center">—</td>
+            <td align="center">-1,5</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Выходное напряжение шума, мкВ</td>
+            <td align="center">—</td>
+            <td align="center">120</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Подавление пульсаций, Дб</td>
+            <td align="center">50</td>
+            <td align="center">67</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Напряжение выключения, В</td>
+            <td align="center">—</td>
+            <td align="center">2</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Выходное сопротивление, мОм</td>
+            <td align="center">—</td>
+            <td align="center">28</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Ток короткого замыкания, мА</td>
+            <td align="center">—</td>
+            <td align="center">230</td>
+            <td align="center">—</td>
+          </tr>
+          <tr>
+            <td align="left">Пиковый ток, А</td>
+            <td align="center">—</td>
+            <td align="center">2,2</td>
+            <td align="center">—</td>
+          </tr>
+        </tbody>
+      </table>
+    <br>
+	
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	<hr>
+<h3>Источники</h3>	
+<p><a href="http://www.ruselectronic.com/news/stabilizatory-naprjazhjenija/" target="_blank">ruselectronic.com - Трехвыводные стабилизаторы напряжения </a></p>
+
+<p><a href="https://rudatasheet.ru/datasheets/lm78xx_lm78xxa/" target="_blank">rudatasheet.ru - LM78XX/LM78XXA 3-х выводной 1 А положительный стабилизатор напряжения</a></p>
+</div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

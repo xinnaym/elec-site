@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Установка библиотек в Arduino IDE</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	
+	<h1>Установка библиотек в Arduino IDE</h1>
+	
+	
+<p>Для создания многих скетчей требуются библиотеки. Чтобы использовать методы и функции библиотеки, её нужно скачать, установить и подключить.</p>
+<p>Многие библиотеки находятся в zip архиве, но не спешите доставать файлы из архива, т.к. Arduino IDE сама может распаковывать архивы и размещать библиотеки в нужных папках.</p>
+<p>Если Вы скачали архив библиотеки с сайта не указывая путь для сохранения файла, то скаченный (загруженный) Вами файл скорее всего находится в папке <strong>Загрузки</strong>.</p>
+<p>После  скачивания библиотеку  нужно установить. Установить библиотеку можно вручную или сделать это средствами Arduino IDE.</p>
+
+
+<h3>Установка библиотеки средствами Arduino IDE</h3>
+  <ol>
+    <li>Войдите в меню: <strong>Скетч </strong>&gt; <strong>Подключить библиотеку</strong> &gt; <strong>Добавить .ZIP библиотеку...</strong>.
+		<figure>
+		<img src="arduino-libraries_files/image1.png">
+		<figcaption>Рис. 1 - Меню добавления библиотеки<figcaption>
+		</figure>
+		</li>
+    <li>В появившемся окне выберите папку со скаченным ZIP-архивом. 
+		<figure>
+		<img src="arduino-libraries_files/image2.png">
+		<figcaption>Рис. 2 - Выбор папки и файла с  ZIP-архивом<figcaption>
+		</figure>
+		</li>
+    <li>Выберите ZIP-файл библиотеки и нажмите на кнопку «<strong>Открыть</strong>» (<strong>Open</strong>).</li>
+    </ol>
+
+
+  <h3>Установка библиотеки вручную</h3>
+  <p>Распакуйте скаченный  ZIP-архив и поместите папку с файлами библиотеки в папку<strong> libraries</strong>. Обычно путь к этой папке: 
+    <strong>Библиотеки</strong> &gt; <strong>Документы </strong>&gt; <strong>Мои Документы </strong>&gt; <strong>Arduino </strong>&gt; <strong>libraries</strong> (на Вашем компьютере путь можеть быть другим). </p>
+		
+<figure>
+	<img src="arduino-libraries_files/image3.png">
+	<figcaption>Рис. 3 - Папка <strong>libraries</strong><figcaption>
+</figure>
+
+  <p>Если во время копирования программа Arduino IDE была открыта, то нужно закрыть все окна этой программы и перезапустить. Теперь можно  подключать библиотеки в скетч.</p>
+  <p>Папка <strong>libraries</strong><em> </em>есть ещё в папке программы Arduino IDE (где располагается файл arduino.exe). Не рекомендуется устанавливать библиотеки в этой папке.  Если Вы  установите новую версию Arduino IDE, то библиотеки находящиеся в папке  <strong>Документы &gt; Arduino &gt; libraries</strong>, будут доступны  в новой версии Arduino IDE, а библиотеки находящиеся в папке <strong>libraries</strong> программы Arduino IDE в новой версии не будут доступны.</p>
+	
+	
+  <h3>Подключение библиотеки</h3>
+  <p>Для того чтобы подключить библиотеку, в начале скетча нужно написать оператор <span class="ar-oper">#include</span> с указанием именеи библиотеки. Например:</p>
+<div class="kod">
+<pre>
+<span class="ar-oper">#include</span> &lt;iarduino_4LED.h&gt;   <span class="comment1">// Подключение библиотеки iarduino_4LED</span>
+</pre>
+</div>
+
+  <p>Некоторые библиотеки работают используя методы и функции других библиотек, тогда нужно подключать две библиотеки, сначала подключается та, методы и функции которой использует вторая.</p>
+  <p>Например:</p>
+  <div class="kod">
+<pre>
+<span class="comment1">// Библиотека LiquidCrystal_I2C использует методы и функции библиотеки Wire</span>
+#include &lt;Wire.h&gt;  <span class="comment1">// Подключение библиотеки Wire для работы с шиной I2C</span>  
+#include &lt;LiquidCrystal_I2C.h&gt;  <span class="comment1">// Подключение библиотеки LiquidCrystal_I2C</span> 
+<span class="comment1">//для работы с LCD дисплеем по шине I2C</span>
+</pre>
+</div>
+
+<p>Для работы с большинством библиотек, нужно создать объект (экземпляр класса библиотеки), через который будут доступны их функции и методыю</p>
+<p>Например:</p>
+<div class="kod">
+<pre>
+LiquidCrystal_I2C lcd(0x27,20,4); <span class="comment1">// lcd это объект библиотеки LiquidCrystal_I2C</span>
+<span class="comment1">// через объект обращаются к функциям и методам библиотеки</span>
+</pre>
+</div>
+
+  <p>Вместо <span class="kod3">lcd</span> можно написать любое слово или сочетание букв и цифр, это название объекта через который можно обращаться к методам и функциям библиотеки. Если вместо <span class="kod3">lcd</span>  написать <span class="kod3">myLCD</span>, то и ко всем методам и функциям библиотеки <strong>LiquidCrystal_I2C</strong>, нужно обращаться через указанное  имя объекта, например: <span class="kod3"><br>
+    myLCD.print("my text");</span></p>
+
+  <h3>Поиск библиотек</h3>
+  <p>Библиотеки можно искать самостоятельно или можно воспользоваться функционалом Arduino IDE.</p>
+  <p>Выберите пункт меню: <strong>Скетч &gt; Подключить библиотеку &gt; Управлять библиотеками...</strong>.</p>
+	
+<figure>
+	<img src="arduino-libraries_files/image4.png">
+	<figcaption>
+	Рис. 4 - Управление библиотеками
+	<figcaption>
+</figure>
+ 
+  <p>Откроется «<strong>Менеджер библиотек</strong>», в котором можно найти интересующую  библиотеку введя её название в строку поиска, дополнительно можно установить пункты «<strong>Тип</strong>» и «<strong>Тема</strong>».</p>
+	
+<figure>
+	<img src="arduino-libraries_files/image5.png">
+	<figcaption>
+	Рис. 5 - Менеджер библиотек
+	<figcaption>
+</figure>
+ 
+
+<p>Нажатие на описании библиотеки приведёт к появлению кнопок «<strong>Выберите версию</strong>» и  «<strong>Установка</strong>». После нажатия на кнопку «<strong>Установка</strong>» можно приступать к подключению библиотеки в скетч.</p>
+  <br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://lesson.iarduino.ru/page/Installing_libraries"  target="_blank">lesson.iarduino.ru - Установка библиотек в Arduino IDE</a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2021</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

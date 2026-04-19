@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Простые схемы для начинающих</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Простые схемы для начинающих</h1>
+	
+		
+	<h2>Фонарик-мигалка</h2>
+	<p>Частоту миганий лампы можно регулировать подбором элементов сопротивлений резисторв R1, R2,  конденсатора C1. Лампа может быть на напряжения 6-12 В. В зависимости от этого нужно выбирать напряжение питания схемы (от 6 до 12 В) и мощность коммутирующего транзистора VT3.</p>
+	
+	<figure><img src="sheme-1_files/fonarik.png" width="531" height="372">
+	<figcaption>Рис. 1 - Схема мигающего фонаря</figcaption>
+	</figure>
+	
+  <p class="tab_num">Таблица 1</p>	
+
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>Перечень элементов для фонарика-мигалки</caption>
+	    <tr>
+	      <th>Обозначение</th>
+	      <th>Тип</th>
+	      <th>Номинал</th>
+	      <th>Количество</th>
+	      <th>Примечание</th>
+      </tr>
+      <tr>
+        <td align="left">C1</td>
+        <td align="left">Электролитический конденсатор</td>
+        <td align="center">10мкФ 12В</td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left">HL1</td>
+        <td align="left">Лампочка накаливания </td>
+        <td align="center">12 В</td>
+        <td align="center">1</td>
+        <td align="left">6-12 В </td>
+      </tr>
+      <tr>
+        <td align="left">R1</td>
+        <td align="left">Резистор</td>
+        <td align="center">47 кОм</td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left">R2</td>
+        <td align="left">Резистор</td>
+        <td align="center">12 кОм</td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left">R3</td>
+        <td align="left">Резистор</td>
+        <td align="center">910 Ом</td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left">R4</td>
+        <td align="left">Резистор</td>
+        <td align="center">5,1 кОм</td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left">VT1 </td>
+        <td align="left">Транзистор биполярный </td>
+        <td align="center">КТ361Б</td>
+        <td align="center">1</td>
+        <td align="left">КТ645, КТ502</td>
+      </tr>
+      <tr>
+        <td align="left">VT2</td>
+        <td align="left">Транзистор биполярный </td>
+        <td align="center">КТ315Б</td>
+        <td align="center">1</td>
+        <td align="left">КТ312, КТ342, КТ503</td>
+      </tr>
+      <tr>
+        <td align="left">VT3</td>
+        <td align="left">Транзистор биполярный </td>
+        <td align="center">КТ814Б</td>
+        <td align="center">1</td>
+        <td align="left">КТ816, КТ818</td>
+      </tr>
+	  </table>
+	
+	
+	<h2>Автомат выключения освещения</h2>
+	
+	<p>От множества схем подобных автоматов эта отличается предельной простотой и надежностью и в подробном описании не нуждается. Она позволяет включать освещение или какой-нибудь электроприбор на заданное непродолжительное время, а затем автоматически его отключает.</p>
+	
+	<figure>
+	  <img src="sheme-1_files/automat.png" width="658" height="311">
+		<figcaption>Рис. 2 - Схема автомата выключения освещения</figcaption>
+	</figure>
+
+  <p class="tab_num">Таблица 2</p>	
+	<table border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>Перечень элементов для автомата выключения освещения</caption>
+	    <tr>
+	      <td>Обозначение</td>
+	      <th>Тип</th>
+	      <th>Номинал</th>
+	      <th>Количество</th>
+	      <th>Примечание</th>
+      </tr>
+      <tr>
+        <td align="left">C1</td>
+        <td align="left">Конденсатор электролитический </td>
+        <td align="center">4700 мкФ&times;16 В</td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left">HL1</td>
+        <td align="left">Лампа накаливания </td>
+        <td align="center">100 Вт </td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left">K1</td>
+        <td align="left">Реле</td>
+        <td align="center">РЭС22</td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left">R1</td>
+        <td align="left">Резистор</td>
+        <td align="center">20 кОм</td>
+        <td align="center">1</td>
+        <td align="left">15…47 кОм</td>
+      </tr>
+      <tr>
+        <td align="left">SA1</td>
+        <td align="left">Кнопка</td>
+        <td align="center">Без фиксации</td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left">VТ1</td>
+        <td align="left">Транзистор биполярный </td>
+        <td align="center">КТ801А</td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+	  </table>
+	<p>Для включения нагрузки достаточно кратковременно нажать выключатель   SA1 без фиксации. При этом конденсатор успевает зарядиться и открывает   транзистор, который управляет включением реле. Время включения   определяется емкостью конденсатора С1 и с указанным на схеме номиналом   (4700 мкФ) составляет около 4 минут. Увеличение времени включенного   состояния достигается подключением дополнительных конденсаторов   параллельно С1.</p>
+	<p>Транзистор может быть любым n-p-n типа средней мощности или даже   маломощным, типа КТ315. Это зависит от рабочего тока применяемого реле,   которое также может быть любым другим на напряжение срабатывания 6-12 В и   способным коммутировать нагрузку необходимой вам мощности. Можно   использовать и транзисторы p-n-p типа, но нужно будет поменять   полярность напряжения питания и включения конденсатора С1. Резистор R   также влияет в небольших пределах на время срабатывания и может быть   номиналом 15 … 47 кОм в зависимости от типа транзистора.</p>
+		<hr>
+
+
+	  <h2>Мигалка на светодиоде с питанием 1,5 В</h2>
+		
+	  <p>Cхема мигающего светодиода (рис. 3) работает как от 3,6 В питания, хотя работает от батарейки 1,5 В.</p>
+
+    <figure>
+  <img src="sheme-1_files/migalka1_5.png" width="562" height="373">
+	<figcaption>Рис. 3 - Схема  мигающего светодиода</figcaption>
+</figure>
+
+<p class="tab_num">Таблица 3 </p>	
+
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>
+	Перечень элементов для 
+	мигающего светодиода
+	</caption>
+	    <tr>
+	      <th>Обозначение</th>
+	      <th>Тип</th>
+	      <th>Номинал</th>
+	      <th>Количество</th>
+	      <th>Примечание</th>
+      </tr>
+      <tr>
+        <td>C1</td>
+        <td align="left">Электролитический конденсатор</td>
+        <td align="center">10 мкФ&times;16 В</td>
+        <td align="center">1</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>C2</td>
+        <td align="left">Конденсатор</td>
+        <td align="center">10 нФ</td>
+        <td align="center">1</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>C3</td>
+        <td align="left">Электролитический конденсатор</td>
+        <td align="center">100 мкФ&times;16 В</td>
+        <td align="center">1</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>HL1</td>
+        <td align="left">Светодиод</td>
+        <td align="center">АЛ307</td>
+        <td align="center">1</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>G1</td>
+        <td align="left">Элемент питания </td>
+        <td align="center">1,5 В </td>
+        <td align="center">1</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>R1, R4</td>
+        <td align="left">Резистор</td>
+        <td align="center">1 кОм</td>
+        <td align="center">1</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>R2</td>
+        <td align="left">Резистор</td>
+        <td align="center">100 кОм</td>
+        <td align="center">1</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>R3</td>
+        <td align="left">Резистор</td>
+        <td align="center">47 Ом</td>
+        <td align="center">1</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>VT1</td>
+        <td align="left">Транзистор биполярный </td>
+        <td align="center">BC547</td>
+        <td align="center">1</td>
+        <td>КТ3102, КТ315, КТ312, КТ342, КТ503</td>
+      </tr>
+      <tr>
+        <td>VT2</td>
+        <td align="left">Транзистор биполярный </td>
+        <td align="center">BC557</td>
+        <td align="center">1</td>
+        <td>КТ3107, КТ361</td>
+      </tr>
+	  </table>
+	
+	  <p>Данная схема позволяет использовать разнообразные батарейки – ААА, АА или обычные «таблетки». В схеме желательно использовать белый   светодиод. Он будет производить яркую вспышку. Вспышка «потребляет»   минимальный ток, а это ведет к увеличению срока службы батареи. Тем самым, аккумулятор будет служить намного дольше. </p>
+
+
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+
+<h3>Источники</h3>	
+<!--<a href=""  target="_blank"></a> -->
+  <p><a href="https://cxem.net/beginner/beginner98.php">cxem.net - Простые схемы для начинающих</a></p>
+	
+<p><a href="http://radio-uchebnik.ru/shem/nachinayushchim/8-nachinayushchim/270-svetodiodnaya-migalka-na-1-5-volta">radio-uchebnik.ru - Мигалка на светодиоде с питанием 1,5 Вольта</a></p>
+
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2024</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

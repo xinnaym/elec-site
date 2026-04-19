@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ЦМУ на лампах накаливания (вариант 5)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Цветомузыкальная установка на лампах накаливания (вариант 5)</h1>
+	
+  <p>Три  раздельных  усилительных  каскада  предназначены    для  усиления трех  полос звуковой  частоты:</p>
+  <ul>
+    <li> на транзисторе VT1 &#8212; на  частоте  свыше  1000 Гц, </li>
+    <li>на транзисторе VT2 &#8212; от 200 до  1000 Гц, </li>
+    <li>на транзисторе VT3 – ниже  200 Гц.</li>
+  </ul>
+  <p> Разделение частот осуществляется простыми RC-фильтрами.</p>
+  <p> Входной  сигнал  берется  с выхода  акустических колонок.  Его  уровень регулируется с помощью переменный резистор R1. Для  подстройки уровня  яркости  каждого канала  используются переменные (подстроечные) резисторы R3, R5, R7.</p>
+  <figure>
+	<img src="color-music-7_files/cmu7-shema.png" width="774" height="762" border="0">	
+	<figcaption>Рис. 1 - Схема электрическая принципиальная цветомузыкальной установки</figcaption>
+</figure>
+
+<p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Перечень элементов цветомузыкальной установки</caption>
+<thead>
+  <tr>
+	  <th>Обозначение</th>
+					<th>Тип</th>
+					<th>Номинал</th>
+					<th>Количество</th>
+					<th>Примечание</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td align="left">C1, C4 </td>
+    <td align="left">Конденсатор электролитический </td>
+    <td align="center">1 мкФ - 16 В</td>
+    <td align="center">2</td>
+    <td align="left">&nbsp;</td>
+</tr><tr>
+    <td align="left">C2, C5</td>
+    <td align="left">Конденсатор электролитический </td>
+    <td align="center">10 мкФ - 16 В</td>
+    <td align="center">2</td>
+    <td align="left">&nbsp;</td>
+</tr><tr>
+    <td align="left">C3</td>
+    <td align="left">Конденсатор электролитический</td>
+    <td align="center">50 мкФ - 16 В</td>
+    <td align="center">1</td>
+    <td align="left">&nbsp;</td>
+</tr><tr>
+  <td align="left">EL1-EL6</td>
+    <td align="left">Лампа накаливания</td>
+    <td align="center">6,3 В / 0,28 А</td>
+    <td align="center">6</td>
+    <td>&nbsp;</td>
+		</tr>
+<tr><td align="left">R1</td>
+    <td align="left">Резистор переменный </td>
+    <td align="center">100 Ом  </td>
+    <td align="center">1</td>
+    <td>&nbsp;</td>
+</tr><tr>
+  <td align="left">R2, R4, R6</td>
+    <td align="left">Резистор постоянный </td>
+    <td align="center">3 кОм - 0,25 Вт</td>
+    <td align="center">3</td>
+    <td>&nbsp;</td>
+</tr><tr>
+    <td align="left">R3, R5, R7</td>
+    <td align="left">Резистор переменный</td>
+    <td align="center">150 Ом</td>
+    <td align="center">3</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+  <td align="left">VТ1-VТ3</td>
+    <td align="left">Биполярный транзистор</td>
+    <td align="center">П213</td>
+    <td align="center">3</td>
+    <td>&nbsp;</td>
+</tr><tr>
+  <td align="left">VD1</td>
+    <td align="left">Диод</td>
+    <td align="center">Д220</td>
+    <td align="center">1</td>
+    <td>&nbsp;</td>
+</tr>
+		</tbody>
+		</table>
+
+  <p> Резисторы R2, R4, R6 задают смещение на базах транзисторов. Нагрузкой каждого каскада являются две параллельно включенные лампочки (6,3 В&times;0,28 А). Питается схема от блока питания с выходным напряжением 9 В и  максимальным  током свыше 2 А. </p>
+  <p> Транзисторы  могут иметь значительный разброс по усилению тока. Поэтому, значения резисторов R2, R4, R6  необходимо  подбирать для каждого каскада. Ток  коллектора  при  этом   настраивается  на такую  величину, чтобы  нити  накала ламп немного светились   в  отсутствии  входного сигнала.  Для обеспечения стабильнй работы транзисторы необходимо  установитьна  радиаторы площадью  от  75 кв.см. </p>
+	<br>
+
+  </a><a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	<hr>
+	
+	
+<h3>Источники:</h3>
+<p><a href="http://elektrikaetoprosto.ru/trans17.html"  target="_blank">elektrikaetoprosto.ru - Цветомузыкальная приставка на П213</a></p>
+
+
+<!--
+<p><a href=""></a></p>
+ -->
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2024</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

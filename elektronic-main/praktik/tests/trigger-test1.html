@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Исследование работы триггеров</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	  <h1>Исследование работы триггеров</h1>
+
+    <h3>RS-триггер на микросхеме К155ЛА3</h3>
+<p> Схема выполнена на логических элементах 2И-НЕ. Собранная схема имеет всего лишь два устойчивых состояния &quot;0&quot; или &quot;1&quot;.  Вывод 14 микросхемы К155ЛА3 подключается к "плюс" питания, вывод  7 - к "минус" питания. </p>
+<div class="ris">
+<img src="trigger-test1_files/rs-trigger-k155la3.jpg" alt="" title="Схема RS-триггера на логической микросхеме К155ЛА3" width="580" height="243">
+<p>Рис. 1 - Схема RS-триггера на логической микросхеме К155ЛА3</p>
+</div>
+
+<p class="tab_num">Таблица 1</p>
+		<table border="1" align="center" cellpadding="3" cellspacing="0">
+		<caption>Перечень элементов</caption>
+  <thead>
+	  <tr>
+		  <th>Обозначение</th>
+			<th>Наименование</th>
+			<th>Номинал</th>
+			<th>Количество</th>
+			<th>Примечание</th>
+	  </tr>
+	</thead>
+	<tbody>
+		<tr>
+		  <td align="left">DD1</td>
+			<td align="left">Микросхема</td>
+			<td align="center"> К155ЛА3</td>
+			<td align="center" >1</td>
+			<td align="left" >&nbsp;</td>
+		</tr>
+		<tr>
+		  <td align="left">HL1, HL2</td>
+      <td align="left">Светодиод </td>
+      <td align="center">АЛ307</td>
+      <td align="center" >2</td>
+<td align="left" >красного и синего цвета свечения </td>
+		</tr>
+		<tr>
+		  <td align="left">R1, R2</td>
+      <td align="left">Резистор постоянный </td>
+<td align="center">330 Ом / 0,25 Вт</td>
+<td align="center" >2</td>
+<td align="left" >&nbsp;</td>
+		</tr>
+		<tr>
+		  <td align="left">SB1, SB2 </td>
+		  <td align="left">Кнопка </td>
+		  <td align="center">&nbsp;</td>
+		  <td align="center" >2</td>
+		  <td align="left" >без фиксации </td>
+		  </tr>
+		</tbody>
+		</table>
+
+<p>После того, как на схему будет подано напряжение питания, загорится один из светодиодов. </p>
+<p>При однократном нажатии на кнопку SB1 (<strong>Set - </strong>установка), RS-триггер устанавливается в единичное состояние. При этом должен засветиться тот светодиод,  который подключен к  прямому выходу <strong>Q</strong>. Это свидетельствует о том, что триггер «запомнил» &quot;1&quot; и выдал сигнал об этом на прямой выход <strong>Q</strong>. Светодиод, который же подключен к инверсному выходу <strong class="inv">Q</strong>, должен погаснуть. Инверсный – это значит обратный прямому. Если на прямом выходе &quot;1&quot;, то на инверсном &quot;0&quot;. </p>
+<p>При повторном нажатии на кнопку SB1, состояние триггера не изменится – реагировать на нажатия кнопки он не будет. В этом и заключается основное свойство любого триггера – способность длительное время сохранять одно из двух состояний. По сути, триггер - это простейший элемент памяти.</p>
+<p>Чтобы сбросить RS-триггер в ноль (т.е. записать в триггер логический &quot;0&quot;) нужно один раз нажать на кнопку SB2 ( <strong>Reset</strong> - сброс). При этом  светодиод на прямом выход <strong>Q</strong> погаснет, а на <span>инверсном выходе <strong class="inv">Q</strong> </span>загорится. Повторные нажатия на кнопку SB2<strong> </strong>состояние триггера не изменят.</p>
+
+<p>Данная схема  RS-триггера не имеет  защиты от помех, а сам триггер является одноступенчатым.</p>
+<p>Также стоит отметить, что на этой схеме выводы установки <strong>S</strong>, сброса <strong>R</strong>, прямого <strong>Q</strong> и инверсного выхода <strong class="inv">Q</strong> показаны условно – их можно поменять местами и суть работы схемы не изменится. Это всё потому, что схема выполнена на  неспециализированной микросхеме. </p>
+
+
+<h3>Схема RS-триггера на микросхеме КМ555ТМ2</h3>
+<p>Микросхема КМ555ТМ2 содержит два D-триггера. Эта микросхема выполнена в керамическом корпусе, поэтому в названии присутствует сокращение К<strong><u>М</u></strong>. Также можно применить микросхемы К555ТМ2 и К155ТМ2. Они имеют пластмассовый корпус.</p>
+<p>D-триггер несколько отличается от RS-триггера, но у него также присутствуют входы для  установки (<strong>S</strong>) и сброса (<strong>R</strong>). Если не использовать вход данных (<strong>D</strong>) и тактирования (<strong>C</strong>), то на базе микросхемы КМ555ТМ2 легко собрать RS-триггер (рис. 2). </p>
+<div class="ris">
+<img src="trigger-test1_files/rs-trigger-km555tm2.jpg" width="350" height="284">
+<p>Рис. 2 - Схема RS-триггера на микросхеме КМ555ТМ2</p>
+</div>
+
+<p class="tab_num">Таблица 2 </p>
+		<table border="1" align="center" cellpadding="3" cellspacing="0">
+		<caption>Перечень элементов</caption>
+  <thead>
+	  <tr>
+		  <th>Обозначение</th>
+			<th>Наименование</th>
+			<th>Номинал</th>
+			<th>Количество</th>
+			<th>Примечание</th>
+	  </tr>
+	</thead>
+	<tbody>
+		<tr>
+		  <td align="left">DD1</td>
+			<td align="left">Микросхема</td>
+			<td align="center"> КМ555ТМ2</td>
+			<td align="center" >1</td>
+			<td align="left" >К555ТМ2, К155ТМ2</td>
+		</tr>
+		<tr>
+		  <td align="left">HL1, HL2</td>
+      <td align="left">Светодиод </td>
+      <td align="center">АЛ307</td>
+      <td align="center" >2</td>
+<td align="left" >красного и синего цвета свечения </td>
+		</tr>
+		<tr>
+		  <td align="left">R1, R2</td>
+      <td align="left">Резистор постоянный </td>
+<td align="center">330 Ом / 0,25 Вт</td>
+<td align="center" >2</td>
+<td align="left" >&nbsp;</td>
+		</tr>
+		<tr>
+		  <td align="left">SB1, SB2 </td>
+		  <td align="left">Кнопка </td>
+		  <td align="center">&nbsp;</td>
+		  <td align="center" >2</td>
+		  <td align="left" >без фиксации</td>
+		  </tr>
+		</tbody>
+		</table>
+
+
+<p>В схеме применён только один из двух D-триггеров микросхемы КМ555ТМ2. Второй D-триггер не используется. Его выводы никуда не подключаются.</p>
+<p>Так как входы S и R микросхемы КМ555ТМ2 являются инверсными (отмечены кружком), то переключение триггера из одного устойчивого состояния в другое происходит при подаче на входы S и R логического 0.</p>
+
+<p>Чтобы подать на входы &quot;0&quot;, нужно просто соединить эти входы с минусовым проводом питания. Сделать это можно как с помощью специальных кнопок, например, тактовых, как на схеме, так и с помощью обычного проводника. Кнопками, конечно, это делать гораздо удобнее.</p>
+<p>Нажимаем кнопку SB1 (<strong>Set</strong>) и устанавливаем RS-триггер в единицу. Светится<strong> </strong>светодиод HL2, который подключен к прямому выходу триггера (<strong style="text-decoration:overline">Q</strong>).</p>
+<p>Нажимаем кнопку SB2 (<strong>Reset</strong>) и сбрасываем триггер в нуль. Cветится<strong> </strong>светодиод HL2, который подключен к инверсному выходу триггера (<strong class="inv" style="text-decoration:overline">Q</strong>).</p>
+<p>Стоит отметить, что входы <strong>S</strong> и <strong>R</strong> у микросхемы КМ555ТМ2 являются приоритетными. Это значит, что сигналы на этих входах для триггера являются главными. Поэтому если на входе R нулевое состояние, то при любых сигналах на входах C и D состояние триггера не изменится. Это утверждение относится к работе D-триггера.</p>
+<p>Можно использовать зарубежные аналоги  микросхем стандартной  транзисторно-транзисторной логики (ТТЛ):</p>
+<ul>
+  <li> <strong>74LS74</strong> - аналог К555ТМ2, </li>
+  <li><strong>SN7474N</strong> и <strong>SN7474J</strong> - аналоги К155ТМ2,&nbsp;</li>
+  <li><strong>SN7400N</strong> и <strong>SN7400J</strong> - аналоги К155ЛА3.</li>
+</ul>
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+
+<h3>Источники</h3>	
+  <p><a href="http://go-radio.ru/experimenti-s-rs-triggerom.html"  target="_blank">go-radio.ru - Эксперименты с RS-триггером</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2020</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

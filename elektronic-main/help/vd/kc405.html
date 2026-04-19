@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>КЦ405</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Диодный мост КЦ405</h1>
+	<h2> (КЦ405А, КЦ405Б, КЦ405В, КЦ405Г, КЦ405Д, КЦ405Е, КЦ405Ж, КЦ405И)</h2>
+	<p>Диодный мост КЦ405 - блоки из кремниевых, диффузионных диодов. 
+    Тип блока КЦ405А, КЦ405Б, КЦ405В, КЦ405Г, КЦ405Д, КЦ405Е, КЦ405Ж, КЦ405И - однофазный мост для монтажа на печатную плату. </p>
+	<p>	  Выпускаются в пластмассовых корпусах с жесткими выводами. Маркировка и схема соединения злектродов с выводами приводятся на корпусе.</p>
+	<p> Масса блоков не более 20 г.<br>
+	  </p>
+	<div class="ris"><img src="kc405_files/kc405a.jpg" width="310" height="310">&nbsp;&nbsp;&nbsp;
+    <img src="kc405_files/kc405-draw.jpg" width="254" height="330">
+    <p>Рис. 1 - Внешний вид и размеры диодного моста КЦ405</p>
+	</div>
+
+<p class="tab_num">Таблица 1</p>
+    <table border="1" align="center" cellpadding="3" cellspacing="0">
+		<caption>
+		Параметры диодных мостов КЦ405
+		</caption>
+      <tbody>
+        <tr>
+          <th rowspan="2"> Наименование   </th>
+          <th> <span class="formula2">U<sub>обр max</sub></span> </th>
+          <th> <span class="formula2">U<sub>обр имп max</sub></span> </th>
+          <th> <span class="formula2">I<sub>пр max</sub></span> </th>
+          <th> <span class="formula2">I<sub>пр имп max</sub></span> </th>
+          <th> <span class="formula2">U<sub>пр</sub>/I<sub>пр</sub></span> </th>
+          <th> <span class="formula2">I<sub>oбр</sub></span> </th>
+          <th> <span class="formula2">f<sub>д max</sub></span> </th>
+          <th> <span class="formula2">t<sub>вос обр</sub></span> </th>
+          <th> <span class="formula2">Т</span> </th>
+        </tr>
+        <tr>
+          <th> В </th>
+          <th> В </th>
+          <th> мА </th>
+          <th> А </th>
+          <th> В/мА </th>
+          <th> мкА </th>
+          <th> кГц </th>
+          <th> мкс </th>
+          <th> °C </th>
+        </tr>
+        <tr>
+          <td align="left"><strong> КЦ405А </strong> </td>
+          <td align="center"> - </td>
+          <td align="center"> 600 </td>
+          <td align="center"> 1000 </td>
+          <td align="center"> - </td>
+          <td align="center"> 4/1000 </td>
+          <td align="center"> 125 </td>
+          <td align="center"> 5 </td>
+          <td align="center"> - </td>
+          <td align="center"> -40...+85 </td>
+        </tr>
+        <tr>
+          <td align="left"><strong> КЦ405Б </strong> </td>
+          <td align="center"> - </td>
+          <td align="center"> 500 </td>
+          <td align="center"> 1000 </td>
+          <td align="center"> - </td>
+          <td align="center"> 4/1000 </td>
+          <td align="center"> 125 </td>
+          <td align="center"> 5 </td>
+          <td align="center"> - </td>
+          <td align="center"> -40...+85 </td>
+        </tr>
+        <tr>
+          <td align="left"><strong> КЦ405В </strong> </td>
+          <td align="center"> - </td>
+          <td align="center"> 400 </td>
+          <td align="center"> 1000 </td>
+          <td align="center"> - </td>
+          <td align="center"> 4/1000 </td>
+          <td align="center"> 125 </td>
+          <td align="center"> 5 </td>
+          <td align="center"> - </td>
+          <td align="center"> -40...+85 </td>
+        </tr>
+        <tr>
+          <td align="left"><strong> КЦ405Г </strong> </td>
+          <td align="center"> - </td>
+          <td align="center"> 300 </td>
+          <td align="center"> 1000 </td>
+          <td align="center"> - </td>
+          <td align="center"> 4/1000 </td>
+          <td align="center"> 125 </td>
+          <td align="center"> 5 </td>
+          <td align="center"> - </td>
+          <td align="center"> -40...+85 </td>
+        </tr>
+        <tr>
+          <td align="left"><strong> КЦ405Д </strong> </td>
+          <td align="center"> - </td>
+          <td align="center"> 200 </td>
+          <td align="center"> 1000 </td>
+          <td align="center"> - </td>
+          <td align="center"> 4/1000 </td>
+          <td align="center"> 125 </td>
+          <td align="center"> 5 </td>
+          <td align="center"> - </td>
+          <td align="center"> -40...+85 </td>
+        </tr>
+        <tr>
+          <td align="left"><strong> КЦ405Е </strong> </td>
+          <td align="center"> - </td>
+          <td align="center"> 200 </td>
+          <td align="center"> 1000 </td>
+          <td align="center"> - </td>
+          <td align="center"> 4/1000 </td>
+          <td align="center"> 125 </td>
+          <td align="center"> 5 </td>
+          <td align="center"> - </td>
+          <td align="center"> -40...+85 </td>
+        </tr>
+        <tr>
+          <td align="left"><strong> КЦ405Ж </strong> </td>
+          <td align="center"> - </td>
+          <td align="center"> 600 </td>
+          <td align="center"> 600 </td>
+          <td align="center"> - </td>
+          <td align="center"> 4/600 </td>
+          <td align="center"> 125 </td>
+          <td align="center"> 5 </td>
+          <td align="center"> - </td>
+          <td align="center"> -40...+85 </td>
+        </tr>
+        <tr>
+          <td align="left"><strong> КЦ405И </strong> </td>
+          <td align="center"> - </td>
+          <td align="center"> 500 </td>
+          <td align="center"> 600 </td>
+          <td align="center"> - </td>
+          <td align="center"> 4/600 </td>
+          <td align="center"> 125 </td>
+          <td align="center"> 5 </td>
+          <td align="center"> - </td>
+          <td align="center"> -40...+85 </td>
+        </tr>
+      </tbody>
+    </table>
+<br>
+
+    <p><a href="uo-parametr-vd.html">Условные обозначения электрических параметров диодов</a></p>
+<br>
+  <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	<hr>
+<h3>Источники</h3>	
+  <p><a href="http://www.eandc.ru/catalog/detail.php?ID=10920"  target="_blank">eandc.ru - Диодный блок КЦ405А</a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

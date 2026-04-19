@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Операторы сравнения и логические операторы</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+
+  
+  <div id="content">
+	<h1>Операторы сравнения и логические операторы</h1>
+	
+<h2>Операторы сравнения</h2>
+<a name="m_if"></a>
+<h3 class="lenta">== (равно), != (не равно), <br>
+&lt; (меньше), &lt;= (меньше или равно),<br>
+&gt; (больше), &gt;= (больше или равно)</h3>
+
+<a name="m_if"></a>
+
+<p>В C++ имеется 6 операторов сравнения:</p>
+
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<th>Оператор</th>
+<th>Символ</th>
+<th>Пример</th>
+<th>Операция</th>
+</tr>
+<tr>
+<td align="left">Равно</td>
+<td><span class="kod3">==</span></td>
+<td><span class="kod3">x == y</span></td>
+<td align="left"><span class="kod3">true</span>, если <span class="kod-var">x</span> равно <span class="kod-var">y</span>, в противном случае <span class="kod3">false</span></td>
+</tr>
+<tr>
+<td align="left">Не равно</td>
+<td><span class="kod3">!=</span></td>
+<td><span class="kod3">x != y</span></td>
+<td align="left"><span class="kod3">true</span>, если <span class="kod-var">x</span> не равно&nbsp;<span class="kod-var">y</span>, в противном случае <span class="kod3">false</span></td>
+</tr>
+<tr>
+<td align="left">Больше</td>
+<td><span class="kod3">&gt;</span></td>
+<td><span class="kod3">x &gt; y</span></td>
+<td align="left"><span class="kod3">true</span>, если <span class="kod-var">x</span> больше <span class="kod-var">y, в противном случае <span class="kod3">false</span></td>
+</tr>
+<tr>
+<td align="left">Меньше</td>
+<td><span class="kod3">&lt;</span></td>
+<td><span class="kod3">x &lt; y</span></td>
+<td align="left"><span class="kod3">true</span>, если <span class="kod-var">x</span> меньше <span class="kod-var">y</span>, в противном случае <span class="kod3">false</span></td>
+</tr>
+<tr>
+<td align="left">Больше или равно</td>
+<td><span class="kod3">&gt;=</span></td>
+<td><span class="kod3">x &gt;= y</span></td>
+<td align="left"><span class="kod3">true</span>, если <span class="kod-var">x</span> больше/равно <span class="kod-var">y</span>, в противном случае <span class="kod3">false</span></td>
+</tr>
+<tr>
+<td align="left">Меньше или равно</td>
+<td><span class="kod3">&lt;=</span></td>
+<td><span class="kod3">x &lt;= y</span></td>
+<td align="left"><span class="kod3">true</span>, если <span class="kod-var">x</span> меньше/равно&nbsp;<span class="kod-var">y</span>, в противном случае <span class="kod3">false</span></td>
+</tr>
+</tbody>
+</table>
+
+<p>Каждый из этих операторов вычисляется в логическое значение <span class="kod3">true</span>&nbsp;(1) или <span class="kod3">false</span> (0).</p>
+
+
+
+<h2>Логические операторы</h2>
+
+
+
+<p>Логические операторы позволяют проверить сразу несколько условий за раз.</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<th>Оператор</th>
+<th>Символ</th>
+<th>Пример</th>
+<th>Операция</th>
+</tr>
+<tr>
+<td>Логическое НЕ</td>
+<td>!</td>
+<td>!x</td>
+<td>true, если x — false и false, если x — true</td>
+</tr>
+<tr>
+<td>Логическое И</td>
+<td>&amp;&amp;</td>
+<td>x &amp;&amp; y</td>
+<td>true, если x и y — true, в противном случае — false</td>
+</tr>
+<tr>
+<td>Логическое ИЛИ</td>
+<td>||</td>
+<td>x || y</td>
+<td>true, если x или y — true, в противном случае — false</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<a name="m_not"></a>
+<h3 class="lenta">! (Логическое НЕ)</h3>
+<p class="tab_num">Таблица 1</p>
+<table width="300" border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Таблица истинности <br>
+логического оператора НЕ</caption>
+<tbody>
+<tr>
+<th>Операнд</th>
+<th>Результат</th>
+</tr>
+<tr>
+<td align="center">true</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">false</td>
+<td align="center">true</td>
+</tr>
+</tbody>
+</table>
+
+<p>Если операнд равен <span class="kod3">true</span>, то с применением логического НЕ он станет <span class="kod3">false</span>. Если операнд до применения оператора равен <span class="kod3">false</span>, то с его применением станет  <span class="kod3">true</span>. Другими словами, логический оператор НЕ меняет результат с <span class="kod3">true</span> на <span class="kod3">false</span> и наоборот.</p>
+<p>Оператор НЕ часто используется в условных выражениях:</p>
+<div class="kod">
+<pre>
+bool bTooLarge = (x &gt; 100); // переменная bTooLarge будет true, если x > 100
+  if (!bTooLarge)
+  // делаем что-нибудь с x
+  else
+  // выводим ошибку
+</pre>
+</div>		
+		
+<p>Следует помнить, что логический оператор <span class="kod2">НЕ</span> имеет очень высокий уровень приоритета. Например, при вычислении выражения <span class="kod3">! х == у</span> сначала вычисляется <span class="kod3">! х</span>, а затем производится сравнение на равенсство </p>
+<p class="sovet"><strong>Правило</strong>: Если логическое <span class="kod2">НЕ</span> должно работать с результатами работы других операторов, то другие операторы и их операнды должны находится в круглых скобках.  Используйте круглые скобки. Тогда не нужно будет помнить правила приоритета.</p>
+
+
+<a name="m_or"></a>
+<h3 class="lenta">|| (логическое ИЛИ)</h3>
+
+<p>Если хотя бы один из двух операндов истинно, то логический оператор ИЛИ возвращает true, в противном случае результат равен false.</p>
+
+<table width="500" border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Таблица истинности <br>логического оператора  ИЛИ (оператор ||)</caption>
+<tbody>
+<tr>
+<th>Левый операнд</th>
+<th>Правый операнд</th>
+<th>Результат</th>
+</tr>
+<tr>
+<td align="center">false</td>
+<td align="center">false</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">false</td>
+<td align="center">true</td>
+<td align="center">true</td>
+</tr>
+<tr>
+<td align="center">true</td>
+<td align="center">false</td>
+<td align="center">true</td>
+</tr>
+<tr>
+<td align="center">true</td>
+<td align="center">true</td>
+<td align="center">true</td>
+</tr>
+</tbody>
+</table>
+
+<p class="sovet">Не путайте <span class="kodred">логическое ИЛИ (||)</span> с <span class="kodred">побитовым ИЛИ (|)</span>. Хоть у них и одинаковые названия, функции они выполняют разные.</p>
+
+
+<a name="m_and"></a>
+<h3 class="lenta">&amp;&amp; (логическое И)</h3>
+
+<p>Результат выполнения логического оператор И будет <span class="kod3">true</span> только при условии, что оба операнда будут истинными, в противном случае – <span class="kod3">false</span>.</p>
+
+<table width="500" border="1" cellpadding="3" cellspacing="0">
+<caption>Таблица истинности <br>логического оператора  И (оператор &amp;&amp;)</caption>
+  <tbody>
+  <tr>
+  <th>Левый операнд</th>
+  <th>Правый операнд</th>
+  <th>Результат</th>
+  </tr>
+  <tr>
+  <td align="center">false</td>
+  <td align="center">false</td>
+  <td align="center">false</td>
+  </tr>
+  <tr>
+  <td align="center">false</td>
+  <td align="center">true</td>
+  <td align="center">false</td>
+  </tr>
+  <tr>
+  <td align="center">true</td>
+  <td align="center">false</td>
+  <td align="center">false</td>
+  </tr>
+  <tr>
+  <td align="center">true</td>
+  <td align="center">true</td>
+  <td align="center">true</td>
+  </tr>
+  </tbody>
+</table>
+<p>Например, мы хотим знать, находится ли значение переменной х в диапазоне чисел от 10 до 20. В этом случае необходимо проверить два условия: является ли х больше 10 и является ли х меньше 20.</p>
+
+<div class="kod">
+<pre>if (x &gt; 10 &amp;&amp; x &lt; 20) {
+  ... ...
+} else {
+    ... ...
+  }
+</pre>
+</div>		
+
+<p>Если два условия истинны, то выполняться будет часть <span class="kod-oper">if</span>. Если хоть одно или оба сразу ложные, то выполняться будет часть <span class="kod-oper">else</span>.</p>
+<p>Можете комбинировать вместе несколько условий И:</p>
+
+<div class="kod">
+<pre>if (x &gt; 10 &amp;&amp; x &lt; 20 &amp;&amp; x !=18) {
+  ... ...
+} else {
+    ... ...
+  }
+</pre>
+</div>		
+
+
+<h3>Короткий цикл вычислений</h3>
+<p>Для того, чтобы логическое И возвращало <span class="kod3">true</span>, оба операнда должны быть истинными. Если первый операнд вычисляется как <span class="kod3">false</span>, то оператор И должен сразу возвращать <span class="kod3">false</span> независимо от результата второго операнда, даже без его обработки. Это называется <em>короткий цикл вычислений (short circuit evaluation)</em> и выполняется он, в первую очередь, в целях оптимизации.</p>
+<p>Аналогично, если первый операнд логического ИЛИ — <span class="kod3">true</span>, то и всё условие будет <span class="kod3">true</span>, надобности вычислять второй операнд нет.</p>
+
+
+
+<h2>Использование И/ИЛИ</h2>
+<p>Иногда возникают ситуации, когда смешивания логических операторов И и ИЛИ в одном выражении не избежать. В этом случае необходимо учитывать, приоритет логической операции И выше приоритета логической операции ИЛИ. Таким образом, операции с оператором И будут всегда вычисляться первыми (если только операции ИЛИ не находятся в круглых скобках).</p>
+<p>Рассмотрим выражение:&nbsp; <span class="kod3">value1 || value2 &amp;&amp; value3</span>. Поскольку приоритет логического И выше, то обрабатываться оно будет так: <span class="kod3">value1 || (value2 &amp;&amp; value3)</span>, а не так: <span class="kod3">(value1 || value2) &amp;&amp; value3</span>.</p>
+<p>Хорошей практикой является использование&nbsp;круглых скобок для заключения в них операций.&nbsp;Это предотвратит ошибки приоритета, увеличит читабельность кода и четко даст понять компилятору, как нужно обрабатывать выражения. Например, вместо того, чтобы писать <span class="kod3">value1 &amp;&amp; value2 || value3 &amp;&amp; value4</span>, лучше записать <span class="kod3">(value1 &amp;&amp; value2) || (value3 &amp;&amp; value4)</span>.</p>
+
+	
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://ravesli.com/urok-42-operatory-sravneniya/"  target="_blank">ravesli.com - Урок 42. Операторы сравнения</a></p>
+  <p><a href="https://ravesli.com/urok-43-logicheskie-operatory-i-ili-ne/"  target="_blank">ravesli.com - Урок 43. Логические операторы (И, ИЛИ, НЕ)</a></p>
+
+</div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

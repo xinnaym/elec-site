@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ночник на Arduino UNO</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Ночник на Arduino UNO</h1>
+
+	<p>Рассмотрим  реализацию ночника, который будет автоматически включаться когда темно и выключаться когда становится светло.</p>
+
+  <p>Сопротивление фоторезистора зависит от света, попадающего на него. Используя фоторезистор в связке с  резистором 4,7 кОм, мы получаем делитель напряжения, в котором напряжение проходящее через фоторезистор, изменяется, в зависимости от уровня освещенности.</p>
+
+  <p>Напряжение с делителя, мы подаем на аналоговый вход  Arduino. Там мы сравниваем полученное значение с определенным порогом и включаем или выключаем светильник.</p>
+
+  <figure><img src="arduino-nightlight_files/arduino10-1.jpg" width="203" height="91">
+<figcaption>Рис. 1 - Фоторезистор</figcaption>
+</figure>
+
+<p>Принципиальная схема устройства показана на рис. 2. Когда освещенность увеличивается, сопротивление фоторезистора падает и соответственно на резисторе R2 напряжение увеличивается. Когда освещенность падает все наоборот. Вывод А0 используется как вход АЦП.</p>
+
+<figure><img src="arduino-nightlight_files/nightlight-shema.JPG" width="420" height="340">
+  <figcaption>Рис. 2 - Принципиальная схема ночника </figcaption>
+</figure>
+
+<p>Здесь мы просто включаем и выключаем светодиод, который  подключен к цифровому выводу D7 (через резистор сопротивлением 220 Ом). Если нужно подключать более мощную нагрузку, то ее следует подключать через реле или тиристор.</p>
+
+<h3>Скетч</h3>
+<div class="kod">
+<pre>
+int fotopin = A0;       <span class="comment1">// устанавливаем вывод для АЦП</span>
+int led = 7;
+unsigned int foto = 0;  <span class="comment1">// сигнал с фоторезистора</span>
+ 
+void setup() {
+ pinMode(led, OUTPUT);
+ Serial.begin(9600);   <span class="comment1">// инициализация монитора порта</span>
+}
+
+void loop() {
+  foto = analogRead(fotopin);  <span class="comment1">// считываем значение с фоторезистора</span>
+  if(foto&lt;500)
+    digitalWrite(led, HIGH);       <span class="comment1">// включаем светодиод</span>
+    else digitalWrite(led, LOW);   <span class="comment1">// выключаем светодиод</span>
+   
+  //нижеследующие строки служат для отладки 
+  Serial.println(foto);     <span class="comment1">// вывод данных с фоторезистора (0-1024)</span>
+  delay(500);  
+}
+</pre>
+</div>
+
+<p>С помощью строк для отладки можно контролировать значение АЦП (от 0 до 1024). При необходимости в коде нужно изменить значение порог включения и выключения  (500) на то, которое вы подберете опытным путем, изменяя освещенность.</p>
+	
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="http://cxem.net/arduino/arduino10.php"  target="_blank">cxem.net - Arduino UNO урок 8 - Ночник</a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2023</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

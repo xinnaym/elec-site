@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Управление шаговым двигателем 28byj-48 с помощью драйвера l293n</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cdutt-str.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+<h1>Управление шаговым двигателем 28BYJ-48 с помощью драйвера L293N</h1>
+
+<p>Для управления шаговым двигателем 28BYJ-48 можно использовать драйвер L293N. Схема подключения показана на рис. 1, монтажная схема - наа рис. 2.</p>
+		
+    <figure>
+      <img src="28byj-48_l298n_files/28byj-48_l298n_shema.png" width="434" height="709">
+    <figcaption>Рис. 1 - Схема подключения шагового двигателя 28BYJ-48 к драйверу L293N и Arduino Uno</figcaption>
+    </figure>
+
+    <figure>
+      <img src="28byj-48_l298n_files/28byj-48_l298n_montag.png" width="660" height="641">
+    <figcaption>Рис. 2 - Монтажная схема подключения шагового двигателя 28BYJ-48 к драйверу L293N и Arduino Uno</figcaption>
+    </figure>
+		
+		<p>Скетч для управления шаговым двигателем 28BYJ-48 с помощью драйвера L293N:</p>
+
+<div class="kod">
+<pre>
+<span class="ar-oper">#include</span> &lt;<span class="ar-func"><strong>Stepper</strong></span>.h&gt;
+<span class="ar-const">const int</span> steps1 = 60;  <span class="comment1">//количество шагов на 1 оборот</span>
+<span class="comment1">// устанавливаем порты для подключения драйвера</span>
+<span class="ar-func"><strong>Stepper</strong></span> sm(steps1, 8, 9, 10, 11); 
+
+<span class="ar-type">void</span> <span class="ar-oper">setup</span>(){
+  sm.<span class="ar-func">setSpeed</span>(60);   <span class="comment1">//установка скорости 60 об/мин</span> 
+}
+
+<span class="ar-type">void</span> <span class="ar-oper">loop</span>() {
+  sm.<span class="ar-func">step</span>(300);  <span class="comment1">//вращаем ротор по часовой стрелки</span>
+  <span class="ar-func">delay</span>(1000);
+  sm.<span class="ar-func">step</span>(-500); <span class="comment1">// вращаем ротор против часовой стрелки</span>
+  <span class="ar-func">delay</span>(1000);
+}
+</pre>
+</div>
+
+<p>Скетч начинается с подключении стандартной библиотеки Stepper:</p>
+<p class="kod3">#include &lt;Stepper.h&gt;</p>
+
+<p>В с ледующей строке константе с именем <span class="kod2">steps1</span> указываем количество шагов на оборот:</p>
+<p class="kod3">const int steps1 = 60;</p>
+
+<p>Далее указываем указываем к выводам подключен шаговый двигатель:</p>
+<p class="kod3">Stepper sm(steps1, 8, 9, 10, 11);</p>
+
+
+<p>В функции <span class="kod2">setup</span> устанавливаем скорость шагового двигателя, вызывая функцию <span class="kod2">setSpeed()</span></p>
+<p class="kod3">sm.setSpeed(60);</p>
+
+<p>В функции <span class="kod2">loop</span> вызываем функцию <span class="kod2">step()</span>, которая вращает двигатель на определенное количество шагов со скоростью, определяемой в функцией<span class="kod2"> setSpeed()</span>.</p>  
+<p class="kod3">sm.step(300);</p>
+<p class="kod3">sm.step(-500);</p>
+
+
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://robotchip.ru/obzor-drayvera-motora-na-l298n/"  target="_blank">robotchip.ru - Обзор драйвера мотора на L298N</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2023</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Усилитель звука на TDA7396</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Усилитель звука на микросхеме TDA7396</h1>
+
+
+
+<p>Усилитель звука на микросхеме TDA7396 собирается  по схеме на рис. 1.</p>
+
+<figure>
+  <img src="usilitel-tda7396_files/shema-tda7396.png" height="554" width="828">
+  <figcaption>Рис. 1 - Схема усилителя на микросхеме TDA7396</figcaption>
+</figure>
+
+	
+<p class="tab_num">Таблица 1</p>	
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>
+Перечень элементов усилителя на микросхеме ТДА7396
+</caption>
+  <tr>
+    <th>Обозначение</th>
+    <th>Наименование</th>
+    <th>Номинал</th>
+    <th>Количество</th>
+  </tr>
+  <tr>
+    <td>BA1</td>
+    <td align="left">Динамическая головка</td>
+    <td align="center" valign="middle">4 Ом</td>
+    <td align="center" valign="middle">1</td>
+  </tr>
+  <tr>
+    <td>C1, С2</td>
+    <td align="left">Конденсатор  </td>
+    <td align="center" valign="middle">0,22 мкФ </td>
+    <td align="center" valign="middle">2</td>
+  </tr>
+  <tr>
+    <td>С3 </td>
+    <td align="left">Конденсатор  электролитический</td>
+    <td align="center" valign="middle">10 мкФ - 25 В</td>
+    <td align="center" valign="middle">1</td>
+  </tr>
+  <tr>
+    <td>С4</td>
+    <td align="left">Конденсатор </td>
+    <td align="center" valign="middle">0,1 мкФ</td>
+    <td align="center" valign="middle">1</td>
+  </tr>
+  <tr>
+    <td>C5</td>
+    <td align="left">Конденсатор электролитический </td>
+    <td align="center" valign="middle">1000 мкФ - 25 В </td>
+    <td align="center" valign="middle">1</td>
+  </tr>
+  <tr>
+    <td>DA1</td>
+    <td align="left">Микросхема</td>
+    <td align="center" valign="middle">TDA7396</td>
+    <td align="center" valign="middle">1</td>
+  </tr>
+  <tr>
+    <td>R1</td>
+    <td align="left">Резистор постоянный </td>
+    <td align="center" valign="middle">51 кОм</td>
+    <td align="center" valign="middle">1</td>
+  </tr>
+</table>
+
+
+<figure>
+  <a href="usilitel-tda_files7396/tda7396.jpg"><img src="usilitel-tda7396_files/tda7396.jpg" width="315" height="350" border="0"></a>
+  <img src="usilitel-tda7396_files/cok-tda7396.png" height="525" width="420">
+  <figcaption>Рис. 2 - Внешний вид и распиновка микросхемы TDA7396</figcaption>
+</figure>
+
+
+
+<p>Напряжение питания может быть от 8 и до 18 В. Усиливаемый вуковой сигнал подается на выводы "IN+" и "IN-" микросхемы.  </p>
+
+<p>Конденсаторы на входе питания 100 нФ и 1000 мкФ можно не использовать, если с блока питания  идет стабильное напряжение.</p>
+
+
+<p> Если собрать два таких  каскада, получим  стереоусилитель.</p>
+<p>&nbsp;</p>
+
+
+<br>
+
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>  
+	
+	<hr>
+  <h3>Источники</h3>
+  <p><a href="http://www.ruselectronic.com/news/prostoj-usilitel-zvuka/" target="_blank">ruselectronic.com - Самый простой усилитель звука</a></p>
+
+
+</div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2024</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

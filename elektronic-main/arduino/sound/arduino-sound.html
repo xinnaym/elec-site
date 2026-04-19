@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Звуковая сигнализация на Arduino UNO</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Звуковая сигнализация на Arduino UNO</h1>
+
+
+<p>Рассмотрим реализацию звуковой сигнализации какого-либо явления. Для этого мы будем использовать пьезодинамик. Схема электрическая принципиальная устройства показана на рис. 1.</p>
+
+<div class="ris"><img src="arduino-sound_files/sound-shema.png" alt="" width="860" height="297">
+<p>Рис. 1 - Схема электрическая принципиальная устройства</p>
+</div>
+
+
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>
+Список компонент 
+</caption>
+  <thead>
+	  <tr>
+		  <th>Наименование</th>
+			<th>Номинал</th>
+			<th>Количество</th>
+		</tr>
+	</thead>
+	<tbody>
+	  <tr>
+		  <td align="left">Плата Arduino</td>
+		  <td align="center">Arduino Uno</td>
+		  <td align="center">1</td>
+		</tr>
+		<tr>
+		<td align="left">Резистор постоянный </td>
+		<td align="center">10 кОм</td>
+		<td align="center">2</td>
+		</tr>
+		<tr><td align="left">Термистор</td>
+		<td align="center">B57164-K 103-J</td>
+		<td align="center">1</td>
+		</tr>
+		<tr><td align="left">Фоторезистор</td>
+		<td align="center">VT90N2</td>
+		<td align="center">1</td>
+		</tr>
+		<tr>
+			<td align="left">Переменный резистор</td>
+			<td align="center">10 кОм</td>
+			<td align="center">1</td>
+		</tr>
+		<tr>
+      <td align="left">Пьезоизлучатель</td>
+			<td align="center">Пассивный</td>
+			<td align="center">1</td>
+		</tr>
+		<tr>
+			<td align="left">Макетная плата</td>
+			<td align="center">&nbsp;</td>
+			<td align="center">1</td>
+		</tr>
+		<tr><td align="left">Соединительные провода</td>
+		<td align="center">&nbsp;</td>
+		<td align="center">10-15</td>
+		</tr>
+	</tbody>
+</table>
+	
+
+
+<h3>Скетч №1</h3>
+<div class="kod">
+<pre>
+#define TERM A0
+#define FOTO A1
+#define POT A2
+#define BUZZ 3
+ 
+void setup()
+{
+  Serial.begin(9600);
+  Serial.println("Privet!");
+   
+  pinMode(TERM, INPUT);
+  pinMode(FOTO, INPUT);
+  pinMode(POT, INPUT);
+  pinMode(BUZZ, OUTPUT);
+}
+ 
+void loop() 
+{
+  int temp = analogRead(TERM);
+  int light = analogRead(FOTO);
+  int value = analogRead(POT);
+ 
+   
+ if(temp < 450)
+ {Serial.println("Achtung!It's too hot!");
+  Serial.println("Temperature:");
+  Serial.println(temp);
+  tone(BUZZ, 3000, 1000);
+  delay(2000);
+ }
+ 
+ if(light > 400)
+ {Serial.println("Night is coming!");
+  Serial.println("Light:");
+  Serial.println(light);
+  tone(BUZZ, 4000, 1000);
+  delay(2000);
+ }
+ 
+  if(value > 700)
+  {Serial.println("Turn it off pls");
+   Serial.println("Value:");
+   Serial.println(value);
+   tone(BUZZ, 3000, 1000);
+   delay(2000);
+  }
+}
+</pre>
+</div>
+
+<p>При преодолении порога значений, издается писк, и выводится сообщение в Serial Monitor, причем, подача сигнала не прекратится, пока значение не вернется в нормальные рамки. Таким образом, можно сигнализировать разные ситуации с нашим устройством.</p>
+<p>Функция <strong>Tone </strong>генерирует на пьезодинамике звуковую волну. В общем виде функция записывается так: <br>
+  <span class="kod3">Tone(Номер пина, Частота, Длительность)</span></p>
+
+<ul>
+  <li><span class="kod3">Номер пина</span> – это номер пина, к которому подключен пьезодинамик.&nbsp;</li>
+  <li><span class="kod3">Частота</span> – частота звука, подаваемая на пьезодинамик.</li>
+  <li><span class="kod3">Длительность</span> – длительность подаваемого сигнала в миллисекундах. Ее можно не задавать, но тогда звук не будет прекращаться пока вы не вызовите функцию <span class="kod3">noTone(Номер пина)</span>.</li>
+</ul>
+
+
+
+
+
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="http://cxem.net/arduino/arduino188.php"  target="_blank">cxem.net - Курс Arduino - Звук</a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2020</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

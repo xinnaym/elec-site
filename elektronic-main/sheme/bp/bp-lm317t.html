@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Блок питания на LM317T</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	  <h1>Блок питания на LM317T</h1>
+		
+		<p><a href="../../help/stab/lm317.html" target="_blank">LM317T</a> — популярный регулируемый положительный линейный стабилизатор напряжения. 
+LM317T способен обеспечить плавную регулировку выходного напряжения от 1,2 В до 37 В с током нагрузки до 1,5 А. Также данный стабилизатор может работать в качестве стабилизатора тока. Ниже представлены две схемы на стабилизаторе <a href="../../help/stab/lm317.html" target="_blank">LM317T</a>.</p>
+	  <p>Первая схема (рис. 1) содержит минимум деталей и позволяет регулировать напряжение  от 1 В до 15 В. В зависимости от того, какой трансформатор примените, можно получить другой диапазон напряжений.</p>
+    <p>C помощью трансформатора сетевое напряжение 220 В уменьшается до 25 В. Переменное напряжение от трансформатора выпрямляется диодным мостом и пульсации сглаживаются с помощью конденсатора С1. </p>
+    <p>Резисторы R1 и R2 образуют делитель напряжения. В зависимости от сопротивления этих резисторов можно получить разное выходное напряжение. </p>
+    <p>В качестве выпрямителя можно использовать диодный мост GBU606. Он рассчитан на ток до 6 А. При большом токе в нагрузке микросхему LM317T необходимо установить на радиатор с помощью термопасты для улучшения теплообмена.</p>      
+    
+		<figure>
+			  <a href="bp-lm317t_files/bp-lm317t-1.png" target="_blank"><img src="bp-lm317t_files/bp-lm317t-1.png" width="860" border="0"></a>
+			<figcaption>Рис. 1 - Схема простого блока питания на LM317T</figcaption>
+		</figure>
+		
+		<p class="tab_num">Таблица 1</p>
+  <table cellspacing="0" cellpadding="3" bordercolor="black" align="center" border="1">
+	<caption>Перечень элементов  (к схеме на рис. 1)</caption>
+    <tbody>
+      <tr>
+        <th>Обозначение</th>
+        <th>Наименование</th>
+        <th>Номинал</th>
+        <th>Примечание</th>
+      </tr>
+      <tr>
+        <td align="center">DA1</td>
+        <td align="left">Стабилизатор</td>
+        <td align="center">LM317T</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">С1</td>
+        <td align="left">Конденсатор электролитический </td>
+        <td align="center">1000 мкФ &times; 50 В </td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">С2</td>
+        <td align="left">Конденсатор электролитический </td>
+        <td align="center">100 мкФ &times; 50 В </td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R1</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">200 Ом / 1 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R2</td>
+        <td align="left">Резистор переменный</td>
+        <td align="center">6,8 кОм</td>
+        <td align="center">10 кОм</td>
+      </tr>
+      <tr>
+        <td align="center">Т1</td>
+        <td align="left">Трансформатор</td>
+        <td align="center">220/25В 1А </td>
+        <td align="left"> С напряжением вторичной обмотки <br>
+          12-13 В и током 1 А </td>
+      </tr>
+      <tr>
+        <td align="center">VD1</td>
+        <td align="left">Диодный мост</td>
+        <td align="center">GBU606</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+
+      <br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+    <p>Вторая схема (рис. 2) содержит больше деталей. Она основана на типовой схеме включения стабилизатора LM317T. </p>
+    <p>Конденсатор C3 предотвращает усиление пульсаций при увеличении выходного напряжения.
+      Конденсатор C2 рекомендуется, если LM317 не находится в непосредственной близости возле конденсаторов фильтра источника питания. 
+      Конденсатор C4 улучшает переходную характеристику, но не влияет на стабильность.
+      Диоды VD1 и VD2 являются защитными.</p>
+    <p>Светодиод HL1 является индикатором работы блока питания. </p>
+    <figure>
+			  <a href="bp-lm317t_files/bp-lm317t-2.png" target="_blank"><img src="bp-lm317t_files/bp-lm317t-2.png" width="860" border="0"></a>
+			<figcaption>Рис. 2 - Схема блока питания на LM317T</figcaption>
+		</figure>
+		
+		<p class="tab_num">Таблица 2 </p>
+    <table cellspacing="0" cellpadding="3" bordercolor="black" align="center" border="1">
+	<caption>Перечень элементов (к схеме на рис. 2)</caption>
+    <tbody>
+      <tr>
+        <th>Обозначение</th>
+        <th>Наименование</th>
+        <th>Номинал</th>
+        <th>Примечание</th>
+      </tr>
+      <tr>
+        <td align="center">С1</td>
+        <td align="left">Конденсатор электролитический </td>
+        <td align="center">2200 мкФ &times; 50 В </td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">С2</td>
+        <td align="left">Конденсатор </td>
+        <td align="center">0,1 мкФ </td>
+        <td align="left">1мкФ. Керамический или танталовый </td>
+      </tr>
+      <tr>
+        <td align="center">С3</td>
+        <td align="left">Конденсатор электролитический </td>
+        <td align="center">10 мкФ &times; 50 В </td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">С4</td>
+        <td align="left">Конденсатор электролитический </td>
+        <td align="center">1 мкФ &times; 50 В </td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">FU1</td>
+        <td align="left">Предохранитель плавкий </td>
+        <td align="center">0,5 А </td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">DA1</td>
+        <td align="left">Стабилизатор</td>
+        <td align="center">LM317T</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">HL1</td>
+        <td align="left">Светодиод</td>
+        <td align="center">АЛ307</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R1</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">18 кОм / 0,5 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R2</td>
+        <td align="left">Резистор переменный</td>
+        <td align="center">6,8 кОм</td>
+        <td align="center">10 кОм</td>
+      </tr>
+      <tr>
+        <td align="center">R3</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">240 Ом / 1 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">Т1</td>
+        <td align="left">Трансформатор</td>
+        <td align="center">220/30В 1,5А </td>
+        <td align="left"> </td>
+      </tr>
+      <tr>
+        <td align="center">VD1</td>
+        <td align="left">Диодный мост</td>
+        <td align="center">PBL405</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">VD2, VD3 </td>
+        <td align="left">Диод </td>
+        <td align="center">1N4001</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+	
+      <br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	<hr>
+<h3>Источники</h3>	
+<p><a href="http://www.ruselectronic.com/news/prostoj-blok-pitanija/" target="_blank">ruselectronic.com - Простой блок питания</a></p>
+
+<p><a href="https://www.joyta.ru/3799-lm317-reguliruemyj-stabilizator-napryazheniya-i-toka/" target="_blank">joyta.ru - LM317 регулируемый стабилизатор напряжения и тока. Характеристики, онлайн калькулятор, datasheet</a></p>
+
+<p><a href="http://led-obzor.ru/lm317-lm317t-shemyi-vklyucheniya-datasheet" target="_blank">led-obzor.ru - LM317 И LM317T СХЕМЫ ВКЛЮЧЕНИЯ, DATASHEET</a></p>
+
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2022</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

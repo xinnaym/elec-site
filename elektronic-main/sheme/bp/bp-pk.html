@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Источник питания из БП ПК-1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Источник питания из блока питания ПК - 1</h1>
+
+<p>Разбираем блок питания на отдельные узлы. Сверлим в нижней части корпуса отверстия для клемм и установки на днище резиновых ножек (рис. 1).</p>
+
+<div class="ris">
+  <a href="bp-pk_files/02.jpg" target="_blank"><img src="bp-pk_files/02.jpg" alt="ДНО КОМПЬЮТЕРНОГО БЛОКА ПИТАНИЯ" width="406" height="349" border="0"></a>
+<p>Рис. 1 - Дно компьютерного блока питания</p>
+</div>
+
+
+<p>Клеммы ставим на все  имеющиеся напряжения: красные +12 В, +5 В, +3,3 В, а чёрные 0 В, -12 В, -5 В (рис. 2). Используя их различное сочетание, можно получить весьма широкий спектр постоянных выходных напряжений (табл. 1).</p>
+
+<div class="ris">
+  <a href="bp-pk_files/03.jpg" target="_blank"><img src="bp-pk_files/03.jpg" alt="КЛЕММЫ КОМПЬЮТЕРНОГО БЛОКА ПИТАНИЯ" width="400" height="200" border="0"></a>
+  <p>Рис. 2 - Клеммы компьютерного блока питания</p>
+</div>
+
+
+<p>Из выводных проводов нетронутыми оставим два жгута: на одном выводном жгуте оставляем разъём питания для подключения жёстких дисков c интерфейсом IDE, на другом - разъём для устройств с интерфейсом SATA. Остальные провода укорачиваем и объединяем в соответствии с цветом и  выходным напряжением (рис. 3).</p>
+
+<div class="ris">
+<img src="bp-pk_files/05.jpg" width="400" height="330">
+<p>Рис. 3 - Модернизированные провода </p>
+</div>
+
+<p>Плату ставим на место, укороченные провода присоединяем к клеммам, цельные жгуты выводим наружу (рис. 4).</p>
+
+
+<div class="ris">
+  <a href="bp-pk_files/06.jpg" target="_blank">
+	<img src="bp-pk_files/06.jpg" alt="Плата и внутренности КОМПЬЮТЕРНОГО БЛОКА ПИТАНИЯ ПК" width="400" height="340"></a>
+  <a href="bp-pk_files/07.jpg" target="_blank">&nbsp;&nbsp;</a>
+  <p>Рис. 4 - Плата и внутренности компьютерного блока питания</p>
+</div>
+
+
+
+<p>Затем ставим на место разъём сетевого питания и выключатель. Вентилятор установим так, чтобы он гнал воздух внутрь корпуса. Ставим верхнюю часть корпуса &nbsp;на место (рис. 5). </p>
+
+
+<div class="ris">
+  <a href="bp-pk_files/08.jpg" target="_blank"><img src="bp-pk_files/08.jpg" alt="ВКЛЮЧЕНИЕ КОМПЬЮТЕРНОГО БЛОКА ПИТАНИЯ ОТДЕЛЬНО" width="400" height="300" border="0"></a>
+  <p>Рис. 5 -  Лицевая сторона переделанного компьютерного блока питания</p>
+	</div>
+
+<p>Кнопку включения можно устанавливаем внутри выходного разъема 220 В на задней стороне корпуса (рис. 6). Это исключает случайное включение или выключение источника питания. </p>
+
+<div class="ris">
+  <a href="bp-pk_files/09.jpg"><img src="bp-pk_files/09.jpg" alt="доработка и отдельное использования компьютерного БП ATX" width="400" height="225" border="0"></a>
+  <p>Рис. 6 - Обратная сторона переделанного компьютерного блока питания</p>
+	</div>
+
+
+<p class="tab_num">Таблица соединений</p>
+<table width="300" border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Получение разных напряжений </caption>
+ <thead>
+ <tr>
+ <th scope="col">Получаем</th>
+ <th scope="col">Соединяем</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td align="center">24,0 В </td>
+ <td align="center">12 Ви -12 В </td>
+ </tr>
+ <tr>
+ <td align="center">17,0 В </td>
+ <td align="center">12 В и -5 В </td>
+ </tr>
+ <tr>
+ <td align="center">15,3 В </td>
+ <td align="center">3,3 В и -12 В </td>
+ </tr>
+ <tr>
+ <td align="center">10,0 В </td>
+ <td align="center">5 В и -5 В </td>
+ </tr>
+ <tr>
+ <td align="center">8,7 В </td>
+ <td align="center">12 В и 3,3 В </td>
+ </tr>
+ <tr>
+ <td align="center">8,3 В </td>
+ <td align="center">3,3 В и -5 В </td>
+ </tr>
+ <tr>
+ <td align="center">7,0 В </td>
+ <td align="center">12 В и 5 В </td>
+ </tr>
+ <tr>
+ <td align="center">1,7 В </td>
+ <td align="center">5 В и 3,3 В</td>
+ </tr>
+ </tbody>
+</table>
+
+<p>Также БП стал более компактным и мобильным, поэтому применений ему будет масса - необходимость в мощном и отдельном источнике различных напряжений возникает часто. </p>
+
+
+<br>
+
+ 
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	<hr>
+<h3>Источники:</h3>
+<p><a href="http://radioskot.ru/publ/bp/ispolzovanija_kompjuternogo_bloka_pitanija_bez_pk/7-1-0-1127" target="_blank">radioskot.ru - ИСПОЛЬЗОВАНИЕ КОМПЬЮТЕРНОГО БЛОКА ПИТАНИЯ БЕЗ ПК</a></p>
+<p><a href="http://radioskot.ru/publ/bp/prostoj_blok_pitanija_iz_atx/7-1-0-24" target="_blank">radioskot.ru - ПРОСТОЙ БЛОК ПИТАНИЯ ИЗ ATX</a></p>
+
+
+<!--
+<p><a href=""></a></p>
+ -->
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

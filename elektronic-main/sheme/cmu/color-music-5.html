@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Трехканальная ЦМУ-3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	
+	<h1>Трехканальная цветомузыкальная установка на светодиодах-3</h1>
+	
+  <p>Установка состоит из трех усилителей, собранных на транзисторах VT1–VT3. Фильтрами  служат:</p>
+  <ul>
+    <li> высоких частот - цепь С2R6, </li>
+    <li>средних частот -  цепь R4С3, </li>
+    <li>низких частот - цепь R5С4. </li>
+  </ul>
+  <p>Подстроечные резисторы R1 – R3 служат для подстройки чувствительности каждого канала. Конденсатор С1 – входной развязывающий. Каждый транзисторный ключ нагружен на свой светодиод. Резисторы R7 – R9 ограничивают токи через светодиоды. Если на вход подать сигнал с громкоговорителя, то яркость свечения диодов будет дополнительно зависеть от регулятора громкости колонки.</p>
+  <figure>
+	 <img src="color-music-5_files/cmu-5-shema.png" width="855" height="653">	
+	<figcaption>Рис. 1 - Схема электрическая принципиальная трехканальной цветомузыкальной установки</figcaption>
+</figure>
+
+  <p class="tab_num">Таблица 1</p>
+  <table cellspacing="0" cellpadding="3" bordercolor="black" align="center" border="1">
+    <caption>
+      Перечень элементов
+      трехканальной цветомузыкальной установки
+    </caption>
+    <tbody>
+      <tr>
+        <th>Обозначение</th>
+        <th>Наименование</th>
+        <th>Номинал</th>
+        <th>Кол-во</th>
+        <th>Примечание</th>
+      </tr>
+      <tr>
+        <td align="center">С1</td>
+        <td align="left">Конденсатор электролитический </td>
+        <td align="center">10 мкФ - 16 В </td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">С2</td>
+        <td align="left">Конденсатор</td>
+        <td align="center">0,68 мкФ </td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">C3</td>
+        <td align="left">Конденсатор </td>
+        <td align="center">0,1 мкФ </td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">C4</td>
+        <td align="left">Конденсатор</td>
+        <td align="center">1 мкФ </td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">НL1 - HL3 </td>
+        <td align="left">Светодиоды</td>
+        <td align="center"><a href="../../help/vd/al307.html" target="_blank">АЛ307</a></td>
+        <td align="center">3</td>
+        <td align="left"><p>HL1 - зеленый, <br>
+          HL2 - желтый<br>
+          HL3 - красный</p>            </td>
+      </tr>
+      <tr>
+        <td align="center">R1 - R3</td>
+        <td align="left">Резистор подстроечный</td>
+        <td align="center">10 кОм</td>
+        <td align="center">3</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center"> R4</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">2,2 кОм - 0,5 Вт</td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R5</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">1 кОм - 0,5 Вт</td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R6</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">10 кОм - 0,5 Вт</td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R7-R9</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">200 Ом - 0,5 Вт</td>
+        <td align="center">3</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">VD1-VD3</td>
+        <td align="left">Диод</td>
+        <td align="center"><a href="../../help/vd/d9.html" target="_blank">Д9Д</a></td>
+        <td align="center">3</td>
+        <td align="left">С любым буквенным индексом</td>
+      </tr>
+      <tr>
+        <td align="center">VT1-VT3</td>
+        <td align="left">Транзистор биполярный</td>
+        <td align="center"><a href="../../help/vt/vtb-rus/vtb-rus-npn/kt315.html" target="_blank">КТ315Б</a></td>
+        <td align="center">3</td>
+        <td align="left">С любым буквенным индексом</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>В устройстве можно применить   светодиоды с номинальным током не более <nobr>40-50&nbsp;мА</nobr>. Токи через них устанавливаются изменением номинала резисторов R7–R9.</p>
+  <p>Питаться устройство может от любого источника питания напряжением 6-12 В, потребляемый ток – около 30 мА при указанных на схеме элементах и напряжении питания 9 В. </p>	
+	<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	<hr>
+<!--<h3>Источники:</h3>
+<p><a href="http://begin.esxema.ru/?p=1248">begin.esxema.ru - Цветомузыкальная приставка на трех светодиодах</a></p>
+
+
+
+<p><a href=""></a></p>
+ -->
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2024</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

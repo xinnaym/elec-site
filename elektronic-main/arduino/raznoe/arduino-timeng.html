@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Тайминг</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Тайминг</h1>
+
+
+<p>В программе мигающего светодиода(см. код ниже) есть один очень большой недостаток. Для выдержки паузы между включением и выключением светодиода в 1 с используется функция <strong>delay()</strong>. В это время контроллер не может выполнять другие команды в главной функции <strong>loop()</strong></p>
+
+<div class="kod">
+<pre>
+/* Мигание LED
+ * ------------
+ * Включает и выключает светодиод (LED) подсоединенный  
+ * к выходу 13, с интервалом в 2 секунды
+ */
+ 
+int ledPin = 13;                <span class="comment1">// LED подсоединен к выводу 13</span>
+ 
+void setup()
+{
+  pinMode(ledPin, OUTPUT);      <span class="comment1">// устанавливаем вывод 13 как выход</span>
+}
+ 
+void loop()
+{
+  digitalWrite(ledPin, HIGH);   <span class="comment1">// включаем LED</span>
+  delay(1000);                  <span class="comment1">// пауза 1 секунда</span>
+  digitalWrite(ledPin, LOW);    <span class="comment1">// выключаем LED</span>
+  delay(1000);                  <span class="comment1">// пауза 1 секунда</span>
+}
+</pre>
+</div>
+
+
+<p>Внесем небольшие корректировки в функцию <strong>loop()</strong>. Чтобы сделать код более компактным и изящным, заменим 2 пары строчек на одну пару. Вместо установки значения в HIGH, а затем обратно в LOW, мы получим текущее значение <strong>ledPin</strong> и проинвертируем его. Т.е. если оно было HIGH, то станет LOW и наоборот.</p>
+
+<div class="kod">
+<pre>
+void loop()
+{
+  digitalWrite(ledPin, !digitalRead(ledPin));  <span class="comment1">// включаем/выключаем LED</span>
+  delay(1000);                                 <span class="comment1">// задержка 1 сек.</span>
+}
+</pre>
+</div>
+
+
+<p>Теперь мы усовершенствуем функцию <strong>delay()</strong>. Взамен, мы будем использовать функцию <strong>millis()</strong>. Данная функция возвращает количество миллисекунд, прошедшее с момента запуска текущей программы. Функция переполнится (вернется в нуль) приблизительно через 50 суток работы программы.</p>
+
+<p>Альтернативной функцией является <strong>micros()</strong>, которая возвращает количество микросекунд, прошедшее с момента запуска текущей программы. Функция переполнится (вернется в нуль) приблизительно через 70 минут работы программы.</p>
+
+<p>Используем функцию <strong>millis()</strong>:</p>
+
+
+<div class="kod">
+<pre>
+/* Мигание LED Версия 2
+ * ------------------------
+ * Включает и выключает светодиод (LED) подсоединенный   
+ * к выходу 13, с интервалом в 2 секунды используя функцию millis()
+ */
+int ledPin = 13;                 <span class="comment1">// LED подсоединен к выводу 13</span>
+unsigned long currentTime;
+unsigned long loopTime;
+ 
+void setup()
+{
+  pinMode(ledPin, OUTPUT);      <span class="comment1">// устанавливаем вывод 13 как выход</span>
+  currentTime = millis();       <span class="comment1">// считываем время, прошедшее с момента запуска программы</span>
+  loopTime = currentTime;  
+}
+ 
+void loop()
+{
+  currentTime = millis(); <span class="comment1">// считываем время, прошедшее с момента запуска программы</span>
+  if(currentTime >= (loopTime + 1000)){ <span class="comment1">//сравниваем текущий таймер с переменной loopTime+1с</span>
+    digitalWrite(ledPin, !digitalRead(ledPin)); <span class="comment1">// включаем/выключаем LED</span>
+    loopTime = currentTime;                     <span class="comment1">// в loopTime записываем новое значение</span>
+  }
+  <span class="comment1">// Здесь могут быть другие команды</span>
+}
+</pre>
+</div>
+
+<p>В данном примере мы ввели две дополнительные переменные currentTime и loopTime. В функции <strong>setup()</strong> обе переменные имеют одно и тоже значение. В функции <strong>loop()</strong>, переменная currentTime каждый раз обновляется в цикле. Когда currentTime больше чем loopTime на 1 секунду (loopTime + 1000), то LED меняет свое состояние, а переменной loopTime присваивается текущее значение currentTime.</p>
+
+<p>Обратите внимание, что в данном примере мы не использовали функцию <strong>delay()</strong> и процессор может выполнять другие операции.</p>	
+	
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники:</h3>	
+  <p><a href="http://cxem.net/arduino/arduino5.php"  target="_blank">cxem.net - Arduino UNO урок 3 - Тайминг</a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

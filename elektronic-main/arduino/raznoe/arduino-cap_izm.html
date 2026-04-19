@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Измерение емкости конденсаторов с помощью Arduino</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Измерение емкости конденсаторов с помощью Arduino</h1>
+	
+<p>В данном материале мы научимся использовать Arduino для измерения   емкости конденсаторов. Это может пригодиться, если конденсатор не имеет   маркировки.</p>
+<h2>Шаг 1: Что такое емкость?</h2>
+
+<div class="ris"><img src="arduino-cap_izm_files/arduino165-2.jpg" alt="" width="310" height="248"></div>
+<p>Емкость – это способность объекта накапливать электрический заряд. Разумно предположить, что таким объектом выступает конденсатор.</p>
+
+<p>Конденсатор, который запасает данный заряд в электрическом поле между двумя проводящими обкладками, называется конденсатор с пластинчатыми обкладками. Не токопроводящий материал, который располагается между этими двумя обкладками, называется диэлектриком. Диэлектрики изменяют величину заряда, которую может хранить конденсатор, и фактически, определяют, для каких целей конденсатор будет использоваться впоследствии (напр., в высокочастотной схеме, схеме с повышенным напряжением и т.д.).</p>
+
+<p>Равенство для определения емкости конденсатора с пластинчатыми обкладками выражается следующим образом:</p>
+
+<p class="formula">C = (&epsilon;S)/d</p>
+
+<p>где </p>
+<p>&epsilon; – это магнитная проницаемость свободного места или диэлектрика,</p>
+<p>S – это площадь поверхности перекрытия между обкладками, и </p>
+<p>d – расстояние между обкладками.</p>
+
+
+<h2>Шаг 2: Как измерить емкость?</h2>
+
+<div class="ris"><img alt="" src="arduino-cap_izm_files/arduino165-3.gif">
+<p>А - Напряжение конденсатора во время заряда</p>
+<p>В - Напряжение конденсатора во время разряда, напряжение резистора или ток конденсатора во время заряда или разряда.</p>
+
+</div>
+<p class="formula"><img src="arduino-cap_izm_files/arduino165-4.gif" alt=""></p>
+
+
+<p>RC-цепочка (Резистор-Конденсатор) имеет свойство, известное как "RC временная постоянная" или <span class="formula2">&tau;</span> (&quot;тау&quot;):</p>
+<p class="formula">&tau; = RC</p>
+<p><span class="formula2">&tau;</span> может быть упрощена из более сложного выражения (показано на рисунке выше) для представления времени, которое требуется для заряда конденсатора через резистор, для достижения 63,2% от его полного напряжения. Данная величина может быть измерена по времени, которое потребуется, чтобы конденсатор достиг значения 36,8% от его полного напряжения при разряде.</p>
+
+<p>Микроконтроллер Arduino будет запрограммирован на величину времени, которое потребуется для достижения конденсатором величины 63,2% от его полного заряда. Далее будет использоваться выражение для <span class="formula2">&tau;</span> для вычисления величины емкости, поскольку значение номинала резистора нам известно.</p>
+
+<h2>Шаг 3: Используемые компоненты</h2>
+<p>Для проекта нам потребуется</p>
+
+<ul><li>Микроконтроллер Ardunio<br>
+  <img alt="" src="arduino-cap_izm_files/arduino165-5a.jpg"></li>
+	<li>Монтажная плата<br> 
+	<img alt="" src="arduino-cap_izm_files/arduino165-5b.jpg">
+	</li>
+	<li>Проволочные перемычки<br>
+	  <img src="arduino-cap_izm_files/arduino165-6.jpg" width="324" height="310"></li>
+	<li>Резисторы 220 Ом и 10 кОм<br>
+	<img alt="" src="arduino-cap_izm_files/arduino165-7.jpg">
+</li>
+	<li>Конденсатор неизвестной емкости<br>
+<img alt="" src="arduino-cap_izm_files/arduino165-8.jpg"></li>
+</ul>
+
+
+
+<h2>Шаг 4: Подключение</h2>
+
+<div class="ris"><img alt="" src="arduino-cap_izm_files/arduino165-9.jpg"></div>
+<div class="ris"><img alt="" src="arduino-cap_izm_files/arduino165-10.jpg"></div>
+<div class="ris"><img alt="" src="arduino-cap_izm_files/arduino165-11.jpg"></div>
+
+<p>Подключение компонентов в данном проекте не представляет особых трудностей. Просто выполняйте подключение компонентов, согласно схемы.</p>
+
+<p class="warning">ПРИМЕЧАНИЕ: Убедитесь в том, что серебряная полоска на конденсаторе (в случае использования биполярного конденсатора) подключается к земле.</p>
+
+<p class="warning">ПРИМЕЧАНИЕ 2: Резистор номиналом 220 Ом и проводник, подключенные к выводу 11, не являются необходимыми, но рекомендуемыми, поскольку эта цепочка ускоряет время разряда.</p>
+
+<h2>Шаг 5: Загрузка кода и тестирование</h2>
+
+<div class="ris"><img alt="" src="arduino-cap_izm_files/arduino165-12.jpg"></div>
+
+<p>После надлежащей сборки схемы, загрузите код в ваш микроконтроллер Arduino. Код имеет комментарии, что позволяет облегчить понимание всего процесса измерения.</p>
+
+<p>После загрузки кода, откройте Serial Monitor (Tools &gt; Serial Monitor – Инструменты &gt; Монитор последовательного интерфейса) для просмотра измерения конденсатора неизвестной емкости.
+</p>
+
+<p>Первая величина показывает, какое время требуется конденсатору для достижения величины 63.2% от его полного заряда. Вторая величина – это измеренная емкость в "нано" или "пико" фарадах.</p>
+
+<p>Программа циклически тестирует конденсатор, поэтому измеренные значения могут незначительно отличаться. Лучше всего использовать усредненное измеренное значение.</p>
+
+<p>ПРИМЕЧАНИЕ: Данная схема измерения наиболее пригодна для конденсатора емкостью от 1 до 3500 мкФ.</p>	
+	
+<h3>Arduino Sketch</h3>
+
+<div class="kod">
+<pre>
+#define analogPin      0          <span class="comment1">// analog pin for measuring capacitor voltage</span>
+#define chargePin      13         <span class="comment1">// pin to charge the capacitor - connected to one end</span> 
+                                  <span class="comment1">// of the charging resistor</span>
+#define dischargePin   11         <span class="comment1">// pin to discharge the capacitor</span>
+#define resistorValue  10000.0F   <span class="comment1">// change this to whatever resistor value you are using</span>
+                                  <span class="comment1">// F formatter tells compliler it's a floating point value</span>
+
+unsigned long startTime;
+unsigned long elapsedTime;
+float microFarads;        <span class="comment1">// floating point variable to preserve precision, make calculations</span>
+float nanoFarads;
+
+void setup(){
+  pinMode(chargePin, OUTPUT);     <span class="comment1">// set chargePin to output</span>
+  digitalWrite(chargePin, LOW);  
+
+  Serial.begin(9600);             <span class="comment1">// initialize serial transmission for debugging</span>
+}
+
+void loop(){
+  digitalWrite(chargePin, HIGH);  <span class="comment1">// set chargePin HIGH and capacitor charging</span>
+  startTime = millis();
+
+  while(analogRead(analogPin) < 648){   <span class="comment1">// 647 is 63.2% of 1023, which corresponds to full-scale voltage</span> 
+  }
+
+  elapsedTime= millis() - startTime;
+ <span class="comment1">// convert milliseconds to seconds (10^-3) and Farads to microFarads (10^6), net 10^3 (1000)</span>  
+  microFarads = ((float)elapsedTime / resistorValue) * 1000;   
+  Serial.print(elapsedTime);       <span class="comment1">// print the value to serial port</span> 
+  Serial.print(" mS    ");         <span class="comment1">// print units and carriage return</span> 
+
+
+  if (microFarads > 1){
+    Serial.print((long)microFarads);       <span class="comment1">// print the value to serial port</span> 
+    Serial.println(" microFarads");         <span class="comment1">// print units and carriage return</span> 
+  }
+  else
+  {
+   <span class="comment1">//if value is smaller than one microFarad, convert to nanoFarads (10^-9 Farad)</span>  
+   <span class="comment1">//This is  a workaround because Serial.print will not print floats</span> 
+
+    nanoFarads = microFarads * 1000.0;<span class="comment1">/ multiply by 1000 to convert to nanoFarads(10^-9 Farads)</span> 
+    Serial.print((long)nanoFarads); <span class="comment1">// print the value to serial port</span> 
+    Serial.println(" nanoFarads");  <span class="comment1">// print units and carriage return</span> 
+  }
+
+  /* dicharge the capacitor  */
+  digitalWrite(chargePin, LOW);    <span class="comment1">// set charge pin to  LOW </span> 
+  pinMode(dischargePin, OUTPUT);   <span class="comment1">// set discharge pin to output </span> 
+  digitalWrite(dischargePin, LOW); <span class="comment1"> // set discharge pin LOW </span> 
+  while(analogRead(analogPin) > 0) <span class="comment1">  // wait until capacitor is completely discharged</span> 
+  {
+  }
+
+  pinMode(dischargePin, INPUT);    <span class="comment1">// set discharge pin back to input</span>
+}
+</pre>
+</div>
+
+
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+<hr>
+
+
+<br>
+<div class="ris">
+<img src="arduino-cap_izm_files/1498202337_cap1.jpg">
+</div>
+
+<h3>Принцип измерения емкости</h3>
+<p>Измерение емкости в данном случае основано на свойстве резисторно-конденсаторных (RC) цепей, которое носит название «постоянная времени». Постоянная времени RC-цепи определяется как время, необходимое для того, чтобы напряжение на конденсаторе достигло 63,2% от его напряжения при полной зарядке. Большие конденсаторы требуют больше времени для зарядки и, следовательно, имеют большие постоянные времени. Емкость в RC-цепочке связана с постоянной времени по уравнению: </p>
+<p class="formula"><em>T</em><sub>c</sub> = <em>RC</em>. </p>
+<p>Соответственно, емкость определится как: </p>
+<p class="formula"><em>C</em> = <em>T</em><sub>c</sub>/<em>R</em>.</p>
+<p>Ниже представлены три измерителя емкости, которые способны измерять более точно в микрофарадном, нанофарадном и пикофарадном диапазонах. Каждый измеритель емкости (кроме третьего) имеет RC-цепь с известными значениями резисторов и неизвестным значением конденсатора. Arduino будет измерять напряжение на конденсаторе и записывать время, необходимое для достижения 63,2% от его напряжения при полной зарядке (постоянная времени). Поскольку значение сопротивления уже известно, мы можем использовать приведенную выше формулу в программе, которая рассчитает неизвестную емкость.</p>
+
+
+<h3>Измеритель емкости от 0,1 мкФ до 3900 мкФ</h3>
+<div class="ris">
+<img src="arduino-cap_izm_files/1498202447_cap2.jpg">
+<p>Схема измерителя емкости от 0,1 мкФ до 3900 мкФ на Arduino (R1 = 10 кОм, R2 = 220 Ом).</p>
+</div>
+
+<h4>Скетч</h4>
+<div class="kod">
+<pre>
+#define analogPin      0          
+#define chargePin      13         
+#define dischargePin   11        
+#define resistorValue  10000.0F   
+
+unsigned long startTime;
+unsigned long elapsedTime;
+float microFarads;                
+float nanoFarads;
+
+void setup()
+{
+  pinMode(chargePin, OUTPUT);     
+  digitalWrite(chargePin, LOW);  
+  Serial.begin(9600);             
+}
+
+void loop()
+{
+  digitalWrite(chargePin, HIGH);  
+  startTime = millis();
+  while(analogRead(analogPin) &lt; 648)
+  {       
+  }
+
+  elapsedTime= millis() - startTime;
+  microFarads = ((float)elapsedTime / resistorValue) * 1000;   
+  Serial.print(elapsedTime);       
+  Serial.print(" mS    ");         
+
+  if (microFarads > 1){
+    Serial.print((long)microFarads);       
+    Serial.println(" microFarads");         
+  }
+  else{
+    nanoFarads = microFarads * 1000.0;      
+    Serial.print((long)nanoFarads);         
+    Serial.println(" nanoFarads");          
+    delay(500); 
+  }
+
+  digitalWrite(chargePin, LOW);            
+  pinMode(dischargePin, OUTPUT);            
+  digitalWrite(dischargePin, LOW);          
+  while(analogRead(analogPin) &gt; 0)
+  {         
+  }
+
+  pinMode(dischargePin, INPUT);            
+}
+</pre>
+</div>
+
+<div class="ris">
+<img src="arduino-cap_izm_files/1498202471_cap3.jpg">
+<p>Пример результатов измерения емкости электролитического конденсатора 470 мкФ</p>
+</div>
+
+<p>В первом столбце показана постоянная времени конденсатора, а второй столбец – величина емкости. Единицы будут автоматически изменяться с микрофарад на нанофарады. Вы заметите, что с большими конденсаторами для Arduino требуется больше времени для вывода показаний. Это связано с тем, что более крупные конденсаторы имеют большие постоянные времени и поэтому требуют больше времени, чтобы достичь 63,2% от их напряжения при полной зарядке. Например, конденсатор емкостью 3900 мкФ может потребовать несколько минут для отображения следующего показания.</p>
+
+
+<h3>Измеритель емкости от 0,0047 мкФ до 180 мкФ</h3>
+<div class="ris">
+<img src="arduino-cap_izm_files/1498202574_cap4.jpg">
+<p>Схема измерителя емкости от 4,7 нФ до 3900 мкФ на Arduino (R1 = 10 кОм, R2 = 3,1 Ом, R3 = 1,8 кОм).</p>
+</div>
+
+<h4>Скетч</h4>
+<div class="kod">
+<pre>
+const byte pulsePin = 2;
+const unsigned long resistance = 10000;
+
+volatile boolean triggered;
+volatile boolean active;
+volatile unsigned long startTime;
+volatile unsigned long duration;
+
+ISR (ANALOG_COMP_vect)
+  {
+  unsigned long now = micros ();
+  if (active)
+    {
+    duration = now - startTime;
+    triggered = true;
+    digitalWrite (pulsePin, LOW); 
+    }
+  }
+
+void setup ()
+  {
+  pinMode(pulsePin, OUTPUT);
+  digitalWrite(pulsePin, LOW);
+  Serial.begin(9600);
+  Serial.println("Started.");
+  ADCSRB = 0;          
+  ACSR =  _BV (ACI)     
+        | _BV (ACIE)    
+        | _BV (ACIS0) | _BV (ACIS1);  
+   }  
+
+void loop ()
+  {
+  if (!active)
+    {
+    active = true;
+    triggered = false;
+    digitalWrite (pulsePin, HIGH); 
+    startTime = micros ();  
+    }
+
+  if (active && triggered)
+    {
+    active = false;
+    Serial.print ("Capacitance = ");
+    Serial.print (duration * 1000 / resistance);
+    Serial.println (" nF");
+    triggered = false;
+    delay (3000);
+    }
+}
+</pre>
+</div>
+
+<div class="ris">
+<img src="arduino-cap_izm_files/1498202586_cap5.jpg">
+<p>Пример результатов измерения емкости пленочного конденсатора 10 нФ</p>
+</div>
+
+
+
+<h3>Измеритель емкости от 18 пФ до 470 мкФ</h3>
+
+<div class="ris">
+<img src="arduino-cap_izm_files/1498202735_cap6.jpg" alt="Измеритель емкости от 18 пФ до 470 мкФ на Arduino" title="Измеритель емкости от 18 пФ до 470 мкФ на Arduino">
+<p>Схема измерителя емкости от 18 пФ до 470 мкФ на Arduino</p>
+</div>
+
+<h4>Скетч</h4>
+<div class="kod">
+<pre>
+const int OUT_PIN = A2;
+const int IN_PIN = A0;
+const float IN_STRAY_CAP_TO_GND = 24.48;
+const float IN_CAP_TO_GND  = IN_STRAY_CAP_TO_GND;
+const float R_PULLUP = 34.8;  
+const int MAX_ADC_VALUE = 1023;
+
+void setup()
+{
+  pinMode(OUT_PIN, OUTPUT);
+  pinMode(IN_PIN, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+    pinMode(IN_PIN, INPUT);
+    digitalWrite(OUT_PIN, HIGH);
+    int val = analogRead(IN_PIN);
+    digitalWrite(OUT_PIN, LOW);
+
+    if (val < 1000)
+    {
+      pinMode(IN_PIN, OUTPUT);
+
+      float capacitance = (float)val * IN_CAP_TO_GND / (float)(MAX_ADC_VALUE - val);
+
+      Serial.print(F("Capacitance Value = "));
+      Serial.print(capacitance, 3);
+      Serial.print(F(" pF ("));
+      Serial.print(val);
+      Serial.println(F(") "));
+    }
+    else
+    {
+      pinMode(IN_PIN, OUTPUT);
+      delay(1);
+      pinMode(OUT_PIN, INPUT_PULLUP);
+      unsigned long u1 = micros();
+      unsigned long t;
+      int digVal;
+
+      do
+      {
+        digVal = digitalRead(OUT_PIN);
+        unsigned long u2 = micros();
+        t = u2 > u1 ? u2 - u1 : u1 - u2;
+      } while ((digVal < 1) && (t < 400000L));
+
+      pinMode(OUT_PIN, INPUT);  
+      val = analogRead(OUT_PIN);
+      digitalWrite(IN_PIN, HIGH);
+      int dischargeTime = (int)(t / 1000L) * 5;
+      delay(dischargeTime);   
+      pinMode(OUT_PIN, OUTPUT);  
+      digitalWrite(OUT_PIN, LOW);
+      digitalWrite(IN_PIN, LOW);
+
+      float capacitance = -(float)t / R_PULLUP
+                              / log(1.0 - (float)val / (float)MAX_ADC_VALUE);
+
+      Serial.print(F("Capacitance Value = "));
+      if (capacitance > 1000.0)
+      {
+        Serial.print(capacitance / 1000.0, 2);
+        Serial.print(F(" uF"));
+      }
+      else
+      {
+        Serial.print(capacitance, 2);
+        Serial.print(F(" nF"));
+      }
+
+      Serial.print(F(" ("));
+      Serial.print(digVal == 1 ? F("Normal") : F("HighVal"));
+      Serial.print(F(", t= "));
+      Serial.print(t);
+      Serial.print(F(" us, ADC= "));
+      Serial.print(val);
+      Serial.println(F(")"));
+    }
+    while (millis() % 1000 != 0);    
+}
+</pre>
+</div>
+
+<div class="ris">
+<img src="arduino-cap_izm_files/1498202800_cap7.jpg">
+<p>Пример результатов измерения емкости керамического конденсатора 22 пФ</p>
+</div>
+
+	
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://www.arduino.cc/en/Tutorial/CapacitanceMeter"  target="_blank">arduino.cc - Capacitance Meter and RC Time Constants</a></p>
+
+  <p><a href="http://cxem.net/arduino/arduino165.php"  target="_blank">cxem.net - Измерение емкости конденсаторов с помощью Arduino</a></p>
+	
+  <p><a href="http://digitrode.ru/computing-devices/mcu_cpu/816-izmeritel-emkosti-na-arduino-svoimi-rukami.html"  target="_blank">digitrode.ru - Как с помощью Arduino измерить емкость конденсатора?</a></p>
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

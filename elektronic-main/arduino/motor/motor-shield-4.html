@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Motor Shield  L293D</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cdutt-str.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+<h1>4-х канальный драйвер электродвигателей <br>
+  Motor Shield  L293D</h1>
+
+<p>Один из самых простых и недорогих способов управления электродвигателями - это воспользоваться Motor Shield на базе L293D, который можно легко установить на плату Arduino UNO.</p>
+
+<figure>
+  <img src="motor-shield-4_files/motor-shield-l293d-1.jpg" alt="Схема драйвера двигателей" width="490" height="400" border="0">
+  <figcaption>Рис. 1 - Внешний вид Motor Shield  L293D</figcaption>
+</figure>
+<ol>
+  <li>Микросхемы L293D. </li>
+  <li>Микросхема 74HC595.</li>
+  <li>Выводы для подключения сервоприводов. </li>
+  <li>Клемма для подключения электродвигателей (M1, M2, M3, M4). </li>
+  <li>Клемма <span class="lev1">&laquo;<strong>EXT_PWR</strong>&raquo;</span>, через которые можно запитать  шилд, т.к. для работы моторов необходимо большее напряжение, чем напряжение от Arduino. 
+	  
+  </li>
+  <li>Перемычка <span class="lev1">&laquo;<strong>PWR</strong>&raquo;</span>, отвечающая за питание шилда.</li>
+</ol>
+<p class="warning">Для питания Motor Shield L293D иным источником необходимо снять перемычку,<br>которая обозначена &quot;PWR&quot;. </p>
+<p>Motor Shield L293D построен на микросхеме L293D, состоящая из двух H-мост (H-Bridge), с помощью которых можно управлять двумя постоянными двигателями или одним шаговым двигателем. Каждый канал рассчитан на 0,6 А с пиком 1,2 А. Так как на Motor Shield L293D установлено две микросхемы L293D, можно управлять сразу четырьмя двигателями постоянного тока.  Так же, на Motor Shield L293D установлена микросхема 74HC595, которая расширяет 4 цифровых контакта Arduino до 8 управляющих контактов двух микросхем L293D.</p>
+
+<h4>Основные технические параметры Motor Shield L293D:</h4>
+<ul class="list1">
+  <li>4-х канальное управление.</li>
+  <li>Напряжение питания двигателей &#8212; 5...36 В.</li>
+  <li> Напряжение питания платы &#8212; 5 В.</li>
+  <li> Допустимый ток нагрузки &#8212; 600 мА на канал.</li>
+  <li> Максимальный (пиковый) ток нагрузки &#8212; 1,2 А на канал.</li>
+  <li>Размер платы &#8212; 70&times;54&times;20 мм.</li>
+</ul>
+<ul>
+  <li>Защита от перегрева</li>
+  <li>Контакт для дополнительного питания платы</li>
+</ul>
+<p>На Motor Shield L293D находится светодиод, который светится только тогда, когда подсоединенные электромоторы запитаны. Если светодиод не светится, то  электромоторы работать не будут, так как источника питания не хватает на работу моторов или его совсем нет.</p>
+<p>Питание Motor Shield L293D можно осуществить двумя способами:</p>
+<ol>
+  <li>Общий источник питания для Arduino и двигателей (максимальное напряжение 12 В)<span class="lev1"> — можно использовать один источник питания, используется разъем DC на Arduino UNO или 2-х контактный разъем  &laquo;<strong>EXT_PWR</strong>&raquo;, так же необходимо установить перемычку &laquo;<strong>PWR</strong>&raquo;.</span></li>
+  <li>Раздельный источник питания — рекомендуется отдельно питать Arduino и шилд, для этого Arduino подключаем к USB, а двигатели подключаем к источнику постоянного тока, используя разъем «<strong>EXT_PWR</strong>&raquo;. Необходимо убрать перемычку перемычку &laquo;<strong>PWR</strong>&raquo;.</li>
+</ol>
+<p class="warning">Внимание! Нельзя подавать питание на «EXT_PWR» выше 12 В при установленной перемычке «PWR».</p>
+<p>Выходные контакты двух микросхем L293D выведены по бокам  с помощью 5-ти контактных винтовых клемм, а именно М1, М2, М3 и М4. К этим контактам подключается четыре двигателя постоянного тока и два шаговых двигателя.</p>
+<p>Так же, на shield выведен два 3-х контактных разъема, которым можно подключить два сервопривода.</p>
+<p>Цифровые контакты D2 и D13 и аналоговые контакты A0-A5 не используются.</p>
+<p>Для удобной работы с Motor shield L293D необходимо установить библиотеку &laquo;<strong>AFMotor.h&raquo;</strong>. </p>
+<p><a href="https://robotchip.ru/download/library/Adafruit_Motor_Shield_library.zip">Скачать библиотеку &laquo;AFMotor.h&raquo;</a></p>
+<h2>Подключение к Arduino двигателя постоянного тока <br>
+  с помощью Motor shield L293D</h2>
+<p>Необходимые детали:</p>
+<ul>
+  <li>Arduino UNO R3 &#8212; 1 шт.</li>
+  <li>Блок питания 12В, 2А &#8212; 1 шт.</li>
+  <li>Кабель USB 2.0 A-B &#8212; 1 шт.</li>
+  <li>Двигатель постоянного тока &#8212; 1шт.</li>
+  <li>Motor shield L293D &#8212; 1шт.</li>
+</ul>
+
+<p>Устанавливаем shield сверху Arduino, далее подключаем источник питания к клеммам &laquo;<strong>EXT_PWR</strong>&raquo;, в примере используется источник питания на 9 В. Затем подключаем двигатели к клеммам  М4.</p>
+
+<figure>
+  <img src="motor-shield-4_files/motor-shield-l293d-2.jpg" width="680" height="290" border="0">
+<figcaption>Рис. 2 -  Подключение одного двигателя постоянного тока к Arduino  с помощью Motor Shield L293D</figcaption>
+</figure>
+
+<p>В  скетче №1 показано, как управлять скоростью и направлением движении двигателями постоянного тока</p>
+
+<h3>Скетч №1 </h3>
+<div class="kod">
+<pre><span class="ar-oper">#include</span> &lt;AFMotor.h&gt;<span class="comment1">// Подключаем библиотеку AFMotor</span>
+AF_DCMotor motor(4);      <span class="comment1">// Указываем какому порту подключен двигатель</span> (1-4)
+ 
+<span class="ar-type">void</span> <span class="kod-oper">setup</span>() 
+{
+  motor.setSpeed(200);    <span class="comment1">// Начальная скорость вращения</span>
+  motor.run(RELEASE);     <span class="comment1">// Останавливаем двигатель</span>
+}
+ 
+<span class="ar-type">void</span> <span class="ar-oper">loop</span>() 
+{
+  uint8_t i;              <span class="comment1">// Создаем переменную "i"</span>
+  motor.run(FORWARD);     <span class="comment1">// Вращение двигателя вперед</span>
+ 
+  <span class="kod-oper">for</span> (i=0; i&lt;255; i++)   <span class="comment1">// Ускоряем двигатель от 0 до 255</span>
+  {
+    motor.setSpeed(i);    <span class="comment1">// Отправка скорости</span>
+    <span class="ar-func">delay</span>(10);            <span class="comment1">// Пауза</span>
+  }
+  <span class="kod-oper">for</span> (i=255; i!=0; i--)  <span class="comment1">// Замедляем двигатель от 255 до 0</span>
+  { 
+    motor.setSpeed(i);    <span class="comment1">// Отправка скорости</span>
+    <span class="ar-func">delay</span>(10);            <span class="comment1">// Пауза</span>
+  }
+ 
+  motor.run(BACKWARD);    <span class="comment1">// Вращение двигателя назад</span>
+ 
+  <span class="kod-oper">for</span> (i=0; i&lt;255; i++)   <span class="comment1">// Ускоряем двигатель от 0 до 255</span>
+  {
+    motor.setSpeed(i);    <span class="comment1">// Отправка скорости</span>
+    <span class="ar-func">delay</span>(10);            <span class="comment1">// Пауза</span>
+  }
+  <span class="kod-oper">for</span> (i=255; i!=0; i--)  <span class="comment1">// Замедляем двигатель от 255 до 0</span>
+  { 
+    motor.setSpeed(i);    <span class="comment1">// Отправка скорости</span>
+    <span class="ar-func">delay</span>(10);            <span class="comment1">// Пауза</span>
+  }
+ 
+  motor.run(RELEASE);     <span class="comment1">// Останавливаем двигатель</span>
+  delay(1000);            <span class="comment1">// Пауза</span>
+}
+</pre>
+</div>
+
+<p>Скетч начитается с подключением библиотеки «<strong>AFMotor.h</strong>.», затем создаем объект «<strong>AF_DCMotor motor(4)</strong>;» в котором указываем номер порта двигателя (M1, M2, M3, M4). Если необходимо подключить несколько двигателей, создайте отдельный объект «<strong>AF_DCMotor motor1(1);</strong>» и так далее.</p>
+<p>В «<strong>void setup</strong>» мы вызываем функции «<strong>setSpeed(speed)</strong>» в которой задаем скорость двигателя, от 0 до 255 и функцию «<strong>motor.run</strong>» направление вращения двигателя, где «<strong>FORWARD</strong>» — вперед, «<strong>BACKWARD</strong>» — назад, «<strong>RELEASE</strong>» — остановка.</p>
+
+<figure>
+  <img src="motor-shield-4_files/4-motor-shield-l293d.jpg" width="699" height="290" border="0">
+<figcaption>Рис. 3 -  Подключение четырех двигателей постоянного тока к Arduino  с помощью Motor Shield L293D</figcaption>
+</figure>
+<p>Ниже приведен пример (Скетч №2) управления четыремя двигателями постоянного тока. </p>
+<h3>Скетч №2 </h3>
+<div class="kod">
+<pre><span class="ar-oper">#include</span> &lt;AFMotor.h&gt;  <span class="comment1">// Подключаем библиотеку AFMotor</span>
+<span class="ar-type">int</span> i;
+AF_DCMotor motor1(1);  // Подключаем моторы к клеммникам M1
+AF_DCMotor motor2(2);  // Подключаем моторы к клеммникам M2
+AF_DCMotor motor3(3);  // Подключаем моторы к клеммникам M3
+AF_DCMotor motor4(4);  // Подключаем моторы к клеммникам M4
+
+<span class="ar-type">void</span> <span class="kod-oper">setup</span>() 
+{
+ motor1.setSpeed(255);// Задаем максимальную скорость вращения моторов
+ motor1.run(RELEASE);
+ motor2.setSpeed(255);
+ motor2.run(RELEASE);
+ motor3.setSpeed(255);
+ motor3.run(RELEASE);
+ motor4.setSpeed(255);
+ motor4.run(RELEASE);
+
+}
+
+<span class="ar-type">void</span> <span class="kod-oper">loop</span>() 
+{
+ motor1.run(FORWARD); 
+ motor1.setSpeed(255); 
+ motor2.run(FORWARD); 
+ motor2.setSpeed(255); 
+ motor3.run(FORWARD); 
+ motor3.setSpeed(255); 
+ motor4.run(FORWARD); 
+ motor4.setSpeed(255); 
+ delay(3000); //Указываем время движения
+ 
+  motor1.run(RELEASE); // Останавливаем двигатели
+  motor2.run(RELEASE);
+  motor3.run(RELEASE);
+  motor4.run(RELEASE);
+  delay(500); // Указываем время задержки
+
+  motor1.run(BACKWARD);  // Задаем движение назад
+  motor1.setSpeed(255);  // Задаем скорость движения 
+  motor2.run(BACKWARD); 
+  motor2.setSpeed(255);
+  motor3.run(BACKWARD); 
+  motor3.setSpeed(255);
+  motor4.run(BACKWARD); 
+  motor4.setSpeed(255);  
+  delay(3000); // Указываем время движения
+    
+  motor1.run(RELEASE); // Останавливаем двигатели
+  motor2.run(RELEASE);
+  motor3.run(RELEASE); 
+  motor4.run(RELEASE); 
+}
+</pre>
+</div>
+
+<h2>Подключение к Arduino шагового двигателя <br>
+  с помощью Motor shield L293D</h2>
+
+<p>Необходимые детали:</p>
+<ul>
+  <li>Arduino UNO R3 &#8212; 1 шт.</li>
+  <li>Блок питания 12В, 2А &#8212; 1 шт.</li>
+  <li>Кабель USB 2.0 A-B &#8212; 1 шт.</li>
+  <li>Шаговый двигатель &#8212; 1шт.</li>
+  <li>Motor shield L293D &#8212; 1шт.</li>
+</ul>
+<p>Рассмотрим подключение шагового двигателя, который рассчитан на 12 В (и выше) и делает 200 шагов на оборот. Подключите шаговый двигатель к клеммам M3 и M4 (рис. 3). Затем подключите внешний источник питания 12 В к разъему «<strong>EXT_PWR</strong>«. Не забудьте удалить перемычку PWR.</p>
+
+<figure>
+  <img src="motor-shield-4_files/motor-shield-l293d-3.jpg" width="750" height="250" border="0">
+<figcaption>Рис. 4 -  Подключение шагового двигателя к Arduino с помощью Motor Shield L293D</figcaption>
+</figure>
+
+<p>Код для управления шаговым двигателем с помощью Motor Shield L293D приведен в скетче №3.</p>
+<h3>Скетч №3 </h3>
+<div class="kod">
+<pre><span class="ar-oper">#include</span> &lt;AFMotor.h&gt;<span class="comment1">// Подключаем библиотеку AFMotor</span>
+AF_Stepper motor(200, 2);  <span class="comment1">// 200 - количество шагов на 1 оборот двигателя</span>
+                           <span class="comment1">//2- двигатель подключен к порту №2 (М3-М4)</span>
+ 
+<span class="ar-type">void</span> <span class="kod-oper">setup</span>() 
+{
+  motor.<span class="ar-func">setSpeed</span>(50);    <span class="comment1">// Скорость двигателя в минуту</span>
+}
+
+<span class="ar-type">void</span> <span class="kod-oper">loop</span>() {
+  motor.step(300, FORWARD, SINGLE); 
+  motor.step(300, BACKWARD, SINGLE); 
+  motor.step(300, FORWARD, DOUBLE); 
+  motor.step(300, BACKWARD, DOUBLE); 
+  motor.step(300, FORWARD, INTERLEAVE); 
+  motor.step(300, BACKWARD, INTERLEAVE); 
+  motor.step(300, FORWARD, MICROSTEP); 
+  motor.step(300, BACKWARD, MICROSTEP); 
+}
+</pre>
+</div>
+
+<p>Скетч начинается с подключением библиотеки «<strong>AFMotor.h</strong>&raquo;. </p>
+<p>Во второй строке создаем объект «<span class="kod3">AF_Stepper motor(200, 2);</span>&raquo;, где указываем количество шагов на оборот и номер порта.</p>
+<p>В разделе настройки, функцией «<span class="kod3">motor.setSpeed(50);</span>» устанавливает скорость двигателя, где «<strong>50</strong>» количество оборотов в минуту.</p>
+<p>В разделе цикла программы вызываем  функции для управления скоростью и направлением вращения двигателя:</p>
+<ul>
+  <li><span class="kod2">300</span> — количество шагов.</li>
+  <li><span class="kod2">FORWARD</span>, <span class="kod2">BACKWARD</span> — направления вращение двигателем.</li>
+  <li><span class="kod2">SINGLE</span> — активация одной обмотки двигателя для совершения шага.</li>
+  <li><span class="kod2">DOUBLE</span> — активация двух обмоток двигателя, что обеспечивает больший вращающий момент</li>
+  <li><span class="kod2">INTERLEAVE</span>  — применение ШИМ для управления шаговым двигателем двигателем.<br>
+</li>
+</ul>
+
+
+<h2>Подключение к Arduino сервопривода <br>
+  с помощью Motor shield L293D</h2>
+<p>&nbsp;</p>
+<p>Необходимые детали:</p>
+<ul>
+  <li>Arduino UNO R3 &#8212; 1 шт.</li>
+  <li>Блок питания 12В, 2А &#8212; 1 шт.</li>
+  <li>Кабель USB 2.0 A-B &#8212; 1 шт.</li>
+  <li>Сервопривод&#8212; 1шт.</li>
+  <li>Motor shield L293D &#8212; 1шт.</li>
+</ul>
+<p> На Motor shield L293D выведен 16-разрядные контакты Arduino <strong>9</strong> и <strong>10</strong>, питание для сервоприводов подается от 5 вольтного стабилизатора Arduino, поэтому подключать дополнительное питание в разъем &laquo;EXT_PWR&raquo; не нужно.</p>
+
+<figure>
+  <img src="motor-shield-4_files/motor-shield-l293d-4.jpg" width="480" height="300" border="0">
+<figcaption>Рис. 5 -  Подключение сервопривода к Arduino с помощью Motor Shield L293D</figcaption>
+</figure>
+
+<p>Код для управления сервоприводом с помощью Motor Shield L293D приведен в скетче №4. Так как используется стандартный вывод, используем стандартную библиотеку <strong>Servo</strong>.</p>
+<h3>Скетч №4 </h3>
+<div class="kod">
+<pre><span class="ar-oper">#include</span> &lt;Servo.h&gt;  <span class="comment1">// Подключаем библиотеку Servo</span>
+<span class="ar-type">Servo</span> myservo;      <span class="comment1">// Создаем объект</span> 
+<span class="ar-type">int</span> pos = 0;        <span class="comment1">// Создаем переменную</span>
+ 
+<span class="ar-type">void</span> <span class="kod-oper">setup</span>() 
+{
+  myservo.<span class="ar-func">attach</span>(10); <span class="comment1">// Указываем к какому порту подключен вывод сервопривода</span>
+}
+ 
+<span class="ar-type">void</span> <span class="kod-oper">loop</span>() {
+{
+  <span class="ar-oper">for</span>(pos = 0; pos <= 180; pos += 1) <span class="comment1">// Увеличиваем угол от 0 до 180</span>
+  {
+    myservo.<span class="ar-func">write</span>(pos);              <span class="comment1">// Передаем данные</span>
+    <span class="ar-func">delay</span>(15);                       <span class="comment1">// Пауза</span> 
+  }
+          
+  <span class="ar-oper">for</span>(pos = 180; pos>=0; pos-=1) <span class="comment1">// Уменьшаем угол от 180 до 0</span>
+  {
+    myservo.<span class="ar-func">write</span>(pos);          <span class="comment1">// Передаем данные</span>
+    <span class="ar-func">delay</span>(15);                   <span class="comment1">// Пауза</span> 
+  }
+}
+</pre>
+</div>
+
+
+
+<p>&nbsp;</p>
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://robotchip.ru/obzor-motor-shield-l293d/"  target="_blank">robotchip.ru - Обзор motor shield l293d</a></p>
+
+  <p><a href="https://helpduino.ru/Arduino_Motor_Shield_L293D.html"  target="_blank">helpduino.ru - Подключение Motor Shield L293D к плате Arduino и управление электромоторами</a></p>
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2021</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

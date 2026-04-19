@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Модуль KY-017</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cdutt-str.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+<h1>Модуль датчика наклона KY-017</h1>
+
+
+<p>Модуль ртутного датчика наклона KY-017 состоит из колбы, в которой расположены 2 контакта разной длины и ртутного шарика. При наклоне модуля ртутный шарик перемещается внутри колбы и замыкает или размыкает контакты. Так как данный датчик имеет всего 2 положения, его применение ограничено.</p>
+<figure>
+  <img src="ky-017_files/ky-017-foto.png" width="510" height="190" border="0">
+  <figcaption>Рис. 1 - Внешний вид модуля KY-017</figcaption>
+</figure>
+
+<p>Кроме ртутного переключателя модуль KY-017 содержит резистор 680 Ом и светодиод, который загорается при обнаружении наклона.</p>
+
+<h4>Технические характеристики KY-026:</h4>
+ <ul>
+   <li>Напряжение питания &#8212; 3,3...5,5 В.</li>
+<!--   <li>Дальность обнаружения огня &#8212; 1 м. </li>
+   <li>Угол обнаружения пламени &#8212; 60&deg;.</li>
+   <li>Размеры &#8212; 36 &times;16 мм.</li>
+ --> </ul>
+
+ <p>&nbsp;</p>
+ <p>Назначение выводов (рис. 1) представлено в таблице 1.</p>
+ <p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+  <tr>
+    <th>Контакт</th>
+    <th>Назначение</th>
+  </tr>
+  <tr>
+    <th align="center">S</th>
+    <td align="left">Цифровой  выход </td>
+  </tr>
+  <tr>
+    <th align="center">+5V</th>
+    <td align="left">+5 В </td>
+  </tr>
+  <tr>
+    <th align="center">&#8212;</th>
+    <td align="left">Общий минусовой контакт</td>
+  </tr>
+</table>
+
+<figure>
+	<a href="ky-017_files/ky-017-connect.jpg" target="_blank"><img src="ky-017_files/ky-017-connect.jpg" width="860" border="0"></a>
+  <figcaption>Рис. 2 - Схема подключения модуля KY-017 к Arduino UNO</figcaption>
+</figure>
+<!--
+<h4>Скетч: </h4>
+<p>Температура термистора вычисляться с использованием уравнения Стейнхарта-Харта. В монитор порта выводится температура в градусах Цельсия.</p>
+<div class="kod">
+<pre>
+<span class="ar-type">int</span> TPin = A0;
+<span class="ar-type">int</span> U;
+<span class="ar-type">float</span> R1 = 10000; <span class="comment1">// значение R1 на модуле</span>
+<span class="ar-type">float</span> logR2, R2, T;
+<span class="comment1">//c1, c2, c3 - коэффициенты Штейнхарта-Харта для термистора</span>
+<span class="ar-type">float</span> c1 = 0.001129148, c2 = 0.000234125, c3 = 0.0000000876741;  
+
+<span class="ar-type">void</span> <span class="ar-oper">setup</span>() {
+  <span class="ar-func"><strong>Serial</strong>.begin</span>(9600);
+}
+
+<span class="ar-type">void</span> <span class="ar-oper">loop</span>() {
+  U = <span class="ar-func">analogRead</span>(TPin);
+  R2 = R1 * (1023.0 / (<span class="ar-type">float</span>)U - 1.0); <span class="comment1">//вычислите сопротивление на термисторе</span>
+  logR2 = <span class="ar-type">log</span>(R2);
+  T = (1.0 / (c1 + c2*logR2 + c3*logR2*logR2*logR2)); <span class="comment1">// температура в Кельвине</span>
+  T = T - 273.15; <span class="comment1">//преобразование Кельвина в Цельсия</span>
+
+  <span class="ar-func">Serial.print</span>("Temperature: "); 
+  <span class="ar-func">Serial.print</span>(T);
+  <span class="ar-func">Serial.println</span>(" C"); 
+
+  <span class="ar-func">delay</span>(500);
+}
+</pre>
+</div>
+<br>
+
+<p class="sovet">Примечание. Уравнение Стейнхарта-Харта — математическая модель, описывающая сопротивление полупроводниковых терморезисторов с отрицательным температурным коэффициентом электрического сопротивления в зависимости от температуры. То есть это уравнение применимо только к тем терморезисторам у который при повышении температуры падает сопротивление (NTC-термисторы, Negative Temperature Coefficient).</p>
+ --><!--
+ <p>Для работы с модулем KY-005 используется библиотека <strong>IRremote</strong>.</p>
+ -->
+
+ <p>&nbsp;</p>
+
+<br>
+    <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+
+ <hr>
+<h3>Источники</h3>	
+<!-- -->   
+<p><a href="http://funnydiy.net/1017"  target="_blank">funnydiy.net - Датчик наклона. Модуль KY-017 для Ардуино. Обзор</a></p>
+ 
+<p><a href="https://arduino-tex.ru/news/52/ky-017-modul-rtutnogo-datchika-naklona.html"  target="_blank">arduino-tex.ru - KY-017 – модуль ртутного датчика наклона. Подключение к Arduino</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2021</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

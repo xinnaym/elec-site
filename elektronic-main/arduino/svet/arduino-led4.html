@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Программная регулировка яркости светодиодов</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Программная регулировка яркости светодиодов</h1>
+	
+
+<p>Если светодиод половину времени будет включён, а половину выключен, то визуально будет казаться, что он светится в половину своей яркости. Это называется широтно-импульсная модуляция (ШИМ или PWM по-английски). С помощью ШИМ можно управлять "аналоговым" компонентом с помощью цифрового кода. Для этих целей подходят  те выводы Arduino, около которых нарисовано такое обозначение "<span class="kod2">~</span>". Такими являются выводы 3, 5, 6, 9, 10, 11.</p>
+<p>Для реализации ШИМ применяется процедура <span class="kod2">analogWrite</span> имееющий следующий синтаксис: </p>
+<p><span class="kod2">analogWrite(вывод, значение);</span></p>
+<ul>
+  <li> <span class="kod2">вывод</span> -  номер вывода ШИМ, </li>
+  <li><span class="kod2">значение</span> - значение ШИМ (0-255), применительно к светодиодам это будет их яркость свечения. <br>
+    0 - всегда выключен, 255 - всегда включен.</li>
+</ul>
+
+<figure>
+<img src="arduino-led4_files/shema-led4.png" width="220" height="160">
+<figcaption>Рис. 1 - Схема для программного управления яркостью светодиода</figcaption>
+</figure>
+
+<p> Соедините  светодиод с  выводом 9 (рис. 1) и запустите скетчи представленные ниже. </p>
+
+<h3>Скетч 1</h3>
+<p>При выполнении данного скетча яркость изменяется ступенчато.
+<div class="kod">
+<pre>
+<span class="ar-type">int</span> ledPin = 9; <span class="ar-comment">//к этому выводу подсоединен светодиод</span>
+
+<span class="ar-type">void</span> <span class="ar-oper">setup</span>() {
+  <span class="ar-func">pinMode</span>(ledPin, OUTPUT);<span class="ar-comment">// инициализация пина на вывод</span>
+  }
+ 
+<span class="ar-type">void</span> <span class="ar-oper">loop</span>() {
+  <span class="ar-func">analogWrite</span>(ledPin, 255</span>);<span class="ar-comment">&nbsp;&nbsp;//полная яркость (255/255 = 1)</span>
+  <span class="ar-func">delay</span>(1000);&nbsp;&nbsp;<span class="ar-comment">// пауза 1 сек </span>
+  <span class="ar-func">digitalWrite</span>(ledPin, LOW);&nbsp;&nbsp;<span class="ar-comment">//выключить светодиод</span>
+  <span class="ar-func">delay</span>(1000);&nbsp;&nbsp;<span class="ar-comment">//пауза 1 сек</span>
+  <span class="ar-func">analogWrite</span>(ledPin, 191</span>);&nbsp;&nbsp;<span class="ar-comment">//яркость на  3/4  (191/255&asymp; 0,75)</span>
+  <span class="ar-func">delay</span>(1000);&nbsp;&nbsp;<span class="ar-comment">//пауза 1 сек</span>
+  <span class="ar-func">digitalWrite</span>(ledPin, LOW);&nbsp;&nbsp;<span class="ar-comment">//выключить светодиод</span>
+  <span class="ar-func">delay</span>(1000);&nbsp;&nbsp;<span class="ar-comment">//пауза 1 сек</span>
+  <span class="ar-func">analogWrite</span>(ledPin, 127</span>);&nbsp;&nbsp;<span class="ar-comment">//половина яркости (127/255&asymp;0,5)</span>
+  <span class="ar-func">delay</span>(1000</span>);&nbsp;&nbsp;<span class="ar-comment">// пауза 1 сек</span>
+  <span class="ar-func">digitalWrite</span>(ledPin, LOW);&nbsp;&nbsp;<span class="ar-comment">//выключить светодиод</span>  
+  <span class="ar-func">delay</span>(1000</span>);&nbsp;&nbsp;<span class="ar-comment">//пауза 1 сек</span>  
+  <span class="ar-func">analogWrite</span>(ledPin, 63</span>);&nbsp;&nbsp;<span class="ar-comment">//четверть яркости (63/255&asymp;0,25)</span>  
+  <span class="ar-func">delay</span>(1000</span>);&nbsp;&nbsp;<span class="ar-comment">// пауза 1 сек</span>  
+  <span class="ar-func">digitalWrite</span>(ledPin, LOW);&nbsp;&nbsp;<span class="ar-comment">//выключить светодиод</span>  
+  <span class="ar-func">delay</span>(1000</span>);&nbsp;&nbsp;<span class="ar-comment">//пауза 1 сек</span>  
+}
+</pre>
+</div>
+
+
+<h3>Скетч 2</h3>
+
+<p>Светодиод должен увеличить, а затем плавно уменьшить яркость.</p>
+<p><span class="kod2">delay(20)</span> используется, чтобы замедлить скорость нарастания и уменьшения яркости.</p>
+
+
+<div class="kod">
+<pre>
+<span class="ar-type">int</span> ledPin = 9; <span class="ar-comment">//светодиод подключен к выводу 9</span>
+<span class="ar-type">int</span> intensity;  <span class="ar-comment">//яркость светодиода</span>
+
+<span class="ar-type">void</span> <span class="ar-oper">setup</span>() {
+  <span class="ar-func">pinMode</span>(ledPin, <span class="ar-const">OUTPUT</span>);<span class="ar-comment">// инициализация пина на выход</span>  
+}  
+  
+<span class="ar-type">void</span> <span class="ar-oper">loop</span>() {
+  <span class="ar-comment">//плавно увеличиваем яркость (0 to 255)</span>
+  <span class="ar-oper">for</span> (intensity=0;intensity&lt;=255;intensity++)
+  {
+    <span class="ar-func">analogWrite</span>(ledPin,intensity);
+    <span class="ar-func">delay</span>(20);
+  }
+  <span class="ar-func">delay</span>(2000);<span class="ar-comment">//ждем 2 сек</span>
+	
+ <span class="ar-comment">//плавно уменьшаем яркость (255 to 0)</span>
+  <span class="ar-oper">for</span> (intensity=255;intensity&gt;=0;intensity--)
+  {
+    <span class="ar-func">analogWrite</span>(ledPin,intensity);
+    <span class="ar-func">delay</span>(20);
+  }
+  <span class="ar-func">delay</span>(2000);<span class="ar-comment">//ждем 2 сек</span>
+}
+</pre>
+</div> 
+
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://usamodelkina.ru/6810-arduino-dlya-nachinayuschih.html"  target="_blank">usamodelkina.ru - Arduino для начинающих</a></p>
+</div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2023</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

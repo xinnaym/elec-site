@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Имитатор звука сирены</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Имитатор звука сирены</h1>
+	
+  <p>Данное устройство имитирует звук сирены — частота сигнала периодически плавно увеличивается, а затем уменьшается и т. д.</p>
+  <p>Основа схемы (рис. 1) — несимметричный мультивибратор на транзисторах VT2 и VT3. Частота генерации зависит от ёмкости  конденсатора С3. Нагрузкой мультивибратора служит динамическая головка ВА1.</p>
+
+  <figure>
+  <a href="sirena-1_files/sirena-1a.png" target="_blank">
+	<img src="sirena-1_files/sirena-1a.png" width="860" border="0"></a>
+  <figcaption>Рис. 1 - Схема  имитатора звука сирены</figcaption>
+</figure>
+
+	<p class="tab_num">Таблица 1</p>
+	
+  <table border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>Перечень элементов</caption>
+    <tr>
+      <th>Позиционное<br>
+        обозначение </th>
+      <th>Наименование</th>
+      <th>Номинал</th>
+      <th>Кол-во</th>
+      <th>Замена</th>
+    </tr>
+    <tr>
+      <td align="left">BA1</td>
+      <td align="left"> Динамическая головка</td>
+      <td align="center">1...2 Вт / 8-16 Ом </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">C1</td>
+      <td align="left">Конденсатор электролитический </td>
+      <td align="center">100 мкФ, 16 В </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">С2</td>
+      <td align="left">Конденсатор электролитический</td>
+      <td align="center">47 мкФ, 16 В</td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">C3, C4 </td>
+      <td align="left">Конденсатор </td>
+      <td align="center">0,1 мкФ</td>
+      <td align="center">2</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">DD1</td>
+      <td align="left">Микросхема </td>
+      <td align="center">К561ЛА9 </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R1, R2</td>
+      <td align="left">Резистор постоянный </td>
+      <td align="center">22 кОм </td>
+      <td align="center">2</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R3</td>
+      <td align="left">Резистор постоянный </td>
+      <td align="center">68 кОм </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R4</td>
+      <td align="left">Резистор  постоянный</td>
+      <td align="center">18 кОм </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R5</td>
+      <td align="left">Резистор  постоянный</td>
+      <td align="center">62 кОм </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R6</td>
+      <td align="left">Резистор  постоянный</td>
+      <td align="center">47кОм </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R7</td>
+      <td align="left">Резистор подстроечный </td>
+      <td align="center">4,7 кОм </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R8, R9 </td>
+      <td align="left">Резистор  постоянный</td>
+      <td align="center">270 Ом </td>
+      <td align="center">2</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">VT1</td>
+      <td align="left">Транзистор биполярный, n-p-n </td>
+      <td align="center">КТ315Б</td>
+      <td align="center">1</td>
+      <td align="left">с любым буквенным индексом. <br>
+        КТ3102, КТ312</td>
+    </tr>
+    <tr>
+      <td align="left">VT2</td>
+      <td align="left">Транзистор биполярный, p-n-p </td>
+      <td align="center">КТ361Б</td>
+      <td align="center">1</td>
+      <td align="left">с любым буквенным индексом. <br>
+        КТ3107</td>
+    </tr>
+    <tr>
+      <td align="left">VT3</td>
+      <td align="left">Транзистор биполярный, p-n-p  </td>
+      <td align="center">КТ815Б</td>
+      <td align="center">1</td>
+      <td align="left">с любым буквенным индексом. <br>
+КТ817</td>
+    </tr>
+  </table>
+
+  <p>На логических элементах DD1.1 и DD1.2 собран генератор прямоугольных импульсов. Частота импульсов определяется ёмкостью конденсатора С1 и сопротивлением резистора R1. Логический элемент DD1.3 — буферный. </p>
+  <p>На транзисторе VT1 собран электронный ключ. Когда на выходе элемента DD1.3 высокий уровень, транзистор VT1 открыт и конденсатор С2 заряжается через резистор R4. При этом изменяется режим работы транзистора VT2 — он открывается больше и частота несимметричного мультивибратора возрастает. При низком уровне на выходе элемента DD1.3 транзистор VT1 закрыт и конденсатор С2 разряжается через резисторы R5, R6 и базу транзистора VT2, который плавно закрывается, и частота несимметричного мультивибратора уменьшается. Транзистор VT1 периодически открывается и закрывается, изменяется и частота мультивибратора, имитируя сигнал сирены.</p>
+  <p>Громкость сигнала в небольших пределах и режим работы мультивибратора можно изменять подстроечным резистором R7. </p>
+  <p>Питание генератора и мультивибратора осуществляется от стабилизированного источника питания с выходным напряжением 9 В. Конденсатор С4 служит для сглаживания пульсации на линии питания и подавляют помехи.</p>
+  <p>Налаживание сводится к подборке конденсаторов С1 — С3. Общую тональность звучания сирены изменяют подборкой конденсатора С3, скорость нарастания и спада частоты — конденсатора С2, а период её изменения — конденсатора С1.  </p>
+  <br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="http://radiohata.ru/beginner/277-imitator-zvuka-sireny.html"  target="_blank">radiohata.ru - Имитатор звука сирены</a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2023</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

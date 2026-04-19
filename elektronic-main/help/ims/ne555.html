@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Микросхема NE555</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+
+  
+  <div id="content">
+	<h1>Микросхема NE555</h1>
+
+
+
+  <p>Микросхема NE555 — универсальный таймер — устройство для формирования  (генерации) одиночных и повторяющихся импульсов со стабильными временными  характеристиками. Впервые выпущен в 1971 году компанией Signetics.  Функциональные аналоги оригинального NE555 выпускаются во множестве биполярных  и КМОП-вариантов. Отечественным аналогом  данной микросхемы является КР1006ВИ1. Сдвоенная версия 555 выпускается  под обозначением 556, счетверенная — под обозначением 558.</p>
+  <p class="tab_num">Таблица 1</p>
+
+    <table border="1" cellspacing="0" cellpadding="3">
+		<caption>Обозначения таймера 555 различных производителей
+		</caption>
+      <tr>
+        <th valign="top">Производитель </th>
+        <th valign="top">Название микросхемы</th>
+      </tr>
+      <tr>
+        <td valign="top">ECG Philips</td>
+        <td valign="top">ECG955M</td>
+      </tr>
+      <tr>
+        <td valign="top">Exar</td>
+        <td valign="top">XR-555</td>
+      </tr>
+      <tr>
+        <td valign="top">Fairchild</td>
+        <td valign="top">NE555</td>
+      </tr>
+      <tr>
+        <td valign="top">Harris</td>
+        <td valign="top">HA555</td>
+      </tr>
+      <tr>
+        <td valign="top">Intersil</td>
+        <td valign="top">SE555/NE555</td>
+      </tr>
+      <tr>
+        <td valign="top">Lithic Systems</td>
+        <td valign="top">LC555</td>
+      </tr>
+      <tr>
+        <td valign="top">Maxim</td>
+        <td valign="top">ICM7555</td>
+      </tr>
+      <tr>
+        <td valign="top">Motorola</td>
+        <td valign="top">MC1455/MC1555</td>
+      </tr>
+      <tr>
+        <td valign="top">National</td>
+        <td valign="top">LM1455/LM555C</td>
+      </tr>
+      <tr>
+        <td valign="top">NTE Silvania</td>
+        <td valign="top">NTE955M</td>
+      </tr>
+      <tr>
+        <td valign="top">Raytheon</td>
+        <td valign="top">RM555/RC555</td>
+      </tr>
+      <tr>
+        <td valign="top">RCA</td>
+        <td valign="top">CA555/CA555C</td>
+      </tr>
+      <tr>
+        <td valign="top">Sanyo</td>
+        <td valign="top">LC7555</td>
+      </tr>
+      <tr>
+        <td valign="top">Texas Instruments</td>
+        <td valign="top">SN52555/SN72555</td>
+      </tr>
+    </table>
+
+  <p>Микросхема NE555 представляет собой асинхронный RS-триггер со  специфическими порогами входов, точно заданными аналоговыми компараторами и  встроенным делителем напряжения.</p>
+  <p>Микросхема NE555 имеет высокую плотность  монтажа при низкой себестоимости, чем заслужила высокую популярность. Применяется для построения различных генераторов, модуляторов, реле времени, пороговых устройств и прочих узлов  электронной аппаратуры.</p>
+
+
+  <h2>Устройство NE555</h2>
+  <p>Внутреннее устройство NE555 включает в  себя пять функциональных узлов (рис. 1). </p>
+
+  <figure>
+	  <a href="ne555_files/ne555_fsheme.png" target="_blank"><img src="ne555_files/ne555_fsheme.png" width="860" border="0"></a>
+	<figcaption>Рис. 1 - Функциональная схема микросхемы NE555</figcaption>
+	</figure>
+	
+  <p>На входе расположен резистивный  делитель напряжения, который формирует два опорных напряжения для прецизионных  компараторов. Выходные контакты компараторов поступают на следующий блок –  RS-триггер с внешним выводом для сброса, а затем на усилитель мощности.  Последним узлом является транзистор с открытым коллектором, который может  выполнять несколько функций, в зависимости от поставленной задачи. </p>
+  <p>Рекомендуемое напряжение питания для  ИМС типа NA, NE, SA лежит в интервале 4,5 … 16 В, а для SE может достигать 18  В. При этом ток потребления при минимальном Uпит равен 2–5 мА, при  максимальном U<sub>пит</sub> – 10–15 мА. Некоторые ИМС 555 КМОП-серии  потребляют не более 1 мА. Наибольший выходной ток импортной микросхемы может  достигать значения в 200 мА. Для КР1006ВИ1 он не выше 100 мА. </p>
+  <p>Качество сборки и производитель сильно  влияют на условия эксплуатации таймера. Например, диапазон рабочих температур  NE555 составляет от 0 до 70&deg;C, а SE555 &#8212; от -55 до +125&deg;C, что важно знать при  конструировании устройств для работы в открытой окружающей среде. </p>
+		
+  <p>NE555 и её аналоги преимущественно  выпускаются в восьмивыводном корпусе типа PDIP8, TSSOP или SOIC. Расположение  выводов микросхемы NE555 в различных корпусах показано на рис. 2. </p>
+	
+  <figure>
+	  <img src="ne555_files/ne555-korpus.jpg" width="860" border="0">
+	<figcaption>Рис. 2 - Цоколевка микросхемы NE555 в различных корпусах</figcaption>
+</figure>
+ 
+  <figure>
+	  <img src="ne555_files/ne555_ugo.png" width="340" height="330" border="0">
+	<figcaption>Рис. 3 - Условное графическое обозначение микросхемы NE555</figcaption>
+</figure>
+<p>Назначение выводов:</p>
+  <ol>
+    <li>0V &#8212; Общий (GND). Подключается к минусу питания устройства. </li>
+    <li>TR &#8212; Запуск (TRIGGER). Подача импульса низкого уровня на  вход второго компаратора приводит к запуску и появлению на выходе сигнала  высокого уровня, длительность которого зависит от номинала внешних элементов R  и С.</li>
+    <li>OUT &#8212; Выход. Высокий уровень выходного  сигнала равен (U<sub>пит</sub>-1,5В), а низкий – около 0,25 В. Переключение  занимает около 0,1 мкс. </li>
+    <li>R &#8212; Сброс (RESET). Данный вход имеет  наивысший приоритет и способен управлять работой таймера независимо от  напряжения на остальных выводах. Для разрешения запуска необходимо, чтобы на  нём присутствовал потенциал более 0,7 В. Поэтому его через резистор  соединяют с питанием схемы. Появление импульса менее 0,7 В запрещает работу  NE555. </li>
+    <li>CV &#8212; Контроль (CONTROL  VOLTAGE). Данный вывод напрямую соединен с делителем напряжения и в отсутствие  внешнего воздействия выдаёт 2/3 U<sub>пит</sub>. Подавая на вывод CONTROL  VOLTAGE управляющий  сигнал, можно получить на выходе модулированный сигнал. В простых схемах он  подключается к внешнему конденсатору. </li>
+    <li>THR &#8212; Останов (THRESHOLD). Является входом первого  компаратора, появление на котором напряжения более 2/3U<sub>пит</sub>  останавливает работу триггера и переводит выход таймера в низкий уровень. При  этом на выводе 2 должен отсутствовать запускающий сигнал, так как TRIGGER имеет  приоритет перед THRESHOLD. </li>
+    <li>DTS &#8212;  Разряд (DISCHARGE). Соединен напрямую с внутренним  транзистором, который включен по схеме с общим коллектором. Обычно к переходу  коллектор-эмиттер подключают времязадающий конденсатор, который разряжается,  пока транзистор находится в открытом состоянии. Реже используется для  наращивания нагрузочной способности таймера. </li>
+    <li>VCC &#8212; Питание. Подключается к плюсу  источника питания 4,5…16 В.    </li>
+    </ol>
+
+
+  <table border="1" align="center" cellpadding="2" cellspacing="0">
+	<caption>Электрические характеристики<br>
+(VCC = от 5 В до 15 В, TA = 25°C (если не указано иное))</caption>
+    <colgroup>
+      <col>
+      <col align="left">
+      <col align="left">
+      <col align="right">
+      <col align="right">
+      <col align="right">
+      <col align="center">
+      <col>
+      <col>
+      <col>
+      </colgroup>
+    <thead align="left">
+      <tr>
+        <th rowspan="2" align="center" valign="middle">ПАРАМЕТР</th>
+        <th colspan="2" rowspan="2" align="center" valign="middle">УСЛОВИЯ ИСПЫТАНИЙ</th>
+        <th colspan="3" align="center" valign="middle">SE555</th>
+        <th colspan="3" align="center" valign="middle">NA555<br>
+          NE555<br>
+          SA555</th>
+        </tr>
+      <tr>
+        <th align="right" valign="middle">мин.</th>
+        <th align="right" valign="middle">тип.</th>
+        <th align="right" valign="middle">макс</th>
+        <th rowspan="1" align="right" valign="middle">мин.</th>
+        <th align="right" valign="middle">тип.</th>
+        <th align="right" valign="middle">макс.</th>
+      </tr>
+    </thead>
+    <tbody align="left">
+      <tr>
+        <td rowspan="2" align="left" valign="middle">Уровень напряжения на выводе THRES, В </td>
+        <td rowspan="1" align="left" valign="middle">VCC = 15 В</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">9.4</td>
+        <td align="center" valign="middle">10</td>
+        <td align="center" valign="middle">10.6</td>
+        <td rowspan="1" align="center" valign="middle">8.8</td>
+        <td align="center" valign="middle">10</td>
+        <td align="center" valign="middle">11.2</td>
+        </tr>
+      <tr>
+        <td rowspan="1" align="left" valign="middle">VCC = 5 В</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">2.7</td>
+        <td align="center" valign="middle">3.3</td>
+        <td align="center" valign="middle">4</td>
+        <td rowspan="1" align="center" valign="middle">2.4</td>
+        <td align="center" valign="middle">3.3</td>
+        <td align="center" valign="middle">4.2</td>
+      </tr>
+      <tr>
+        <td align="left" valign="middle">Ток через вывод THRES, нА </td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">30</td>
+        <td align="center" valign="middle">250</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">30</td>
+        <td align="center" valign="middle">250</td>
+        </tr>
+      <tr>
+        <td rowspan="4" align="left" valign="middle">Уровень напряжения на выводеTRIG, В </td>
+        <td rowspan="2" align="left" valign="middle">VCC = 15 В</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">4.8</td>
+        <td align="center" valign="middle">5</td>
+        <td align="center" valign="middle">5.2</td>
+        <td align="center" valign="middle">4.5</td>
+        <td align="center" valign="middle">5</td>
+        <td align="center" valign="middle">5.6</td>
+        </tr>
+      <tr>
+        <td align="left" valign="middle">TA = от –55°C до 125°C</td>
+        <td align="center" valign="middle">3</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">6</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td rowspan="2" align="left" valign="middle">VCC = 5 В</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">1.45</td>
+        <td align="center" valign="middle">1.67</td>
+        <td align="center" valign="middle">1.9</td>
+        <td align="center" valign="middle">1.1</td>
+        <td align="center" valign="middle">1.67</td>
+        <td align="center" valign="middle">2.2</td>
+      </tr>
+      <tr>
+        <td align="left" valign="middle">TA = от –55°C до 125°C</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">1.9</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left" valign="middle">Ток через вывод TRIG, мкА</td>
+        <td align="left" valign="middle"> при 0 В на TRIG</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">0.5</td>
+        <td align="center" valign="middle">0.9</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">0.5</td>
+        <td align="center" valign="middle">2</td>
+        </tr>
+      <tr>
+        <td rowspan="2" align="left" valign="middle">Уровень напряжения на выводе RESET, В </td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">0.3</td>
+        <td align="center" valign="middle">0.7</td>
+        <td align="center" valign="middle">1</td>
+        <td align="center" valign="middle">0.3</td>
+        <td align="center" valign="middle">0.7</td>
+        <td align="center" valign="middle">1</td>
+        </tr>
+      <tr>
+        <td align="left" valign="middle">TA = от  –55°C до 125°C</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">1.1</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td rowspan="2" align="left" valign="middle">Ток через вывод RESET, мА </td>
+        <td align="left" valign="middle">при VCC на RESET</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">0.1</td>
+        <td align="center" valign="middle">0.4</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">0.1</td>
+        <td align="center" valign="middle">0.4</td>
+        </tr>
+      <tr>
+        <td align="left" valign="middle">при 0 В на RESET</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">–0.4</td>
+        <td align="center" valign="middle">–1</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">–0.4</td>
+        <td align="center" valign="middle">–1.5</td>
+      </tr>
+      <tr>
+        <td align="left" valign="middle">Переключающий ток на DISCH в закрытом состоянии, нА </td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">20</td>
+        <td align="center" valign="middle">100</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">20</td>
+        <td align="center" valign="middle">100</td>
+        </tr>
+      <tr>
+        <td align="left" valign="middle">Переключающее напряжение на DISCH в открытом состоянии, В</td>
+        <td align="left" valign="middle">VCC = 5 В, IO = 8 мA</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">0.15</td>
+        <td align="center" valign="middle">0.4</td>
+        </tr>
+      <tr>
+        <td rowspan="4" align="left" valign="middle">Напряжение на CONT, В</td>
+        <td rowspan="2" align="left" valign="middle">VCC = 15 В</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">9.6</td>
+        <td align="center" valign="middle">10</td>
+        <td align="center" valign="middle">10.4</td>
+        <td align="center" valign="middle">9</td>
+        <td align="center" valign="middle">10</td>
+        <td align="center" valign="middle">11</td>
+        </tr>
+      <tr>
+        <td align="left" valign="middle">TA = от –55°C до 125°C</td>
+        <td align="center" valign="middle">9.6</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">10.4</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td rowspan="2" align="left" valign="middle">VCC = 5 В</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">2.9</td>
+        <td align="center" valign="middle">3.3</td>
+        <td align="center" valign="middle">3.8</td>
+        <td align="center" valign="middle">2.6</td>
+        <td align="center" valign="middle">3.3</td>
+        <td align="center" valign="middle">4</td>
+      </tr>
+      <tr>
+        <td align="left" valign="middle">TA = от –55°C до 125°C</td>
+        <td align="center" valign="middle">2.9</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">3.8</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td rowspan="11" align="left" valign="middle">Низкий уровень напряжения на выходе, В</td>
+        <td rowspan="2" align="left" valign="middle">VCC = 15 В, IOL = 10 мA</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">0.1</td>
+        <td align="center" valign="middle">0.15</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">0.1</td>
+        <td align="center" valign="middle">0.25</td>
+        </tr>
+      <tr>
+        <td align="left" valign="middle">TA = от –55°C до 125°C</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">0.2</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td rowspan="2" align="left" valign="middle">VCC = 15 В, IOL = 50 мА</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">0.4</td>
+        <td align="center" valign="middle">0.5</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">0.4</td>
+        <td align="center" valign="middle">0.75</td>
+      </tr>
+      <tr>
+        <td align="left" valign="middle">TA = от –55°C до 125°C</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">1</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td rowspan="2" align="left" valign="middle">VCC = 15 В, IOL = 100 мА</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">2</td>
+        <td align="center" valign="middle">2.2</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">2</td>
+        <td align="center" valign="middle">2.5</td>
+      </tr>
+      <tr>
+        <td align="left" valign="middle">TA = от –55°C до 125°C</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">2.7</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="middle">VCC = 15 В, IOL = 200 мA</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">2.5</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">2.5</td>
+        <td align="center" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left" valign="middle">VCC = 5 В, IOL = 3.5 мA</td>
+        <td align="left" valign="middle">TA = от –55°C до 125°C</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">0.35</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td rowspan="2" align="left" valign="middle">VCC = 5 В, IOL = 5 мA</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">0.1</td>
+        <td align="center" valign="middle">0.2</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">0.1</td>
+        <td align="center" valign="middle">0.35</td>
+      </tr>
+      <tr>
+        <td align="left" valign="middle">TA = от –55°C до 125°C</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">0.8</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="middle">VCC = 5 В, IOL = 8 мA</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">0.15</td>
+        <td align="center" valign="middle">0.25</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">0.15</td>
+        <td align="center" valign="middle">0.4</td>
+      </tr>
+      <tr>
+        <td rowspan="5" align="left" valign="middle">Высокий уровень напряжения на выходе, В</td>
+        <td rowspan="2" align="left" valign="middle">VCC = 15 В, IOH = –100 мA</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">13</td>
+        <td align="center" valign="middle">13.3</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">12.75</td>
+        <td align="center" valign="middle">13.3</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        </tr>
+      <tr>
+        <td align="left" valign="middle">TA = от –55°C до 125°C</td>
+        <td align="center" valign="middle">12</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="middle">VCC = 15 В, IOH = –200 мA</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">12.5</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">12.5</td>
+        <td align="center" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td rowspan="2" align="left" valign="middle">VCC = 5 В, IOH = –100 мA</td>
+        <td align="left" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">3</td>
+        <td align="center" valign="middle">3.3</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">2.75</td>
+        <td align="center" valign="middle">3.3</td>
+        <td align="center" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left" valign="middle">TA = от –55°C до 125°C</td>
+        <td align="center" valign="middle">2</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td rowspan="4" align="left" valign="middle">Потребляемый ток, мА </td>
+        <td rowspan="2" align="left" valign="middle">Низкий уровень на выходе, без нагрузки</td>
+        <td align="left" valign="middle">VCC = 15 В</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">10</td>
+        <td align="center" valign="middle">12</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">10</td>
+        <td align="center" valign="middle">15</td>
+        </tr>
+      <tr>
+        <td align="left" valign="middle">VCC = 5 В</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">3</td>
+        <td align="center" valign="middle">5</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">3</td>
+        <td align="center" valign="middle">6</td>
+      </tr>
+      <tr>
+        <td rowspan="2" align="left" valign="middle">Низкий уровень на выходе, без нагрузки</td>
+        <td align="left" valign="middle">VCC = 15 В</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">9</td>
+        <td align="center" valign="middle">10</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">9</td>
+        <td align="center" valign="middle">13</td>
+      </tr>
+      <tr>
+        <td align="left" valign="middle">VCC = 5 В</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">2</td>
+        <td align="center" valign="middle">4</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">2</td>
+        <td align="center" valign="middle">5</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>&nbsp;</p>
+  <br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://www.radiokot.ru/articles/01/"  target="_blank">radiokot.ru - Теория и практика применения таймера 555. Часть первая.</a></p>
+
+  <p><a href="https://ledjournal.info/spravochnik/ne555-datasheet.html"  target="_blank">ledjournal.info - Подробное описание, применение и схемы включения таймера NE555 </a></p>
+
+  <p><a href="https://rudatasheet.ru/datasheets/ne555-%D0%BF%D1%80%D0%B5%D1%86%D0%B8%D0%B7%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9-%D1%82%D0%B0%D0%B9%D0%BC%D0%B5%D1%80/"  target="_blank">rudatasheet.ru - NE555-Прецизионный таймер</a></p>
+
+</div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2023</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

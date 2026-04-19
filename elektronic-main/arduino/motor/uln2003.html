@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Драйвер шагового двигателя ULN2003</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Драйвер шагового двигателя ULN2003</h1>
+
+<p>Модуль управления для шагового двигателя <a href="stepmotor-28byj-48.html">28YBJ-48</a> разработан на микросхеме ULN2003 - транзисторная сборка  с выходными ключами повышенной мощности, имеющая на выходах защитные диоды, которые предназначены для защиты управляющих электрических цепей от обратного выброса напряжения от индуктивной нагрузки.</p>
+
+
+	<div class="ris">
+		<img src="uln2003_files/uln2003-board2.jpg" width="340" height="310">
+		<img src="uln2003_files/106-11.jpg" alt="Драйвер шагового двигателя ULN2003" height="310">
+		<img src="uln2003_files/uln2003-board.jpg" alt="Драйвер шагового двигателя ULN2003" width="599" height="289">
+		<p>Рис. 1 - Внешний вид драйвера шагового двигателя ULN2003</p>		
+</div>
+  <p>Плата драйвера шагового двигателя на базе микросхемы ULN2003 представляет собой массив транзисторов, включенных по схеме Дарлингтона. Это позволяет достаточно просто управлять мотором 28BYJ-48, используя микроконтроллер.</p>
+  <p> На плате драйвера имеется пятиконтактный разъем для подключения к шаговику и четыре светодиода, показывающих, какая из обмоток запитана в текущий момент времени.</p>
+  <p>Также сбоку расположен джампер (два вывода под четырьмя резисторами), установка которого позволяет подавать питание на шаговый двигатель. Питать мотор от 5 В Arduino не рекомендуется, так как мотор может потреблять ток, превышающий возможности Arduino. Лучше использовать внешний 5-12 В источник питания, выдающий ток не менее 1 А. Четыре управляющих входа помечены как IN1-IN4 и должны быть подключены к четырем цифровым выводам Arduino.</p>
+	
+
+  <h3>Характеристики</h3>
+  <ul>
+    <li>Напряжение питания двигателя: 5...12 В (постоянный ток).</li>
+    <li>Выведено 4 фазы.</li>
+    <li>Количество шагов: 64;</li>
+    <li>Напряжение управляющее: 5 В.</li>
+    <li>Номинальный ток коллектора одного ключа  0,5 А.</li>
+    <li>Угол поврота на один шаг: 5,625 градуса.</li>
+    <li>Частота: 100 Гц.</li>
+    <li>Частота холостого хода по часовой стрелке: &gt; 600 Гц.</li>
+    <li>Частота холостого хода против часовой стрелки: &gt; 1000 Гц.</li>
+    <li>Класс электробезопасности: A.</li>
+    <li>Светодиодная индикация включения фаз.</li>
+    <li>Защитные диоды на выходах.</li>
+    <li>Вход адаптирован к всевозможными видам логики.</li>
+    <li>Возможность применения для управления реле.</li>
+    <li>Размеры: 35&times;30&times;10мм.</li>
+   <li>Масса: 8 г.</li>
+  </ul>
+	
+
+<div class="ris">
+		<img src="uln2003_files/ULN2003_driver.jpg" alt=" Драйвер шагового двигателя ULN2003" width="630" height="360">
+		<p>Рис. 2 - Схема модуля драйвера шагового двигателя на базе ULN2003</p>		
+</div>
+
+  <h2>Подключение драйвера шагового двигателя ULN2003</h2>
+  <div class="ris">
+  <img src="uln2003_files/106-5.jpg" alt="Схема подключения ULN2003 к шаговому двигателю" width="860" height="560">
+<p>Рис. 3 - Схема подключения ULN2003 к шаговому двигателю</p>
+</div>
+	
+	
+  <h3>Подключение драйвера шагового двигателя ULN2003 к Arduino Uno</h3>
+  <p>Подключите выводы IN1, IN2, IN3 и IN4 к пинам  Arduino Uno. Положительный контакт источника питания необходимо подключить к выводу, помеченному как «+», а землю источника питания к выводу «-» на плате контроллера. Если для питания Arduino и мотора используются различные источники питания, то необходимо объединить выводы «земля» источников вместе.</p>
+  <div class="ris">
+<img src="uln2003_files/106-8.jpg" alt="Схема подключения ULN2003 к Arduino и шаговому двигателю">
+<p>Рис. 4 - Схема подключения ULN2003 к Arduino и шаговому двигателю</p>
+</div>
+
+<p><strong>Примечание</strong>. Если вы захотите использовать плату L293 вместо ULN2003, красный контакт подключать не надо.</p>
+
+	
+  <br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://autohome.org.ua/market/moto_servo/driver-uln2003-detail"  target="_blank">autohome.org.ua - Драйвер шагового двигателя ULN2003</a></p>
+  <p><a href="http://arduino-diy.com/arduino-shagovii-motor-28-BYJ48-draiver-ULN2003"  target="_blank">arduino-diy.com - Arduino, шаговый двигатель 28-BYJ48 и драйвер ULN2003</a></p>
+  <p><a href="http://robot-kit.ru/article_info.php/articles_id/36/article/-font-color---993300--Podklyuchenie-shagovogo-dvigatelya-28BYJ-48-5V-k-Arduino--CHast-1---font-"  target="_blank">robot-kit.ru - Подключение шагового двигателя 28BYJ-48-5V к Arduino. Часть 1.</a></p>
+  <p><a href="http://robot-kit.ru/article_info.php/articles_id/21/article/-font-color---993300--Podklyuchenie-shagovogo-dvigatelya-28BYJ-48-5V-k-Arduino--CHast-2---font-"  target="_blank">robot-kit.ru - Подключение шагового двигателя 28BYJ-48-5V к Arduino. Часть 2.</a></p>
+  <p><a href="http://robot-kit.ru/article_info.php/articles_id/34/article/-font-color---993300--Podklyuchenie-shagovogo-dvigatelya-28BYJ-48-5V-k-Arduino--CHast-2---font-"  target="_blank">robot-kit.ru - Подключение шагового двигателя 28BYJ-48-5V к Arduino. Часть 3.</a></p>
+  <p><a href="http://robotosha.ru/arduino/stepper-motor-28byj-uln2003-arduino.html"  target="_blank">robotosha.ru - Шаговый двигатель 28BYJ-48 с драйвером ULN2003 и Arduino UNO</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Цветомузыкальная установка на лампах накаливания (вариант 2)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Цветомузыкальная установка на лампах накаливания (вариант 2)</h1>
+
+<p>Данная цветомузыкальная установка содержит всего 4 транзистора и десяток резисторов с конденсаторами.</p>
+
+<div class="ris"><img src="color-music-9_files/cmu9-shema.JPG" width="840" height="640">
+<p>Рис. 1 - Схема цветомузыкальной установки на лампах накаливания</p>
+</div>
+
+
+<p class="tab_num">Таблица 1</p>
+  <table cellspacing="0" cellpadding="3" bordercolor="black" align="center" border="1">
+	<caption>Перечень элементов</caption>
+    <tbody>
+      <tr>
+        <th>Обозначение</th>
+        <th>Наименование</th>
+        <th>Номинал</th>
+        <th>Примечание</th>
+      </tr>
+      <tr>
+        <td align="center">С1, С2, C4, С6</td>
+        <td align="left">Конденсатор электролитический </td>
+        <td align="center">10 мкФ / 25 В </td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">C3</td>
+        <td align="left">Конденсатор электролитический</td>
+        <td align="center">1 мкФ / 25 В </td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">C5</td>
+        <td align="left">Конденсатор электролитический</td>
+        <td align="center">4,7 мкФ / 25 В </td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">EL1 - EL6 </td>
+        <td align="left">Лампочка накливания </td>
+        <td align="center"><a href="../../help/vd/al307.html" target="_blank"></a></td>
+        <td align="left"><p>EL1 - EL2 - синий, <br>
+          EL3 - EL4 - зеленый<br>
+          EL5 - EL6 - красный</p>
+          <p>можно заменить светодиодами </p></td>
+      </tr>
+      <tr>
+        <td align="center">R1</td>
+        <td align="left">Резистор переменный</td>
+        <td align="center">47 кОм</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center"> R2, R5, R7, R9</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">33 кОм / 0,25 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R3, R6</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">22 кОм / 0,25 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R4</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">10 кОм / 0,25 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R8 , R10</td>
+        <td align="left">Резистор подстроечный</td>
+        <td align="center">33 кОм</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">VT1</td>
+        <td align="left">Транзистор биполярный</td>
+        <td align="center"><a href="../../help/vt/kt315.html" target="_blank">КТ315</a></td>
+        <td align="left">С любым буквенным индексом</td>
+      </tr>
+      <tr>
+        <td align="center">VT2-VT4</td>
+        <td align="left">Транзистор биполярный</td>
+        <td align="center"><a href="../../help/vt/kt815.html" target="_blank">КТ815</a></td>
+        <td align="left">С любым буквенным индексом</td>
+      </tr>
+    </tbody>
+  </table>
+<p>Питается устройство от низкого напряжения 10-15 В, что позволяет подключать её к источникам музыки даже в автономных условиях. </p>
+
+<p>Все устройство нужно собрать в  подходщем корпусе, на котором размещаются кнопка включения питания, три регулятора уровня цветов и сами лампочки (светодиоды). Рисунок проводников печатной платы приведен на рис. 2. </p>
+
+<div class="ris"><img src="color-music-9_files/cmu-9-pcb.JPG" width="382" height="846">
+<p>Рис. 2 - Топология печатной платы цветомузыкальной установки</p>
+</div>
+
+<p>При использовании  светодиодов в качестве транзисторов VT2- VT4 можно поставить КТ315, резисторы R5, R7, R9 поставить 120 кОм, при этом светодиоды чуть горят. Резистор R2, задающий усиление входного каскада, нужно подбирать в зависимости от того, куда будет подключаться цветомузыка.</p>
+
+<p>&nbsp;</p>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	<hr>
+	
+	
+<h3>Источники:</h3>
+<p><a href="http://radioskot.ru/publ/raznocvetnaja_svetodiodnaja_cvetomuzyka/1-1-0-506"  target="_blank">radioskot.ru - Разноцветная светодиодная цветомузыка</a></p>
+
+
+<!--
+<p><a href=""></a></p>
+ -->
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2020</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Расчет трансформатора</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+
+  <h1>Простой расчет трансформатора</h1>
+  <p>Данная методика расчета трансформаторов конечно очень приблизительная но для радиолюбительской практики вполне подходит.
+    Кроме   этого  нижеперечисленные расчеты актуальны только лишь для   трансформаторов с Ш-образным сердечником и для работы с током   промышленной частоты 50 Гц.</p>
+  <p>И еще один нюанс: при самостоятельной намотке трансформаторов следует учитывать очень важный факт - количество витков в первичной обмотке. 
+    Чем   выше количество витков тем выше её сопротивление и следовательно будет   ниже нагрев. Кроме того: при большом сопротивлении в первичке будет и   ниже ток покоя, а следовательно ниже уровень паразитных помех. 
+    Поэтому   при расчетах мы будем принимать коэффициент трансформации равным 50.   (можно и больше, но тогда количество витков еще больше возрастет).</p>
+  <p>Задача: нужен трансформатор с выходным напряжением 12 В и током на   вторичной обмотке не менее 1A (если обмоток несколько то токи   складываются).</p>
+  <p>Мощность вторичной обмотки: </p>
+  <p class="formula"><em>P</em><sub>2</sub> = <em>I</em><sub>2</sub> &middot; <em>U</em><sub>2</sub> = 12 &middot; 1 = 12 [Вт]</p>
+  <p> Так как КПД у   трансформаторов приблизительно 85%, то мощность забираемая первичкой при   работе будет приблизительно в 1,2 раза выше и получится </p>
+  <p class="formula">P<sub>2</sub> =12 &middot; 1,2 = 14,4 [Вт].</p>
+  <p>Исходя из этого можно посчитать площадь сердечника:</p>
+  <p class="formula">
+	<img src="raschet-transformator_files/S_serdechnik_transformator.png" width="200" height="50" title="площадь сердечника трансформатора">,	</p>
+  <p>где <br>
+    <span class="formula2"><em>S</em></span> - площадь сердечника, <br>
+    <span class="formula2"><em>P</em><sub>1</sub></span> - мощность первичной обмотки.</p>
+  <p>Получится 4,93 &asymp; 5 см<sup>2</sup> .<br>
+    Это необходимая минимальная площадь сердечника. Если есть возможность применить больше - это даже лучше.</p>
+  <p>Рассчитываем количество витков по формуле:</p>
+  <p class="formula">
+	<img src="raschet-transformator_files/vitki_na_volt_formula.png" width="150" height="50" title="количество витков трансформатора"></p>
+    <p>где<br>
+    <span class="formula2"><em>W</em></span> - количество витков,<br>
+    <span class="formula2"><em>К</em><sub>тр</sub></span> - коэффициент трансформации,<br>
+    <span class="formula2"><em>S</em><sub>с</sub></span> - площадь сечения сердечника.</p>
+  <p>Так как  <span class="formula2"><em>К</em><sub>тр</sub></span>=50, то:</p>
+  <p class="formula"><em>W</em><sub>1</sub> = 50/5 &middot; 220 = 2200.</p>
+  <p class="formula"> <em>W</em><sub>2</sub>= 50/5 &middot; 12 = 120.</p>
+  <p>Рассчитываем диаметр провода по формуле:</p>
+  <p class="formula">
+	<img src="raschet-transformator_files/Diametr_provod_formula.png" width="150" height="50" title="диаметр провода"></p>
+  <p>где    <em><span class="formula2">I </span></em>- ток протекающий через обмотку.</p>
+  <p> Рассчитываем ток через первичную обмотку используя напряжение и мощность первичной обмотки:</p>
+  <p class="formula"> <em>I</em><sub>1</sub>= <em>P</em><sub>1</sub>/<em>U</em><sub>1</sub> = 14,4/220 = 0,065 (A).</p>
+  <p>Диаметр провода для первичной обмотки: 
+      <span class="formula2"><em>D</em><sub>1</sub> = 0,7 &middot; <img src="raschet-transformator_files/065.png" width="52" height="20" align="absmiddle"> = 0,18</span> (мм).</p>
+  <p>Диаметр провода для вторичной обмотки:
+    <span class="formula2"><em>D</em><sub>2</sub> = 0,7 &middot; <img src="raschet-transformator_files/1.PNG" width="24" height="20" align="absmiddle"> = 0,7</span> (мм). </p>
+  <br>
+    <br>
+  <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	<hr>
+<h3>Источники:</h3>
+<p><a href="http://radio-uchebnik.ru/txt/raschety-po-elektronike-i-elektrotekhnike/11-elektrotekhnika-elektronika-samostoyatelnye-raschety/15-uproshchennyj-raschet-transformatora">radio-uchebnik.ru</a></p>
+
+
+<!--
+<p><a href=""></a></p>
+ -->
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

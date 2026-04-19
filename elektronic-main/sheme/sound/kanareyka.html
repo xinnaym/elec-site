@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Электронная канарейка</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Электронная канарейка</h1>
+<p>В  основе электронного имитатора пения канарейки  лежит асимметричный мультивибратор (рис. 1). Асимметричным данный мультивибратор называется потому, что конденсаторы на коллекторах транзисторов имеют разные ёмкости.</p>
+	
+<figure>
+  <a href="kanareyka_files/kanarejka-shema-mp.png">
+	  <img src="kanareyka_files/kanarejka-shema-mp.png" width="600" height="385" border="0"></a>
+  <figcaption>Рис. 1 - Схема электронной канарейки на транзисторах МП41</figcaption>
+</figure>
+
+<p class="tab_num">Таблица 1</p>
+  <table cellspacing="0" cellpadding="3" bordercolor="black" align="center" border="1">
+	<caption>
+	Перечень элементов электронной канарейки
+	</caption>
+    <tbody>
+      <tr>
+        <th>Обозначение</th>
+        <th>Наименование</th>
+        <th>Номинал</th>
+        <th>Кол-во</th>
+        <th>Примечание</th>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">BF1</td>
+        <td align="left" valign="middle">Динамическая головка<br></td>
+        <td align="center" valign="middle">50 Ом</td>
+        <td align="center" valign="middle">1</td>
+        <td align="left" valign="middle">более 50 Ом </td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">С1</td>
+        <td align="left" valign="middle">Конденсатор электролитический </td>
+        <td align="center" valign="middle">47 мкФ-16 В<br></td>
+        <td align="center" valign="middle">1</td>
+        <td align="left" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">С2</td>
+        <td align="left" valign="middle">Конденсатор электролитический </td>
+        <td align="center" valign="middle">22 мкФ-16 В<br></td>
+        <td align="center" valign="middle">1</td>
+        <td align="left" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">С3</td>
+        <td align="left" valign="middle">Конденсатор</td>
+        <td align="center" valign="middle">5100 пФ </td>
+        <td align="center" valign="middle">1</td>
+        <td align="left" valign="middle">4700...5600 пФ </td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">GB1</td>
+        <td align="left" valign="middle">Батарейка</td>
+        <td align="center" valign="middle">9 В </td>
+        <td align="center" valign="middle">1</td>
+        <td align="left" valign="middle">Крона</td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle"> R1</td>
+        <td align="left" valign="middle">Резистор постоянный</td>
+        <td align="center" valign="middle">39 кОм - 0,25 Вт</td>
+        <td align="center" valign="middle">1</td>
+        <td align="left" valign="middle"> 0,25-0,5 Вт</td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">R2, R4 </td>
+        <td align="left" valign="middle">Резистор постоянный</td>
+        <td align="center" valign="middle">220 кОм - 0,25 Вт</td>
+        <td align="center" valign="middle">2</td>
+        <td align="left" valign="middle">0,25-0,5 Вт</td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">R3 </td>
+        <td align="left" valign="middle">Резистор постоянный</td>
+        <td align="center" valign="middle">470 Ом - 0,25 Вт</td>
+        <td align="center" valign="middle">1</td>
+        <td align="left" valign="middle">0,25-0,5 Вт</td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">S1</td>
+        <td align="left" valign="middle">Выключатель</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">1</td>
+        <td align="left" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">VT1</td>
+        <td align="left" valign="middle">Транзистор биполярный </td>
+        <td align="center" valign="middle">МП41А</td>
+        <td align="center" valign="middle">2</td>
+        <td align="left" valign="middle">МП42Б, <br>
+          коэффициент передачи тока более 60</td>
+      </tr>
+    </tbody>
+  </table>
+	
+  <p>&nbsp;</p>
+ <!-- <p>Вместо транзисторов МП41 (МП42) можно взять транзисторы КТ315. В этом случае нужно поменять полярность источника питания и электролитических конденсаторов (рис. 2). </p>
+
+  <div class="ris"><img src="kanareyka_files/kanarejka-shema2.jpg" width="610" height="370">
+  <p>Рис. 2 - Схема электронной канарейки на транзисторах КТ315</p>
+	</div> -->
+<figure>
+  <a href="kanareyka_files/kanarejka-mp_psb.png" target="_blank"><img src="kanareyka_files/kanarejka-mp_psb.png" width="370" height="400" border="0"></a>
+  <figcaption>Рис. 2 - Печатная плата электронной канарейки</figcaption>
+</figure>
+	
+<figure>
+  <a href="kanareyka_files/kanarejka-mp_sborka.png" target="_blank"><img src="kanareyka_files/kanarejka-mp_sborka.png" width="300" height="270" border="0"></a>
+  <figcaption>Рис. 3 - Расположение элементов на печатной плате электронной канарейки</figcaption>
+</figure>
+
+  <p>Тональность трели подбирается  подбором ёмкости конденсатора С3. Если уменьшать ёмкость, то звук будет резким, а при   увеличении ёмкости наоборот мягким. Частота трели регулируется  ёмкостью конденсатора С2: чем меньше ёмкость, тем чаще трель. Резистор R3 так же влияет на частоту звука, его назначение – прекращать трель вовремя. Если сильно изменять сопротивление резистора R3, работа схемы может нарушиться.</p>
+  <p>Устройство можно изготовить на транзисторах структуры n-p-n, например, КТ315. В этом случае необходимо изменить полярность подключения источника питания и электролитических конденсаторов (рис. 4). </p>
+	
+<figure>
+  <a href="kanareyka_files/kanarejka-shema-kt315.png">
+	  <img src="kanareyka_files/kanarejka-shema-kt315.png" width="605" height="390" border="0"></a>
+  <figcaption>Рис. 4 - Схема электронной канарейки на транзисторах КТ315</figcaption>
+</figure>	
+  <br>
+
+
+
+  <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	<hr>
+<h3>Источники:</h3>
+<p><a href="http://radioskot.ru/publ/nachinajushhim/ehlektronnaja_kanarejka/22-1-0-1058" target="_blank">radioskot.ru - Электронная канарейка</a></p>
+
+
+<!--
+<p><a href=""></a></p>
+ -->
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2024</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ИК-пульт и Arduino</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cdutt-str.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Использование инфракрасного пульта в проектах с Arduino</h1>
+
+<p>Инфракрасный пульт дистанционного управления (ИК-пульт) — один из самых простых способов взаимодействия с электронными приборами. </p>
+
+<figure>
+  <a href="arduino-ik_pult_files/ik-pult.jpg" target="_blank"><img src="arduino-ik_pult_files/ik-pult.jpg" width="430" height="330" border="0"></a>
+  <figcaption>Рис. 1 - Инфракрасный пульт дистанционного управления</figcaption>
+</figure>
+
+<p>При нажатии кнопки ИК-пульта происходит кодирование сигнала в инфракрасном свете, приемник принимает его и выполняет требуемое действие. Информация кодируется в виде логической последовательности пакетов импульсов с определенной частотой. Приемник получает эту последовательность и выполняет демодулирование данных. Для приема сигнала используется микросхема, в которой содержатся фотоприемник (фотодиод), усилители, полосовой фильтр, демодулятор (детектор, который позволяет выделить огибающую сигнала) и выходной транзистор. Также в ней установлены фильтры – электрический и оптический. Работают такие устройства на расстоянии до 40 метров.</p>
+
+<figure>
+	<img src="arduino-ik_pult_files/demodulation.jpg" width="768" height="258" border="0">
+  <figcaption>Рис. 2 - Детектирование сигнала ИК-пульта</figcaption>
+</figure>
+
+<p>Для приема сигнала с ИК-пульта требуется специальный ИК-датчик. ИК-датчик воспринимает инфракрасный сигнал только на частоте 38 кГц (иногда 40кГц). Именно такое свойство позволяет датчику игнорировать много посторонних световых шумов от ламп освещения и солнца.</p>
+<p>Популярным для простых проектов является ИК-датчик VS1838B (рис. 3). </p>
+
+<figure>
+  <a href="arduino-ik_pult_files/vs1838b.png" target="_blank"><img src="arduino-ik_pult_files/vs1838b.png" alt="Схема драйвера двигателей" width="185" height="210" border="0"></a>
+  <figcaption>Рис. 3 - Инфракрасный датчик VS1838B</figcaption>
+</figure>
+
+<p>Основные  характеристики ИК-датчика VS1838B:  </p>
+<ul>
+  <li>несущая частота &#8212; 38 кГц; </li>
+  <li>напряжение питания &#8212; 2,7 ... 5,5 В; </li>
+  <li>потребляемый ток &#8212;  50 мкА. </li>
+</ul>
+<p>Можно использовать и другие датчики, например: TSOP4838, TSOP1736, SFH506.</p>
+<p>Подключение ИК-датчика VS1838B к Arduino показано в таблице 1.</p>
+<p class="tab_num">Таблица 1</p>
+<table width="300" border="1" cellpadding="6" cellspacing="0">
+<caption>Подключение  датчика VS1838B <br>
+к Arduino
+</caption>
+  <tr>
+    <th>Arduino</th>
+    <th>VS1838B</th>
+  </tr>
+  <tr>
+    <td align="center">5V</td>
+    <td align="center">Vcc</td>
+  </tr>
+  <tr>
+    <td align="center">GND</td>
+    <td align="center">GND</td>
+  </tr>
+  <tr>
+    <td align="center">D2</td>
+    <td align="center">Data</td>
+  </tr>
+</table>
+
+
+
+
+<p> Для составления скетча с ИК-пультом воспользуемся стандартной библиотекой <strong>IRremote</strong>, которая предназначена  для упрощения работы с приёмом и передачей ИК-сигналов. Для начала составим скетч для того, чтобы понять какой код дает каждая кнопка (скетч №1).</p>
+
+<h3>Скетч №1 </h3>
+<div class="kod">
+<pre>#include "IRremote.h"
+
+IRrecv irrecv(2); // указываем вывод, к которому подключен приемник
+
+decode_results results;
+
+void setup() {
+  Serial.begin(9600); // выставляем скорость COM порта
+  irrecv.enableIRIn(); // запускаем прием
+}
+
+void loop() {
+  if (irrecv.decode(&results)) { // если данные пришли
+    Serial.println(results.value, HEX); // печатаем данные
+    irrecv.resume(); // принимаем следующую команду
+  }
+}
+</pre>
+</div>
+
+
+<p>После загрузки скетча в Arduino можно получить команды с пульта. Открываем монитор последовательного порта (Ctrl+Shift+M), берём в руки пульт, и направляем его на датчик. Нажимая разные кнопочки, наблюдаем в окне монитора соответствующие этим кнопкам коды.</p>
+<p>В некоторых случаях, при попытке загрузить программу в контроллер, может появиться ошибка:</p>
+<p class="kod3"><em>TDK2 was not declared In his scope</em></p>
+<p>Чтобы ее исправить, достаточно удалить два файла из папки библиотеки. Открываем папку, где установлено приложение Arduino IDE (скорее всего  «C:\Program Files (x86)\Arduino»). Затем в папку с библиотекой:<br>
+<strong>…\Arduino\libraries\RobotIRremote</strong> и удаляем файлы <strong>IRremoteTools.cpp</strong> и <strong>IRremoteTools.h.</strong> Затем, перезапускаем Arduino IDE, и снова пробуем загрузить программу на контроллер.</p>
+<h2>Управление светодиодом с помощью ИК-пульта</h2>
+<p>Составим скетч для зажигания и гашения светодиода при нажатии на кнопки громкости. В качестве светодиода, используем встроенный светодиод на выводе 13. Для этого нам потребуется коды (могут отличаться, в зависимости от пульта):</p>
+<ul>
+  <li>FFA857 — увеличение громкости;</li>
+  <li>FFE01F — уменьшение громкости.</li>
+</ul>
+
+<h3>Скетч №2</h3>
+<div class="kod">
+<pre>
+#include "IRremote.h"    
+IRrecv irrecv(2); // указываем вывод, к которому подключен приемник    
+decode_results results;    
+
+void setup() 
+{
+   irrecv.enableIRIn(); // запускаем прием  
+}
+void loop() 
+{
+  if (irrecv.decode( &amp;results )) { // если данные пришли      
+    switch ( results.value ) {
+      case 0xFFA857:
+        digitalWrite( 13, HIGH );
+        break;      
+	    case 0xFFE01F:          
+        digitalWrite( 13, LOW );
+        break;
+    }
+    irrecv.resume(); // принимаем следующую команду   
+  }
+}
+</pre>
+</div>
+<p>Загружаем на Arduino и тестируем. Нажимаем <strong>vol+</strong> — светодиод зажигается, <strong>vol-</strong> — гаснет.</p>
+
+
+
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://robotclass.ru/tutorials/arduino-ir-remote-control/"  target="_blank">robotclass.ru - Ардуино: инфракрасный пульт и приемник</a></p>
+	
+  <p><a href="https://arduinomaster.ru/datchiki-arduino/ir-ik-pult-upravleniya-arduino/"  target="_blank">arduinomaster.ru - ИК пульт ардуино</a></p>
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2021</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

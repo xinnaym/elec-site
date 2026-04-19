@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>УГО элементов</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Условные графические обозначения элементов на схемах<br>
+часть 2</h1>
+
+<p><a href="ugo.html">Условные графические обозначения элементов на схемах. Часть 1</a></p>
+
+<ul>
+  <li><a href="#vt">Транзисторы</a>.</li>
+  <li><a href="#vd">Диоды</a>.</li>
+	<li><a href="#tiristor">Тиристоры</a>.</li>
+  <li><a href="#opel">Оптоэлектронные приборы</a></li>
+	<li><a href="#digit">Цифровая техника</a>.</li>
+</ul>
+	
+	<table border="1" cellspacing="0" cellpadding="2" align="center">
+    <tr>
+      <th>Графическое изображение</th>
+      <th>Позиционное<br>обозначение</th>
+      <th>Элемент</th>
+    </tr>
+    <tr>
+      <td colspan="3"><a name="vt"></a><h2>Транзисторы</h2></td>
+      </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-vt-npn.jpg" width="330" height="270"></td>
+      <td>VT</td>
+      <td align="left"><strong>Биполярный  транзистор n-p-n-типа</strong> в корпусе</td>
+    </tr>
+    <tr>
+      <td valign="middle"><img src="ugo2_files/ugo-vt-pnp.jpg" width="100" height="100"></td>
+      <td>VT</td>
+      <td align="left"><strong>Биполярный  транзистор p-n-p-типа</strong> в корпусе</td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-fototranzistor.JPG" width="111" height="116"></td>
+      <td>VT</td>
+      <td valign="top"><p align="center"><strong>Фототранзистор</strong><br>
+        Транзистор, сопротивление перехода &quot;коллектор-эмиттер&quot; которого уменьшается при его освещении. </p></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-vt-1pn.jpg" width="300" height="200"></td>
+      <td>VT</td>
+      <td align="left"><strong>Транзистор однопереходный с базой n-типа </strong></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-vt1pp.jpg" width="90" height="90"></td>
+      <td>&nbsp;</td>
+      <td align="left"><strong>Транзистор однопереходный с базой p-типа</strong></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-pvt-n.jpg" width="220" height="299"></td>
+      <td>VT</td>
+      <td align="left"><strong>Транзистор полевой с управляющим p-n-переходом и каналом n-типа</strong> <br>
+        Транзистор, сопротивление перехода &quot;сток-исток&quot;    которого уменьшается при подаче напряжения на его затвор относительно истока. </td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-pvt-p.jpg" width="120" height="80"></td>
+      <td>VT</td>
+      <td align="left"><strong>Транзистор полевой с управляющим p-n-переходом и каналом p-типа</strong></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-mdpn.jpg" width="120" height="80"></td>
+      <td>VT</td>
+      <td align="left"><strong>Транзистор полевой МДП   со встроенным каналом</strong><strong> n-типа</strong><br>
+Полевой транзистор, управляемый положительным потенциалом на затворе, относительно истока. Имеет изолированный затвор.</td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-mdpp.jpg" width="120" height="80"></td>
+      <td>VT</td>
+      <td align="left"><strong>Транзистор полевой МДП    со встроенным каналом </strong><strong>р-</strong><strong>типа</strong><br>
+Полевой транзистор, управляемый отрицательным потенциалом    на затворе, относительно истока (для запоминания р-канал - позитив). Имеет    изолированный затвор. </td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-mdp-inn.jpg" width="120" height="80"></td>
+      <td>VT</td>
+      <td align="left"><strong>Транзистор полевой с индуцированным каналом</strong><strong> n-типа</strong><br>
+Полевой транзистор, обладающий теми же свойствами, что и &quot;со встроенным n-каналом&quot; с той разницей, что имеет ещё большее входное сопротивление. </td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-mdp-inp.jpg" width="120" height="80"></td>
+      <td>VT</td>
+      <td align="left"><strong>Транзистор полевой с индуцированным каналом</strong><strong> </strong><strong>р-</strong><strong>типа</strong><br>
+Полевой транзистор, обладающий теми же свойствами, что и &quot;со встроенным p-каналом&quot; с той разницей, что имеет ещё большее входное сопротивление. </td>
+    </tr>    
+    <tr>
+      <td><img src="ugo2_files/ugo-igbt-n.png" width="100" height="104"></td>
+      <td>VT</td>
+      <td align="left"><strong>IGBT транзистор n-канальный </strong></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-igbt-p.png" width="100" height="104"></td>
+      <td>VT</td>
+      <td align="left"><strong>IGBT транзистор p-канальный </strong></td>
+    </tr>
+    <tr>
+      <td colspan="3"><a name="vd"></a><h2>Диоды</h2></td>
+      </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-vd.jpg" width="156" height="144"></td>
+      <td>VD</td>
+      <td align="left"><strong>Диод</strong>, общее обозначение</td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-stab.jpg" width="120" height="96"></td>
+      <td>VD</td>
+      <td align="left"><p align="center"><strong>Стабилитрон    (стабистор)</strong><br>
+        Специальный полупроводниковый диод, предназначенный для    стабилизации приложенного к его выводам напряжения обратной полярности (у    стабистора – прямой полярности) </p></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-stabilitron-duo.jpg" width="110" height="40"></td>
+      <td>VD</td>
+      <td align="left"><strong>Двусторонний стабилитрон</strong></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-diod-duo.JPG" width="90" height="80"></td>
+      <td>VD</td>
+      <td align="left"><strong>Двунаправленный диод</strong></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-diod-shottki.JPG" width="86" height="44"></td>
+      <td>VD</td>
+      <td align="left"><strong>Диод Шоттки</strong></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-diod-obrasch.JPG" width="86" height="44"></td>
+      <td>VD</td>
+      <td align="left"><strong>Обращенный диод</strong></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-diod-tunel.JPG" width="84" height="44"></td>
+      <td>VD</td>
+      <td align="left"><strong>Туннельный диод</strong></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-led.jpg" width="400" height="270"></td>
+      <td>VD</td>
+      <td align="left"><strong>Светодиод</strong><br>
+Полупроводниковый диод, кристалл которого светится под    действием приложенного прямого тока. </td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-fotodiod.jpg" width="130" height="120"></td>
+      <td>VD</td>
+      <td align="left"><strong>Фотодиод</strong><br>
+Полупроводниковый диод, при освещении которого на выводах    появляется слабый электрический ток. </td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-vd-most.jpg" width="180" height="170"></td>
+      <td>VD</td>
+      <td align="left"><strong>Диодный мост</strong> </td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-varicap.jpg" width="80" height="50"></td>
+      <td>VD</td>
+      <td align="left"><p align="center"><strong>Варикап</strong><br>
+        Полупроводниковый диод, обладающий внутренней    ёмкостью и изменяющий её значение в зависимости от амплитуды приложенного к    его выводам напряжения обратной полярности. </p></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-diod-optron.JPG" width="240" height="110"></td>
+      <td>&nbsp;</td>
+      <td align="left"><p><strong>Излучающий и принимающий диод в оптроне</strong></p>        </td>
+    </tr>
+<!-- Устройства коммутации-->    
+<!-- Измерители электрических величин -->
+    <tr>
+      <td colspan="3"><a name="tiristor"></a><h2>Тиристоры</h2></td>
+      </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-dinistor.gif" width="144" height="96"></td>
+      <td>VS</td>
+      <td valign="top"><p align="center"><strong>Динистор</strong><br>
+        Вид тиристора, который открывается (начинает пропускать    ток) только при достижении определённого напряжения между его анодом и    катодом, и запирается (прекращает пропускать ток) только при уменьшении тока    до нуля, или смены полярности тока. </p></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-simistor.gif" width="165" height="200"></td>
+      <td>VS</td>
+      <td valign="top"><p align="center"><strong>Симистор</strong><br>
+        Составной тиристор, способный коммутировать токи как    положительной полярности (от анода к катоду), так и отрицательной (от катода    к аноду). </p></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-tiristor-anod.gif" width="150" height="140"></td>
+      <td>VS</td>
+      <td align="left"><strong>Тринистор управляемый по аноду </strong></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-tiristor-katod.gif" width="165" height="125"></td>
+      <td>VS</td>
+      <td align="left"><strong>Тринистор управляемый по катоду </strong></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-tiristor-zap-anod.gif" width="163" height="140"></td>
+      <td>VS</td>
+      <td align="left"><strong>Запираемый тринистор управляемый по аноду </strong></td>
+    </tr>
+
+    <tr>
+      <td><img src="ugo2_files/ugo-tiristor-zap-katod.gif" width="145" height="125"></td>
+      <td>VS</td>
+      <td align="left"><strong>Запираемый тринистор управляемый по катоду </strong></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-fototiristor.JPG" width="213" height="92"></td>
+      <td>VS</td>
+      <td align="left"><strong>Фототиристор</strong></td>
+    </tr>
+    <tr>
+      <td colspan="3"><a name="opel"></a><h2>Оптоэлектронные приборы</h2></td>
+      </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-optopara-diod.jpg" width="170" height="106"></td>
+      <td>&nbsp;</td>
+      <td align="left"><strong>Диодная оптопара</strong></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-optopara-rez.JPG" width="170" height="112"></td>
+      <td>&nbsp;</td>
+      <td align="left"><strong>Резисторная оптопара</strong></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-optopara-tiristor.JPG" width="170" height="106"></td>
+      <td>&nbsp;</td>
+      <td align="left"><strong>Тиристорная оптопара</strong></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-optopara-simistor.JPG" width="215" height="163"></td>
+      <td>&nbsp;</td>
+      <td align="left"><strong>Симисторная оптопара</strong></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-optopara-tranz.jpg" width="170" height="106"></td>
+      <td>&nbsp;</td>
+      <td align="left"><strong>Транзисторная оптопара</strong></td>
+    </tr>
+<!--    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+ -->
+    <tr>
+      <td colspan="3"><a name="digit"></a>
+        <h2>Цифровая техника</h2></td>
+      </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-logic-nor.jpg" width="310" height="160"></td>
+      <td>DD</td>
+      <td align="left"><strong>Логический элемент ИЛИ-НЕ</strong></td>
+    </tr>
+			<tr>
+      <td><img src="ugo2_files/ugo-logic-and.jpg" width="110" height="100"></td>
+      <td>DD</td>
+      <td align="left"><strong>Логический элемент И </strong></td>
+    </tr>
+    <tr>
+      <td><img src="ugo2_files/ugo-logic-not.jpg" width="110" height="70"></td>
+      <td>DD</td>
+      <td align="left"><strong>Логический элемент НЕ </strong></td>
+    </tr>
+			<tr>
+      <td><img src="ugo2_files/ugo-d-triger.jpg" width="140" height="220"></td>
+      <td>DD</td>
+      <td align="left"><strong>D-триггер </strong></td>
+    </tr>
+		</table>
+<br>
+
+
+ <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+
+  <hr>
+	
+<h3>Источники:</h3>
+<p><a href="http://www.radio-portal.ru/datasheet/120-uslovnie-oboznacheniy/1379-2010-06-13-15-31-21.html" target="_blank">radio-portal.ru - Язык радиолюбителей</a></p>
+<p><a href="http://www.meanders.ru/elements_1.shtml" target="_blank">meanders.ru - Графическое обозначение радиоэлементов на схеме. Основные элементы, таблица.</a></p>
+<p><a href="https://www.ruselectronic.com/news/chitaem-elektroskhemy-chast-1/"  target="_blank">ruselectronic.com - Обозначение радиоэлементов в схемах</a></p>
+<h3>Литература</h3>
+  <p>Справочная книга радиолюбителя-конструктора. В 2-х кн.- М.: Радио и связь, 1993.</p>
+  <p>Борисов В.Г. Юный радиолюбитель. - М.: Радио и связь, 1992. - 416с.</p>
+  <p>Иваницкий В. Советы начинающему радиолюбителю. - М.: ДОСААФ, 1982. - 192 с.</p>
+  <p>Иванов Б.С. Первые шаги в радиоэлектронику. - М.: Сов. Россия, 1989.- 128 с.</p>
+  <p>Журнал "Радиолюбитель" 1996 №1-2.</p>
+
+<!-- saved from url=(0032)http://www.irlx.narod.ru/azb.htm -->
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2020</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

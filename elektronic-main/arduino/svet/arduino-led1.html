@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Мигающий светодиод на Arduino</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Мигающий светодиод на Arduino</h1>
+
+<p>Детали:</p>
+<ul>
+  <li>Микроконтроллер Arduino UNO.</li>
+  <li>Макетная плата. </li>
+  <li>Светодиод.</li>
+  <li>Резистор сопротивлением 200-300 Ом. </li>
+  <li>USB-кабель.</li>
+  <li>Соединительные провода. </li>
+</ul>
+<p>Схема электрических соединений показана на рисунке 1.</p>
+
+<figure>
+  <img src="arduino-led1_files/shema-led1.png" width="252" height="162">
+	<figcaption>Рис. 1 - Схема  соединения светодиода к микроконтроллеру </figcaption>
+</figure>
+
+<p>Резистор  ограничивает ток, который проходит через светодиод. Каждый светодиод рассчитан на определённый ток, и если этот ток будет больше, то светодиод выйдет из строя. </p>
+<p>Большинство светодиодов 3 мм или 5 мм имеют рабочее напряжение около 2 В. Значит, на резисторе нам надо погасить </p>
+<p class="formula">5 - 2 = 3 [B]. </p>
+<p>Затем мы вычислим ток, проходящий через резистор. Большинство 3 и 5 мм светодиодов светятся полной яркостью при токе 20 мА. Ток больше этого может вывести их из строя, а ток меньшей силы снизит их яркость, не причинив никакого вреда.</p>
+<p class="tab_num">Таблица 1</p>
+<table border="1" cellspacing="0" cellpadding="3">
+<caption>Рабочие напряжения светодиодов</caption>
+  <tr>
+    <th>Цвет излучения</th>
+    <th>Рабочее напряжение, В </th>
+  </tr>
+  <tr>
+    <td align="left">Красный</td>
+    <td align="center">1,8</td>
+  </tr>
+  <tr>
+    <td align="left">Зеленый</td>
+    <td align="center">2,2</td>
+  </tr>
+  <tr>
+    <td align="left">Желтый</td>
+    <td align="center">2,1</td>
+  </tr>
+  <tr>
+    <td align="left">Синий</td>
+    <td align="center">3,2</td>
+  </tr>
+  <tr>
+    <td align="left">Белый</td>
+    <td align="center">3,2</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p><strong><em>Пример</em></strong>. Необходимо включить светодиод в цепь 5 В,чтобы на нем был ток 20 мА (0,02 А). Так как все детали включены в одну цепь на резистор тоже будет ток 20 мА.</p>
+<p>Мы получаем:</p>
+<p class="formula"><em>R</em> = <em>U</em>/<em>I </em>= 3 / 0,02 = 150 [Ом]</p>
+<p>150 Ом - это минимальное сопротивление, лучше использовать немного больше, потому, что светодиоды имеют некоторый разброс  характеристик. Обычно используется резистор 200-300&nbsp;Ом.</p>
+
+<h3>Порядок работы </h3>
+
+<p>1. Cоединяем элементы как показано на рисунке 2.</p>
+<figure>
+  <img src="arduino-led1_files/montag-led1.png" width="520" height="770" border="0" >
+	<figcaption>Рис. 2 - Соединение элементов </figcaption>
+</figure>
+<p>2.  В среде Arduino IDE вводим  скетч.</p>
+ <h4>Скетч</h4>
+ <div class="kod">
+<span class="ar-type">void</span> <span class="ar-func">setup</span>(){<br>   
+  &nbsp;&nbsp;<span class="ar-func">pinMode</span>(3, <span class="kod-const">OUTPUT</span>);<span class="comment1"> // порт 3 в режиме вывода</span><br>
+  }<br>
+  <br>
+  <span class="ar-type">void</span> <span class="ar-func">loop</span>(){<br>   
+  &nbsp;&nbsp;<span class="ar-func">digitalWrite</span>(3, <span class="kod-const">HIGH</span>);<span class="comment1"> // в порт 13 записываем логическую 1</span><br>   
+  &nbsp;&nbsp;<span class="ar-func">delay</span>(1000); <span class="comment1">//длительность свечения светодиода</span><br>   
+  &nbsp;&nbsp;<span class="ar-func">digitalWrite</span>(3, <span class="kod-const">LOW</span>);<span class="comment1"> // в порт 13 записываем логический 0</span><br>   
+  &nbsp;&nbsp;<span class="ar-func">delay</span>(1000);   <span class="comment1">// длительность гашения светодиода</span><br>
+  }<br>
+</div>
+<p>3. Загружаем скетч в Arduino. Если все правильно, светодиод должен мигать. Частоту мигания можно изменять изменяя значение параметра процедуры <span class="kod-var">delay</span>.</p>
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://usamodelkina.ru/6821-migayuschiy-svetodiod-arduino.html"  target="_blank">usamodelkina.ru - Мигающий светодиод (Arduino)</a></p>
+	
+<p><a href="https://arduinomaster.ru/projects/miganie-svetodiodom-arduino/"  target="_blank">arduinomaster.ru - Мигание светодиодом на Ардуино. Мигалка и маячок</a></p>
+
+<p><a href="https://alexgyver.ru/lessons/arduino-led/"  target="_blank">alexgyver.ru - Светодиоды и ленты</a></p>
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2023</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

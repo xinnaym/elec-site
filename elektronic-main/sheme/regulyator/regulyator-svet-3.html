@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Светорегуляторы</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Конденсаторный светорегулятор</h1>
+
+			
+
+<p>На ряду с плавными регуляторами в быту получили распространение конденсаторные устройства (рис. 1). Работа данного устройства основана на зависимости передачи переменного тока от величины емкости. Чем больше емкость конденсатора, тем больше ток он пропускает через свои полюса. Данный вид  диммера может быть довольно компактным, и зависит от требуемых параметров, емкости конденсаторов (табл. 1).</p>
+
+<div class="ris">
+  <a href="regulyator-svet-5_files/sxema-gasyashiye-kondensatory.png" target="_blank"><img src="regulyator-svet-3_files/dimmer-cap.JPG" alt="" width="422" height="302" border="0"></a>
+<p>Рис. 4 - Схема с гасящим конденсатором</p>
+</div>
+
+<p>Как видно из схемы, есть три положения: 100% мощности, через гасящий конденсатор и выключено. В устройстве используется неполярные бумажные конденсаторы. Номинальное сопротивление резистора R1 может быть в пределах 100-500 кОм, мощность 0,5 Вт. </p>
+<p class="tab_num">Таблица 1 </p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>
+Значения емкости гасящих конденсаторов для отдельных ламп накаливания и <br>
+гирлянд из них  при включении в сеть 220 В
+</caption>
+  <tr>
+    <th>Параметры лампы </th>
+    <th>Емкость конденсатора, мкФ </th>
+    <th>Напряжение на лампе, В </th>
+  </tr>
+  <tr>
+    <td align="left">Коммутаторные (телефонные) U=24 В, <span class="formula2">I<sub>н</sub></span>=0,1 А </td>
+    <td align="center">1</td>
+    <td align="center">14</td>
+  </tr>
+  <tr>
+    <td align="left">От ёлочных гирлянд (Россия) U=11 В, <span class="formula2">I<sub>н</sub></span>=0,1 А </td>
+    <td align="center">1,5</td>
+    <td align="center">10</td>
+  </tr>
+  <tr>
+    <td align="left">Осветительные лампы на 220 В </td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;15 Вт, <span class="formula2">I<sub>н</sub></span>=0,068 А</td>
+    <td align="center">1</td>
+    <td align="center">150</td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;25 Вт, <span class="formula2">I<sub>н</sub></span>=0,11 А</td>
+    <td align="center">2</td>
+    <td align="center">150</td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;40 Вт,<span class="formula2">I<sub>н</sub></span>=0,18 А</td>
+    <td align="center">2,5</td>
+    <td align="center">150</td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;60 Вт, <span class="formula2">I<sub>н</sub></span>=0,27 А</td>
+    <td align="center">3,8</td>
+    <td align="center">140</td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;100 Вт, <span class="formula2">I<sub>н</sub></span>=0,45 А</td>
+    <td align="center">6</td>
+    <td align="center">150</td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;150 Вт, <span class="formula2">I<sub>н</sub></span>=0,68 А</td>
+    <td align="center">7</td>
+    <td align="center">140</td>
+  </tr>
+</table>
+<p>На основе этой схемы можно самому собрать простой ночник, с помощью тумблера или переключателя управлять яркостью светильника.</p>
+
+
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://samelectrik.ru/5-sxem-sborki-samodelnogo-svetoregulyatora.html"  target="_blank">samelectrik.ru - 5 схем сборки самодельного светорегулятора</a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

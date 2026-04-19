@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Регулятор яркости светодиодов</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+
+  
+  <div id="content">
+
+<h1>Регулятор яркости светодиодов</h1>
+<p>В данной схеме (рис. 1) резистор R1 является делителем напряжения. С помощью этого резистора  задается степень &laquo;открытости&raquo;  транзистора VT1, и, следовательно, ток протекающий через него и светодиоды.</p>
+
+  <figure>
+	  <img src="led-regul_files/led3-regul.png" width="560" height="290" border="0">
+	  <figcaption>Рис. 1 - Схема регулятора яркости светодиодов</figcaption>
+	</figure>
+
+	<p class="tab_num">Таблица 1</p>
+  <table border="1" align="center" cellpadding="3" cellspacing="0">
+    <caption>
+    Список элементов схемы регулятора яркости светодиодов (рис.&nbsp;1)
+    </caption>
+    <thead><tr><th>Обозначение</th>
+				    <th>Наименование</th>
+				    <th>Номинал</th>
+				    <th>Количество</th>
+				    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td align="left">HL1-HL3 </td>
+        <td align="left">Светодиод</td>
+        <td align="left">АЛ307</td>
+        <td align="center">3</td>
+      </tr>
+      <tr>
+      <td align="left">R1</td>
+			    <td align="left">Резистор переменный </td>
+			    <td align="left"> 250 кОм</td>
+			    <td align="center">1</td>
+	    </tr><tr>
+								      <td align="left">R2 </td>
+								      <td align="left">Резистор постоянный </td>
+								      <td align="left">220 Ом / 0,25 Вт </td>
+								      <td align="center">1</td>
+								    </tr>
+								    <tr>
+								      <td align="left">SA1</td>
+								      <td align="left">Выключатель</td>
+								      <td align="left">&nbsp;</td>
+								      <td align="center">1</td>
+	      </tr>
+								    <tr>
+                      <td align="left">VT1</td>
+								      <td align="left">Биполярный транзистор</td>
+								      <td align="left">2N2222</td>
+								      <td align="center">1</td>
+	      </tr>
+    </tbody>
+  </table>
+
+  <p>При указанных в таблице 1 номиналах элементов и напряжении питания 11,58 В в крайних положениях ручки переменного резистора были получены  результаты показанные в таблице 2.</p>
+ 	<p class="tab_num">Таблица 2 </p>
+  <table border="1" align="center" cellpadding="3" cellspacing="0">
+    <caption>
+    Зависмость свечения светодиодов от напряжений на выводах транзистора
+    </caption>
+    <tr>
+      <th align="left">Напряжение баз-эмиттер U<sub>бэ</sub>, В </th>
+      <td align="center">0</td>
+      <td align="center">0,8</td>
+    </tr>
+    <tr>
+      <th align="left">Напряжение коллектор-эмиттер U<sub>кэ</sub>, В</th>
+      <td align="center">3,77</td>
+      <td align="center">0,8</td>
+    </tr>
+    <tr>
+      <th align="left">Свечение светодиодов </th>
+      <td align="center">тусклое</td>
+      <td align="center">яркое</td>
+    </tr>
+</table>
+
+  <figure>
+	  <a href="led-regul_files/led3-regul-foto.jpg" target="_blank"><img src="led-regul_files/led3-regul-foto.jpg" width="400" border="0"></a>
+	  <figcaption>Рис. 2 - Регулятор яркости светодиодов собранный на макетной плате</figcaption>
+	</figure>
+
+  <p>В зависимости от тока через светодиоды, их количества и способа соединения можно использовать другие транзисторы.  При большой мощности светодиодов транзистор необходимо  установить на радиатор охлаждения.</p>
+  <p>Сопротивлениe R2 нужно исключить, если в качестве светодиодов использовать светодиодную ленту, так как токоограничивающие резисторы уже имеются в ленте. </p>
+  <hr>
+
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+<h3>Источник</h3>
+  <p><a href="https://sdelaysam-svoimirukami.ru/4053-prosteyshiy-regulyator-yarkosti-svetodiodov.html"  target="_blank">sdelaysam-svoimirukami.ru - Простейший регулятор яркости светодиодов</a></p>
+	
+<!--<h3>Источники</h3> -->
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+</div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2023</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

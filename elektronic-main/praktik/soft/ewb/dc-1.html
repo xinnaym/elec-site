@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Исследование цепей постоянного тока</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../../index.html">Главная</a></li>
+      <li><a href="../../../teorie.html">Теория</a></li>
+      <li><a href="../../../praktik.html">Практика</a></li>
+      <li><a href="../../../help.html">Справочники</a></li>
+      <li><a href="../../../sheme.html">Схемы</a></li>
+      <li><a href="../../../arduino.html">Arduino</a></li>
+      <li><a href="../../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+
+<h2 class="ewb">Electronics Workbench</h2>
+
+	<h1>Исследование цепей постоянного тока в программе Electronics Workbench</h1>
+
+  <h2>Краткая теория</h2>
+  <h3>Последовательное соединение резисторов</h3>
+	
+<p>При последовательном соединении резисторов напряжение на концах всей цепи складывается из напряжений на каждом резисторе:</p>
+<p class="formula">U = U<sub>1</sub> + U<sub>2</sub> + U<sub>3</sub>.</p>
+<p>По закону Ома для участка цепи напряжение на каждом резисторе:</p>
+<p class="formula">U<sub>1</sub> = R<sub>1</sub>I; U<sub>2</sub> = R<sub>2</sub>I; U<sub>3</sub> = R<sub>3</sub>I,</p>
+<p>где<span class="formula2"> I = I<sub>1</sub> = I<sub>2</sub></span> - общий ток, текущий в цепи. </p>
+
+<div class="ris">
+	<img src="dc-1_files/posled-1.png" width="409" height="274">
+	<p>Рис. 1 - Последовательное соединение резисторов</p>
+</div>
+
+
+<p>Полное сопротивление цепи  <em>n</em> последовательно  соединенных резисторов:</p>
+<p class="formula">R<sub>пс</sub> = R<sub>1</sub> + R<sub>2</sub> + R<sub>3</sub>+…+ R<sub>n</sub>.</p>
+<p class="warning">При последовательном соединении резисторов их общее  сопротивление равно сумме электрических сопротивлений каждого резистора.</p>
+
+
+<h3>Параллельное соединение резисторов</h3>
+
+<p>При параллельном соединении резисторов через цепь течет полный ток <span class="formula2">I</span>, который складываетсяиз    токов через каждый резистор:</p>
+<p class="formula"> I = I<sub>1</sub> + I<sub>2</sub> + I<sub>3</sub>.</p>
+
+<div class="ris">
+	<img src="dc-1_files/posled-1.png" width="409" height="274">
+	<p>Рис. 2 - Параллельное соединение резисторов</p>
+</div>
+
+<p>Напряжения на всех резисторах равны:</p>
+<p class="formula">  U = U<sub>1</sub> = U<sub>2</sub> = U<sub>3</sub></p>
+<p class="formula">  R<sub>пар</sub>I = R<sub>1</sub>I<sub>1</sub> = R<sub>2</sub>I<sub>2</sub> = R<sub>3</sub>I<sub>3</sub>. </p>
+
+<p>Полное сопротивление цепи из <em>n</em> параллельно соединенных резисторов:</p>
+<p class="formula"><img src="dc-1_files/formula1.png" width="270" height="63"></p>
+<p>Полное сопротивление цепи из  двух параллельно соединенных резисторов:</p>
+<p class="formula"><img width="152" height="59" src="dc-1_files/formula2.png"> </p>
+<p class="warning">При параллельном соединении проводников величина,  обратная сопротивлению цепи, равна сумме обратных величин сопротивлений всех  параллельно соединенных проводников.</p>
+<p>При параллельном соединении  резисторов их общее сопротивление уменьшается и всегда меньше сопротивления  каждого отдельно взятого резистора.</p>
+
+
+
+<h2>Порядок  выполнения работы</h2>
+<h3>1. Исследование последовательного соединения  резисторов</h3>	
+
+
+<ol>
+  <li>Рассчитайте полное сопротивление резисторов подключенных к источнику питания (рис. 3).    Номинальные сопротивления резисторов и источника питания взять из таблицы 1 (по варианту).
+<div class="ris">
+	<img src="dc-1_files/pic3.png" width="300" height="198">
+	<p>Рис. 3 - Последовательное соединение двух резисторов</p>
+</div>
+	</li>
+  <li>Рассчитайте силу тока и напряжение на каждом резисторе.</li>
+  <li>Полученные результаты запишите в таблицу отчета.</li>
+</ol>
+
+  <p class="tab_num">Таблица 1</p>
+  <table width="500" border="1" align="center" cellpadding="3" cellspacing="0">
+    <tr>
+      <th valign="top">№<br>
+      варианта </th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+    </tr>
+    <tr>
+      <td valign="top">R1, кОм</td>
+      <td align="center" valign="middle">1,2</td>
+      <td align="center" valign="middle">1,6</td>
+      <td align="center" valign="middle">2,4</td>
+      <td align="center" valign="middle">1,8</td>
+      <td align="center" valign="middle">3,6</td>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">2,2</td>
+      <td align="center" valign="middle">1,6</td>
+      <td align="center" valign="middle">1,5</td>
+      <td align="center" valign="middle">1,2</td>
+    </tr>
+    <tr>
+      <td valign="top">R2, кОм</td>
+      <td align="center" valign="middle">2,7</td>
+      <td align="center" valign="middle">3,3</td>
+      <td align="center" valign="middle">1,6</td>
+      <td align="center" valign="middle">2,2</td>
+      <td align="center" valign="middle">2,2</td>
+      <td align="center" valign="middle">1,8</td>
+      <td align="center" valign="middle">2,4</td>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">3,3</td>
+      <td align="center" valign="middle">1,5</td>
+    </tr>
+    <tr>
+      <td valign="top">U, В</td>
+      <td align="center" valign="middle">12</td>
+      <td align="center" valign="middle">9</td>
+      <td align="center" valign="middle">12</td>
+      <td align="center" valign="middle">9</td>
+      <td align="center" valign="middle">12</td>
+      <td align="center" valign="middle">9</td>
+      <td align="center" valign="middle">12</td>
+      <td align="center" valign="middle">9</td>
+      <td align="center" valign="middle">12</td>
+      <td align="center" valign="middle">9</td>
+    </tr>
+</table>
+  <ol start="4">
+    <li>Постройте в программе «Electronics Workbench» модель электрической схемы для исследования  последовательного соединения резисторов (рис. 4). 
+<div class="ris">
+	<img src="dc-1_files/dc1.png" width="414" height="334">
+	<p>Рис. 4 - Модель электрической схемы для исследования  последовательного соединения резисторов</p>
+</div>
+		</li>
+    <li>Установите параметры элементов схемы (по варианту). </li>
+    <li>Измерьте силу  тока и напряжения на участках цепи. </li>
+    <li>Полученные результаты  запишите в таблицу отчета.</li>
+    <li>Рассчитайте значения  сопротивлений резисторов и их общее сопротивление по показаниям измерительных  приборов.</li>
+    <li>Сформулируйте выводы по полученным результатам.</li>
+    </ol>
+
+
+<h3>2. Исследование параллельного соединения резисторов</h3>
+
+<ol>
+  <li>Рассчитайте общее сопротивление резисторов подключенных параллельно к    источнику питания (рис. 5). Номинальные сопротивления резисторов и источника питания взять из таблицы 1 (по варианту).
+<div class="ris">
+	<img src="dc-1_files/pic5.png" width="167" height="277">
+	<p>Рис. 5 - Параллельное соединение двух резисторов</p>
+</div>
+	</li>
+    <li>Рассчитайте силу тока и напряжение на каждом резисторе.</li>
+    <li>Полученные результаты запишите в таблицу отчета.</li>
+    <li>Постройте в программе «Electronics Workbench» модель электрической схемы, для исследования  последовательного соединения резисторов (рис. 6). 
+<div class="ris">
+	<img src="dc-1_files/dc2.png" width="317" height="294">
+	<p>Рис. 6 - Модель электрической схемы для исследования  параллельного соединения резисторов</p>
+</div>
+</li>
+    <li>Установите параметры элементов схемы. </li>
+    <li>Измерьте силу  тока и напряжения на участках цепи. </li>
+    <li>Полученные результаты  запишите в таблицу отчета.</li>
+    <li>Рассчитайте значения  сопротивлений резисторов и их общее сопротивление по показаниям измерительных  приборов.</li>
+    <li>Сформулируйте выводы по полученным результатам.</li>
+    </ol>
+<!--   -->		
+		
+		
+<hr>
+
+
+<br>
+<a href="#top1"><img src="../../../images/up.png" width="24" height="24"></a>
+	
+<!--<hr>
+<h3>Источники</h3>	
+  <p><a href="http://cxem.net/arduino/arduino188.php"  target="_blank">cxem.net - Курс Arduino - Звук</a></p>
+ -->
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2020</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

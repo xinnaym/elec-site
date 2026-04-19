@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Регулируемый блок питания из компьютерного блока питания</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Источник питания из блока питания ПК - 2</h1>
+    
+<p>Предлагается переделка компьютерного блока питания типа ATX, в регулируемый блок с напряжением от 3 до 25 В и токе 5А.</p>
+<p>Берем блок питания с ШИМ TL494 или ее модификациями. Удаляем резистор с первого вывода микросхемы к +5 В и заменяем резистор от первого вывода к 12 В на 1 кОм. Ставим 2 переменных резистора для грубой и точной регулировки (рис. 1).</p>
+
+<div class="ris">
+<img src="bp-iz-pk_files/image002.jpg" width="204" height="198">
+<p>Рис. 1 - Замена резистора </p>
+</div>
+
+
+<p>Затем необходимо выпаять дроссель групповой стабилизации, а в образовавшийся разрыв цепи 12 В впаять перемычку (рис. 2).</p>
+
+<div class="ris">
+<img src="bp-iz-pk_files/image003.jpg" width="400" height="357">
+<img src="bp-iz-pk_files/image004.jpg" width="210" height="230">
+<p>Рис. 2 - Удаление дросселя </p>
+</div>
+<p>Также необходимо заменить фильтрующие конденсаторы в выходных цепях, на конденсаторы с более высоким напряжением. Т.к напряжение на выходе теперь изменяющееся то кулер нужно питать от 220 В (есть такие кулеры), либо попробовать запитать его от дежурного напяжения.</p>
+
+<p>Осталось сделать переднюю панель, вывести на нее ручки переменных резисторов, клеммы и вольтметр. </p>       
+            
+
+<br>
+
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+
+<hr>
+	
+	
+<h3>Источники:</h3>
+<p><a href="http://radiomaster.com.ua/1654-reguliruemyj-bp-iz-kompyuternogo-bloka-pitaniya.html"  target="_blank">radiomaster.com.ua - Регулируемый БП из компьютерного блока питания</a></p>
+
+
+<!--
+<p><a href=""></a></p>
+ -->
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Датчик температуры DS18B20</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Датчик температуры DS18B20</h1>
+	
+<p>Датчик температуры DS18B20 - это цифровой измеритель температуры, с  разрешением преобразования 9 - 12 разрядов и функцией тревожного сигнала контроля за температурой. Параметры контроля могут быть заданы пользователем и сохранены в энергонезависимой памяти датчика.</p>
+<p>DS18B20 обменивается данными с микроконтроллером по однопроводной линии связи, используя протокол интерфейса 1-Wire.</p>
+<p>Питание датчик может получать непосредственно от линии данных, без использования внешнего источника. В этом режиме питание датчика происходит от энергии, запасенной на паразитной емкости.</p>
+<p>Диапазон измерения температуры составляет от -55 до +125&deg;C. Для диапазона от -10 до +85&deg;C погрешность не превышает 0,5&deg;C.</p>
+<p>У каждой микросхемы DS18B20 есть уникальный серийный код длиной 64 разряда, который позволяет нескольким датчикам подключаться на одну общую линию связи. Т.е. через один порт микроконтроллера можно обмениваться данными с несколькими датчиками, распределенными на значительном расстоянии. Режим крайне удобен для использования в системах экологического контроля, мониторинга температуры в зданиях, узлах оборудования.</p>
+
+<figure>
+  <a href="arduino-ds18b20_files/ds18b20-foto.jpg" target="_blank"><img src="arduino-ds18b20_files/ds18b20-foto.jpg" width="280" height="225" border="0"></a>
+  <figcaption>Рис. 1 - Датчик температуры DS18B20 в корпусе ТО-92 </figcaption>
+</figure>
+
+<h4> Основные характеристики:</h4>
+<ul>
+  <li>Диапазон: -55...+125&deg;C.</li>
+  <li>Точность: 0,5&deg;C.</li>
+  <li>Разрешение: 9.. 12 бит (0,48.. 0,06&deg;C).</li>
+  <li>Питание: 3...5,5 В.</li>
+  <li>Период выдачи результата:
+      <ul>
+        <li>750 мс при точности 12 бит.</li>
+        <li>94 мс при точности 9 бит.</li>
+      </ul>
+  </li>
+  <li>Интерфейс связи: 1-Wire (OneWire).</li>
+  <li>Корпус: TO-92, SOIC-8 или герметичное исполнение.</li>
+</ul>
+
+<p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Назначение выводов</caption>
+  <tbody>
+    <tr>
+      <th>Вывод</th>
+      <th>Описание</th>
+    </tr>
+    <tr>
+      <th>GND</th>
+      <td align="left" valign="middle">Обший провод (-) </td>
+    </tr>
+    <tr>
+      <th>DQ</th>
+      <td align="left" valign="middle">Вывод сигнала данных (входа/выход). <br>
+        Выход типа открытый коллектор интерфейса 1-Wire. <br>
+        Также через него происходит питание в режиме ”паразитное питание”.</td>
+    </tr>
+    <tr>
+      <th>VDD</th>
+      <td align="left" valign="middle">Вывод внешнего питания (+). <br>
+        В режиме ”паразитного питания" должен быть подключен к земле.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Датчик подключается к любому цифровому пину Arduino, но пин должен быть подтянут к питанию резистором 4,7 кОм. На один пин можно подключить несколько датчиков DS18B20.</p>
+
+<p>Для написания программ понадобиться библиотека OneWire.</p>
+
+<figure>
+  <a href="arduino-ds18b20_files/ds18b20-connect.jpg" target="_blank"><img src="arduino-ds18b20_files/ds18b20-connect.jpg" width="820" height="610" border="0"></a>
+  <figcaption>Рис. 2 - Подключение датчика температуры DS18B20 к Arduino UNO с помощью макетной платы </figcaption>
+</figure>
+
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="http://mypractic.ru/ds18b20-datchik-temperatury-s-interfejsom-1-wire-opisanie-na-russkom-yazyke.html"  target="_blank">mypractic.ru - DS18B20 – датчик температуры с интерфейсом 1-Wire. Описание на русском языке.</a></p>
+
+  <p><a href="https://kit.alexgyver.ru/tutorials/ds18b20/"  target="_blank">alexgyver.ru - Arduino и термометр DS18B20</a></p>
+<p><a href="https://3d-diy.ru/wiki/arduino-datchiki/tsifrovoy-datchik-temperatury-ds18b20/"  target="_blank">3d-diy.ru - Цифровой датчик температуры DS18B20</a></p>
+
+<p><a href="https://portal-pk.ru/news/199-datchik-temperatury-ds18b20-podklyuchaem-k-arduino.html"  target="_blank">portal-pk.ru - Урок 10 - Датчик температуры DS18B20, подключаем к Arduino.</a></p>
+</div>
+
+
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2021</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

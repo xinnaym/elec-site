@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Регулятор скорости вентилятора-1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Регулятор скорости вентилятора-1</h1>
+	
+	<figure><img src="regulyator-cooler-1_files/regulyator-cooler-1.png" width="490" height="420">
+	  <figcaption>Рис. 1 - Схема регулятора скорости вентилятора</figcaption>
+	</figure>
+	
+  <p class="tab_num">Таблица 1</p>
+  <table cellspacing="0" cellpadding="3" bordercolor="black" align="center" border="1">
+	<caption>
+	Перечень элементов регулятора скорости вентилятора (рис. 1)
+	</caption>
+    <tbody>
+      <tr>
+        <th>Обозначение</th>
+        <th>Наименование</th>
+        <th>Номинал</th>
+        <th>Кол-во</th>
+        <th>Примечание</th>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">M1</td>
+        <td align="left" valign="middle">Электромотор вентилятора </td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">1</td>
+        <td align="left" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle"> R1</td>
+        <td align="left" valign="middle">Резистор постоянный </td>
+        <td align="center" valign="middle">2 кОм - 0,25 Вт </td>
+        <td align="center" valign="middle">1</td>
+        <td align="left" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle"> R2</td>
+        <td align="left" valign="middle">Резистор постоянный </td>
+        <td align="center" valign="middle">75 кОм - 0,25 Вт </td>
+        <td align="center" valign="middle">1</td>
+        <td align="left" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">VD1-VD4</td>
+        <td align="left" valign="middle">Диод</td>
+        <td align="center" valign="middle"><a href="../../help/vd/d9.html" target="_blank">Д9Б</a></td>
+        <td align="center" valign="middle">4</td>
+        <td align="left" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">VT1</td>
+        <td align="left" valign="middle">Транзистор биполярный </td>
+        <td align="center" valign="middle"><a href="../../help/vt/vtb-rus/vtb-rus-npn/kt315.html" target="_blank">КТ315Б</a></td>
+        <td align="center" valign="middle">1</td>
+        <td align="left" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">VT2</td>
+        <td align="left" valign="middle">Транзистор биполярный </td>
+        <td align="center" valign="middle"><a href="../../help/vt/vtb-rus/vtb-rus-npn/kt815.html" target="_blank">КТ815В</a></td>
+        <td align="center" valign="middle">1</td>
+        <td align="left" valign="middle">&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+	
+  <p>Датчиком температуры в данном устройстве служат германиевые диоды VD1-VD4,  включенные в обратном направлении в цепь базы составного транзистора VT1VT2.  </p>
+  <p> Резистор  R1 защищает транзисторы VT1 и VT2 от  теплового пробоя диодов. Его сопротивление выбирают, исходя из предельно допустимого  значения тока базы VT1. Резистор R2 определяет порог срабатывания регулятора.</p>
+  <p> Число  диодов датчика температуры зависит от статического коэффициента передачи тока  составного транзистора VT1VT2. Если при  комнатной температуре и включенном питании  вентилятора  не вращается, число диодов следует увеличить. Необходимо добиться того, чтобы  после подачи напряжения питания она уверенно начинала вращаться с небольшой  частотой. Если  частота вращения вентилятора окажется значительно больше требуемой, число диодов следует уменьшить.</p>
+  <p>Одноименные выводы диодов VD1-VD4 соединить  вместе, расположив их корпусы в одной плоскости вплотную друг к другу.  Полученный блок приклеивают термостойким клеем к теплоотводу. </p>
+  <p>Налаживание  устройства сводится к подбору резистора R2. Временно заменив его подстроечным резистором сопротивлением 100-150 кОм,  подбирают такое сопротивление введенной части, чтобы при номинальной нагрузке  вентилятор вращался с небольшой  частотой.  </p>
+  <br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://m.qrz.ru/schemes/contribute/digest/comp42.shtml"  target="_blank">m.qrz.ru - Регулятор скорости вентилятора</a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2024</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

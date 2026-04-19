@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Кодовый замок на Arduino UNO</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Кодовый замок на Arduino UNO</h1>
+
+<h3>Описание работы </h3>
+<p>При включении дисплей будет писать "Enter code."</p>
+<div class="ris">
+<a href="arduino-zamok_files/arduino224-1b.jpg" target="_blank">
+<img src="arduino-zamok_files/arduino224-1b.jpg"  width="650" height="250" title="Нажмите для увеличения"></a></div>
+
+<p>включится красный светодиод,</p>
+
+<div class="ris"><a href="arduino-zamok_files/arduino224-2b.jpg" target="_blank"><img src="arduino-zamok_files/arduino224-2b.jpg" alt="Проверка 2." width="500" height="208" title="Нажмите для увеличения"></a></div>
+<p>а зелёный погаснет, сервопривод установится на 0°. При вводе цифр на дисплее будут выводиться символы &quot;*&quot;.</p>
+
+<div class="ris">
+<a href="arduino-zamok_files/arduino224-3b.jpg" target="_blank">
+  <img src="arduino-zamok_files/arduino224-3b.jpg" width="650" height="250" title="Нажмите для увеличения"></a>
+</div>
+
+<p>Если код введён неверно, то дисплей напишет "Enter cod.". Если код правильный, то прозвучит звуковой сигнал, серво привод повернётся на 180°, дисплей напишет "Open."</p>
+
+<div class="ris">
+<a href="arduino-zamok_files/arduino224-4b.jpg" target="_blank">
+<img src="arduino-zamok_files/arduino224-4b.jpg"  width="650" height="250" title="Нажмите для увеличения"></a>
+</div>
+
+<p>включится зелёный светодиод,</p>
+
+<div class="ris"><a href="arduino-zamok_files/arduino224-5b.jpg" target="_blank">
+<img src="arduino-zamok_files/arduino224-5b.jpg" width="500" height="200" title="Нажмите для увеличения"></a></div>
+<p>а красный отключится. После 3 секунд сервопривод вернётся в начальное положение,&nbsp;включится красный светодиод, а зелёный погаснет, дисплей напишет "Close.",</div>
+
+<div class="ris">
+<a href="arduino-zamok_files/arduino224-6b.jpg" target="_blank"><img src="arduino-zamok_files/arduino224-6b.jpg" alt="Проверка 5." width="650" height="250" title="Нажмите для увеличения"></a></div>
+
+<p>затем&nbsp;дисплей напишет "Enter code.".</p>
+
+
+
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Список элементов</caption>
+  <thead>
+    <tr>
+      <th>Тип</th>
+      <th>Номинал</th>
+      <th>Количество</th>
+      <th>Примечание</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left">Плата Arduino</td>
+      <td align="left">Arduino Nano 3.0</td>
+      <td>1</td>
+      <td>5В</td>
+      </tr>
+    <tr>
+      <td align="left">Резистор</td>
+      <td align="left">220 Ом</td>
+      <td>2</td>
+      <td>SMD</td>
+      </tr>
+    <tr>
+      <td align="left">Светодиод</td>
+      <td align="left">АЛ102Г</td>
+      <td>1</td>
+      <td>Красный</td>
+      </tr>
+    <tr>
+      <td align="left">Светодиод</td>
+      <td align="left">АЛ307Г</td>
+      <td>1</td>
+      <td>Зелёный</td>
+      </tr>
+    <tr>
+      <td align="left">LCD-дисплей</td>
+      <td align="left">С I2C интерфейсом</td>
+      <td>1</td>
+      <td>Зелёная подсветка</td>
+      </tr>
+    <tr>
+      <td align="left">Сервопривод</td>
+      <td align="left">SG90</td>
+      <td>1</td>
+      <td>180 градусов</td>
+      </tr>
+    <tr>
+      <td align="left">Зуммер</td>
+      <td align="left">5В</td>
+      <td>1</td>
+      <td>Bu</td>
+      </tr>
+    <tr>
+      <td align="left">Клавиатура</td>
+      <td align="left">4x4</td>
+      <td>1</td>
+      <td>Матричная</td>
+      </tr>
+    <tr>
+      <td align="left">Макетная плата </td>
+      <td align="left">640 точек</td>
+      <td>1</td>
+      <td>&nbsp;</td>
+      </tr>
+  </tbody>
+</table>
+
+<h3>Порядок сборки схемы&nbsp;</h3>
+<p>Сначала соединяем ардуино проводами с макетной платой (контакты питания).</p>
+<div class="ris">
+<a href="arduino-zamok_files/arduino224-7b.jpg" target="_blank"><img src="arduino-zamok_files/arduino224-7b.jpg" alt="Соединение ардуино с BreadBoard" width="890" height="380" title="Нажмите для увеличения"></a></div>
+
+<p>Потом подключаем к контактам D9 - D2 матричную клавиатуру.</p>
+
+<div class="ris">
+<a href="arduino-zamok_files/arduino224-8b.jpg" target="_blank"><img alt="Матричная клавиатура." src="arduino-zamok_files/arduino224-8b.jpg" title="Нажмите для увеличения"></a></div>
+
+<p>Далее подключаем дисплей. Контакты питания к макетной плате, SDA - А4, SCL - А5.</p>
+
+<div class="ris">
+<a href="arduino-zamok_files/arduino224-9b.jpg" target="_blank"><img src="arduino-zamok_files/arduino224-9b.jpg" alt="Дисплей." width="500" height="500" title="Нажмите для увеличения"></a></div>
+
+
+<p>Затем сервопривод. Его подключаем к контакту 10.</p>
+
+<div class="ris"><a href="arduino-zamok_files/arduino224-10b.jpg" target="_blank">
+<img src="arduino-zamok_files/arduino224-10b.jpg" alt="Сервопривод." width="600" height="460" title="Нажмите для увеличения"></a></div>
+
+<p>Красный светодиод к контакту 11.</p>
+
+<div class="ris"><a href="arduino-zamok_files/arduino224-11b.jpg" target="_blank">
+<img src="arduino-zamok_files/arduino224-11b.jpg" alt="Красный светодиод." width="600" height="465" title="Нажмите для увеличения"></a></div>
+
+<p>Зелёный - к контакту 12.</p>
+
+<div class="ris"><a href="arduino-zamok_files/arduino224-12b.jpg" target="_blank">
+<img src="arduino-zamok_files/arduino224-12b.jpg" alt="Зелёный светодиод." width="600" height="470" title="Нажмите для увеличения"></a></div>
+
+<p>Зуммер - к контакту 13.</p>
+
+<div class="ris">
+<a href="arduino-zamok_files/arduino224-13b.jpg" target="_blank">
+<img src="arduino-zamok_files/arduino224-13b.jpg" width="625" height="430" title="Нажмите для увеличения"></a></div>
+
+<h3>Cкетч</h3>
+<div class="kod">
+<pre>
+#include &lt;iarduino_KB.h&gt;
+#include &lt;Wire.h&gt;
+#include &lt;LiquidCrystal_I2C.h&gt;
+#include &lt;Servo.h&gt;
+iarduino_KB KB(9, 8, 7, 6, 5, 4, 3, 2);
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+Servo servo;
+int pass[4] = {3, 6, 1, 8};
+int in[4];
+int r = 11;
+int g = 12;
+void setup() {
+  KB.begin(KB1);
+  pinMode(r, OUTPUT);
+  pinMode(g, OUTPUT);
+  lcd.init();
+  lcd.backlight();
+  digitalWrite(g, LOW);
+  digitalWrite(r, HIGH);
+  servo.attach(10);
+  servo.write(0);
+  lcd.setCursor(0, 0);
+}
+void loop() 
+{
+  lcd.clear();
+  lcd.print("Enter code.");
+  while (!KB.check(KEY_DOWN)) {
+    delay(1);
+  }
+  in[0] = KB.getNum;
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print('*');
+  while (!KB.check(KEY_DOWN)) {
+    delay(1);
+  }
+  in[1] = KB.getNum;
+  lcd.print('*');
+  while (!KB.check(KEY_DOWN)) {
+    delay(1);
+  }
+  in[2] = KB.getNum;
+  lcd.print('*');
+  while (!KB.check(KEY_DOWN)) {
+    delay(1);
+  }
+  in[3] = KB.getNum;
+  lcd.print('*');
+  if (in[0] == pass[0]) {
+    if (in[1] == pass[1]) {
+      if (in[2] == pass[2]) {
+        if (in[3] == pass[3]) {
+          lcd.clear();
+          lcd.setCursor(0, 0);
+          lcd.print("Open.");
+          tone(13, 400, 750);
+          servo.write(180);
+          digitalWrite(r, LOW);
+          digitalWrite(g, HIGH);
+          delay(3000);
+          lcd.clear();
+          lcd.setCursor(0, 0);
+          lcd.print("Close.");
+          tone(13, 300, 700);
+          servo.write(0);
+          digitalWrite(g, LOW);
+          digitalWrite(r, HIGH);
+          delay(1000);
+        }
+      }
+    }
+  }
+}
+</pre>
+</div>
+
+
+
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="http://cxem.net/arduino/arduino224.php"  target="_blank">cxem.net - Кодовый замок из ардуино</a></p>
+
+</div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

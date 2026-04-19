@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Подключение ЖК-дисплея 1602A I2C</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+
+  
+  <div id="content">
+	<h1>Подключение ЖК-дисплея 1602A I2C <br>к Arduino</h1>
+  <p>Символьный дисплей LCD1602 I2C  — жидкокристаллический дисплей (Liquid Crystal Display) экран которого способен отображать одновременно до 32 символов (16 столбцов, 02 строки, от чего и произошло название дисплея: LCD1602). Дисплей оснащён платой конвертером для преобразования параллельного 8-битного интерфейса дисплея в шину I2C по которой он и подключается к Arduino по адресу <strong>0x3F</strong> или <strong>0x27</strong>. </p>
+	
+<figure>
+<img src="lcd1602a_files/lcd1602a-i2c-1.jpg" height="280">
+<img src="lcd1602a_files/lcd1602a-i2c-2.jpg" height="280">
+<figcaption>Рис. 1 - Внешний вид ЖК-дисплея 1602A I2C</figcaption>
+</figure>
+
+  <p>Дисплей построен на базе ЖК дисплея типа STN (Super Twisted Nematic) под управлением контроллера HD44780 и имеет синхронный параллельный 8-битный интерфейс подключённый к конвертеру для преобразования параллельного интерфейса дисплея в шину I2C по которой он и подключается к Arduino. Наличие конвертера облегчает подключение дисплея к Arduino, т.к. шина I2C использует всего 2 вывода для передачи данных и 2 вывода питания. Дисплей оснащён светодиодной подсветкой синего цвета. Контроллер HD44780 имеет ПЗУ в которой хранятся цифры, символы латиницы и некоторые иероглифы японского языка, для их отображения на дисплее. Отсутствующие символы, в т.ч. и символы кириллицы, можно загружать в память ОЗУ контроллера, для вывода на дисплей надписей на русском языке или нестандартных символов (например «смайликов»).</p>
+  <h4>Основные характеристики</h4>
+  <ul>
+    <li>Тип выводимой информации: символьный.</li>
+    <li>Язык в ПЗУ дисплея: латиница, японский.</li>
+    <li>Возможность загрузки собственных символов: есть.</li>
+    <li>Формат выводимой информации: 16&times;2 символов.</li>
+    <li>Тип дисплея: LCD.</li>
+    <li>Технология дисплея: STN.</li>
+    <li>Угол обзора: 180&deg;.</li>
+    <li>Цвет подсветки: синий.</li>
+    <li>Цвет символов: белый.</li>
+    <li>Контроллер: HD44780.</li>
+    <li>Интерфейс: I2C.</li>
+    <li>Адрес на шине I2C: 0&times;3F или 0&times;27 (зависит от конвертера).</li>
+    <li>Напряжение питания 5 В.</li>
+    <li>Рабочая температура: -20 ... +70&deg;С.</li>
+    <li>Температура хранения -30 ... +80&deg;С.</li>
+    <li>Габариты: 80&times;36 мм.</li>
+  </ul>
+	
+  <h3>Подключение</h3>
+
+  <p>Дисплей подключается к аппаратной шине I2C Arduino. Если Вы подключаете дисплей напрямую, то выводы GND и VCC дисплея подключаются к напряжению 5 В, а выводы SDA и SCL к аппаратной шине I2C. У Arduino UNO вывод SDA = A4, а вывод SCL = A5 (табл. 1). </p>
+
+  <p class="tab_num">Таблица 1</p>
+  <table align="center" border="1" cellpadding="4" cellspacing="1">
+    <tbody>
+      <tr>
+        <th width="140">Arduino Uno</th>
+        <th width="140">LCD 1602A I2C</th>
+        </tr>
+      <tr>
+        <td align="center" valign="middle">GND</td>
+        <td align="center" valign="middle">GND</td>
+        </tr>
+      <tr>
+        <td align="center" valign="middle">5V</td>
+        <td align="center" valign="middle">VCC</td>
+        </tr>
+      <tr>
+        <td align="center" valign="middle">A4</td>
+        <td align="center" valign="middle">SDA</td>
+        </tr>
+      <tr>
+        <td align="center" valign="middle">A5</td>
+        <td align="center" valign="middle">SCL</td>
+        </tr>
+    </tbody>
+  </table>
+  <figure>
+<img src="lcd1602a_files/lcd1602a-i2c-connect.jpg" width="860">
+<figcaption>Рис. 2 - Схема подключения ЖК-дисплея 1602A I2C к Arduino</figcaption>
+</figure>	
+	
+<h3>Скетч №1 </h3>
+
+<div class="kod">
+<pre>
+<span class="ar-oper">#include</span> &lt;<span class="ar-func"><strong>LiquidCrystal_I2C</strong></span>.h&gt;  <span class="comment1">// подключаем библиотеку</span>
+<span class="ar-func">LiquidCrystal_I2C</span> lcd(0x27, 16, 2);  <span class="comment1">// адрес, столбцов, строк</span>
+
+<span class="ar-type">void</span> <span class="ar-oper">setup</span>() {
+  lcd.<span class="ar-func">begin</span>();           <span class="comment1">// инициализация</span>
+  lcd.<span class="ar-func">backlight</span>();       <span class="comment1">// включить подсветку</span>  
+  lcd.<span class="ar-func">setCursor</span>(0, 0);   <span class="comment1">// столбец 0 строка 0</span>
+  lcd.<span class="ar-func">print</span>("Arduino");
+  lcd.<span class="ar-func">setCursor</span>(2, 1);   <span class="comment1">// столбец 0 строка 1</span>
+  lcd.<span class="ar-func">print</span>("UNO");
+}
+<span class="ar-type">void</span> <span class="ar-oper">loop</span>() {
+
+}
+</pre>
+</div>	
+	
+<figure>
+<img src="lcd1602a_files/lcd1602a-i2c-3.jpg" width="448" height="192">
+<figcaption>Рис. 3 - Результат выполнения скетча №1</figcaption>
+</figure>
+	
+
+  <br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://lesson.iarduino.ru/page/urok-4-podklyuchenie-lcd1602-po-i2c-k-arduino"  target="_blank">lesson.iarduino.ru - Урок 4. Подключение LCD1602 по I2C к Ардуино</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2022</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Модуль KY-020</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cdutt-str.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+<h1>Модуль датчика наклона KY-020</h1>
+
+<p>Модуль KY-020 оснащён шариковым датчиком наклона. Принцип работы модуля наклона KY-020 основан на замыкании цепи двумя металлическими шариками. При наклоне датчика шарики перемешаются и при попадании на контакты замыкают цепь. KY-020 состоит из резистора 10 кОм и шарового переключателя с двунаправленной проводимостью, который размыкает/замыкает цепь в зависимости от степени ее наклона. Угол наклона не измеряется.</p>
+	
+<figure>
+  <img src="ky-020_files/ky-020.jpg" width="450" height="350">
+    <figcaption>Рис. 1 - Внешний вид модуля KY-020</figcaption>
+</figure>
+	
+<figure>
+  <img src="ky-020_files/ky-020-principe.jpg" width="500" height="160">
+    <figcaption>Рис. 2 - Принцип работы модуля KY-020</figcaption>
+</figure>
+
+  <p>В схеме датчика наклона KY-020  присутствует сопротивление, которое подтягивает сигнальный выход к питанию, а сам датчик при срабатывании замыкается на землю.</p>
+
+<figure>
+<img src="ky-020_files/ky-020-shema.png" width="220" height="200">
+  <figcaption>Рис. 3 - Схема модуля KY-020</figcaption>
+</figure>
+
+<p>Технические характеристики модуля KY-020:</p>
+<ul>
+  <li>Рабочее напряжение &#8212;  3,3…5 В.</li>
+  <li>Тип выхода &#8212; Цифровой.</li>
+</ul>
+
+
+ 
+ <p>Назначение выводов представлено в таблице 1.</p>
+ <p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+  <tr>
+    <th>Контакт</th>
+    <th>Назначение</th>
+  </tr>
+  <tr>
+    <th align="center">VSS</th>
+    <td align="left">+5 В - Питание положительный полюс</td>
+  </tr>
+  <tr>
+    <th align="center">&#8212;</th>
+    <td align="left">Общий (GND) </td>
+  </tr>
+  <tr>
+    <th align="center">S</th>
+    <td align="left">Сигнальный</td>
+  </tr>
+</table>
+
+<figure>
+  <img src="ky-020_files/ky-020-maket.jpg" width="740" height="640">
+    <figcaption>Рис. 4 - Схема подключения модуля наклона KY-020 к Arduino UNO</figcaption>
+</figure>
+
+ <!--<p> Для работы с модулем KY-022 используется библиотека <strong>IRremote_master</strong>.</p> -->
+
+
+ <h3>Скетч</h3>   
+ <p>Включение светодиода при наклоне модуля KY-020.</p>
+ <div class="kod">
+<pre><span class="ar-type">int</span> led = 13 ;     <span class="comment1">// назначение пина для светодиода</span>
+<span class="ar-type">int</span> SensorPin = 3; <span class="comment1">// назначение пина для датчика наклона</span>
+<span class="ar-type">int</span> status ;<span class="comment1">       // переменная для хранения значения датчика</span>
+<span class="ar-type">void</span> <span class="ar-oper">setup</span> ()
+{
+  <span class="ar-func">pinMode</span>(led, <span class="ar-type">OUTPUT</span>) ;      <span class="comment1">// пин светодиода работает как выход</span>
+  <span class="ar-func">pinMode</span>(SensorPin, <span class="ar-type">INPUT</span>) ; <span class="comment1">//пин датчика наклона работает как вход</span>
+}
+<span class="ar-type">void</span> <span class="ar-oper">loop</span> ()
+{
+  status = <span class="ar-func">digitalRead</span>(SensorPin) ;<span class="comment1">// чтение значения с датчика</span>
+  <span class="ar-oper">if</span> (status == <span class="ar-type">HIGH</span>) <span class="comment1">//когда с датчика появляется высокий уровень</span> 
+  {
+    <span class="ar-func">digitalWrite</span>(led, <span class="ar-type">HIGH</span>);<span class="comment1"> //светодиод светится</span>
+  }
+  <span class="ar-oper">else</span>
+  {
+    <span class="ar-func">digitalWrite</span>(led, <span class="ar-type">LOW</span>);
+  }
+}
+</pre>
+</div>
+
+
+ <br>
+    <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+
+ <hr>
+<h3>Источники</h3>	
+
+  <p><a href="https://arduino-tex.ru/news/56/ky-020---datchiki-naklona-podklyuchenie-k-arduino.html"  target="_blank">arduino-tex.ru - KY-020 - датчики наклона. Подключение к Arduino.</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2021</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

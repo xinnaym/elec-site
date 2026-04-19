@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ультразвуковой датчик расстояния HC–SR04</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+<h1>Ультразвуковой датчик расстояния <br>
+HC–SR04</h1>
+
+<p>Ультразвуковой датчик расстояния - модуль HC-SR04 использует акустическое излучение для определения расстояния до объекта. Этот бесконтактный датчик обеспечивает высокую точность и стабильность измерений. Диапазон измерений составляет: от 2 см до 400 см. На показания датчика практически не влияют солнечное излучение и электромагнитные шумы. Модуль продается в комплекте с трансмиттером и ресивером.</p>
+
+<p>Технические характеристики HC-SR04:</p>
+<ul>
+	<li>Напряжение питания: +5В – постоянный ток;</li>
+	<li>Сила тока покоя: &lt; 2 мА;</li>
+	<li>Рабочая сила тока: 15 мА;</li>
+	<li>Эффективный рабочий угол: &lt; 15°;</li>
+	<li>Расстояние измерений: от 2 см до 400 см (1 – 13 дюймов) с разрешением 0,3&nbsp;см;</li>
+	<li>Разрешающая способность: 0.3 см;</li>
+	<li>Угол измерений: 30 градусов;</li>
+	<li>Ширина импульса триггера: 10 микросекунд;</li>
+	<li>Размеры: 45 мм x 20 мм x 15 мм.</li>
+</ul>
+
+<figure>
+ <a href="arduino-hc-sr04_files/HC-SR04.jpg" target="_blank">
+ <img src="arduino-hc-sr04_files/HC-SR04.jpg" alt="Arduino_HC-SR04_общий вид" width="280" height="250" border="0"></a> 
+ <figcaption>Рис. 1 - Внешний вид датчика HC-SR04</figcaption>
+</figure>
+
+<p>Выводы:</p>
+<ul>
+	<li>VCC   – +5 В (постоянный ток)</li>
+	<li>Trig  (Т):  – сигнала входа(Триггер, INPUT)</li>
+	<li>Echo (R) – вывод сигнала выхода (Эхо, OUTPUT)</li>
+	<li>GND  – Земля</li>
+  </ul>
+
+<h3>Принцип работы ультразвуковых датчиков</h3>
+
+<p>Действие ультразвукового дальномера HC-SR04 основано на принципе эхолокации. Он излучает звуковые импульсы в пространство и принимает отражённый от препятствия сигнал. По времени распространения звуковой волны к препятствию и обратно определяется расстояние до объекта.</p>
+<p>Запуск звуковой волны начинается с подачи положительного импульса длительностью не менее 10 микросекунд на вывод <strong>TRIG</strong> дальномера. Как только импульс заканчивается, дальномер излучает в пространство перед собой пачку звуковых импульсов частотой 40&nbsp;кГц. В это же время на выводе <strong>ECHO</strong> дальномера появляется логическая единица. Как только датчик улавливает отражённый сигнал, на выводе ECHO появляется логический ноль. По длительности логической единицы на выводе <strong>ECHO</strong> («Задержка эхо» на рисунке) определяется расстояние до препятствия.</p>
+
+<figure><img src="arduino-hc-sr04_files/1.png" alt="Принцип действия ультразвукового дальномера HC-SR04" width="520" height="216">
+<figcaption>Рис. 2 - Принцип действия ультразвукового дальномера HC-SR04</figcaption>
+</figure>
+
+<p class="warning">Внимание! Так как в основу принципа действия положен ультразвук, то такой датчик не подходит для определения расстояния до звукопоглощающих объектов. Оптимальными для измерения являются предметы с ровной гладкой поверхностью. </p>
+
+
+<h3>Схема взаимодействия Arduino с HC SR04</h3>
+
+<p>Для получения данных, необходимо выполнить такую последовательность действий:</p>
+<ul><li>Подать на выход Trig импульс длительностью 10 микросек;</li>
+<li>Ультразвуковой дальномер HC-SR04 посылает  8 импульсов с частотой 40 кГц;</li>
+<li>Когда импульсы дойдут до препятствия, они отразятся от него и будут приняты приемником, что обеспечит наличие входного сигнала на выходе Echo;</li>
+<li>На стороне контроллера полученный сигнал при помощи формул следует перевести в расстояние.</li>
+</ul>
+<p>&nbsp;</p>
+
+
+
+<h3>Подключение датчика HC–SR04 к Arduino</h3>
+
+<figure>
+ <a href="arduino-hc-sr04_files/shema.jpg"><img src="arduino-hc-sr04_files/shema-1.png" width="390" height="190"></a> 
+ <figcaption>Рис. 4 - Схема подключения HC-SR04 к Arduino</figcaption>
+</figure>
+
+
+<!--<p class="warning">Примечание: в свободном доступе существует библиотека <a href="http://playground.arduino.cc/Code/NewPing" target="_blank">NewPing</a>, которая облегчает использование HC–SR04.</p>
+ -->
+
+<h4>Скетч №1 </h4>
+<p>Ультразвуковой датчик HC–SR04 определяет расстояние в миллиметрах и выводит полученные значения в окно серийного монитора в среде Arduino IDE.</p>
+<div class="kod">
+<pre><span class="ar-type">int</span> <span class="kod-var">trigPin</span> = 11;
+<span class="ar-type">int</span> <span class="kod-var">echoPin</span> = 12; 
+<span class="ar-type">long</span> <span class="kod-var">t</span>, <span class="kod-var">s</span>;
+
+<span class="ar-type">void</span> <span class="ar-oper">setup</span>() {
+  <span class="comment1">//Инициализируем последовательный порт на скорости 9600 бод</span>
+  <span class="ar-func"><strong>Serial</strong></span>.<span class="ar-func">begin</span>(9600);
+  <span class="comment1">//Инициализирум входы и выходы</span>
+  <span class="ar-func">pinMode</span>(<span class="kod-var">trigPin</span>, <span class="ar-const">OUTPUT</span>); <span class="comment1">// триггер - выходной пин</span>
+  <span class="ar-func">pinMode</span>(<span class="kod-var">echoPin</span>, <span class="ar-const">INPUT</span>);  <span class="comment1">//эхо - входной</span>
+  }
+
+<span class="ar-type">void</span> <span class="ar-oper">loop</span>(){
+  <span class="comment1">// На 5 мкс подаем логический "0"</span>  
+  <span class="ar-func">digitalWrite</span>(<span class="kod-var">trigPin</span>, <span class="ar-const">LOW</span>);
+  <span class="ar-func">delayMicroseconds</span>(5);
+  <span class="comment1">// Генерируем импульс импульс длительностью 10 мкс:</span>
+  <span class="ar-func">digitalWrite</span>(<span class="kod-var">trigPin</span>, <span class="ar-const">HIGH</span>);
+  <span class="ar-func">delayMicroseconds</span>(10);
+  <span class="ar-func">digitalWrite</span>(<span class="kod-var">trigPin</span>, <span class="ar-const">LOW</span>);
+  <span class="kod-var">t</span> = <span class="ar-func">pulseIn</span>(<span class="kod-var">echoPin</span>, <span class="ar-const">HIGH</span>); <span class="comment1">//Считываем длину эхо-сигнала в мкс</span> 
+  <span class="kod-var">s</span> = (<span class="kod-var">t</span>/2) * 0.343; <span class="comment1">// Преобразуем время в расстояние</span>
+  <span class="ar-func"><strong>Serial</strong></span>.<span class="ar-func">print</span>(<span class="kod-var">s</span>);
+  <span class="ar-func"><strong>Serial</strong></span>.<span class="ar-func">print</span>("mm");
+  <span class="ar-func"><strong>Serial</strong></span>.<span class="ar-func">println</span>();
+  <span class="ar-func">delay</span>(500);
+} 
+</pre>
+</div>
+
+<p>Функция <span class="kod-func">Microseconds()</span> задаёт  задержку выполнения программы в микросекундах.</p>
+<p>Функция <span class="kod-func">pulseIn()</span> возвращает длину сигнала в микросекундах.   Так как звук проходит двойное расстояние – до объекта и обратно – результат нужно  разделить  пополам. Чтобы получить время <span class="kod-var">t</span> в секундах, нужно разделить его на 1&nbsp;000&nbsp;000.</p>
+
+<p>Расстояние равно произведению скорости  на время:</p>
+<p class="formula">S = V&times;t</p>
+<p>Скорость звука в воздухе 343&nbsp;м/сек или 0,343 мм/мкс. Таким образом, расстояние до объекта в миллиметрах: </p>
+<p class="formula">S = t / 2&times;0,343 = t&times;0,172 [мм].</p>
+<p><strong>Примечание. </strong>Операцию умножения микроконтроллер выполняет быстрее, чем операцию деления. Поэтому операцию деления можно заменить на эквивалентное умножение (например <strong>:100</strong> на <strong>&times;0,01</strong>).</p>
+	
+	
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+
+  <p><a href="https://arduinomaster.ru/datchiki-arduino/ultrazvukovoj-dalnomer-hc-sr04/"  target="_blank">arduinomaster.ru - Датчик расстояния Ардуино HC SR04</a></p>
+  <p><a href="https://soltau.ru/index.php/arduino/item/374-kak-podklyuchit-ultrazvukovoj-dalnomer-hc-sr04-k-arduino"  target="_blank">soltau.ru - Как подключить ультразвуковой дальномер HC-SR04 к Arduino</a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2024</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

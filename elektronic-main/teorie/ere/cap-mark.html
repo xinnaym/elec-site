@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Маркировка конденсаторов</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+    <h1>Маркировка конденсаторов</h1>
+
+    <h3><span id="i-3">Буквенно-цифровая маркировка</span></h3>
+    <p>При такой маркировке буква указывает на десятичную запятую и обозначение (мкФ, нФ, пФ), а цифры — на значение емкости.</p>
+    <p>Если в обозначении ёмкости конденсатора имеется русская буква "<strong>п</strong>", латинская &quot;<strong>p</strong>&quot; или буквы отсутствуют, емкость выражена в пикофарадах.</p>
+    <p>Например:</p>
+    <ul type="square">
+      <li>1п0 &#8212; 1пФ. </li>
+      <li>1p5  &#8212; 1,5 пФ.</li>
+      <li>15п   &#8212; 15 пФ. </li>
+      <li>15p2 &#8212; 15,2 пФ.</li>
+    </ul>
+
+    <div class="ris"><img src="cap-mark_files/cap-120p.jpg" width="180" height="190">
+		<p>Рис. 1 - Конденсатор ёмкостью 120 пФ </p>
+		</div>
+		
+    <p>Если в обозначении ёмкости конденсатора имеется русская буква &quot;<strong>Н</strong>&quot; или латинская &quot;<strong>n</strong>&quot;, емкость указана в нанофарадах. </p>
+    <p> Например:</p>
+    <ul type="square">
+      <li>n10 &#8212; 0,1нФ (100 пФ).</li>
+      <li>Н15 &#8212; 0,15 нФ (150 пФ).  </li>
+      <li>1n0 &#8212; 1нФ (1000 пФ). </li>
+      <li>1Н5 &#8212; 1,5 нФ (1500 пФ).</li>
+      <li>10n &#8212; 10 нФ (0,01 мкФ). </li>
+      <li>68Н &#8212; 68 нФ (0,068 мкФ). </li>
+    </ul>
+
+    <div class="ris"><img src="cap-mark_files/cap-2n2.jpg" width="200" height="220">
+		<p>Рис. 2 - Конденсатор ёмкостью 2,2 нФ </p>
+		</div>
+		
+    <p>Если в обозначении ёмкости конденсатора имеется русская буква  "<strong>М</strong>" или греческая &quot;<strong>&micro;</strong>", емкость указана в микрофарадах.</p>
+    <p>Например:</p>
+    <ul type="square">
+      <li>М10 &#8212; 0,1 мкФ.</li>
+      <li>1&micro;0 &#8212; 1мкФ. </li>
+      <li>1&micro;5 &#8212; 1,5 мкФ.</li>
+      <li>15&micro; &#8212; 15 мкФ.</li>
+      <li>150&micro; &#8212; 150 мкФ.</li>
+    </ul>
+
+    <div class="ris">
+		<img src="cap-mark_files/cap_0m22.jpg">
+		<img src="cap-mark_files/cap-1m.jpg" width="127" height="126">
+		<p>Рис. 3 - Конденсаторы ёмкостью 0,22 мкФ и 1 мкФ </p>
+		</div>
+		
+    <p>Также для обозначения используют букву «<strong>R</strong>», она используется для обозначения емкостей в микрофарадах. Но если перед «<strong>R</strong>» стоит ноль, то емкость выражено в пикофарадах. Например: </p>
+    <ul>
+      <li>0R5 &#8212; 0,5 пФ, </li>
+      <li>R47 &#8212; 0,47 мкФ, </li>
+      <li>6R8 &#8212; 6,8 мкФ.</li>
+    </ul>
+
+
+
+    <h3>Кодовая  маркировка емкости конденсатора (соответствии  со стандартами IEC).</h3>
+    <h4><strong>1.  Кодировка тремя цифрами</strong></h4>
+    <p> Первые две цифры указывают на  значение емкости в пикофарадах (пФ), последняя — количество нулей. Если емкость  менее 10 пФ, то последняя цифра может быть &quot;9&quot;. При емкостях меньше  1,0 пФ первая цифра &quot;0&quot;. </p>
+    <p class="tab_num">Таблица 1</p>
+    <table border="1" cellspacing="0" cellpadding="3">
+      <tr>
+        <th valign="top">код</th>
+        <th valign="top">пикофарады, пФ </th>
+        <th valign="top">нанофарады, нФ</th>
+        <th valign="top">микрофарады, мкФ </th>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">109 </td>
+        <td align="center" valign="middle">1,0 пФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">159 </td>
+        <td align="center" valign="middle">1,5 пФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">229 </td>
+        <td align="center" valign="middle">2,2 пФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">339 </td>
+        <td align="center" valign="middle">3,3 пФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">479 </td>
+        <td align="center" valign="middle">4,7 пФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">689 </td>
+        <td align="center" valign="middle">6,8 пФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">100 </td>
+        <td align="center" valign="middle">10 пФ </td>
+        <td align="center" valign="middle">0,01 нФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">150 </td>
+        <td align="center" valign="middle">15 пФ </td>
+        <td align="center" valign="middle">0,015 нФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">220 </td>
+        <td align="center" valign="middle">22 пФ </td>
+        <td align="center" valign="middle">0,022 нФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">330 </td>
+        <td align="center" valign="middle">33 пФ </td>
+        <td align="center" valign="middle">0,033 нФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">470 </td>
+        <td align="center" valign="middle">47 пФ </td>
+        <td align="center" valign="middle">0,047 нФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">680 </td>
+        <td align="center" valign="middle">68 пФ </td>
+        <td align="center" valign="middle">0,068 нФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">101 </td>
+        <td align="center" valign="middle">100 пФ </td>
+        <td align="center" valign="middle">0,1 нФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">151 </td>
+        <td align="center" valign="middle">150 пФ </td>
+        <td align="center" valign="middle">0,15 нФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">221 </td>
+        <td align="center" valign="middle">220 пФ </td>
+        <td align="center" valign="middle">0,22 нФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">331 </td>
+        <td align="center" valign="middle">330 пФ </td>
+        <td align="center" valign="middle">0,33 нФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">471 </td>
+        <td align="center" valign="middle">470 пФ </td>
+        <td align="center" valign="middle">0,47 нФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">681 </td>
+        <td align="center" valign="middle">680 пФ </td>
+        <td align="center" valign="middle">0,68 нФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">102 </td>
+        <td align="center" valign="middle">1000 пФ </td>
+        <td align="center" valign="middle">1 нФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">152 </td>
+        <td align="center" valign="middle">1500 пФ </td>
+        <td align="center" valign="middle">1,5 нФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">222 </td>
+        <td align="center" valign="middle">2200 пФ </td>
+        <td align="center" valign="middle">2,2 нФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">332 </td>
+        <td align="center" valign="middle">3300 пФ </td>
+        <td align="center" valign="middle">3,3 нФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">472 </td>
+        <td align="center" valign="middle">4700 пФ </td>
+        <td align="center" valign="middle">4,7 нФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">682 </td>
+        <td align="center" valign="middle">6800 пФ </td>
+        <td align="center" valign="middle">6,8 нФ </td>
+        <td align="center" valign="middle"><p align="center">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">103 </td>
+        <td align="center" valign="middle">10000 пФ </td>
+        <td align="center" valign="middle">10 нФ </td>
+        <td align="center" valign="middle">0,01 мкФ </td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">153 </td>
+        <td align="center" valign="middle">&nbsp;15000 пФ </td>
+        <td align="center" valign="middle">15 нФ </td>
+        <td align="center" valign="middle">0,015 мкФ </td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">223 </td>
+        <td align="center" valign="middle">&nbsp;22000 пФ </td>
+        <td align="center" valign="middle">22 нФ </td>
+        <td align="center" valign="middle">0,022 мкФ </td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">333 </td>
+        <td align="center" valign="middle">&nbsp;33000 пФ </td>
+        <td align="center" valign="middle">33 нФ </td>
+        <td align="center" valign="middle">0,033 мкФ </td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">473 </td>
+        <td align="center" valign="middle">&nbsp;47000 пФ </td>
+        <td align="center" valign="middle">47 нФ </td>
+        <td align="center" valign="middle">0,047 мкФ </td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">683 </td>
+        <td align="center" valign="middle">&nbsp;68000 пФ </td>
+        <td align="center" valign="middle">68 нФ </td>
+        <td align="center" valign="middle">0,068 мкФ </td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">104 </td>
+        <td align="center" valign="middle">100000 пФ </td>
+        <td align="center" valign="middle">100 нФ </td>
+        <td align="center" valign="middle">0,1 мкФ </td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">154 </td>
+        <td align="center" valign="middle">150000 пФ </td>
+        <td align="center" valign="middle">150 нФ </td>
+        <td align="center" valign="middle">0,15 мкФ </td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">224 </td>
+        <td align="center" valign="middle">220000 пФ </td>
+        <td align="center" valign="middle">220 нФ </td>
+        <td align="center" valign="middle">0,22 мкФ </td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">334 </td>
+        <td align="center" valign="middle">330000 пФ </td>
+        <td align="center" valign="middle">330 нФ </td>
+        <td align="center" valign="middle">0,33 мкФ </td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">474 </td>
+        <td align="center" valign="middle">470000 пФ </td>
+        <td align="center" valign="middle">470 нФ </td>
+        <td align="center" valign="middle">0,47 мкФ </td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">684 </td>
+        <td align="center" valign="middle">680000 пФ </td>
+        <td align="center" valign="middle">680 нФ </td>
+        <td align="center" valign="middle">0,68 мкФ </td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">105 </td>
+        <td align="center" valign="middle">1000000 пФ </td>
+        <td align="center" valign="middle">1000 нФ </td>
+        <td align="center" valign="middle">1 мкФ </td>
+      </tr>
+    </table>
+    <h4>2. Кодировка четырьмя цифрами</h4>
+    <p>Возможны варианты кодирования  4-значным числом. Но и в этом случае последняя цифра указывает количество  нулей, а первые три — емкость в пикофарадах (pF).</p>
+    <p class="tab_num">Таблица 2</p>
+      <table border="1" cellspacing="0" cellpadding="4">
+        <tr>
+          <th>Код</th>
+          <th>пикофарады (pF)</th>
+          <th>нанофарады (nF)</th>
+          <th>микрофарады (&micro;F)</th>
+        </tr>
+        <tr>
+          <td align="center" valign="top">1622</td>
+          <td align="center" valign="top">16200</td>
+          <td align="center" valign="top">16,2</td>
+          <td align="center" valign="top">0,0162</td>
+        </tr>
+        <tr>
+          <td align="center" valign="top">4753</td>
+          <td align="center" valign="top">475000</td>
+          <td align="center" valign="top">475</td>
+          <td align="center" valign="top">0,475</td>
+        </tr>
+    </table>
+
+    <h4>3.  Маркировка ёмкости в микрофарадах</h4>
+      <p>Вместо десятичной точки может  ставиться буква R.</p>
+    <p class="tab_num">Таблица 3</p>
+      <table border="1" cellspacing="0" cellpadding="3">
+        <tr>
+          <th width="93" valign="top">Код<strong> </strong></th>
+          <th width="133" valign="top">Ёмкость<strong> </strong></th>
+        </tr>
+        <tr>
+          <td width="93" align="center" valign="top">R1 </td>
+          <td width="133" align="center" valign="top">0,1 мкФ </td>
+        </tr>
+        <tr>
+          <td width="93" align="center" valign="top">R47 </td>
+          <td width="133" align="center" valign="top">0,47 мкФ</td>
+        </tr>
+        <tr>
+          <td width="93" align="center" valign="top">1</td>
+          <td width="133" align="center" valign="top">1 мкФ </td>
+        </tr>
+        <tr>
+          <td width="93" align="center" valign="top">4R7 </td>
+          <td width="133" align="center" valign="top">4,7 мкФ</td>
+        </tr>
+        <tr>
+          <td width="93" align="center" valign="top">10</td>
+          <td width="133" align="center" valign="top">10 мкФ</td>
+        </tr>
+        <tr>
+          <td width="93" align="center" valign="top">100</td>
+          <td width="133" align="center" valign="top">100 мкФ</td>
+        </tr>
+      </table>
+      <h4>4. Смешанная буквенно-цифровая маркировка ёмкости, допуска, ТКЕ, рабочего напряжения</h4>
+    <p>В отличие от первых трех  параметров, которые маркируются в соответствии со стандартами, рабочее  напряжение у разных фирм имеет различную буквенно-цифровую маркировку.</p>
+      
+<!-- <div class="ris">
+  <img src="kondensator_files/2-19.gif" height="267" width="342">
+		<p>Рис. 14 - Устройство трехсекционного конденсатора переменной емкости</p>
+  </div>
+ -->	
+ <h2>Примеры маркировки конденсаторов</h2>
+ <table border="1" cellspacing="0" cellpadding="3">
+  <tr>
+    <th>Изображение</th>
+    <th>Емкость</th>
+    <th>Допуск</th>
+    <th>Напряжение</th>
+    <th>Другие параметры </th>
+    </tr>
+  <tr>
+    <td align="center"><img src="cap-mark_files/cap104.jpg" width="66" height="100"></td>
+    <td align="center">100000 пФ = 100 нФ = 0,1 мкФ </td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    </tr>
+  <tr>
+    <td align="center"><img src="cap-mark_files/cap152.jpg" width="66" height="100"></td>
+    <td align="center">1500 пФ = 1,5 нФ</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    </tr>
+  <tr>
+    <td align="center"><img src="cap-mark_files/cap303.jpg" width="66" height="100"></td>
+    <td align="center">30000 пФ = 30 нФ = 0,03 мкФ</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    </tr>
+  <tr>
+    <td align="center"><img src="cap-mark_files/cap470.jpg" width="69" height="105"></td>
+    <td align="center">47 пФ</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="cap-mark_files/cap22k1kv.jpg" width="66" height="100"></td>
+    <td align="center">22 пФ</td>
+    <td align="center">&plusmn;10%</td>
+    <td align="center">1000 В </td>
+    <td align="center">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="cap-mark_files/cap47m400v.jpg" width="66" height="100"></td>
+    <td align="center">47 пФ</td>
+    <td align="center">&plusmn;20%</td>
+    <td align="center">400 В </td>
+    <td align="center">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="cap-mark_files/cap50.jpg" width="144" height="200"></td>
+    <td align="center">47 пФ</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">63 В - переменное,<br>
+      250 В -  постоянное</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="cap-mark_files/cap-5n6.png" width="90" height="66"></td>
+    <td align="center">5,6 нФ</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">250 В </td>
+    <td align="center">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="cap-mark_files/cap-m22.png" width="90" height="66"></td>
+    <td align="center">0,22 мкФ = 220 нФ</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">400 В </td>
+    <td align="center">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="cap-mark_files/cap-4r1.jpg" width="150" height="208"></td>
+    <td align="center">4,1 мкФ </td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="cap-mark_files/cap-a475.jpg" width="81" height="54"></td>
+    <td align="center">4,7 мкФ</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">10 В </td>
+    <td align="center">&nbsp;</td>
+  </tr>
+</table>
+<!--
+  <tr>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+	
+ -->
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+
+
+	
+
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2020</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

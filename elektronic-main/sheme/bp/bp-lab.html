@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Лабораторный блок питания</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Лабораторный блок питания (0-30 В, 3 А)</h1>
+  <p>Достоинства данного блока питания:</p>
+<ul>
+  <li> выходное напряжение можно регулировать в диапазоне от&nbsp; 0 и до 30 В;</li>
+  <li> можно выставлять какой-то предел по силе тока до 3 А, после которого блок уходит в защиту;</li>
+  <li> очень низкий уровень пульсаций (постоянный ток на выходе блока питания мало чем отличается от постоянного тока батареек и аккумуляторов);</li>
+  <li> защита от перегрузки и неправильного подключения;</li>
+  <li> на блоке питания путем короткого замыкания (КЗ) «крокодилов» устанавливается максимально допустимый ток. Т.е. ограничение по току, которое вы выставляете переменным резистором по амперметру. Следовательно перегрузки не страшны. Сработает индикатор (светодиод) обозначающий превышение установленного уровня тока.</li>
+</ul>
+
+<div class="ris">
+<a href="bp-lab_files/bp-lab-shema-b.JPG" target="_blank">
+  <img src="bp-lab_files/bp-lab-shema-s.JPG" width="941" height="326" border="0"></a>
+	<p>Рис. 1 - Схема лабораторного блока питания</p>
+</div>
+
+
+<p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Перечень элементов</caption>
+  <tr>
+    <th>Позиционное<br> 
+      обозначение </th>
+    <th>Наименование</th>
+    <th>Номинал</th>
+    <th>Примечание</th>
+  </tr>
+  <tr>
+    <td align="left">С1</td>
+    <td align="left">Конденсатор электролитический</td>
+    <td align="center">3300 мкФ/50 В</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">C2, C3</td>
+    <td align="left">Конденсатор электролитический</td>
+    <td align="center">47 мкФ/50 В</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">C4</td>
+    <td align="left">Конденсатор</td>
+    <td align="center">100 нФ</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">С5</td>
+    <td align="left">Конденсатор </td>
+    <td align="center">200 нФ</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">C6, C9</td>
+    <td align="left">Конденсатор</td>
+    <td align="center">100 пФ </td>
+    <td align="left">керамический</td>
+  </tr>
+  <tr>
+    <td align="left">C7</td>
+    <td align="left">Конденсатор электролитический</td>
+    <td align="center">10 мкФ/50 В</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">С8</td>
+    <td align="left">Конденсатор </td>
+    <td align="center">330 пФ</td>
+    <td align="left">керамический</td>
+  </tr>
+  <tr>
+    <td align="left">R1</td>
+    <td align="left">Резистор постоянный </td>
+    <td align="center"> 2,2 кОм/1 Вт</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R2 </td>
+    <td align="left">Резистор постоянный </td>
+    <td align="center">82 Ом/0,25 Вт</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R3</td>
+    <td align="left">Резистор постоянный</td>
+    <td align="center"> 220 Ом/0,25 Вт</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R4</td>
+    <td align="left">Резистор постоянный</td>
+    <td align="center">4,7 кОм/0,25 Вт</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R5, R6, R13, R20, R21</td>
+    <td align="left">Резистор постоянный</td>
+    <td align="center">10 кОм/0,25 Вт</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R7</td>
+    <td align="left">Резистор постоянный</td>
+    <td align="center">0,47 Ом/5 Вт</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R8, R11</td>
+    <td align="left">Резистор постоянный</td>
+    <td align="center">27 кОм/0,25 Вт</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R9, R19</td>
+    <td align="left">Резистор постоянный</td>
+    <td align="center">2,2 кОм/0,25 Вт</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R10</td>
+    <td align="left">Резистор постоянный</td>
+    <td align="center">270 кОм/0,25 Вт</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R12, R18</td>
+    <td align="left">Резистор постоянный</td>
+    <td align="center">56 кОм/0,25 Вт</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R14</td>
+    <td align="left">Резистор постоянный</td>
+    <td align="center">1,5 кОм/0,25 Вт</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R15, R16</td>
+    <td align="left">Резистор постоянный</td>
+    <td align="center">1 кОм/0,25 Вт</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R17</td>
+    <td align="left">Резистор постоянный</td>
+    <td align="center">33 Ом/0,25 Вт</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R22</td>
+    <td align="left">Резистор постоянный</td>
+    <td align="center">3,9 кОм/0,25 Вт</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">RV1</td>
+    <td align="left"> Резистор подстроечный</td>
+    <td align="center">100 кОм</td>
+    <td align="left">многооборотный</td>
+  </tr>
+  <tr>
+    <td align="left"><p>P1, P2</p>      </td>
+    <td align="left">Резистор переменный </td>
+    <td align="center"> 10 кОм</td>
+    <td align="left"> линейный</td>
+  </tr>
+  <tr>
+    <td align="left">VD1-VD4</td>
+    <td align="left"> Диод </td>
+    <td align="center">1N5401…1N5408</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">VD5, VD6, VD9, VD10 </td>
+    <td align="left">Диод </td>
+    <td align="center">1N4148</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">VD7, VD8 </td>
+    <td align="left">Cтабилитрон</td>
+    <td align="center">на 5,6 В</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left"><p>VD11</p>      </td>
+    <td align="left">Диод </td>
+    <td align="center"><a href="../../help/vd/1n4001.html">1N4001</a></td>
+    <td align="left"> на ток 1 A</td>
+  </tr>
+  <tr>
+    <td align="left">VD12</td>
+    <td align="left">Cветодиод</td>
+    <td align="center">&nbsp;</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">VT1</td>
+    <td align="left">Транзистор биполярный, n-p-n </td>
+    <td align="center"> BC548</td>
+    <td align="left"><a href="../../help/vt/bc547.html" target="_blank">ВС547</a></td>
+  </tr>
+  <tr>
+    <td align="left"> VT2 </td>
+    <td align="left">Транзистор биполярный, n-p-n </td>
+    <td align="center"><a href="../../help/vt/kt961.html" target="_blank">КТ961А</a></td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left"> VT3 </td>
+    <td align="left">Транзистор биполярный, p-n-p </td>
+    <td align="center"><a href="../../help/vt/bc557.html" target="_blank">BC557</a> </td>
+    <td align="left">BC327</td>
+  </tr>
+  <tr>
+    <td align="left"> VT4 </td>
+    <td align="left">Транзистор биполярный, n-p-n </td>
+    <td align="center">КТ827А</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">U1, U2, U3</td>
+    <td align="left"> Операционный усилитель </td>
+    <td align="center">TL081</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+</table>
+
+
+<p>На входы X1 и X2 подается переменное напряжение 24 В от сетевого трансформатора. Трансформатор должен быть приличных габаритов, чтобы в нагрузку он смог выдать до 3 А.</p>
+<p>Диоды D1…D4 соединены в диодный мост. Можно взять диоды, которые выдерживают прямой ток 3 А и выше (1N5401...1N5408, КД213), или использовать готовый диодный мост, который бы тоже выдерживал прямой ток 3 А и выше.</p>
+
+<p>Микросхемы U1, U2, U3 представляют из себя операционные усилители. Их цоколевка (расположение выводов) показана на рис. 2. </p>
+<div class="ris"><img src="bp-lab_files/ou-TL801.png" height="110" width="264">
+<p>Рис. 2 - Цоколевка операционных усилителей TL081 </p>
+</div>
+<p> «NC» на  выводе 8 означает, что этот вывод никуда  не присоединяется.  В схеме выводы 1 и 5 также никуда не соединяются. Операционные усилители желательно устанавливать в панельки (&quot;кроватки&quot;)  для микросхем. </p>
+<p>Транзистор  <a href="../../help/vt/kt961.html">КТ961А</a> лучше поставить на радиатор. </p>
+<p>&nbsp;</p>
+
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+<hr>
+<h3>Источники</h3>	
+  <p><a href="http://www.ruselectronic.com/news/laboratornyj-blok-pitaniya-0-30-volt-3-amper-s-regulirovkoj-sily-toka/"  target="_blank">ruselectronic.com - Лабораторный блок питания 0-30 Вольт 3 Ампера, с регулировкой силы тока</a></p>
+  <p><a href="http://www.radioingener.ru/laboratornyj-blok-pitaniya-ot-0-30-volt-ot-0002-3-a/"  target="_blank">radioingener.ru - Лабораторный блок питания от 0—30 Вольт от 0,002—3 А</a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Регулируемый источник питания (12 В, 1,5 А)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Регулируемый источник питания<br>
+	  (24 В, 3 А)</h1>
+
+
+<p>Блок питания  предназначен для получения регулируемого стабилизированного выходного напряжения от 0 до 24 В при токе порядка 1-3 А. В блоке питания предусмотрена защита, то есть ограничение максимального тока при перегрузке.</p>
+
+
+<div class="ris">
+  <a href="bp-regul-7_files/shema-bp-24v-5a.JPG" target="_blank"><img src="bp-regul-7_files/shema-bp-24v-5a.JPG" width="860" border="0"></a>
+<p>Рис. 1 - Схема источника питания</p>
+</div>
+
+	
+<p class="tab_num">Таблица 1</p>
+  <table cellspacing="0" cellpadding="3" bordercolor="black" align="center" border="1">
+	<caption>Перечень элементов</caption>
+    <tbody>
+      <tr>
+        <th>Обозначение</th>
+        <th>Наименование</th>
+        <th>Номинал</th>
+        <th>Примечание</th>
+      </tr>
+      <tr>
+        <td align="center">С1</td>
+        <td align="left">Конденсатор электролитический </td>
+        <td align="center">2200 мкФ/35 В </td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">С3</td>
+        <td align="left">Конденсатор электролитический </td>
+        <td align="center">1 мкФ/35 В </td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">С4</td>
+        <td align="left">Конденсатор электролитический </td>
+        <td align="center">470 мкФ/35 В </td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">С5</td>
+        <td align="left">Конденсатор  </td>
+        <td align="center">100 нФ/35 В </td>
+        <td align="left">керамический; 0,01-0,47 мкФ</td>
+      </tr>
+      <tr>
+        <td align="center">F1</td>
+        <td align="left">Предохранитель</td>
+        <td align="center">5 А </td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R1</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">180 Ом/0,5 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R2, R4</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">6,8 кОм/0,5 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R3</td>
+        <td align="left">Резистор переменный </td>
+        <td align="center">22 кОм</td>
+        <td align="left">4,7 кОм - 22 кОм</td>
+      </tr>
+      <tr>
+        <td align="center">R5</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">7,5 кОм/0,5 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R6</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">0,22 Ом/5 Вт</td>
+        <td align="left">0,15 - 0,47 Ом</td>
+      </tr>
+      <tr>
+        <td align="center">R7</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">20 кОм/0,5 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R8</td>
+        <td align="left">Резистор переменный </td>
+        <td align="center">100 Ом</td>
+        <td align="left">47 – 330 Ом</td>
+      </tr>
+      <tr>
+        <td align="center">Т1</td>
+        <td align="left">Трансформатор</td>
+        <td align="center">220 В/24 В </td>
+        <td align="left">С напряжением вторичной обмотки <br>
+          24-27 В и током 2-3 А </td>
+      </tr>
+      <tr>
+        <td align="center">VD1-VD4</td>
+        <td align="left">Диод выпрямительный </td>
+        <td align="center"><a href="../../help/vd/kd202.html" target="_blank">КД202</a></td>
+        <td align="left">Диодный мост  3-5 А / 50 В</td>
+      </tr>
+      <tr>
+        <td align="center">VD5</td>
+        <td align="left">Светодиод</td>
+        <td align="center">АЛ307Б</td>
+        <td align="left">Красного свечения </td>
+      </tr>
+      <tr>
+        <td align="center">VD6</td>
+        <td align="left">Стабилитрон</td>
+        <td align="center"> BZX24</td>
+        <td align="left">КС527</td>
+      </tr>
+      <tr>
+        <td align="center">VT1</td>
+        <td align="left">Транзистор биполярный</td>
+        <td align="center"><a href="../../help/vt/kt816.html" target="_blank">КТ816</a></td>
+        <td align="left">BD140</td>
+      </tr>
+      <tr>
+        <td align="center">VT2</td>
+        <td align="left">Транзистор биполярный</td>
+        <td align="center">BC548</td>
+        <td align="left">BC547</td>
+      </tr>
+      <tr>
+        <td align="center">VT3, VT5</td>
+        <td align="left">Транзистор биполярный</td>
+        <td align="center"><a href="../../help/vt/kt815.html" target="_blank">КТ815</a></td>
+        <td align="left">BD139</td>
+      </tr>
+      <tr>
+        <td align="center">VT4</td>
+        <td align="left">Транзистор биполярный</td>
+        <td align="center"><a href="../../help/vt/kt819.html" target="_blank">КТ819</a></td>
+        <td align="left">КТ805,2N3055</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+  <p>&nbsp;</p>
+  <p>На транзисторе VТ1 собран стабилизатор тока стабилитрона, т е имеется возможность   установки практически любого стабилитрона с напряжением стабилизации   менее входного напряжения на 5 В. Это   значит, что при установке стабилитрона VD5 допустим ВZX5,6 или КС156 на   выходе стабилизатора получим регулируемое напряжение от 0 до   приблизительно 4 В, соответственно - если стабилитрон на 27 В ,   то максимальное выходное напряжение будет в пределах 24-25 В.</p>
+  <p>Переменное напряжение вторичной обмотки   трансформатора должно быть примерно на 3-5 В больше того, которое вы рассчитываете   получить на выходе стабилизатора, которое в свою очередь зависит от   установленного стабилитрона. Ток вторичной обмотки трансформатора как минимум должен быть не менее того тока, который нужно получить на выходе стабилизатора.</p>
+  <p>Выбор конденсаторов по емкости: С1  – примерно по 1000-2000 мкФ на 1 А, С4 – 220 мкФ на 1 А. Рабочее напряжение конденсаторов грубо   рассчитывается по формуле:</p>
+  <p class="formula">U<sub>раб </sub>&gt; ~U<sub>вх</sub>: 3 &times; 4</p>
+  <p>Например,  если выходное напряжение  трансформатора  30   В:  </p>
+  <p class="formula">U<sub>раб </sub>&gt; 30 <sub></sub>: 3 &times; 4</p>
+  <p class="formula">U<sub>раб </sub>&gt; 40 [В] </p>
+  <p>Уровень ограничения тока на выходе стабилизатора зависит от R6   по минимуму и R8 (по максимуму вплоть до отключения). При   установке перемычки вместо R8 между базой VТ5 и эмиттером VТ4 при   сопротивлении R6 равном 0,39 ом ток ограничения будет примерно на уровне   3 А,</p>
+  <p>Как   понять «ограничение»? Очень просто – выходной ток даже в режиме   короткого замыкания на выходе не превысит 3 А, за счет того что выходное   напряжение будет автоматически снижено практически до нуля.</p>
+  <p>Как   отрегулировать ток ограничения. Выставить на выходе стабилизатора   напряжение на холостом ходу порядка 5-7 В. Затем к выходу   стабилизатора подключить сопротивление примерно на 1 Ом мощностью 5-10   Вт и последовательно с ним амперметр. Подстроечным резистором R8   выставить требуемый ток. Правильно выставленный ток ограничения можно   проконтролировать выкручивая потенциометр регулировки выходного   напряжения на максимум до упора. При этом ток, контролируеммый   амперметром должен оставаться на прежнем уровне.</p>
+  <p>Диоды выпрямительного моста  желательно выбирать с запасом   по току минимум раза в полтора. Указанные диоды КД202  могут без   радиаторов достаточно долго работать при токе 1 А. Установив радиаторы можно   обеспечить 3-5 А.</p>
+  <p>Транзисторы    VT1 и VT4 необходимо устанавливать на радиаторы. VT1 будет слегка греться   поэтому и радиатор нужен небольшой, а вот VT4 да в режиме ограничения   тока будет греться сильно. Поэтому и радиатор нужно   подобрать внушительный, можно и вентилятор от блока питания компьютера к   нему приспособить.</p>
+  <p>Один   предохранитель на ток примерно на 1 А больше чем ток ограничения блока   питания (т е 4-5 А), должен стоять между диодным мостом и   трансформатором, а второй между трансформатором и сетью 220 В   примерно на 0,5-1 А.</p>
+    <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+  <hr>
+<h3>Источники:</h3>	
+  <p><a href="https://radioskot.ru/publ/bp/blok_pitanija_s_regulirovkoj_toka_i_naprjazhenija/7-1-0-887"  target="_blank">radioskot.ru - БЛОК ПИТАНИЯ С РЕГУЛИРОВКОЙ ТОКА И НАПРЯЖЕНИЯ</a></p>
+  <p><a href="http://cxema.my1.ru/publ/istochniki_pitanija/bloki_pitanija_laboratornye/reguliruemyj_blok_pitanija_0_24v_5a/66-1-0-5258"  target="_blank">cxema.my1.ru - Регулируемый блок питания 0-24v 5a</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Простой звуковой генератор</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+
+  
+  <div id="content">
+
+
+  <h1>Простой звуковой генератор</h1>
+  
+	<figure>
+	  <img src="zvonok-4_files/sound33.png" width="450" height="340" border="0">
+	  <figcaption>Рис. 1 - Схема простого звукового генератора</figcaption>
+	</figure>
+
+	<p class="tab_num">Таблица 1</p>
+	
+  <table border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>Перечень элементов</caption>
+    <tr>
+      <th>Позиционное<br>
+        обозначение </th>
+      <th>Наименование</th>
+      <th>Номинал</th>
+      <th>Кол-во</th>
+      <th>Замена</th>
+    </tr>
+    <tr>
+      <td align="left">BA1</td>
+      <td align="left"> Динамическая головка</td>
+      <td align="center">1...2 Вт / 8-16 Ом </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">C1</td>
+      <td align="left">Конденсатор  </td>
+      <td align="center">0,01 мкФ </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R1</td>
+      <td align="left">Резистор постоянный </td>
+      <td align="center">200 кОм </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">SA1</td>
+      <td align="left">Выключатель</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">VT1</td>
+      <td align="left">Транзистор биполярный, n-p-n </td>
+      <td align="center">BC847</td>
+      <td align="center">1</td>
+      <td align="left">        BC547, BC337, КТ3102, КТ315</td>
+    </tr>
+    <tr>
+      <td align="left">VT2</td>
+      <td align="left">Транзистор биполярный, p-n-p </td>
+      <td align="center">BC857</td>
+      <td align="center">1</td>
+      <td align="left">BC557, BC327, КТ361, 
+        КТ3107</td>
+    </tr>
+  </table>
+		
+  <p>&nbsp;</p>
+  <p>После подачи питания, конденсатор С1 начинает заряжаться от источника через резистор и динамик, так как сопротивление динамика мало по сравнению с резистором, напряжение на базе транзистора VТ1 близко к нулю, что не дает транзистору открыться. При достижении напряжения в 0,7 В на конденсаторе, открывается транзистор VТ1, и, как следствие,  транзистор VT2. При открытом транзисторе VТ2 напряжение на динамике близко к напряжению питания, которое в свою очередь разряжает конденсатор С1, закрывая транзисторы VТ1 и VТ2, затем процесс работы устройства повторяется. </p>
+  <p>Частоту генератора <span class="formula2">f</span> можно определить по  формуле:</p>
+  <p class="formula"> <img src="zvonok-4_files/formula 001.png" width="150" height="84">, </p>
+  <p>где</p>
+  <p><span class="formula2">С</span> &#8212;  емкость в фарадах, </p>
+  <p><span class="formula2">R</span> &nbsp;&#8212; сопротивление в омах. </p>
+  <p>При номиналах конденсатора 10 нФ и резистора 200 кОм, частота, приблизительно равна 170 Гц.</p>
+<hr>
+
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+
+
+<h3>Источники</h3>
+
+<p><a href="https://dzen.ru/a/XZXBPOiCwwCuc6At"  target="_blank">dzen.ru - Схемотехника. Простейший звуковой генератор.</a></p>
+	
+<!-- -->
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+</div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2023</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

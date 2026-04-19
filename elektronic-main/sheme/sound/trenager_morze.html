@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Тренажёр азбуки Морзе</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+
+<h1>Тренажёр азбуки Морзе</h1>
+<P>На рисунке 1 показана схема низкочастотного генератора, который можно 
+применить в тренажёре по изучению азбуки Морзе.</P>
+
+<figure>
+<IMG src="trenager_morze_files/morze-shema.png" width="431" height="320">
+<figcaption>Рис. 1 - Схема тренажера азбуки Морзе  (вариант 1)</figcaption>
+</figure>
+<p class="tab_num">Таблица 1</p>
+  <table cellspacing="0" cellpadding="3" bordercolor="black" align="center" border="1">
+	<caption>
+	Перечень элементов тренажера азбуки Морзе  (вариант 1)
+	</caption>
+    <tbody>
+      <tr>
+        <th>Обозначение</th>
+        <th>Наименование</th>
+        <th>Номинал</th>
+        <th>Примечание</th>
+      </tr>
+      <tr>
+        <td align="center">BA1</td>
+        <td align="left">Громкоговоритель</td>
+        <td align="center">8 Ом / 0,25 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">С1</td>
+        <td align="left">Конденсатор </td>
+        <td align="center">0,015 мкФ</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">GB1</td>
+        <td align="left">Батарейка</td>
+        <td align="center">9 В </td>
+        <td align="left">Крона</td>
+      </tr>
+      <tr>
+        <td align="center"> R1</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">30 кОм / 0,25 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R2</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">1,1 кОм / 0,25 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">T1</td>
+        <td align="left">Трансформатор</td>
+        <td align="center">&nbsp;</td>
+        <td align="left">выходной от  карманного радиоприёмника.</td>
+      </tr>
+      <tr>
+        <td align="center">VT1</td>
+        <td align="left">Транзистор биполярный </td>
+        <td align="center">МП37</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+<P>Когда  замыкается ключ S1, ток протекает от плюса 
+батареи к отводу от середины первичной обмотки трансформатора 
+Т1, через половину первичной обмотки 
+трансформатора, конденсатор С1 и переход база-эмиттер 
+транзистора.  Транзистор открывается. Далее  ток от плюса батареи начинает 
+протекать через второю половину первичной обмотки трансформатора и 
+открытый транзистор к минусу батареи.</P>
+	
+    <P>Конденсатор С1 заряжается согласно показанной на схеме 
+полярности. Когда напряжение на С1 достигает определённого 
+значения, зарядный ток становится равным нулю и транзистор VТ1 закрывается.</P>
+    <P>Конденсатор С1 разряжается через резистор R1 и первую половину 
+первичной обмотки тансформатора и процесс начинается вновь. Цикл 
+заряда-разряда составляет около 500 миллисекунд.</P>
+<P>Суммарное магнитное поле,полученное от протекающего тока через 
+две половины первичной обмотки трансформатора, индуктирует напряжение во вторичной обмотке.</P>
+<P>Громкоговоритель, включенный в цепь вторичной обмотки, воспроизводит звук частотой 2 кГц.</P>
+<P>В схеме генератора звуковой частоты, представленной на рисунке 2, отсутствует частотозадающий конденсатор. Работать он начинает при напряжении питания в несколько десятых долей вольта, даже в случае использования транзистора с минимальным коэффициентом передачи тока (но не менее 10).</P>
+<figure>
+<img  src="trenager_morze_files/morze-shema2.png" width="331" height="330">
+<figcaption>Рис. 2 - Схема тренажера азбуки Морзе (вариант 2)</figcaption>
+</figure>
+
+<p>Генерация электрических колебаний возникает при нажатии телеграфного ключа SB1 из-за действия сильной положительной обратной связи между коллекторной и базовой цепями транзистора. Звук слышится из головного телефона BF1, подключённого ко вторичной обмотке трансформатора. Резистором R1 устанавливают нужную громкость звука и его тональность.</p>
+<p class="tab_num">Таблица 2 </p>
+  <table cellspacing="0" cellpadding="3" bordercolor="black" align="center" border="1">
+	<caption>
+	Перечень элементов тренажера азбуки Морзе  (вариант 2)
+	</caption>
+    <tbody>
+      <tr>
+        <th>Обозначение</th>
+        <th>Наименование</th>
+        <th>Номинал</th>
+        <th>Примечание</th>
+      </tr>
+      <tr>
+        <td align="center">BF1</td>
+        <td align="left">Головной телефон</td>
+        <td align="center">  ТМ-2А</td>
+        <td align="left">ДЭМ-4М, ДЭМШ, ТК-67, <br>
+          любой с
+          сопротивлением 60..300 Ом</td>
+      </tr>
+      <tr>
+        <td align="center">G1</td>
+        <td align="left">Элемент питания </td>
+        <td align="center">1,5 В </td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center"> R1</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">390 Ом / 0,25 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">T1</td>
+        <td align="left">Трансформатор</td>
+        <td align="center">&nbsp;</td>
+        <td align="left">выходной от  карманного радиоприёмника.</td>
+      </tr>
+      <tr>
+        <td align="center">VT1</td>
+        <td align="left">Транзистор биполярный </td>
+        <td align="center">КТ315А</td>
+        <td align="left">любой маломощный кремниевый структуры n-p-n</td>
+      </tr>
+    </tbody>
+  </table>
+<p> При использовании транзистора структуры p-n-p необходимо изменить полярность подключения элемента G1. </p>
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	<hr>
+<h3>Источники</h3>	
+  <p><a href="http://radio-hobby.org/modules/news/article.php?storyid=1368"  target="_blank">radio-hobby.org - Простые генераторы НЧ</a></p>
+
+</div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2024</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

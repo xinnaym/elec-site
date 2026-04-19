@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Преобразователь кодов</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+<H1>Преобразователь кодов</H1>
+<P>Преобразователи кодов служат для перевода одной формы числа в другую. Их 
+входные и выходные переменные однозначно связаны между собой. Эту связь можно 
+задать таблицами переключений или логическими функциями. Примером преобразователя кодов является дешифратор.</P>
+
+
+
+ <h2>Преобразователь двоично-десятичного кода в код семисегментного индикатора </h2>
+ <P>Числа на табло и пультах индицируются, как правило, в десятичном 
+  коде. Для этого можно использовать дешифратор на микросхеме К155ИД1 совместно с 
+  газоразрядным индикатором. Однако применение таких индикаторов в 
+  радиолюбительской практике нежелательно из-за сравнительно высокого напряжения 
+  источника питания (200 В). Сейчас широкое распространение получили так 
+  называемые семи сегментные светодиодные и жидкокристаллические индикаторы, 
+  которые работают при тех же напряжениях, что и микросхемы. В них индикация 
+  осуществляется семью элементами, как показано на рисунке 1. Подавая управляющее 
+  напряжение на отдельные элементы индикатора и вызывая его свечение (светодиодные 
+  индикаторы) или изменяя его окраску (жидкокристаллические индикаторы), можно 
+  получить изображение десятичных цифр 0, 1,..., 9. </P>
+ <P> Преобразование двоично-десятичного 
+   кода в код семисегментного индиктора показано в таблице 1. </P>
+	 <p class="tab_num">Таблица 1</p>
+<TABLE width=450 border=1 align="center" cellPadding=2 cellspacing="0">
+  <TBODY>
+  <TR>
+    <th rowspan="2">Цифра</th>
+    <th colspan="4">Входы</th>
+    <th colspan="7">Выходы</th>
+    </TR>
+  <TR>
+    <th>8</th>
+    <th>4</th>
+    <th>2</th>
+    <th>1</th>
+    <th>a</th>
+    <th>b</th>
+    <th>c</th>
+    <th>d</th>
+    <th>e</th>
+    <th>f</th>
+    <th>g</th>
+  </TR>
+  <TR>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD></TR>
+  <TR>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD></TR>
+  <TR>
+    <TD align="center" valign="middle">2</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD></TR>
+  <TR>
+    <TD align="center" valign="middle">3</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD></TR>
+  <TR>
+    <TD align="center" valign="middle">4</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD></TR>
+  <TR>
+    <TD align="center" valign="middle">5</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD></TR>
+  <TR>
+    <TD align="center" valign="middle">6</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD></TR>
+  <TR>
+    <TD align="center" valign="middle">7</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD></TR>
+  <TR>
+    <TD align="center" valign="middle">8</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD></TR>
+  <TR>
+    <TD align="center" valign="middle">9</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD></TR></TBODY></TABLE>
+
+ <P>Цоколёвка некоторых 
+   микросхем – преобразователей кода 8421 в семисегментный показана на рис. 1. </P>
+ <div class="ris">
+<IMG src="preobrazovatel-kodov_files/beginner19-5.gif">
+<p>Рис. 1 - Преобразователи кодов для семисегментного индикатора </p>
+    </div>
+
+<P>На микросхемы серии К514 поступают входные сигналы уровней ТТЛ. Сигнал Г 
+служит для гашения индикации напряжением низкого уровн. При нормальной работе 
+уровень сигнала Г=1. Дешифратор на микросхеме К514 работает со светодиодными 
+индикаторами, имеющими раздельные аноды, на К514ИД2 - с раздельными катодами. 
+Дешифратор К514ИД2, подключают к индикаторам через токоограничительные резисторы 
+(200-500 Ом) в первый имеет такие резисторы в своем корпусе. </P>
+<P>Микросхемы К176ИД2 и К176ИДЗ являются преобразователями кода с выходным 
+регистром памяти. Запись информации в память происходит по фронту тактого 
+сигнала, подаваемого на вход S (при этом сигнал на входе К=0). Если К=1, 
+дешифратор блокируется. Выходной код этих дешифраторов прямой при М=0 и обратный 
+при М=1. Дешифраторы предназначен для работы с жидкокристаллическими и 
+люминесцентными индикаторами. Они могут работать и со светодиодными индикаторами 
+при напряжении источника питания 9 – 12V с пониженной яркостью свечения (из-за 
+ограничения тока до 2-3 мА).</P>
+
+
+
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="http://cxem.net/beginner/beginner19.php"  target="_blank">cxem.net - Преобразователь кодов</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

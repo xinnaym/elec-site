@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Регулируемый источник питания (0-30 В, 5 А)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Регулируемый источник питания<br>
+	  (0-30 В)</h1>
+
+
+  <div class="ris">
+    <p><img src="bp-regul-5_files/bp5r.png" width="860" height="240">Рис. 1 - Принципиальная схема блока питания:</p>
+		</div>
+<p>Мощность трансформатора должна быть не менее 150 Вт, напряжение вторичной обмотки – 21…22 В, выходной ток - 5 А. Тогда после диодного моста на емкости С1 можно получить напряжение около  30 В.</p>
+<p>В качестве диодного моста лучше использовать диодные сборки типа RS602, которые при небольших габаритах рассчитаны на ток 6 А. Диодный мост мост можно также собрать из 10-ти амперных диодов ( Д231, <a href="../../help/vd/d242-d248.html" target="_blank">Д242,  Д243,  Д245,  Д246,  Д247</a>). При этом получится хороший запас по току. </p>
+<p>Электролитические конденсаторы должны бытьрассчитаны на рабочее напряжение 50 В. Ёмкость конденсаторов С1 и С3 может быть в пределах от 2000 до 6800 мкФ.</p>
+<p>Два стабилитрона Д814Д (VD1 и VD2) с напряжением стабилизации 13 В соединенны последовательно. Это даёт верхний предел регулировки напряжения 26 В минус падение напряжения на переходе транзистора VTТ1. </p>
+<p> В качестве регулирующего транзистора в схеме применен <a href="../../help/vt/kt819.html" target="_blank">КТ819</a>, они выпускаются в пластиковых и металлических корпусах. </p>
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="http://www.gamesdraw.ru/?page_id=234"  target="_blank">gamesdraw.ru - Простой блок питания 0-30 вольт</a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

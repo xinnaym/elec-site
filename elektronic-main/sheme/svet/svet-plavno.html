@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Плавное включение лампы накаливания</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Плавное включение лампы накаливания</h1>
+
+
+	<p>Данное устройство предназначено для плавного включения лампы накаливания мощностью до 100 Вт. Его можно  встроить в выключатель или светильник и подключить без дополнительной проводки. При большей мощности лампы  выпрямительные диоды VD1–VD4 необходимо заменить на более мощные, а тиристор VS1 поставить на радиатор.</p>
+
+	
+  <figure>
+	  <img src="svet-plavno_files/svet-plavno1.png" width="855" height="740" border="0"> 
+		<figcaption>Рис. 1 - Схема устройства плавного включения лампы накаливания</figcaption>
+	</figure>
+
+<p class="tab_num">Таблица 1</p>
+  <table cellspacing="0" cellpadding="3" bordercolor="black" align="center" border="1">
+	<caption>Перечень элементов устройства плавного включения лампы накаливания</caption>
+    <tbody>
+      <tr>
+        <th>Обозначение</th>
+        <th>Наименование</th>
+        <th>Номинал</th>
+        <th>Примечание</th>
+      </tr>
+      <tr>
+        <td align="center">С1</td>
+        <td align="left">Конденсатор </td>
+        <td align="center">2 мкФ </td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">HL1 </td>
+        <td align="left">Лампа накливания </td>
+        <td align="center">100 Вт / 220 В </td>
+        <td align="left">25-100 Вт</td>
+      </tr>
+      <tr>
+        <td align="center">R1</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">1 кОм / 0,25 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center"> R2</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">10 кОм / 2 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R3</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">10 кОм / 0,25 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R4</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">100 кОм / 0,25 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R5</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">2,7 МОм / 0,25 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">R6</td>
+        <td align="left">Резистор постоянный</td>
+        <td align="center">160 кОм / 0,25 Вт</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">T1</td>
+        <td align="left">Трансформатор</td>
+        <td align="center">&nbsp;</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">VD1-VD4</td>
+        <td align="left">Диод выпрямительный </td>
+        <td align="center">КД105Б</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">VD5</td>
+        <td align="left">Диод выпрямительный </td>
+        <td align="center">Д220</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">VT1, VT2 </td>
+        <td align="left">Транзистор биполярный </td>
+        <td align="center">КТ315Б</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">VS1</td>
+        <td align="left">Тринистор</td>
+        <td align="center"><a href="../../help/tiristor/ku202.html" target="_blank">КУ201К</a></td>
+        <td align="left">&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+<p>Время выхода лампы на рабочий режим может регулироваться подбором конденсатора С1, при указанных на схеме номиналах лампа «разгорается» за 1 сек. По замыкании выключателя SA1 конденсатор С1 начинает заряжаться и открывать узел регулировки, собранный на транзисторах VT1, VT2 и тринисторе VS1. После зарядки конденсатора диодный мост оказывается закорочен тиристором и на лампу подается полное сетевое напряжение. Резистор R5 служит для разряда конденсатора С1 после выключения лампы. На месте VT1 и VT2 могут работать любые кремниевые маломощные транзисторы n-p-n с коэффициентом передачи тока не менее 50. Питание транзисторный ключ получает от простейшего стабилизатора, собранного на R2, VD6.</p>
+<p class="warning">При налаживании устройства следует соблюдать осторожность, <br>
+  поскольку все узлы прибора находятся под сетевым напряжением!</p>
+	
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	<hr>
+<h3>Источники</h3>	
+  <p><a href="http://esxema.ru/?p=2148"  target="_blank">esxema.ru - Плавное включение лампы накаливания</a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2024</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

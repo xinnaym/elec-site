@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Сторожевое устройство</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Сторожевое устройство на одном транзисторе</h1>
+
+      <div class="ris">
+			<img alt="" src="storog_files/storog-shema2.JPG" height="310" width="479">
+			<img alt="" src="storog_files/storog-shema.JPG" height="533" width="295">
+			<p>Рис. 1 - Принципиальная и монтажная схемы сторожевого устройства</p>
+		</div>
+      
+			<p>Тонкий охранный провод можно натянуть через дверной проем. Пока  охранный провод цел, то в  цепи "плюс батарейки - резистор 100 кОм - охранный провод" будет течь ток. Весь ток будет течь именно через   охранный провод, так как его сопротивление очень мало. Так как весь ток    течет через провод, этого не хватит, чтобы открыть транзистор. Транзистор открывается только тогда, когда его напряжение между базой и   эмиттером будет 0,5-0,7 В.</p>
+      <p>При обрыве  охранного провода, на базе сразу же резко возрастает   напряжение, то есть оно стает более, чем 0,5-0,7 В и начинает течь   ток через базу-эмиттер.  Так как ток течет через базу-эмиттер,  транзистор открывается. При этом  через цепь  "плюс батарейки - зуммер - коллектор - эмиттер" начинает течь ток. Пока через зуммер течет ток, он издает звук. </p>
+      
+      <div class="ris">
+			<a href="storog_files/zummer.JPG" target="_blank"><img src="storog_files/zummer.JPG" alt="" width="215" height="170" border="0"></a>
+			<a href="storog_files/zummer2.JPG" target="_blank"><img src="storog_files/zummer2.JPG" alt="" width="355" height="175" border="0"></a>
+			<p>Рис. 3 - Зуммер</p>
+		</div>
+			
+      <p>Зуммер - это звукоизлучатель. При подаче на него <strong>постоянного</strong> напряжения, он начинает пищать высокочастотным неприятным монотонным звуком. Если разобрать зуммер, то мы увидим на платке нехитрую схему генератора частоты, выполненного в SMD исполнении, а также сам пьезоизлучатель, подпаянный медными проводками к этой платке. </p>
+      <p>Вместо   зуммера можно взять маломощную лампочку или какое-нибудь исполнительное   устройство, которое будет включаться через реле (рис. 4). В этом случае не   забудьте защитить транзистор, включив параллельно катушке реле защитный   диод.</p>
+      <div class="ris"><img alt="" src="storog_files/rele.JPG" height="200" width="190">
+			<p>Рис. 4 - Подключение диода к реле</p>
+			</div>
+			<br>
+
+    <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+<hr>
+<h3>Источники:</h3>
+<p><a href="http://www.ruselectronic.com/news/storozhevoe-ustrojstvo-na-odnom-tranzistore/">ruselectronic.com - Сторожевое устройство на одном транзисторе</a></p>
+
+<!--
+<p><a href=""></a></p>
+ -->
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2021</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

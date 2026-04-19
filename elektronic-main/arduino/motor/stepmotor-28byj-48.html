@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Шаговый двигатель 28BYJ-48</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Шаговый двигатель 28BYJ-48</h1>
+
+
+  <p>Шаговый двигатель - это мотор, который управляется несколькими электромагнитными катушками.</p>
+<p>На центральном валу - роторе - расположены магниты. В зависимости от от того, есть ток на катушках, которые находятся вокруг вала, или нет, создаются магнитные поля, которые притягивают или отталкивают магниты на роторе. В результате вал шагового двигателя вращается. Подобная конструкция позволяет реализовать очень точное управление углом поворота ротора шагового двигателя относительно катушек - статора. </p>
+<p>Шаговые двигатели используются в робототехнике, принтерах, манипуляторах, различных станках и прочих электронных приборах. Большим преимуществом шаговых двигателей над двигателями постоянного вращения является обеспечение точного углового позиционирования ротора. Также в шаговых двигателях имеется возможность быстрого старта, остановки, реверса.</p>
+<p>Шаговый двигатель может точно перемещаться на минимально возможный угол, называемый шагом. Для практических задач можно считать, что шаговый мотор немного похож на сервопривод. Можно задать ему повернуться в некоторое положение и можно рассчитывать получить достаточно стабильные результаты в нескольких повторных экспериментах. Обычно, сервоприводы ограничены углом поворота в диапазоне от 0 до 180°, шаговый же двигатель может вращаться непрерывно, подобно двигателю постоянного тока. Преимуществом шаговых двигателей является то, что можно достичь гораздо большей степени контроля над движением. К недостатком шаговых двигателей можно отнести несколько более сложное управление, чем в случаях с сервами или моторами постоянного тока.</p>
+<p>Можно выделить два основных типа шаговых двигателей: <em>униполярные</em> и <em>биполярные</em>. Униполярные шаговые двигатели имеют пять или шесть контактов для подключения и четыре электромагнитные катушки в корпусе (если быть более точными, то две катушки, разделенные на четыре). Центральные контакты катушек соединены вместе и используются для подачи питания на двигатель. Эти шаговые моторы называются униполярными, потому-что питание всегда подается на один из этих полюсов.</p>
+
+<h2>Принцип работы шагового двигателя</h2>
+<figure>
+<img src="stepmotor-28byj-48_files/stepmotor_shema.jpg" alt="Схема шагового двигателя" width="214" height="235">
+    <figcaption>Рис. 1 - Схема шагового двигателя</figcaption>
+</figure>
+
+<p>Шаговый двигатель обеспечивает вращения ротора на заданный угол при соответствующем управляющем сигнале. Благодаря этому можно контролировать положение узлов механизмов и выходить в заданную позицию. Работа двигателя осуществляется следующим образом – в центральном вале имеется ряд магнитов и несколько катушек. При подаче питания создается магнитное поле, которое воздействует на магниты и заставляет вал вращаться. Такие параметры как угол поворота (шаги), направление движения задаются в программе для микроконтроллера.</p>
+<figure><img src="stepmotor-28byj-48_files/stepmotor-anime3.gif" width="300" height="300">
+  <figcaption>Рис. 2 - Упрощенная анимированная схема работы шагового двигателя</figcaption>
+</figure>
+
+<p><strong>28BYJ-48</strong> — это маленький, дешевый, 5 вольтовый шаговый мотор с редуктором. Передаточное число редуктора у него примерно 64:1, что позволяет получить вполне достойный крутящий момент для мотора такого размера и скорость порядка 15 об/мин. С некоторыми программными хитростями для постепенного ускорения можно достичь более 25 об/мин.</p>
+
+<figure>
+<img src="stepmotor-28byj-48_files/28byj-48.jpg" width="450" height="338"><img src="stepmotor-28byj-48_files/size-28byj-48-2.jpg" alt="Размеры шагового двигателя 28BYJ-48" width="537" height="228">
+<figcaption>Рис. 3 - Шаговый двигатель 28YBJ-48</figcaption>
+</figure>
+
+
+
+
+<p class="tab_num">Таблица 1</p>
+
+  <table border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>
+	Спецификация шагового двигателя <em>28BYJ-48</caption>
+    <tbody>
+      <tr>
+        <td align="left">Тип мотора</td>
+        <td align="left">Униполярный шаговый двигатель</td>
+      </tr>
+      <tr>
+        <td align="left">Число фаз</td>
+        <td align="left">4</td>
+      </tr>
+      <tr>
+        <td align="left">Подключение</td>
+        <td align="left">5-выводов (к контроллеру двигателя)</td>
+      </tr>
+      <tr>
+        <td align="left">Рабочее напряжение</td>
+        <td align="left">5-12 В</td>
+      </tr>
+      <tr>
+        <td align="left">Частота</td>
+        <td align="left">100 Гц</td>
+      </tr>
+      <tr>
+        <td align="left">Сопротивление по постоянному току</td>
+        <td align="left">50 Ом&plusmn;7% (25&deg;C)</td>
+      </tr>
+      <tr>
+        <td align="left">Частота под нагрузкой</td>
+        <td align="left">&gt; 600 Гц</td>
+      </tr>
+      <tr>
+        <td align="left">Частота на холостом ходу</td>
+        <td align="left">&gt; 1000 Гц</td>
+      </tr>
+      <tr>
+        <td align="left">Крутящий момент</td>
+        <td align="left">&gt; 34.3 мН&middot;м (120 Гц)</td>
+      </tr>
+      <tr>
+        <td align="left">Момент самопозиционирования</td>
+        <td align="left">&gt; 34.3 мН&middot;м</td>
+      </tr>
+      <tr>
+        <td align="left">Стопорящий момент</td>
+        <td align="left">600-1200 г&middot;см</td>
+      </tr>
+      <tr>
+        <td align="left">Тяга</td>
+        <td align="left">300 г&middot;см</td>
+      </tr>
+      <tr>
+        <td align="left">Сопротивление изоляции</td>
+        <td align="left">&gt; 10 МОм (500 В)</td>
+      </tr>
+      <tr>
+        <td align="left">Класс изоляции</td>
+        <td align="left">A</td>
+      </tr>
+      <tr>
+        <td align="left">Шум</td>
+        <td align="left">&lt; 35 дБ (120 Гц, без нагрузки, 10 см)</td>
+      </tr>
+      <tr>
+        <td align="left">Режим шага</td>
+        <td align="left">Рекомендован полушаговый режим (8-шаговая управляющая сигнальная последовательность)</td>
+      </tr>
+      <tr>
+        <td align="left">Угол шага</td>
+        <td align="left"><strong>Полушаговый режим: 8-шаговая управляющая сигнальная последовательность (рекомендовано)</strong>. 5,625 градусов на шаг, 64 шага на оборот внутреннего вала мотора.<br>
+				<strong>Режим полного шага: 4-шаговая управляющая сигнальная последовательность</strong>. 11,25&deg;/шаг, 32 шага на оборот внутреннего вала двигателя.</td>
+      </tr>
+      <tr>
+        <td align="left">Передаточное отношение редуктора</td>
+        <td align="left">64:1</td>
+      </tr>
+      <tr>
+        <td align="left">Подключение к контроллеру ULN2003</td>
+        <td align="left">A (синий), B (розовый), C (желтый), D (Оранжевый), E (красный, средний вывод обмоток)</td>
+      </tr>
+      <tr>
+        <td align="left">Вес</td>
+        <td align="left">30г</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Двигатель имеет четыре обмотки, которые запитываются последовательно, чтобы повернуть вал с магнитом.</p>
+ 
+<figure>
+	<img src="stepmotor-28byj-48_files/coils-byj-48.png" alt="Подключение выводов шагового двигателя 28BYJ-48" width="400" height="319">
+      <figcaption>Рис. 4 - Подключение выводов шагового двигателя 28BYJ-48</figcaption>
+  </figure>
+	
+  <p>Чаще всего, при использовании шагового двигателя 28BYJ 48, используют два режима подключения. </p>
+  <ul>
+    <li><em>Полношаговый режим</em> — за 1 такт, ротор делает 1 шаг. </li>
+    <li><em>Полушаговый режим</em> — за 1 такт, ротор делает 1/2 шага. </li>
+  </ul>
+  <p>Когда используется полношаговый метод управления, две из четырех обмоток запитываются на каждом шаге. Идущая вместе с Arduino IDE библиотека <span class="kod2">Stepper</span> использует такой способ. </p>
+  <p class="tab_num">Таблица 2</p>
+  <table border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>
+	Таблица переключения фаз на ULN2003 <br>
+	в полношаговом методе 
+	</caption>
+    <tbody>
+      <tr>
+        <th>Провод</th>
+        <td width="60" align="center">1</td>
+        <td width="60" align="center">2</td>
+        <td width="60" align="center">3</td>
+        <td width="60" align="center">4</td>
+        </tr>
+      <tr>
+        <td align="left">4-Оранжевый</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+      <tr>
+        <td align="left">3-Желтый</td>
+        <td>&nbsp;</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+      <tr>
+        <td align="left">2-Розовый</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+        </tr>
+      <tr>
+        <td align="left">1-Синий</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p>Предпочтительным является использование метода полушага, при котором сначала запитывается только 1 обмотка, затем вместе первая и вторая обмотки, затем только вторая обмотка и так далее. С 4 обмотками это дает 8 различных сигналов, как показано в таблице 3.</p>
+
+<p class="tab_num">Таблица 3 </p>
+  <table border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>
+	Таблица переключения фаз на ULN2003 в полушаговом методе <br>
+Направление вращения по часовой стрелке (1-2 фазы)
+	</caption>
+    <tbody>
+      <tr>
+        <th>Провод</th>
+        <td width="60" align="center">1</td>
+        <td width="60" align="center">2</td>
+        <td width="60" align="center">3</td>
+        <td width="60" align="center">4</td>
+        <td width="60" align="center">5</td>
+        <td width="60" align="center">6</td>
+        <td width="60" align="center">7</td>
+        <td width="60" align="center">8</td>
+      </tr>
+      <tr>
+        <td align="left">4-Оранжевый</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left">3-Желтый</td>
+        <td>&nbsp;</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left">2-Розовый</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left">1-Синий</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+        <td bgcolor="#00FF00">&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="http://arduino-diy.com/arduino-shagovii-motor-28-BYJ48-draiver-ULN2003"  target="_blank">arduino-diy.com - Arduino, шаговый двигатель 28-BYJ48 и драйвер ULN2003</a></p>
+  <p><a href="http://robot-kit.ru/article_info.php/articles_id/36/article/-font-color---993300--Podklyuchenie-shagovogo-dvigatelya-28BYJ-48-5V-k-Arduino--CHast-1---font-"  target="_blank">robot-kit.ru - Подключение шагового двигателя 28BYJ-48-5V к Arduino. Часть 1.</a></p>
+  <p><a href="http://robot-kit.ru/article_info.php/articles_id/21/article/-font-color---993300--Podklyuchenie-shagovogo-dvigatelya-28BYJ-48-5V-k-Arduino--CHast-2---font-"  target="_blank">robot-kit.ru - Подключение шагового двигателя 28BYJ-48-5V к Arduino. Часть 2.</a></p>
+  <p><a href="http://robot-kit.ru/article_info.php/articles_id/34/article/-font-color---993300--Podklyuchenie-shagovogo-dvigatelya-28BYJ-48-5V-k-Arduino--CHast-2---font-"  target="_blank">robot-kit.ru - Подключение шагового двигателя 28BYJ-48-5V к Arduino. Часть 3.</a></p>
+  <p><a href="http://robotosha.ru/arduino/stepper-motor-28byj-uln2003-arduino.html"  target="_blank">robotosha.ru - Шаговый двигатель 28BYJ-48 с драйвером ULN2003 и Arduino UNO</a></p>
+  <p><a href="https://arduinomaster.ru/motor-dvigatel-privod/shagovye-dvigateli-i-motory-arduino/"  target="_blank">arduinomaster.ru - Шаговые двигатели и моторы Ардуино 28BYJ-48 с драйвером ULN2003</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2023</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

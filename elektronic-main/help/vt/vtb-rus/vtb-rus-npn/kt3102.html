@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Транзистор КТ3102</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../../../index.html">Главная</a></li>
+      <li><a href="../../../../teorie.html">Теория</a></li>
+      <li><a href="../../../../praktik.html">Практика</a></li>
+      <li><a href="../../../../help.html">Справочники</a></li>
+      <li><a href="../../../../sheme.html">Схемы</a></li>
+      <li><a href="../../../../arduino.html">Arduino</a></li>
+      <li><a href="../../../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Транзистор КТ3102</h1>
+	<p>Транзистор КТ3102 - эпитаксиально-планарный, n-p-n   структуры, кремниевый, универсальный. Применяется в НЧ устройствах,   требовательных к уровню шумов, а также в генераторных и усилительных СЧ и   ВЧ устройствах. Является комплементарным по отношению к транзистору КТ3107.</p>
+	<p>Транзисторs КТ3102А, КТ3102Б, КТ3102В, КТ3102Г, КТ3102Д, КТ3102Е выпускаются в металлическом корпусе (рис.&nbsp;1,а), КТ3102АМ, КТ3102БМ, КТ3102ВМ,   КТ3102ГМ, КТ3102ДМ, КТ3102ЕМ - в пластмассовом корпусе (рис.&nbsp;1,б). </p>
+	<p>Выводы - гибкие.</p>
+	<p>Маркируются транзисторы следующим образом: </p>
+	<ul>
+	  <li>КТ3102А, КТ3102Б, КТ3102В, КТ3102Г, КТ3102Д, КТ3102Е - на боковой поверхности корпуса непосредственно надписью.</li>
+	  <li> КТ3102АМ,   КТ3102БМ, КТ3102ВМ, КТ3102ГМ, КТ3102ДМ, КТ3102ЕМ - надписью на боковой поверхности корпуса или цветовой маркировкой: зелёная метка на боку корпуса и цветовая метка на торце корпуса указывающая на   группу (табл. 1) . </li>
+	  </ul>
+	<p class="tab_num">Таблица 1 </p>
+	<table border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>Цветовая маркировка транзисторов КТ3102</caption>
+    <tbody>
+      <tr>
+        <td rowspan="6"><img src="../../vt-mark_files/kt3102-color-mark.jpg" width="181" height="207"></td>
+        <td>КТ3102АМ</td>
+        <td>тёмно-красная (бордовая)</td>
+      </tr>
+      <tr>
+        <td>КТ3102БМ</td>
+        <td>жёлтая</td>
+      </tr>
+      <tr>
+        <td>КТ3102ВМ</td>
+        <td>тёмно-зелёная (зеленая) </td>
+      </tr>
+      <tr>
+        <td>КТ3102ГМ</td>
+        <td>голубая</td>
+      </tr>
+      <tr>
+        <td>КТ3102ДМ</td>
+        <td>синяя</td>
+      </tr>
+      <tr>
+        <td>КТ3102ЕМ</td>
+        <td>белая</td>
+      </tr>
+    </tbody>
+  </table>
+
+	
+	<p>Все значения параметров, указанные далее для транзисторов КТ3102(А-Е) справедливы для соответствующих параметров транзисторов КТ3102(АМ-ЕМ).</p>
+
+	<div class="ris">
+	<img src="../../vt-korpus/kt3102.jpg" width="801" height="221">	
+	<p>Рис. 1 - Размеры и цоколевка транзисторов КТ3102</p>	  
+	</div>
+	<br>
+	
+
+	
+	<h2>Электрические параметры транзистора КТ3102</h2>
+	<p class="tab_num">Таблица 2</p>
+	<table border="1" align="center" cellpadding="3" cellspacing="0">
+    <tbody>
+      <tr>
+        <td colspan="2" align="left">Коэффициент передачи тока (статический) <span class="formula2"><em>h</em><sub>21э</sub></span> (<span class="formula2"><em>U</em><sub>кб</sub></span>= 5 В, <span class="formula2"><em>I</em><sub>э</sub></span> = 2 мА)</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left"> Т = +25°C:</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102А</td>
+        <td>100...250</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;КТ3102Б, КТ3102В, КТ3102Д</td>
+        <td>200...500</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;КТ3102Г, КТ3102Е</td>
+        <td>400...1000</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left"> Т = +40°C:</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102А</td>
+        <td>25...250</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102Б, КТ3102В, КТ3102Д</td>
+        <td>50...500</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102Г, КТ3102Е</td>
+        <td>100...1000</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left"> Т = +85°C, не менее:</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102А</td>
+        <td>100</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102Б, КТ3102В, КТ3102Д</td>
+        <td>200</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102Г, КТ3102Е</td>
+        <td>400</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left">Граничная частота коэффициента передачи тока 
+          <span class="formula2"><em>U</em><sub>кб</sub></span>= 5 В,  <span class="formula2">I<sub>э</sub></span> = 10 мА, не менее:</td>
+      </tr>
+      <tr>
+        <td align="left">КТ3102А, КТ3102Б, КТ3102В, КТ3102Д</td>
+        <td>300 МГц</td>
+      </tr>
+      <tr>
+        <td align="left">КТ3102Г, КТ3102Е</td>
+        <td>150 МГц</td>
+      </tr>
+      <tr>
+        <td align="left">Постоянная времени цепи обратной связи на высокой частоте.<br>
+          <span class="formula2">I<sub>э</sub></span> = 10 мА, <span class="formula2"><em>U</em><sub>кб</sub></span>= 5 В, не более:</td>
+        <td>100 пс</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left">Коэффициент шума при <span class="formula2">I<sub>э</sub></span> = 0,2 мА, <span class="formula2"><em>U</em><sub>кб</sub></span>= 5 В,<span class="formula2"> f</span> = 1 кГц, не более:</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102А, КТ3102Б, КТ3102В, КТ3102Г</td>
+        <td>10 дБ</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102Д, КТ3102Е</td>
+        <td>4 дБ </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left">Граничное напряжение при <span class="formula2">I<sub>э</sub></span> = 10 мА,<span class="formula2"> I<sub>б</sub></span> = 0, не менее:</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102А, КТ3102Б</td>
+        <td>30 В</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102В, КТ3102Д</td>
+        <td>20 В</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102Г, КТ3102Е</td>
+        <td>15 В</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left">Ток коллектор-эмиттер (обратный), не более:</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102А, КТ3102Б при <span class="formula2"><em>U</em><sub>кэ</sub></span> = 50 В</td>
+        <td>0,1 мкА</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102В, КТ3102Д при <span class="formula2"><em>U</em><sub>кэ</sub></span> = 30 В</td>
+        <td>0,05 мкА</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102Г, КТ3102Е при <span class="formula2"><em>U</em><sub>кэ</sub></span> = 20 В</td>
+        <td>0,05 мкА</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left">&nbsp;Ток коллектора (обратный), не более:</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left"> КТ3102А, КТ3102Б при <span class="formula2"><em>U</em><sub>кб</sub></span> = 50 В</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;T = +25°C</td>
+        <td>0,05...0,1 мкА</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;T = +40°C</td>
+        <td>0,05 мкА</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;T = +85°C</td>
+        <td>5 мкА</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left"> КТ3102В, КТ3102Д при <span class="formula2"><em>U</em><sub>кб</sub></span> = 30 В</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;T = +25°C</td>
+        <td>0,015...0,05 мкА</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;T = +40°C</td>
+        <td>0,015 мкА</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;T = +85°C</td>
+        <td>5 мкА</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left"> КТ3102Г, КТ3102Е при <span class="formula2"><em>U</em><sub>кб</sub></span> = 20 В</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;T = +25°C</td>
+        <td>0,015...0,05 мкА</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;T = +40°C</td>
+        <td>0,015 мкА</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;T = +85°C</td>
+        <td>5 мкА</td>
+      </tr>
+      <tr>
+        <td align="left">Ток эмиттера (обратный). <span class="formula2"><em>U</em><sub>эб</sub></span> = 5 В, не более:</td>
+        <td>10 мкА</td>
+      </tr>
+      <tr>
+        <td align="left">Ёмкость коллекторного перехода. <span class="formula2"><em>U</em><sub>кб</sub></span> = 5 В, не более:</td>
+        <td>6 пФ</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left">Напряжение коллектор-база (постоянное), <span class="formula2"><em>U</em><sub>кб</sub></span></td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102А, КТ3102Б</td>
+        <td>50 В</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102В, КТ3102Д</td>
+        <td>30 В</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102Г, КТ3102Е</td>
+        <td>20 В</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left">Напряжение коллектор-эмиттер  (постоянное), <span class="formula2"><em>U</em><sub>кэ</sub></span>:</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102А, КТ3102Б</td>
+        <td>50 В</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102В, КТ3102Д</td>
+        <td>30 В</td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;КТ3102Г, КТ3102Е</td>
+        <td>20 В</td>
+      </tr>
+      <tr>
+        <td align="left">Постоянное напряжение эмиттер-база </td>
+        <td>5 В</td>
+      </tr>
+      <tr>
+        <td align="left">Ток коллектора (постоянный ), <span class="formula2"><em>I</em><sub>к&nbsp;max</sub></span></td>
+        <td>100 мА</td>
+      </tr>
+      <tr>
+        <td align="left">Ток коллектора (импульсный) <span class="formula2"><em>I</em><sub>к&nbsp;max и</sub></span> (при <span class="formula2">t<sub>и</sub></span> &le; 40 мкс, Q &ge; 500)</td>
+        <td>200 мА</td>
+      </tr>
+      <tr>
+        <td align="left">Рассеиваемая мощность коллектора (постоянная<u>)</u> при <span class="formula2">T</span> = -40 ... +25°C, <span class="formula2"><em>P</em><sub>к&nbsp;max</sub></span>(т)  </td>
+        <td>250 мВт</td>
+      </tr>
+      <tr>
+        <td align="left">Рабочая температура (окружающей среды)</td>
+        <td>-40 ... +85°C</td>
+      </tr>
+    </tbody>
+	  </table>
+<br>
+	<p class="tab_num">Таблица 3</p>
+		
+	<table border="1" align="center" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<th>Наименование</th>
+<th><span class="formula2">U<sub>кб0 и</sub>, </span>
+  В</th>
+<th><span class="formula2">U<sub>кэ0 и</sub></span>, 
+  В</th>
+<th class="formula2">h<sub>21э</sub></th>
+<th><span class="formula2">I<sub>кбо, </sub></span>мкА</th>
+<th><span class="formula2">f<sub>гр</sub></span><sub>,</sub> МГц</th>
+<th><span class="formula2">К<sub>ш</sub></span>, Дб</th>
+</tr>
+<tr>
+<td>КТ3102А</td>
+<td>50</td>
+<td>50</td>
+<td>100-200</td>
+<td>0,05</td>
+<td>150</td>
+<td>10</td>
+</tr>
+<tr>
+<td>КТ3102Б</td>
+<td>50</td>
+<td>50</td>
+<td>200-500</td>
+<td>0,05</td>
+<td>150</td>
+<td>10</td>
+</tr>
+<tr>
+<td>КТ3102В</td>
+<td>30</td>
+<td>30</td>
+<td>200-500</td>
+<td>0,015</td>
+<td>150</td>
+<td>10</td>
+</tr>
+<tr>
+<td>КТ3102Г</td>
+<td>20</td>
+<td>20</td>
+<td>400-1000</td>
+<td>0,015</td>
+<td>150</td>
+<td>10</td>
+</tr>
+<tr>
+<td>КТ3102Д</td>
+<td>30</td>
+<td>30</td>
+<td>200-500</td>
+<td>0,015</td>
+<td>150</td>
+<td>4</td>
+</tr>
+<tr>
+<td>КТ3102Е</td>
+<td>20</td>
+<td>20</td>
+<td>400-1000</td>
+<td>0,015</td>
+<td>150</td>
+<td>4</td>
+</tr>
+<tr>
+<td>КТ3102Ж</td>
+<td>20</td>
+<td>20</td>
+<td>100-250</td>
+<td>0,05</td>
+<td>150</td>
+<td>—</td>
+</tr>
+<tr>
+<td>КТ3102И</td>
+<td>20</td>
+<td>20</td>
+<td>200-500</td>
+<td>0,05</td>
+<td>150</td>
+<td>—</td>
+</tr>
+<tr>
+<td>КТ3102К</td>
+<td>20</td>
+<td>20</td>
+<td>200-500</td>
+<td>0,015</td>
+<td>150</td>
+<td>—</td>
+</tr>
+<tr>
+<td>КТ3102АМ</td>
+<td>50</td>
+<td>50</td>
+<td>100-200</td>
+<td>0,05</td>
+<td>150</td>
+<td>10</td>
+</tr>
+<tr>
+<td>КТ3102БМ</td>
+<td>50</td>
+<td>50</td>
+<td>200-500</td>
+<td>0,05</td>
+<td>150</td>
+<td>10</td>
+</tr>
+<tr>
+<td>КТ3102ВМ</td>
+<td>30</td>
+<td>30</td>
+<td>200-500</td>
+<td>0,015</td>
+<td>150</td>
+<td>10</td>
+</tr>
+<tr>
+<td>КТ3102ГМ</td>
+<td>20</td>
+<td>20</td>
+<td>400-1000</td>
+<td>0,015</td>
+<td>150</td>
+<td>10</td>
+</tr>
+<tr>
+<td>КТ3102ДМ</td>
+<td>30</td>
+<td>30</td>
+<td>200-500</td>
+<td>0,015</td>
+<td>150</td>
+<td>4</td>
+</tr>
+<tr>
+<td>КТ3102ЕМ</td>
+<td>20</td>
+<td>20</td>
+<td>400-1000</td>
+<td>0,015</td>
+<td>150</td>
+<td>4</td>
+</tr>
+<tr>
+<td>КТ3102ЖМ</td>
+<td>20</td>
+<td>20</td>
+<td>100-250</td>
+<td>0,05</td>
+<td>150</td>
+<td>—</td>
+</tr>
+<tr>
+<td>КТ3102ИМ</td>
+<td>20</td>
+<td>20</td>
+<td>200-500</td>
+<td>0,05</td>
+<td>150</td>
+<td>—</td>
+</tr>
+<tr>
+<td>КТ3102КМ</td>
+<td>20</td>
+<td>20</td>
+<td>200-500</td>
+<td>0,015</td>
+<td>150</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>	
+
+<br>
+  <h4><a href="../../uo-parametr-vt.html" target="_blank">Условные обозначения электрических параметров транзисторов</a></h4>
+  <br>
+<a href="#top1"><img src="../../../../images/up.png" width="24" height="24"></a>
+	  <hr>
+		
+  <h3>Источники:</h3>
+  <p><a href="http://katod-anod.ru/rd/kt3102" target="_blank">katod-anod.ru - Транзистор КТ3102</a></p>
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2021</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

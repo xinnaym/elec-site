@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Мультиплексоры</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+<h1>Демультиплексоры</h1>
+<P><em>Демультиплексор</em> - логическое устройство, в котором сигналы с одного информационного входа, поступают в желаемой последовательности по нескольким выходам в зависимости от кода на адресных шинах. Таким образом, демультиплексор в функциональном отношении противоположен мультиплексору. Демультиплексоры обозначают через DMX или DMS.</P>
+<p>Если соотношение между числом выходов n и числом адресных входов m определяется равенством n=2<sup>m</sup>, то такой демультиплексор называется полным, при n&lt; 2<sup>m</sup> демультиплексор является неполным.</p>
+<p>Демультиплексор с двумя выходами условно можно рассмотреть в виде коммутатора (рис. 1). Состояние его входов и выходов приведено в таблице1.</p>
+<div class="ris">
+  <IMG height=160 src="dms_files/345.jpg" width=420 border=0>
+  <P>Рис. 1 - Модель демультиплексора</P>
+</div>
+
+<p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Состояния входов и выходов демультиплексора</caption>
+  <tr>
+    <th>Адресный вход А </th>
+    <th>Выход Y<sub>1</sub> </th>
+    <th>Выход Y<sub>2</sub> </th>
+  </tr>
+  <tr>
+    <td align="center">0</td>
+    <td align="center">X</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td align="center">1</td>
+    <td align="center">0</td>
+    <td align="center">X</td>
+  </tr>
+</table>
+<p>Из этой таблицы следует:</p>
+<p> Y<sub>1</sub>=X&#8226;А </p>
+<p>Y<sub>2</sub> = X&#8226;А  </p>
+<p>т. е. реализовать такое устройство можно так, как показано на рис. 2.</p>
+<div class="ris">
+  <IMG height=210 src="dms_files/346.jpg" width=360 border=0>
+  <P>Рис. 2 - Реализация демультиплексора с двумя выходами </P>
+</div>
+
+<P>Условное графическое обозначачение демультиплексора показано на рис. 3 .</P>
+
+<div class="ris">
+  <IMG height=330 src="dms_files/dms-ugo.jpg" width=561 border=0>
+  <P>Рис. 3 - Условное графическое обозначачение демультиплексора</P>
+</div>
+
+<p>  Для наращивания числа выходов демультиплексора используют каскадное включение демультиплексоров. В качестве примера (рис. 4) рассмотрим построение демультиплексоров с 16 выходами (1&rarr;16) на основе демультиплексоров с 4 выходами (1&rarr;4).</p>
+
+<div class="ris">
+  <IMG height=600 src="dms_files/347.jpg" width=600 border=0>
+  <P>Рис. 4 -  Каскадное включение демультиплексоров </P>
+</div>
+
+<p> При наличии на адресных шинах А<sub>0</sub> и А<sub>1</sub> нулей информационный вход X подключен к верхнему выходу DМХ<sub>0</sub> и в зависимости от состояния адресных шин А<sub>2</sub> и А<sub>3</sub> он может быть подключен к одному из выходов DMX<sub>1</sub>. Так, при А<sub>2</sub>&nbsp;=&nbsp;А<sub>3</sub>&nbsp;=&nbsp;0 вход X подключен к Y<sub>0</sub>. При А<sub>0</sub> = 1 и А<sub>1</sub> = 0 вход X подключен к DMX<sub>2</sub>, в зависимости от состояния А<sub>2</sub> и А<sub>3</sub> вход соединяется с одним из выходов Y<sub>4</sub> - Y<sub>7</sub> и т.д.</p>
+
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://pue8.ru/silovaya-elektronika/908-multipleksory-i-demultipleksory.html"  target="_blank">pue8.ru - Мультиплексоры и демультиплексоры: схемы, принцип работы</a></p>
+  <p><a href="http://digteh.ru/digital/DMS.php"  target="_blank">digteh.ru - Демультиплексоры</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2020</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

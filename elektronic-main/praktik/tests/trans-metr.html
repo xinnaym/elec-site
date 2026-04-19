@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Исследование работы трансформатора</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Исследование работы трансформатора</h1>
+  <h3>Опыт 1 </h3>
+  <ol>
+    <li>Подключаем первичную обмотку трансформатора к сети 220 В.
+  <div class="ris"> 
+    <a href="trans-metr_files/op1-1.JPG" target="_blank">
+		<img src="trans-metr_files/op1-1.JPG" width="320" height="240" border="0"></a>
+  <p>Рис. 1 - Подключение  трансформатора к сети 220 В</p>
+</div>
+		</li>
+		<li>Поставим  мультиметр на  предел измерения перменного напряжения 750 В и измерим напряжение на первичной обмотке (напряжение сети).
+  <div class="ris">
+  <a href="trans-metr_files/op1-2.JPG" target="_blank">
+	<img src="trans-metr_files/op1-2.JPG" width="320" height="240"></a>
+			<p>Рис. 2 - </p>
+</div>
+		</li>
+		<li>Измеряем напряжение на вторичной обмотке.
+  <div class="ris">
+	<a href="trans-metr_files/op1-3.JPG" target="_blank">
+	<img src="trans-metr_files/op1-3.JPG" width="320" height="240"></a>
+<p>Рис. 3 - </p>
+</div>
+		</li>
+		<li> Проверим соотношение 
+		  <p class="formula"><img src="trans-metr_files/formula1.png" width="122" height="45"></p>
+    Для нашего примера:<br>
+1,54/224=0,006875 (коэффициент отношения напряжения)
+    <br>
+    18/2650=0,006792 (коэффициент отношения обмоток)     <br>
+    Погрешность   связана с потерями на нагрев обмоток трансформатора и магнитопровода, а также   погрешность измерения мультиметра. </li>
+  </ol>
+<!--
+
+<h3>Опыт 2 </h3>
+
+  <p>Возьмем трансформатор.</p>
+
+<div class="ris">
+	<a href="trans-metr_files/transformator-1.JPG" target="_top"><img src="trans-metr_files/transformator-1.JPG" width="512" height="384" border="0"></a>	
+	<p> Рис. 10 - Трансформатор</p>
+	</div>
+<p>Два красных провода - это первичная обмотка трансформатора. На эти провода подводим напряжение из розетки (рис.&nbsp;11).</p>	
+  <div class="ris"><a href="trans-metr_files/transformator-2.JPG" target="_top"><img src="trans-metr_files/transformator-2.JPG" width="375" height="160" border="0"></a>
+  <p>Рис. 11 - </p>
+	</div>
+	
+<p>Снимать напряжение будем с двух синих проводов, которые выведены из вторичной обмотки (рис.&nbsp;12).</p>	
+  <div class="ris">
+    <a href="trans-metr_files/transformator-3.JPG" target="_blank"><img src="trans-metr_files/transformator-3.JPG" width="470" height="310" border="0"></a>
+  <p>Рис. 12 - Выводы  вторичной обмотки </p>
+  </div>
+<p> Выставляем на мультиметре предел измерения перменного напряжения 750 В и измеряем напряжение из сети, которое поступает на первичную обмотку трансформатора - 230 В (рис.&nbsp;13).</p>
+
+	
+  <div class="ris">
+    <img src="trans-metr_files/transformator-11.JPG" height="384" width="512">
+  <p>Рис. 13 - </p>
+  </div>
+	
+  <p>Теперь замеряем напряжение на вторичной обмотке трансформатора. Наш трансформатор понижает переменное напряжение 230 В до значения 22 В (рис.&nbsp;14). </p>
+  <div class="ris">
+   <img src="trans-metr_files/transformator-6.JPG" height="384" width="512">
+  <p>Рис. 14 - </p>
+  </div>
+
+ -->
+<h3>Опыт 2 </h3>	
+  <ol>
+    <li>Для изготовления нагрузки последовательно соедините две лампочки накаливания по 13,5 В (рис.&nbsp;4). Каждая лампочка потребляет силу тока по 0,12 А. Так как лампочки одинаковы,  они поровну делят напряжение:  каждой лампочке достается по 11 В,   следовательно и силу тока каждая лампочка получает меньше, около 0,1 А. 
+  <div class="ris">
+    <img src="trans-metr_files/transformator-8.JPG" height="384" width="512">
+  <p>Рис. 4 - Нагрузка </p>
+  </div>
+	  </li>
+		<li>Измерьте силу тока потребляемую трансформатором в холостом режиме. Холостой режим означает, что ко вторичной обмотке трансформатора не подключена нагрузка. Амперметр подключите последовательно с первичной обмоткой.  (рис. 5).
+      В нашем примере амперметр показывает 60 мА.
+		  <div class="ris">
+    <img src="trans-metr_files/transformator-14.JPG" height="384" width="512">
+  <p>Рис. 5 - Измерение тока холостого хода</p>
+  </div>
+  <p><em><strong>Вывод</strong></em>: На вторичной обмотке трансформатора нету    нагрузки, но трансформатор все равно потребляет ток, а следовательно    электрическую энергию из розетки. </p>
+  <p>Если вычислить мощность, то получим </p>
+  <p class="formula"><em>P = IU</em> = 230&times;0,06 = 13,8 [Вт]. </p>
+  <p>Если трансформатора простоит включенным хотя бы 1 час, то у нас он съест электроэнергию 13,8 Вт&middot;час или   0,0138кВт&middot;час. Поэтому, не рекомендуется оставлять в сети электроприборы, имеющие трансформаторный блок питания. </p>
+		</li>
+    <li>Подключите лампочки ко вторичной обмотке. Лампочки загорелись, и сила тока на первичной обмотке тоже поменялась.
+	  <div class="ris">
+<img src="trans-metr_files/transformator-17.JPG" height="384" width="512">
+  <p>Рис. 6 - Измерение силы тока первичной обмотки трансформатора с нагрузкой </p>
+</div>
+  <p>&nbsp;</p>
+	<p><strong>Вывод</strong>: <em>Как только   мы  нагрузили нагрузкой вторичную обмотку, наши лампочки стали сразу   потреблять силу тока, а также сила тока поднялась и  в цепи первичной   обмотки. Чем выше сила тока во вторичной обмотке, тем выше сила тока и в первичной обмотке.</em></p>
+    </li>
+    <li>Измерьте напряжение  на вторичной обмотке трансформатора без нагрузки. В нашем примере 22,2 В (рис. 7). 
+      <div class="ris">
+    <img src="trans-metr_files/transformator-1a.JPG" height="384" width="512">
+  <p>Рис. 7 - </p>
+  </div>
+		</li>
+    <li>Подключите лампочки ко вторичной обмотке трансформатора и измерьте напряжение на вторичной обмотке трансформатора. В нашем примере 22,0 В (рис. 8).
+	    <div class="ris">
+	<img src="trans-metr_files/transformator-2a.JPG" height="384" width="512">
+  <p>Рис. 8 - </p>
+	</div>
+		</li>
+		<li>Измерьте силу тока во вторичной обмотке с лампочками.
+      В нашем примере 105 мА (рис. 8).
+	    <div class="ris">
+	<img src="trans-metr_files/transformator-1b.JPG" height="384" width="512">
+  <p>Рис. 9 - </p>
+	</div>
+</li>
+  </ol>
+	
+	
+  <p>Аналогичные операции проводим и для  мощного резистора номиналом в 10 Ом и мощностью рассеивания в 10 Вт. Измеряем   напряжение на вторичной обмотке при включении резистора 18,9 В. Напряжение сильно уменьшилась. </p>
+  <div class="ris">
+    <img src="trans-metr_files/transformator-26.JPG" height="384" width="512">
+    <p>Рис. 18 - </p>
+  </div>
+	
+  <p>Сила тока  во вторичной цепи, в которой включен резистор, почти 2 А (рис. 19).</p>
+	
+  <div class="ris">
+   <img src="trans-metr_files/transformator-3a.JPG" height="384" width="512">  
+    <p>Рис. 19 - </p>
+	 </div>
+  <p><strong>Выводы</strong>:<em> при включении нагрузки происходит небольшая просадка напряжения и   напряжение падает тем больше, чем больше силы тока потребляет нагрузка</em>. </p>
+  <p>Здесь также играет роль еще один немаловажный фактор - <strong>мощность трансформатора. Чем больше мощность трансформатора, тем меньше просадка напряжения. </strong>Мощность   трансформатора зависит от его размера. А чем больше трансформатор, тем больше его    размер сердечника и следовательно, такой трансформатор будет мощнее. Также, чем   меньше вторичных обмоток, тем  лучше. Покупая мощный трансформатор, первым делом   смотрите чтобы была одна первичная и одна вторичная обмотки, и конечно   же,  чтобы был погабаритнее сам трансформатор. </p>
+
+  <hr>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	<hr>
+<h3>Источники:</h3>
+<p><a href="http://www.ruselectronic.com/news/ustrojstvo-transformatora/" target="_blank">ruselectronic.com - Устройство трансформатора</a></p>
+<p> <a href="http://www.ruselectronic.com/news/rabota-transformatora/" target="_blank">ruselectronic.com - Работа трансформатора</a></p>
+
+<p><a href="http://sesaga.ru/ustrojstvo-i-princip-raboty-transformatora.html" target="_blank">sesaga.ru - Устройство и принцип работы трансформатора</a></p>
+ <p><a href="http://radio-uchebnik.ru/txt/raschety-po-elektronike-i-elektrotekhnike/11-elektrotekhnika-elektronika-samostoyatelnye-raschety/15-uproshchennyj-raschet-transformatora" target="_blank">radio-uchebnik.ru - Как расчитать параметры  трансформатора</a></p>
+
+<p>В. А. Волгов – «Детали и узлы радио-электронной аппаратуры», Энергия, Москва 1977 г.</p>
+<p>В. Н. Ванин – «Трансформаторы тока», Издательство «Энергия» Москва 1966 Ленинград.</p>
+<p>И. И. Белопольский – «Расчет трансформаторов и дросселей малой моности», М-Л, Госэнергоиздат, 1963 г.</p>
+<p>В. Г. Борисов, – «Юный радиолюбитель», Москва, «Радио и связь» 1992 г.</p>
+<!--
+<p><a href=""></a></p>
+ -->
+</div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2021</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

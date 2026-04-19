@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Простое переговорное устройство</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Простое переговорное устройство</h1>
+	
+<p>С помощью такого переговорного устройства можно обеспечить связь между двумя объектами, находящимися на небольшом расстоянии друг от друга. Если в качестве питания в устройстве используются автомобильные аккумуляторы с каждой стороны, устройство может работать автономно, и не зависить от наличия электричества.</p>
+<p> В качестве проводов лучше использовать провода для телефонной связи («полевка»). Чем меньше суммарное сопротивление проводов, тем на большее расстояние можно удалить абонентов друг от друга. Чем больше длина линии связи, тем большее напряжение нужно для питания схемы, так как возрастают потери в проводах. </p>
+<p>Для организации связи необходимо изготовить два устройства по схеме на рис. 1. Эти устройства соединяют между собой по одноименным контактам с помощью проводов (рис. 2). </p>
+
+<figure>
+  <a href="pergovornoe_files/peregovornoe-1.png" target="_blank">
+	<img src="pergovornoe_files/peregovornoe-1.png" alt="" width="902" height="419" border="0"></a>
+<figcaption>Рис. 1 - Принципиальная схема переговорного устройства</figcaption>
+</figure>
+	
+  <p class="tab_num">Таблица 1</p>	
+
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>
+	Перечень элементов для переговорного устройства
+	</caption>
+	    <tr>
+	      <th>Обозначение</th>
+	      <th>Тип</th>
+	      <th>Номинал</th>
+	      <th>Количество</th>
+	      <th>Примечание</th>
+      </tr>
+      <tr>
+        <td align="left">BF1</td>
+        <td align="left">Телефон</td>
+        <td align="center">ТОН-2 </td>
+        <td align="center">1</td>
+        <td align="left">с сопротивлением  не менее 1400 Ом</td>
+      </tr>
+      <tr>
+        <td align="left">BM1</td>
+        <td align="left">Микрофон</td>
+        <td align="center">МК-164 </td>
+        <td align="center">1</td>
+        <td align="left">угольные</td>
+      </tr>
+      <tr>
+        <td align="left">C1</td>
+        <td align="left">Конденсатор электролитический </td>
+        <td align="center">10 мкФ&times;16В</td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left">C2</td>
+        <td align="left">Конденсатор электролитический </td>
+        <td align="center">20 мкФ&times;16В</td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left">C3</td>
+        <td align="left">Конденсатор электролитический </td>
+        <td align="center">100 мкФ&times;16В</td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left">GB1</td>
+        <td align="left">Батарея элементов </td>
+        <td align="center">9 В </td>
+        <td align="center">1</td>
+        <td align="left">8-12 В </td>
+      </tr>
+      <tr>
+        <td align="left">GN</td>
+        <td align="left">Генератор звуковых частот</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">1</td>
+        <td align="left">мультивибратор на отдельной плате </td>
+      </tr>
+      <tr>
+        <td align="left">K1</td>
+        <td align="left">Реле</td>
+        <td align="center">РЭС10 <br>
+        (паспорт 302) </td>
+        <td align="center">1</td>
+        <td align="left"> любые маломощные,  с напряжением срабатывания 4…5 В.</td>
+      </tr>
+      <tr>
+        <td align="left">R1</td>
+        <td align="left">Резистор</td>
+        <td align="center">470 кОм</td>
+        <td align="center">1</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left">SB1</td>
+        <td align="left">Выключатель кнопочный </td>
+        <td align="center">&nbsp;</td>
+        <td align="center">1</td>
+        <td align="left">без фиксацией </td>
+      </tr>
+      <tr>
+        <td align="left">SA1</td>
+        <td align="left">Переключатель</td>
+        <td align="center">П2К</td>
+        <td align="center">1</td>
+        <td align="left">с фиксацией </td>
+      </tr>
+      <tr>
+        <td align="left">VT1</td>
+        <td align="left">Транзистор биполярный </td>
+        <td align="center">КТ342В</td>
+        <td align="center">1</td>
+        <td align="left">КТ312 ,КТ315Б , КТ503</td>
+      </tr>
+	  </table>
+
+<figure>  
+	<img src="pergovornoe_files/peregovornoe-2.png" alt="" width="678" height="241" border="0">
+<figcaption>Рис. 2 - Соединение переговорных устройств</figcaption>
+</figure>
+	
+<p>В исходном положении переключатели SA1 обоих абонентов находятся в положении «Выкл.», и реле К1 подключены к линии связи. Для подачи сигнала вызова одному из абонентов необходимо  переключатель SA1 установить в положение &quot;Вкл&quot; и замкнуть кнопку SB1 «Вызов». При этом напряжение питания с батареи GB1 поступит в линию связи. Поскольку другой абонент находится в режиме ожидания, поданное первым абонентом напряжение включит реле второго абонента, которое своей контактной группой К1.1 подаст питание на генератор сигнала вызова GN, представляющий собой мультивибратор (генератор звуковых частот). Этот сигнал услышит второй абонент.</p>
+<p>После этого он включает свой тумблер SA1, коллекторы транзисторов VT1 обоих абонентов соединяются через конденсаторы С2. Усиленные звуковые сигналы микрофонов ВМ1 одновременно воспроизводятся телефонами BF1. Таким образом устанавливается дуплексная связь. При окончании связи тумблеры SA1 переводятся в состояние «Выкл.», и устройство принимает исходное положение.</p>
+<p>При налаживании устройства необходимо установить режимы работы транзисторов (подбором резистора R1) так, чтобы на их коллекторах было напряжение 3 В.</p>
+<p>В качестве источника питания можно использовать автомобильные аккумуляторы,  батарейки типоразмера 373 с суммарным напряжением не менее 9 В. </p>	
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://kiloom.ru/sxema/prostoe-peregovornoe-ustrojstvo.html#more-2183"  target="_blank">kiloom.ru - Простое переговорное устройство</a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2024</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

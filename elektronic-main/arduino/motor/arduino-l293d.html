@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Драйвер двигателей L293D</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cdutt-str.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+<h1>Драйвер двигателей L293D</h1>
+
+<p>Микросхема <strong>L293D</strong> является одной из самых распространенных микросхем, предназначенных для  управления электродвигателями.</p>
+
+<div class="ris">
+<img src="arduino-l293d_files/l293d.jpg" alt="драйвер двигателей L293D" width="236" height="236">
+<p>Рис. 1 - Внешний вид и назначение выводов микросхемы L293D</p>
+</div>
+
+
+<h3>Характеристики микросхемы L293D</h3>
+<ul>
+<li>напряжение питания двигателей (Vs) - 4,5...36 В</li>
+<li>напряжение питания микросхемы (Vss) - 5 В</li>
+<li>допустимый ток нагрузки - 600 мA (на каждый канал)</li>
+<li>пиковый (максимальный) ток на выходе - 1,2 A (на каждый канал)</li>
+<li>логический "0" входного напряжения - до 1,5 В</li>
+<li>логическая "1" входного напряжения - 2,3...7 В</li>
+<li>скорость переключений до 5 кГц.</li>
+<li>защита от перегрева</li>
+</ul>
+
+<h3>Устройство микросхемы L293D</h3>
+<p>L293D содержит сразу два драйвера для управления электродвигателями небольшой мощности (четыре независимых канала, объединенных в две пары). Имеет две пары входов для управляющих сигналов и две пары выходов для подключения электромоторов. Кроме того, у L293D есть два входа для включения каждого из драйверов. Эти входы используются для управления скоростью вращения электромоторов с помощью широтно-модулированного сигнала (ШИМ).</p>
+<p>L293D обеспечивает разделение электропитания для микросхемы и для управляемых ею двигателей, что позволяет подключить электродвигатели с большим напряжением питания, чем у микросхемы. Разделение электропитания микросхем и электродвигателей может быть также необходимо для уменьшения помех, вызванных бросками напряжения, связанными с работой моторов.</p>
+
+<div class="ris">
+<img src="arduino-l293d_files/l293d_2.gif" alt="Схема драйвера двигателей" width="335" height="275" border="0">
+<p>Рис. 2 - Схема драйвера двигателей</p>
+</div>
+
+
+  
+<p class="tab_num">Таблица 1</p>
+<table border="1" cellspacing="0" cellpadding="3">
+<caption>Назначение выводов микросхемы L293D</caption>
+  <tr>
+    <th>№ вывода </th>
+    <th>Обозначение</th>
+    <th>Назначение</th>
+  </tr>
+  <tr>
+    <td align="center">1</td>
+    <td align="center">Enable1 (En1)</td>
+    <td align="left">Включает и выключает H-мост</td>
+  </tr>
+  <tr>
+    <td align="center">2</td>
+    <td align="center">INPUT1 (In1)</td>
+    <td align="left">Управление первым H-мостом;</td>
+  </tr>
+  <tr>
+    <td align="center">3</td>
+    <td align="center">OUTPUT1 (Out1)</td>
+    <td align="left"> Подключение первого H-моста</td>
+  </tr>
+  <tr>
+    <td align="center">4</td>
+    <td align="center">GND (0V)</td>
+    <td align="left">Земля</td>
+  </tr>
+  <tr>
+    <td align="center">5</td>
+    <td align="center">GND (0V)</td>
+    <td align="left">Земля</td>
+  </tr>
+  <tr>
+    <td align="center">6</td>
+    <td align="center">OUTPUT2 (Out2)</td>
+    <td align="left"> Подключение первого H-моста</td>
+  </tr>
+  <tr>
+    <td align="center">7</td>
+    <td align="center">INPUT2 (In2)</td>
+    <td align="left">Управление первым H-мостом;</td>
+  </tr>
+  <tr>
+    <td align="center">8</td>
+    <td align="center">Vs (+Vmotor)</td>
+    <td align="left">Напряжение питания для мотором до 36 В</td>
+  </tr>
+  <tr>
+    <td align="center">9</td>
+    <td align="center">Enable2 (En2)</td>
+    <td align="left">включает и выключает H-мост</td>
+  </tr>
+  <tr>
+    <td align="center">10</td>
+    <td align="center">INPUT3 (In3)</td>
+    <td align="left">Управление вторым H-мостом;</td>
+  </tr>
+  <tr>
+    <td align="center">11</td>
+    <td align="center">OUTPUT3 (Out3)</td>
+    <td align="left">Подключение второго H-моста</td>
+  </tr>
+  <tr>
+    <td align="center">12</td>
+    <td align="center">GND (0V)</td>
+    <td align="left">Земля</td>
+  </tr>
+  <tr>
+    <td align="center">13</td>
+    <td align="center">GND (0V)</td>
+    <td align="left">Земля</td>
+  </tr>
+  <tr>
+    <td align="center">14</td>
+    <td align="center">OUTPUT4 (Out4)</td>
+    <td align="left">Подключение второго H-моста</td>
+  </tr>
+  <tr>
+    <td align="center">15</td>
+    <td align="center">INPUT4 (In4)</td>
+    <td align="left">Управление вторым H-мостом;</td>
+  </tr>
+  <tr>
+    <td align="center">16</td>
+    <td align="center">Vss (+V) </td>
+    <td align="left">Питание на 5 В</td>
+  </tr>
+</table>
+
+<div class="ris"><img src="arduino-l293d_files/l293d_3.gif" alt="L293D" width="280" height="250">
+<p>Рис. 3 - Назначение выводов микросхемы L293D</p>
+</div>
+
+
+<h3>Принцип работы драйвера </h3>
+<p>К выходам OUTPUT1 и OUTPUT2 подключим электромотор MOTOR1.</p>
+<p>На вход ENABLE1, включающий драйвер, подадим сигнал (соединим с положительным полюсом источника питания +5&nbsp;В). Если при этом на входы INPUT1 и INPUT2 не подаются сигналы, то мотор вращаться не будет.
+  
+  Если вход INPUT1 соединить с положительным полюсом источника питания, а вход INPUT2 - с отрицательным, то мотор начнет вращаться.
+  
+  Теперь попробуем соединить вход INPUT1 с отрицательным полюсом источника питания, а вход INPUT2 - с положительным. Мотор начнет вращаться в другую сторону.
+  
+  Попробуем подать сигналы одного уровня сразу на оба управляющих входа INPUT1 и INPUT2 (соединить оба входа с положительным полюсом источника питания или с отрицательным) - мотор вращаться не будет.
+  
+  Если мы уберем сигнал с входа ENABLE1, то при любых вариантах наличия сигналов на входах INPUT1 и INPUT2 мотор вращаться не будет.</p>
+<p>Представить лучше принцип работы драйвера двигателя можно, рассмотрев следующую таблицу: </p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+ <tbody><tr>
+  <th height="30" align="center">ENABLE1</th>
+  <th height="30" align="center">INPUT1</th>
+  <th height="30" align="center">INPUT2</th>
+  <th height="30" align="center">OUTPUT1</th>
+  <th height="30" align="center">OUTPUT2</th>
+ </tr>
+
+ <tr>
+  <td height="30" align="center">1</td>
+  <td height="30" align="center">0</td>
+  <td height="30" align="center">0</td>
+  <td height="30" align="center">0</td>
+  <td height="30" align="center">0</td>
+ </tr>
+ <tr>
+  <td height="30" align="center">1</td>
+  <td height="30" align="center">1</td>
+  <td height="30" align="center">0</td>
+  <td height="30" align="center">1</td>
+  <td height="30" align="center">0</td>
+ </tr>
+ <tr>
+  <td height="30" align="center">1</td>
+  <td height="30" align="center">0</td>
+  <td height="30" align="center">1</td>
+  <td height="30" align="center">0</td>
+  <td height="30" align="center">1</td>
+ </tr>
+ <tr>
+  <td height="30" align="center">1</td>
+  <td height="30" align="center">1</td>
+  <td height="30" align="center">1</td>
+  <td height="30" align="center">1</td>
+  <td height="30" align="center">1</td>
+ </tr>
+ </tbody></table>
+
+<ul>
+<li>Входы ENABLE1 и ENABLE2 отвечают за включение каждого из драйверов, входящих в состав микросхемы.</li>
+<li>Входы INPUT1 и INPUT2 управляют двигателем, подключенным к выходам OUTPUT1 и OUTPUT2.</li>
+<li>Входы INPUT3 и INPUT4 управляют двигателем, подключенным к выходам OUTPUT3 и OUTPUT4.</li>
+<li>Контакт Vs соединяют с положительным полюсом источника электропитания двигателей или просто с положительным полюсом питания, если питание схемы и двигателей единое. Проще говоря, этот контакт отвечает за питание электродвигателей.</li>
+<li>Контакт Vss соединяют с положительным полюсом источника питания. Этот контакт обеспечивает питание самой микросхемы.</li>
+<li>Четыре контакта GND соединяют с "землей" (общим проводом или отрицательным полюсом источника питания). Кроме того, с помощью этих контактов обычно обеспечивают теплоотвод от микросхемы, поэтому их лучше всего распаивать на достаточно широкую контактную площадку.</li>
+</ul>
+	
+	
+<h3>Подключение к микроконтроллеру Arduino Uno</h3>
+<p>Для  подключения микросхемы L293D и мотора к микроконтроллеру Arduino Uno нужно выполнить определенные соединения (табл. 2).</p>
+<p class="tab_num">Таблица 2 </p>
+<table border="1" cellspacing="0" cellpadding="3">
+  <tr>
+    <th>L293D</th>
+    <th>Arduino Uno</th>
+  </tr>
+  <tr>
+    <td align="center">2 (In1)</td>
+    <td align="center">7</td>
+  </tr>
+  <tr>
+    <td align="center">7 (In2)</td>
+    <td align="center">8</td>
+  </tr>
+  <tr>
+    <td align="center">10 (In3) </td>
+    <td align="center">2</td>
+  </tr>
+  <tr>
+    <td align="center">15 (In4)</td>
+    <td align="center">3</td>
+  </tr>
+  <tr>
+    <td align="center">1 (En1)</td>
+    <td align="center">6</td>
+  </tr>
+  <tr>
+    <td align="center">9 (En2) </td>
+    <td align="center">5</td>
+  </tr>
+  <tr>
+    <td align="center">5 (GND)</td>
+    <td align="center">GND</td>
+  </tr>
+  <tr>
+    <td align="center">8 (Vs)</td>
+    <td align="center">5 V</td>
+  </tr>
+  <tr>
+    <td align="center">16 (Vss)</td>
+    <td align="center">5V</td>
+  </tr>
+</table>
+<p>Пример такого подключения одного двигателя к Ардуино показан на рис. 4.</p>
+
+<div class="ris">
+  <a href="arduino-l293d_files/podkl-dvigatelya-4.png" target="_blank"><img src="arduino-l293d_files/podkl-dvigatelya-4.png" alt="Схема драйвера двигателей" width="951" height="537" border="0"></a>
+<p>Рис. 4 - Пример подключения одного двигателя к микроконтроллеру Arduino Uno</p>
+</div>
+
+<p>&nbsp;</p>
+
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://myrobot.ru/stepbystep/el_driver.php"  target="_blank">myrobot.ru - ДРАЙВЕР ДВИГАТЕЛЕЙ L293D</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2021</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

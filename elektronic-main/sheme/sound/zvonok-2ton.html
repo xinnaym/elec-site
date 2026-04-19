@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Двухтональный звонок на транзисторах</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+
+  
+  <div id="content">
+  <h1>Двухтональный звонок на транзисторах</h1>
+
+<p>Двухтональный звонок (рис. 1) состоит из двух генераторов: генератора тона, выполненного на транзисторах VT3 и VT4, и симметричного мультивибратора на транзисторах VT1 и VТ2. Выход мультивибратора соединен с генератором тона через резистор R5, поэтому он будет периодически подключаться к общему проводу (минусу источника питания), то есть параллельно резистору R7. При этом частота генератора будет изменяться скачком: при закрытом транзисторе VT2 из динамической головки ВА1 будет слышен звук одного тона, при закрытом — другого. Конденсатор С3 сглаживает крутые фронты импульсов мультивибратора, приводящие к неприятным тонам в звучании звонка.</p>
+<div class="ris">
+  <a href="zvonok-2ton_files/zvonok-2ton.GIF" target="_blank"><img src="zvonok-2ton_files/zvonok-2ton.GIF" width="860" border="0"></a>
+<p>Рис. 1 - Схема двухтонального звонка</p>
+</div>
+<p>На тональность звука влияют резисторы R7 и R5 и конденсатор С4. На частоту переключения тональности — резисторы R2, R3 и конденсаторы C1, С2.</p>
+
+<p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Перечень элементов</caption>
+  <tr>
+    <th>Обозначение</th>
+    <th>Наименование</th>
+    <th>Номинал</th>
+    <th>Количество</th>
+    <th>Примечание</th>
+  </tr>
+  <tr>
+    <td align="left">BA1</td>
+    <td align="left">Динамик</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">1</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">C1, C2</td>
+    <td align="left">Конденсатор электролитический  </td>
+    <td align="center">10 мкФ/10 В</td>
+    <td align="center">2</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">C3, C4</td>
+    <td align="left">Конденсатор </td>
+    <td align="center">1 мкФ </td>
+    <td align="center">2</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">С5</td>
+    <td align="left">Конденсатор электролитический  </td>
+    <td align="center">200 мкФ/10 В</td>
+    <td align="center">1</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">GB1</td>
+    <td align="left">Элемент питания (батарейка) </td>
+    <td align="center">4,5 В</td>
+    <td align="center">1</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R1, R4 </td>
+    <td align="left">Резистор постоянный  </td>
+    <td align="center">1,5 кОм/0,125 Вт</td>
+    <td align="center">2</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R2, R3 </td>
+    <td align="left">Резистор постоянный  </td>
+    <td align="center">47 кОм/0,125 Вт</td>
+    <td align="center">2</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R5 </td>
+    <td align="left">Резистор постоянный  </td>
+    <td align="center">10 кОм/0,125 Вт</td>
+    <td align="center">1</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R6 </td>
+    <td align="left">Резистор постоянный  </td>
+    <td align="center">470 Ом/0,125 Вт</td>
+    <td align="center">1</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R7 </td>
+    <td align="left">Резистор постоянный</td>
+    <td align="center"> 5,1 кОм/0,125 Вт </td>
+    <td align="center">1</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">SB1</td>
+    <td align="left">Выключатель</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">1</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">VT1, VT2, VT4</td>
+    <td align="left">Транзистор биполярный  </td>
+    <td align="center">КТ315Б</td>
+    <td align="center">3</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">VT3</td>
+    <td align="left">Транзистор биполярный  </td>
+    <td align="center">КТ361Б</td>
+    <td align="center">1</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+</table>
+<p>Применяемые в конструкции резисторы и конденсаторы могут быть любых типов, малогабаритные. Например, можно установить полярные конденсаторы К50-35, остальные К10-17.</p>
+  <br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="http://unradio.ru/?p=1832"  target="_blank">unradio.ru - Двухтональный звонок</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Мигалка с изменением частоты</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Мигалка светодиодная с изменением частоты</h1>
+	
+  <p>Главная особенность схемы (рис. 1) - это возможность изменять частоту мигания светодиода.</p>
+	  <p>Регулировка частоты мигания осуществляется подстроечными резисторами R1 и R3: уменьшение сопротивления -  выше частота, увеличение - ниже частота.</p>
+    <p>Питание - от любого источника с выходным напряжением 6 В (можно от батареек).</p>
+
+	
+  <div class="ris">
+	<img src="migalka-4_files/migalka-4.JPG" width="790" height="350">
+	<p>Рис. 1 - Схема светодиодной мигалки  с изменением частоты</p>
+	</div>
+	
+		<p class="tab_num">Таблица 1 </p>
+  <table border="1" align="center" cellpadding="3" cellspacing="0">
+    <caption>
+    Перечень элементов
+    </caption>
+    <thead><tr><th>Обозначение</th>
+				    <th>Наименование</th>
+				    <th>Номинал</th>
+				    <th>Количество</th>
+				    <th>Примечание</th>
+</tr>
+      </thead>
+    <tbody>
+      <tr>
+				<td align="left">C1 </td>
+				<td align="left">Конденсатор </td>
+				<td align="center">1 мкФ </td>
+				<td align="center">1</td>
+				<td>керамический</td>
+			</tr>
+      <tr>
+        <td align="left">HL1 </td>
+        <td align="left">Светодиод</td>
+        <td align="center">АЛ307</td>
+        <td align="center">1</td>
+        <td>можно любой яркий светодиод</td>
+      </tr>
+      <tr>
+      <td align="left">R1</td>
+			    <td align="left">Резистор постоянный </td>
+			    <td align="center"> 1 кОм</td>
+			    <td align="center">1</td>
+			    <td>&nbsp;</td>
+		    </tr>
+			<tr>
+			  <td align="left">R2</td>
+			  <td align="left">Резистор переменный</td>
+			  <td align="center"> 15 кОм</td>
+			  <td align="center">1</td>
+			  <td>&nbsp;</td>
+			  </tr>
+			<tr>
+			  <td align="left">R3</td>
+			  <td align="left">Резистор постоянный </td>
+			  <td align="center"> 1,5 кОм</td>
+			  <td align="center">1</td>
+			  <td>&nbsp;</td>
+			  </tr>
+			<tr>
+			  <td align="left">R4</td>
+			  <td align="left">Резистор переменный</td>
+			  <td align="center"> 100 кОм</td>
+			  <td align="center">1</td>
+			  <td>&nbsp;</td>
+			  </tr>
+			<tr>
+			  <td align="left">SA1</td>
+			  <td align="left">Выключатель</td>
+			  <td align="center">&nbsp;</td>
+			  <td align="center">1</td>
+			  <td>&nbsp;</td>
+	      </tr>
+      <tr>
+        <td align="left">VD1 </td>
+        <td align="left">Диод</td>
+        <td align="center"><a href="../../help/vd/1n4007.html">1N4007</a></td>
+        <td align="center">1</td>
+        <td>&nbsp;</td>
+      </tr>
+			<tr>
+			  <td align="left">VT1</td>
+			  <td align="left">Биполярный транзистор</td>
+			  <td align="center"><a href="../../help/vt/kt315.html">КТ315</a></td>
+			  <td align="center">1</td>
+			  <td>с любым буквенным индексом</td>
+			  </tr>
+			<tr>
+                      <td align="left">VT2</td>
+			  <td align="left">Биполярный транзистор</td>
+			  <td align="center"><a href="../../help/vt/kt361.html">КТ361</a></td>
+			  <td align="center">1</td>
+			  <td>с любым буквенным индексом</td>
+	      </tr>
+      </tbody>
+  </table>
+<br>
+
+  <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	<hr>
+<h3>Источники:</h3>
+<p><a href="http://radio-uchebnik.ru/shem/nachinayushchim/8-nachinayushchim/153-svetodiodnaya-migalka-s-izmenyaemoj-chastotoj" target="_blank">radio-uchebnik.ru - Мигалка светодиодная с изменением частоты</a></p>
+
+
+<!--
+<p><a href=""></a></p>
+ -->
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

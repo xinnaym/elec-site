@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Библиотека Serial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Библиотека Serial</h1>
+
+<p>Библиотека <strong>Serial</strong> — это стандартная библиотека, которая подключается в скетчи автоматически. Она используется для передачи данных через последовательный порт Arduino. Все платы Arduino имеют хотя бы один последовательный порт (UART, иногда называют USART). Для обмена данными&nbsp;<strong>Serial</strong>&nbsp;используют цифровые порты ввод/вывода 0 (RX) и 1 (TX), а также USB-порт. Если  используете функции&nbsp;<strong>Serial</strong>, то нельзя одновременно с этим использовать порты 0 и 1 для других целей.</p>
+<p>Среда разработки Arduino&nbsp;имеет встроенный монитор последовательного интерфейса (Serial monitor). Для начала обмена данными необходимо запустить монитор нажатием кнопки Serial monitor и выставить ту же скорость связи (baud rate), с которой вызвана функция <span class="kod3">begin()</span>.</p>
+
+<p class="warning">Важно! Не подключайте эти порты напрямую к RS232 порту, это может повредить плату.</p>
+
+
+<!-- ********************************************* -->
+<h3 class="lenta">begin()</h3>
+<p>Данная функция устанавливает соединение на определенной скорости.</p>
+
+<h4>Синтаксис</h4>
+<p class="kod2">Serial.begin(скорость, конфигурация)</p>
+
+<h4>Параметры</h4>
+<ul>
+  <li><span class="kod3">скорость</span> - Обязательный параметр. Скорость бит в секунду (бод). Доступные значения: 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 57600 или 115200.</li>
+  <li><span class="kod3">конфигурация</span> - Необязательный параметр. Задает биты данных, биты четности и стоп-биты. Доступные значения: SERIAL_5N1, SERIAL_6N1, SERIAL_7N1, SERIAL_8N1 (это значение задано по умолчанию), SERIAL_5N2, SERIAL_6N2, SERIAL_7N2, SERIAL_8N2, SERIAL_5E1, SERIAL_6E1, SERIAL_7E1, SERIAL_8E1, SERIAL_5E2, SERIAL_6E2, SERIAL_7E2, SERIAL_8E2, SERIAL_5O1, SERIAL_6O1, SERIAL_7O1, SERIAL_8O1, SERIAL_5O2, SERIAL_6O2, SERIAL_7O2, SERIAL_8O2.</li>
+</ul>
+
+<h4>Возвращаемых значений нет</h4>
+
+<h4>Пример</h4>
+<div class="kod">
+<pre>
+void setup() {
+  <span class="ar-comment">//Установка соединения на скорости передачи данных на 9600 бит/сек</span>
+  Serial.begin(9600);    
+}
+</pre>
+</div> 
+<!-- ********************************************* -->
+<h3 class="lenta">end()</h3>
+<p>Отключает соединение через последовательный порт и освобождает пины RX и TX.</p>
+
+<h4>Синтаксис</h4>
+<p class="kod2">Serial.end();</p>
+
+<h4>Параметров нет.</h4>
+
+<h4>Возвращаемых значений нет.</h4>
+<!-- ********************************************* -->
+<h3 class="lenta">print()</h3>
+<p>Функция отправляет данные в последовательный порт в виде ASCII-текста.</p>
+
+<h4>Синтаксис</h4>
+  <p class="kod2">Serial.print(данные, формат);
+
+<h4>Параметры</h4>
+<ul>
+  <li><span class="kod3">данные</span> — обязательный параметр. Данные, которые необходимо отправить.</li>
+	<li><span class="kod3">формат</span> — Необязательный параметр. Форматирует отправляемые данные. Может принимать следующие значения: 
+	<ul>
+	  <li><span class="kod3">BIN</span> — Двоичный формат. </li>
+	  <li><span class="kod3">OCT</span> — Восьмеричный формат. </li>
+	  <li><span class="kod3">DEC</span> — Десятичный формат </li>
+	  <li><span class="kod3">HEX</span> — Шестнадцатиричный формат. </li>
+	  <li><span class="kod3">0</span> — Округление числа до целых. </li>
+	  <li><span class="kod3">2</span> — Округление число до сотых.</li>
+	</ul>
+	</li>
+</ul>  
+  
+<h4>Возвращаемые значения</h4>
+  <p>Количество записанных байтов (тип long)</p>
+  <h4>Пример</h4>
+<div class="kod">
+<pre>
+  Serial.print(78);  <span class="ar-comment">//выводится 78</span>
+  Serial.print(78, BIN);  <span class="ar-comment">//выводится 1001110</span>
+  Serial.print(78, HEX);  <span class="ar-comment">//выводится 4E</span>
+  Serial.print(3.1415926535, 0);  <span class="ar-comment">//выводится 3</span>
+  Serial.print(3.1415926535, 2);  <span class="ar-comment">//выводится 3.14</span>
+  Serial.print(3.1415926535, 4);  <span class="ar-comment">//выводится 3.1416</span>
+</pre>
+</div> 
+	
+	
+<h3 class="lenta">println()</h3>
+<p>Отправляет данные в виде ASCII-текста в последовательный порт с символом конца строки (\r) и символом новой строки (\n)</p>
+  
+<h4>Синтаксис</h4>
+  <p class="kod2">Serial.println(данные, формат)</p>
+<h4>Параметры</h4>
+<ul>
+  <li><span class="kod3">данные</span> — обязательный параметр. Данные, которые необходимо отправить.</li>
+	<li><span class="kod3">формат</span> — Необязательный параметр. Форматирует отправляемые данные. Может принимать следующие значения: 
+	<ul>
+	  <li><span class="kod3">BIN</span> — Двоичный формат. </li>
+	  <li><span class="kod3">OCT</span> — Восьмеричный формат. </li>
+	  <li><span class="kod3">DEC</span> — Десятичный формат </li>
+	  <li><span class="kod3">HEX</span> — Шестнадцатиричный формат. </li>
+	  <li><span class="kod3">0</span> — Округление числа до целых. </li>
+	  <li><span class="kod3">2</span> — Округление число до сотых.</li>
+	</ul>
+	</li>
+</ul>  
+  
+  <h4>Возвращаемые значения</h4>
+  <p>Количество записанных байтов (тип long)</p>
+<!--
+<ul>
+<li><a href="http://arduino.ru/Reference/Serial/Available">available</a>()</li>
+<li><a href="http://arduino.ru/Reference/Serial/Read">read</a>()</li>
+<li><a href="http://arduino.ru/Reference/Serial/Flush">flush</a>()</li>
+<li><a href="http://arduino.ru/Reference/Serial/Write">write</a>()</li>
+<li><a href="http://arduino.ru/Reference/Serial/Peek">peek</a>()</li>
+</ul>	
+ -->	
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://robo02.ru/2018/02/13/arduino-sketch-guide/"  target="_blank">robo02.ru - Справочник по Arduino Scetch</a></p>
+  <p><a href="https://arduino.ru/Reference/Serial"  target="_blank">arduino.ru - Serial</a></p>
+  <p><a href="https://all-arduino.ru/biblioteki-arduino/arduino-biblioteka-serial/"  target="_blank">all-arduino.ru - Arduino библиотека Serial</a></p>
+
+</div>
+
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2023</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

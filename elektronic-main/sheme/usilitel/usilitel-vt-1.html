@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Усилитель звука на транзисторах</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+
+  
+  <div id="content">
+	<h1>Усилитель звука на транзисторах</h1>
+
+<p>Схема усилителя(рис. 1) состоит из шести транзисторов и может развивать мощность до 3 Вт при питании напряжением 12 В. Этой мощности достаточно для озвучивания небольшого помещения. </p>
+
+
+<figure>
+  <img src="usilitel-vt-1_files/usilitel-1.png" width="870">
+  <figcaption>Рис. 1 - Схема усилителя звука на транзисторах</figcaption>
+</figure>
+
+<p class="tab_num">Таблица 1</p>	
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Перечень элементов усилителя</caption>
+  <tr>
+    <th>Обозначение</th>
+    <th>Наименование</th>
+    <th>Номинал</th>
+    <th>Кол-во</th>
+    <th>Примечание</th>
+  </tr>
+  <tr>
+    <td>С1</td>
+    <td align="left">Конденсатор  </td>
+    <td align="center" valign="middle">0,068 мкФ </td>
+    <td align="center" valign="middle">1</td>
+    <td align="center" valign="middle">пленочный</td>
+  </tr>
+  <tr>
+    <td> С2 </td>
+    <td align="left">Конденсатор электролитический </td>
+    <td align="center" valign="middle">10 мкФ - 16 В </td>
+    <td align="center" valign="middle">1</td>
+    <td align="center" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>С3 </td>
+    <td align="left">Конденсатор</td>
+    <td align="center" valign="middle">100 пФ </td>
+    <td align="center" valign="middle">1</td>
+    <td align="center" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>C4 </td>
+    <td align="left">Конденсатор электролитический </td>
+    <td align="center" valign="middle">220 мкФ - 16 В </td>
+    <td align="center" valign="middle">1</td>
+    <td align="center" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>C5</td>
+    <td align="left">Конденсатор  </td>
+    <td align="center" valign="middle">0,1 мкФ</td>
+    <td align="center" valign="middle">1</td>
+    <td align="center" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>C6</td>
+    <td align="left">Конденсатор электролитический </td>
+    <td align="center" valign="middle">1000 мкФ - 16 В </td>
+    <td align="center" valign="middle">1</td>
+    <td align="center" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>R1 </td>
+    <td align="left">Резистор постоянный </td>
+    <td align="center" valign="middle">16 кОм</td>
+    <td align="center" valign="middle">1</td>
+    <td align="center" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>R2, R6 </td>
+    <td align="left">Резистор постоянный </td>
+    <td align="center" valign="middle">33 кОм</td>
+    <td align="center" valign="middle">2</td>
+    <td align="center" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>R3</td>
+    <td align="left">Резистор постоянный </td>
+    <td align="center" valign="middle">5,1 кОм</td>
+    <td align="center" valign="middle">1</td>
+    <td align="center" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>R4</td>
+    <td align="left">Резистор постоянный </td>
+    <td align="center" valign="middle">470 Ом</td>
+    <td align="center" valign="middle">1</td>
+    <td align="center" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>R5 </td>
+    <td align="left">Резистор постоянный </td>
+    <td align="center" valign="middle">8,2 кОм</td>
+    <td align="center" valign="middle">1</td>
+    <td align="center" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>R3</td>
+    <td align="left">Резистор постоянный </td>
+    <td align="center" valign="middle">5,1 кОм</td>
+    <td align="center" valign="middle">1</td>
+    <td align="center" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>VD1, VD2 </td>
+    <td align="left">Диод</td>
+    <td align="center" valign="middle">1N4148</td>
+    <td align="center" valign="middle">2</td>
+    <td align="center" valign="middle">1N4007, КД522</td>
+  </tr>
+   <tr>
+    <td>VT1, VT3 </td>
+    <td align="left">Транзистор биполярный </td>
+    <td align="center" valign="middle">BC639</td>
+    <td align="center" valign="middle">2</td>
+    <td align="center" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>VT2, VT4 </td>
+    <td align="left">Транзистор биполярный </td>
+    <td align="center" valign="middle">BC640</td>
+    <td align="center" valign="middle">2</td>
+    <td align="center" valign="middle">&nbsp;</td>
+  </tr>
+ <tr>
+    <td>VT5</td>
+    <td align="left">Транзистор биполярный </td>
+    <td align="center" valign="middle">BD140</td>
+    <td align="center" valign="middle">1</td>
+    <td align="center" valign="middle">КТ814 </td>
+  </tr>
+  <tr>
+    <td>VT6</td>
+    <td align="left">Транзистор биполярный </td>
+    <td align="center" valign="middle">BD139</td>
+    <td align="center" valign="middle">1</td>
+    <td align="center" valign="middle">КТ815</td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td align="left">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+ --></table>
+<p>Транзисторы VТ5 и VТ6 на схеме образуют выходной каскад. Конденсатор С4, который подключается к коллекторам выходных транзисторов, отделяет постоянную составляющую сигнала на выходе. Поэтому данный усилитель можно использовать без платы защиты акустических систем. Даже если усилитель в процессе работы выйдет из строя и на выходе появится постоянное напряжение, оно не пройдёт дальше этого конденсатора и динамики акустической системы останутся целы. Нагрузкой служит динамик сопротивлением 4-16 Ом. Чем ниже его сопротивление, тем большую мощность будет развивать схема.</p>
+
+<p>При настройке усилитедя разрыв одного из питающих проводов нужно включить амперметр для контроля потребляемого тока. Без подачи на вход сигнала усилитель должен потреблять около 15-20 мА. Ток покоя задаётся резистором R6, для его увеличения нужно уменьшить сопротивление этого резистора. Слишком сильно поднимать ток покоя не следует, т.к. увеличится выделение тепла на выходных транзисторах. Если ток покоя в норме, можно подавать на вход сигнал,  подключать на выход динамик и приступать к прослушиванию.  </p>
+<p>Для воспроизведения стереозвука схему нужно собрать в двух экземплярах. </p>
+<p>Если источник сигнала находится далеко от усилителя, подключать его нужно экранированным проводом для исключения помехи и наводоки. </p>
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://sdelaysam-svoimirukami.ru/4575-usilitel-zvuka-na-tranzistorah.html"  target="_blank">sdelaysam-svoimirukami.ru - Усилитель звука на транзисторах</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2024</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

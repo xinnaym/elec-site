@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Исследование логических элементов</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cdutt-str.ru/"><img width="130" height="130" src="../../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../../index.html">Главная</a></li>
+      <li><a href="../../../teorie.html">Теория</a></li>
+      <li><a href="../../../praktik.html">Практика</a></li>
+      <li><a href="../../../help.html">Справочники</a></li>
+      <li><a href="../../../sheme.html">Схемы</a></li>
+      <li><a href="../../../arduino.html">Arduino</a></li>
+      <li><a href="../../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+
+<h2 class="ewb">Electronics Workbench</h2>
+
+	<h1>Исследование логических элементов<br>в программе
+	  Electronics Workbench</h1>
+
+
+<p>Подробнее о логических элементах можно узнать <a href="../../../teorie/dt/logic1.html" target="_blank">здесь</a>.</p>
+
+<h3>1. Исследование работы логического элемента «И»</h3>
+<ol>
+  <li>В программе Electronics Workbench cоберите модель для исследования  логического элемента «И» (рис. 1).	
+    <div class="ris">
+  <img src="pr-log_files/model1.png" width="753" height="501">
+  <p>Рис. 1 - Модель  для исследования  логического элемента «И»</p>
+	<p style="border:#FF0000 solid 2px; text-align:left; padding:5px;">1. Верхнее по схеме положение переключателя соответствует «1» на входе логического элемента, нижнее положение - «0».<br>
+2. Положение переключателя изменяется при нажатии на клавиатуре клавиш «1» и «2»<br>
+3. Белый цвет индикатора соответствует «0», красный цвет - «1».</p>
+</div>
+</li>
+  <li>Установите свойства элементов схемы (табл. 1). <br>
+    Для установки свойств:
+		<ul>
+		<li>сделайте двойной щелчок на элементе;</li>
+		<li>откройте вкладку (Label, Value или Models);</li>
+		<li>установите значения.</li>
+		</ul>
+
+<p class="tab_num">Таблица 1</p>
+	<table border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>Свойства элементов схемы</caption>
+  <tr>
+    <th>Наименование</th>
+    <th>Обозначение <br>
+      элемента </th>
+    <th>Вкладка Label<br>
+      (Свойство:Значение)</th>
+    <th>Вкладка Value<br>
+(Свойство:Значение) </th>
+    </tr>
+  <tr>
+    <td align="left" valign="middle">Источник питания</td>
+    <td align="center" valign="middle">&nbsp;G1</td>
+    <td align="left" valign="middle">Label: C1</td>
+    <td align="left" valign="middle">Voltage (V): 5 V </td>
+    </tr>
+  <tr>
+    <td align="left" valign="middle">Индикатор</td>
+    <td align="center" valign="middle">HL1</td>
+    <td align="left" valign="middle">Label: HL1</td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">Индикатор</td>
+    <td align="center" valign="middle">HL2</td>
+    <td align="left" valign="middle">Label: HL2</td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">Индикатор</td>
+    <td align="center" valign="middle">HL3</td>
+    <td align="left" valign="middle">Label: HL3</td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">Логический элемент &quot;И&quot; </td>
+    <td align="center" valign="middle">DD1</td>
+    <td align="left" valign="middle">Label: DD1</td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">Переключатель</td>
+    <td align="center" valign="middle">S1</td>
+    <td align="left" valign="middle">Label: S1</td>
+    <td align="left" valign="middle">Key: 1 </td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">Переключатель</td>
+    <td align="center" valign="middle">S2</td>
+    <td align="left" valign="middle">Label: S2</td>
+    <td align="left" valign="middle">Key: 2 </td>
+  </tr>
+</table>
+		
+	 </li>
+  <li>Щелкните мышкой на кнопке <img src="btn.jpg" alt="Mchs1" width="45" height="23" align="absmiddle"> в верхнем правом углу, чтобы включить схему. </li>
+  <li>Определите состояние индикаторов HL1-HL3, когда на оба входа поданы логические <span class="ramka2">«0» </span>и запишите результат в табл. 1 в рабочей тетради.
+    <p class="tab_num">Таблица 2</p>
+    <table width="300" border="1" align="center" cellpadding="3" cellspacing="0">
+		<caption>Таблица истинности<br>логического элемента «И»</caption>
+      <tr>
+        <th>X1 (HL1)</th>
+        <th>X2 (HL2)</th>
+        <th>Y (HL3)</th>
+      </tr>
+      <tr>
+        <td align="center">0</td>
+        <td align="center">0</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">1</td>
+        <td align="center">0</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">0</td>
+        <td align="center">1</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">1</td>
+        <td align="center">1</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </li>
+  <li>Нажмите на клавиатуре клавишу <strong></strong> с цифрой <span class="ramka2">«1»</span>, чтобы на  вход X1 подать логическую <span class="ramka2">«1».</span> </li>
+  <li>Состояния индикаторов HL1-HL3 запишите  в табл. 1 в рабочей тетради.</li>
+  <li>Нажмите на клавиатуре клавишу <strong></strong> с цифрой <span class="ramka2">«1»</span>, чтобы на  вход X1 подать логический <span class="ramka2">«0».</span></li>
+  <li>Нажмите на клавиатуре клавишу <strong></strong> с цифрой <span class="ramka2">«2»</span>, чтобы на  вход X2 подать логическую <span class="ramka2">«1».</span> </li>
+  <li>Состояния индикаторов HL1-HL3 запишите  в табл. 1 в рабочей тетради.</li>
+  <li>Нажмите на клавиатуре клавишу <strong></strong> с цифрой <span class="ramka2">«1»</span>, чтобы на  вход X1 подать логическую <span class="ramka2">«1».</span> </li>
+  <li>Состояния индикаторов HL1-HL3 запишите  в табл. 1 в рабочей тетради.</li>
+  <li>Щелкните мышкой на кнопке <img src="btn.jpg" alt="Mchs1" width="45" height="23" align="absmiddle"> в верхнем правом углу, чтобы выключить схему.</li>
+</ol>
+
+<h3>2. Исследование работы логического элемента «ИЛИ»</h3>
+<ol>
+  <li>Замените в предыдущей схеме логический элемент «И» на  элемент «ИЛИ»( рис. 2).	
+    <div class="ris">
+  <img src="pr-log_files/model2.png" width="627" height="302">
+  <p>Рис. 2 - Модель  для исследования  логического элемента «ИЛИ»</p>
+</div>
+</li>
+
+  <li>Щелкните мышкой на кнопке <img src="btn.jpg" alt="Mchs1" width="45" height="23" align="absmiddle"> в верхнем правом углу, чтобы включить схему. </li>
+  <li>Определите состояние индикаторов HL1-HL3, когда на оба входа поданы логические <span class="ramka2">«0» </span>и запишите результат в табл. 2 в рабочей тетради.
+    <p class="tab_num">Таблица 3 </p>
+    <table width="300" border="1" align="center" cellpadding="3" cellspacing="0">
+		<caption>Таблица истинности<br>
+		логического элемента «ИЛИ»
+		</caption>
+      <tr>
+        <th>X1 (HL1)</th>
+        <th>X2 (HL2)</th>
+        <th>Y (HL3)</th>
+      </tr>
+      <tr>
+        <td align="center">0</td>
+        <td align="center">0</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">1</td>
+        <td align="center">0</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">0</td>
+        <td align="center">1</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">1</td>
+        <td align="center">1</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </li>
+  <li>Нажмите на клавиатуре клавишу <strong></strong> с цифрой <span class="ramka2">«1»</span>, чтобы на  вход X1 подать логическую <span class="ramka2">«1».</span> </li>
+  <li>Состояния индикаторов HL1-HL3 запишите  в табл. 1 в рабочей тетради.</li>
+  <li>Нажмите на клавиатуре клавишу <strong></strong> с цифрой <span class="ramka2">«1»</span>, чтобы на  вход X1 подать логический <span class="ramka2">«0».</span></li>
+  <li>Нажмите на клавиатуре клавишу <strong></strong> с цифрой <span class="ramka2">«2»</span>, чтобы на  вход X2 подать логическую <span class="ramka2">«1».</span> </li>
+  <li>Состояния индикаторов HL1-HL3 запишите  в табл. 1 в рабочей тетради.</li>
+  <li>Нажмите на клавиатуре клавишу <strong></strong> с цифрой <span class="ramka2">«1»</span>, чтобы на  вход X1 подать логическую <span class="ramka2">«1».</span> </li>
+  <li>Состояния индикаторов HL1-HL3 запишите  в табл. 1 в рабочей тетради.</li>
+</ol>
+
+
+<h3>3. Исследование работы двоичного полусумматора</h3>
+
+<ol>
+  <li>В программе Electronics Workbench cоберите модель для исследования двоичного полусумматора (рис. 3).	
+    <div class="ris">
+  <img src="pr-log_files/model-psum.png" width="771" height="548">
+  <p>Рис. 3 - Модель  для исследования   двоичного полусумматора</p>
+</div>
+</li>
+  <li>Определите состояния индикаторов HL1-HL4 при различных комбинациях входных сигналов X1 и X2 <span class="ramka2"> </span>и запишите результат в табл. 3 в рабочей тетради.
+    <br>
+    X1 и X2 - слагаемые;<br>
+    S - значение суммы в данном разряде;<br>
+    Р - перенос в старший разряд.
+    <p class="tab_num">Таблица 4 </p>
+    <table width="300" border="1" align="center" cellpadding="3" cellspacing="0">
+      <caption>
+        Таблица истинности<br>
+        двоичного полусумматора
+      </caption>
+      <tr>
+        <th>X1 (HL1)</th>
+        <th>X2 (HL2)</th>
+        <th>S (HL3)</th>
+        <th>P (HL4)</th>
+      </tr>
+      <tr>
+        <td align="center">0</td>
+        <td align="center">0</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">1</td>
+        <td align="center">0</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">0</td>
+        <td align="center">1</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center">1</td>
+        <td align="center">1</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </li>
+  <li>Щелкните мышкой на кнопке <img src="btn.jpg" alt="Mchs1" width="45" height="23" align="absmiddle"> в верхнем правом углу, чтобы выключить схему.</li>
+  </ol>
+
+
+
+
+		
+<hr>
+
+
+<br>
+<a href="#top1"><img src="../../../images/up.png" width="24" height="24"></a>
+	
+  </div>
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2020</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

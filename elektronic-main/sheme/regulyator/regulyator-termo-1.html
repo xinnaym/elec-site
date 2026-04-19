@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Терморегуляторы</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Терморегуляторы</h1>
+<p>Простейшие измерительные датчики, в том числе и реагирующие на температуру, состоят из измерительного полуплеча из двух сопротивлений, опорного и элемента, меняющего свое сопротивление в зависимости от прилаживаемой к нему температуры.</p>
+
+<p>На  схеме рис. 1, резисторы R1 и R2 являются измерительным элементом  терморегулятора, а резисторы R3 и R4 опорным плечом устройства.</p>
+<p>Элементом терморегулятора, реагирующим на изменение состояния измерительного плеча, является интегральный усилитель в режиме компаратора (микросхема DA1 на рис. 1). Данный режим переключает скачком выход микросхемы из состояния выключено в рабочее положение. Нагрузкой данной микросхемы является электромотор вентилятора ПК. При достижении температуры определенного значения в плече R1 и R2 происходит смещение напряжения, вход микросхемы сравнивает значение на контакте 2 и 3 и происходит переключение компаратора. Таким образом поддерживается температура на заданном уровне и производится управление работой вентилятора.</p>
+
+  <figure>
+    <img src="regulyator-termo-1_files/termo-reg1.png" width="612" height="301">
+    <figcaption>Рис. 1 - Схема терморегулятора </figcaption>
+  </figure>
+	
+
+
+<h2>Обзор схем</h2>
+<p>На схеме (рис. 2) напряжение разности с измерительного плеча поступает на спаренный транзистор с большим коэффициентом усиления, в качестве компаратора выступает электромагнитное реле. При достижении на катушке напряжения, достаточного для втягивания сердечника, происходит ее срабатывание и подключение через ее контакты исполнительных устройств. При достижении заданной температуры, сигнал на транзисторах уменьшается, синхронно падает напряжение на катушке реле, и в какой-то момент происходит расцепление контактов.</p>
+
+  <figure>
+    <img src="regulyator-termo-1_files/termo-reg2.png" width="929" height="412">
+    <figcaption>Рис. 2 - Схема терморегулятора</figcaption>
+  </figure>
+	
+  <p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+  <caption>
+  Перечень элементов терморегулятора (рис. 2)
+  </caption>
+  <thead>
+    <tr>
+		  <th>Обозначение</th>
+			<th>Наименование</th>
+			<th>Номинал</th>
+			<th>Количество</th>
+			<th>Примечание</th>
+		</tr>
+  </thead>
+  <tbody>
+		<tr>
+			<td align="left">C1</td>
+			<td align="left">Конденсатор электролитический </td>
+			<td align="center">20 мкФ &times; 30 В </td>
+			<td align="center">1</td>
+			<td align="left">&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="left">C2</td>
+			<td align="left">Конденсатор электролитический </td>
+			<td align="center">10 мкФ &times; 400 В </td>
+			<td align="center">1</td>
+			<td align="left">&nbsp;</td>
+		</tr>
+    <tr>
+      <td align="left">FU1</td>
+      <td align="left">Предохранитель</td>
+      <td align="center">0,5 А </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">К1</td>
+      <td align="left">Реле</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R1</td>
+      <td align="left">Резистор постоянный </td>
+      <td align="center">2 кОм/0,25 Вт </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R2</td>
+      <td align="left">Терморезистор</td>
+      <td align="center">10 кОм </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R3</td>
+			<td align="left">Резистор  подстроечный</td>
+			<td align="center"> 6,8 кОм</td>
+			<td align="center">1</td>
+			<td align="left">&nbsp;</td>
+		</tr>
+    <tr>
+      <td align="left">R4</td>
+      <td align="left">Резистор постоянный </td>
+      <td align="center">560 Ом/2 Вт </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R5</td>
+      <td align="left">Резистор постоянный </td>
+      <td align="center">36 кОм/2 Вт </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+		<tr>
+			<td align="left">VD1</td>
+			<td align="left">Стабилитрон</td>
+			<td align="center">Д814В</td>
+			<td align="center">1</td>
+			<td align="left">&nbsp;</td>
+	  </tr>
+		<tr>
+			<td align="left">VD2</td>
+			<td align="left">Диод</td>
+			<td align="center">Д226Б</td>
+			<td align="center">1</td>
+			<td align="left">&nbsp;</td>
+	  </tr>
+		<tr>
+      <td align="left">VT1</td>
+			<td align="left">Транзистор биполярный </td>
+			<td align="center">КТ315Б</td>
+			<td align="center">1</td>
+			<td align="left">&nbsp;</td>
+	  </tr>
+		<tr>
+			<td align="left">VT2</td>
+			<td align="left">Транзистор биполярный </td>
+			<td align="center">МП25Б</td>
+			<td align="center">1</td>
+			<td align="left">&nbsp;</td>
+	  </tr>
+  </tbody>
+</table>
+
+<p>Особенностью такого типа реле является наличие гистерезиса — это разница в несколько градусов между включением и отключением самодельного терморегулятора, из-за присутствия в схеме электромеханического реле. </p>
+<p>Вариант терморегулятора, предоставленный на рис. 3, практически лишен гистерезиса.</p>
+
+  <figure>
+    <a href="regulyator-termo-1_files/termo-reg3.png" target="_blank"><img src="regulyator-termo-1_files/termo-reg3.png" width="860" border="0" /></a>
+    <figcaption>Рис. 3 - Схема электрическая принципиальная терморегулятора для инкубатора</figcaption>
+  </figure>
+
+  <p class="tab_num">Таблица 2 </p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+  <caption>
+  Перечень элементов терморегулятора для инкубатора
+  </caption>
+  <tr>
+    <th>Обозначение</th>
+    <th>Наименование</th>
+    <th>Номинал</th>
+    <th>Примечание/замена</th>
+  </tr>
+  <tr>
+    <td align="left">С1</td>
+    <td align="left">Конденсатор</td>
+    <td align="center">1 мкФ</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">С2</td>
+    <td align="left">Конденсатор</td>
+    <td align="center">0,01 мкФ</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">С3</td>
+    <td align="left">Конденсатор электролитический</td>
+    <td align="center">100 мкФ &times; 50 В </td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">DA1</td>
+    <td align="left">Операционный усилитель </td>
+    <td align="center">К140УД6</td>
+    <td align="left"> К140УД7, К140УД8, К153УД2 </td>
+  </tr>
+  <tr>
+    <td align="left">FU1</td>
+    <td align="left">Предохранитель</td>
+    <td align="center">1 А </td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">HL1-HL4</td>
+    <td align="left">Лампы накаливания </td>
+    <td align="center">100 Вт &times; 220 В</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R1, R2</td>
+    <td align="left">Резистор постоянный  </td>
+    <td align="center">47 кОм-0,125 Вт </td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R3</td>
+    <td align="left">Резистор постоянный </td>
+    <td align="center">2,4 кОм-0,125 Вт</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R4</td>
+    <td align="left">Резистор подстроечный </td>
+    <td align="center">47 кОм </td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R5</td>
+    <td align="left">Терморезистор</td>
+    <td align="center">47 кОм </td>
+    <td align="left">ММТ-4</td>
+  </tr>
+  <tr>
+    <td align="left">R6, R7</td>
+    <td align="left">Резистор постоянный </td>
+    <td align="center">24 кОм-0,125 Вт</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R8</td>
+    <td align="left">Резистор постоянный </td>
+    <td align="center">10 кОм-0,125 Вт</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">R9</td>
+    <td align="left">Резистор постоянный </td>
+    <td align="center">43 кОм-2 Вт</td>
+    <td align="left">2 Вт</td>
+  </tr>
+  <tr>
+    <td align="left">R10</td>
+    <td align="left">Резистор постоянный </td>
+    <td align="center">1,8 кОм-0,125 Вт </td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">VD1</td>
+    <td align="left">Стабилитрон</td>
+    <td align="center">Д814А</td>
+    <td align="left">Д814(Б-Д)</td>
+  </tr>
+  <tr>
+    <td align="left">VD2-VD5</td>
+    <td align="left">Диод</td>
+    <td align="center">КД202К</td>
+    <td align="left"> КД202М, КД202Р</td>
+  </tr>
+  <tr>
+    <td align="left">VS1</td>
+    <td align="left">Тринистор</td>
+    <td align="center">КУ202Н</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">VT1</td>
+    <td align="left">Транзистор</td>
+    <td align="center">КТ605</td>
+    <td align="left">КТ940</td>
+  </tr>
+</table>
+
+
+<p>Основой устройства является операционный усилитель DA1. В данной схеме он подключен с положительной обратной связью и является компаратором. Термочувствительным элементом служит резистор R5 типа ММТ-4 с отрицательным ТКЕ (при нагревании его сопротивление уменьшается).</p>
+<p>Выносной датчик подключается через экранированный провод. Для уменьшения наводок и ложного срабатывания устройства, длина провода не должна превышать 1 метр. Нагрузка управляется через тиристор VS1 и мощность нагревателя целиком зависит от его номинала. Тиристор необходимо установить на небольшой радиатор, для отвода тепла. </p>
+<p>Устройство не имеет гальванической развязки от сети 220 В, при настройке будьте внимательны, на элементах регулятора присутствует сетевое напряжение.</p>
+
+<p>Схема терморегулятора на микросхеме TL431, с внешним питанием 12 В для использования в системах домашней автоматики приведена на рис. 4. Данный терморегулятор способен управлять компьютерным вентилятором, силовым реле, световыми индикаторами, звуковыми сигнализаторами. </p>
+<!-- -->
+  <figure>
+    <img src="regulyator-termo-1_files/termoreg-tl431.png" width="770" height="334">
+    <figcaption>Рис. 4 - Схема терморегулятора на микросхеме TL431</figcaption>
+  </figure>	
+	
+  <p class="tab_num">Таблица 3</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+  <caption>
+  Перечень элементов терморегулятора (вариант №1)
+  </caption>
+  <thead>
+    <tr>
+		  <th>Обозначение</th>
+			<th>Наименование</th>
+			<th>Номинал</th>
+			<th>Количество</th>
+			<th>Примечание</th>
+		</tr>
+  </thead>
+  <tbody>
+		<tr>
+			<td align="left">C1, C2</td>
+			<td align="left">Конденсатор </td>
+			<td align="center">0,1 мкФ</td>
+			<td align="center">2</td>
+			<td align="left">&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="left">C3</td>
+			<td align="left">Конденсатор электролитический </td>
+			<td align="center">10 мкФ &times; 25 В </td>
+			<td align="center">1</td>
+			<td align="left">&nbsp;</td>
+		</tr>
+    <tr>
+      <td align="left">DA1</td>
+      <td align="left">Микросхема</td>
+      <td align="center">TL431</td>
+      <td align="center">1</td>
+      <td align="left">КР142ЕН19А</td>
+    </tr>
+    <tr>
+      <td align="left">R1</td>
+      <td align="left">Резистор  подстроечный</td>
+      <td align="center">4,7 кОм</td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R2</td>
+      <td align="left">Терморезистор</td>
+      <td align="center">1,1 кОм </td>
+      <td align="center">1</td>
+      <td align="left">ММТ-4</td>
+    </tr>
+    <tr>
+      <td align="left">R3</td>
+			<td align="left">Резистор  постоянный</td>
+			<td align="center"> 5,6 кОм/0,5 Вт </td>
+			<td align="center">1</td>
+			<td align="left">&nbsp;</td>
+		</tr>
+    <tr>
+      <td align="left">R4</td>
+      <td align="left">Резистор постоянный </td>
+      <td align="center">1 кОм/0,5 Вт </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+		<tr>
+      <td align="left">VT1</td>
+			<td align="left">Транзистор биполярный </td>
+			<td align="center">КТ815</td>
+			<td align="center">1</td>
+			<td align="left">&nbsp;</td>
+	  </tr>
+  </tbody>
+</table>
+
+
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+  <p><a href="https://samelectrik.ru/kak-sobrat-termoregulyator-v-domashnix-usloviyax.html"  target="_blank">samelectrik.ru - Как собрать терморегулятор в домашних условиях?</a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2024</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

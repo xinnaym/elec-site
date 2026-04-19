@@ -1,0 +1,27 @@
+//RGB LED - fading between colors
+//pin connections
+int red = 9;
+int green = 10;
+int blue = 11;
+void setup(){
+  pinMode(red, OUTPUT);
+  pinMode(blue, OUTPUT);
+  pinMode(green, OUTPUT);
+}
+void loop(){
+  for (int brightness=0;brightness<256;brightness++){
+    analogWrite(red, 255-brightness);
+    analogWrite(green, brightness);
+    delay(10);
+  }
+  for (int brightness=0;brightness<256;brightness++){
+    analogWrite(green, 255-brightness);
+    analogWrite(blue, brightness);
+    delay(10);
+  }
+  for (int brightness=0;brightness<256;brightness++){
+    analogWrite(blue, 255-brightness);
+    analogWrite(red, brightness);
+    delay(10);
+  }
+}

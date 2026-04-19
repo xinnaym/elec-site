@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Простой LC-генератор</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+<div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Простой LC-генератор</h1>
+   <P>Простой LC-генератор можно использовать в измерительной аппаратуре. Преимуществом такого 
+            генератора является возможность использования контуров практически с 
+            любым соотношением L/C.</P>
+						
+   <div class="ris"><a href="lc-generator-1_files/lc-generator-1.png" target="_blank"><IMG src="lc-generator-1_files/lc-generator-1.png" width="860" height="430" border="0"></a></div>
+    <P>При L1 = 50 мкГн и С1 = 5 мкФ 
+            генерируемая частота равна 10 кГц. При работе на LC-контуре имеется 
+            малое рабочее напряжение (около 100 мВ). Собственно генератор собран 
+            на транзисторах VT1 и VT2, транзистор VT3 используется как 
+            предварительный усилитель, выходной усилитель собран на транзисторе 
+            VT6.</P>
+            <P>Остальные активные элементы использованы в устройстве АРУ. Этот узел состоит из выпрямителя на 
+            диодах VD1, VD2 по схеме удвоения, усилителя постоянного тока на 
+            транзисторе VT5 и регулирующего транзистора VT4, включенного в цепь 
+            питания задающего генератора. В такой системе АРУ выходное 
+            напряжение остается практически постоянным при изменении напряжения 
+            питания от 3,5 до 15 В. В генераторе можно применить любые 
+            кремниевые транзисторы, важно только, чтобы VT1-VT3 имели коэффициент 
+            передачи по току h<sub>21э</sub>&gt;150.</P>
+<p>&nbsp;</p>
+
+<p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+  <caption>Перечень элементов</caption>
+  <thead>
+    <tr>
+		  <th>Обозначение</th>
+			<th>Наименование</th>
+			<th>Номинал</th>
+			<th>Количество</th>
+			<th>Примечание/замена</th>
+    </tr>
+  </thead>
+  <tbody>
+		<tr>
+			<td align="left">C1</td>
+			<td align="left">Конденсатор</td>
+			<td align="center">5 мкФ</td>
+			<td align="center">1</td>
+			<td>&nbsp;</td>
+		</tr>
+    <tr>
+      <td align="left">C2 &#8212; С4 </td>
+      <td align="left">Конденсатор</td>
+      <td align="center">0,22 мкФ</td>
+      <td align="center">3</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">С5</td>
+      <td align="left">Конденсатор электролитический </td>
+      <td align="center">10 мкФ/16В </td>
+      <td align="center">1</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R1, R10</td>
+      <td align="left">Резистор</td>
+      <td align="center"> 1 кОм</td>
+      <td align="center">2</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R2</td>
+			<td align="left">Резистор</td>
+			<td align="center"> 10 Ом</td>
+			<td align="center">1</td>
+			<td>&nbsp;</td>
+		</tr>
+    <tr>
+      <td align="left">R3</td>
+      <td align="left">Резистор</td>
+      <td align="center"> 470 кОм</td>
+      <td align="center">1</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R4</td>
+			<td align="left">Резистор</td>
+			<td align="center"> 2,2 МОм</td>
+			<td align="center">1</td>
+			<td>&nbsp;</td>
+		</tr>
+    <tr>
+      <td align="left">R5</td>
+      <td align="left">Резистор</td>
+      <td align="center"> 330 Ом</td>
+      <td align="center">1</td>
+      <td>&nbsp;</td>
+    </tr>
+		<tr>
+			<td align="left">R6, R7 </td>
+			<td align="left">Резистор</td>
+			<td align="center"> 1,5 кОм</td>
+			<td align="center">2</td>
+			<td>&nbsp;</td>
+	  </tr>
+		<tr>
+			<td align="left">R8</td>
+								      <td align="left">Резистор</td>
+								      <td align="center"> 100 кОм</td>
+								      <td align="center">1</td>
+			<td>&nbsp;</td>
+	  </tr>
+		<tr>
+			<td align="left">R9</td>
+								      <td align="left">Резистор</td>
+								      <td align="center"> 33 кОм</td>
+								      <td align="center">1</td>
+			<td>&nbsp;</td>
+	  </tr>
+		<tr>
+      <td align="left">VD1, VD2</td>
+			<td align="left">Диод</td>
+			<td align="center">КД503А</td>
+			<td align="center">2</td>
+			<td>1N4148</td>
+	  </tr>
+		<tr>
+      <td align="left">VT1 &#8212; VT3</td>
+			<td align="left">Биполярный транзистор</td>
+			<td align="center"> КТ361Б</td>
+			<td align="center">2</td>
+			<td> КТ361Г,BC252, BC172C </td>
+	  </tr>
+		<tr>
+      <td align="left">VT4 &#8212; VT6</td>
+			<td align="left">Биполярный транзистор</td>
+			<td align="center">КТ315Б</td>
+			<td align="center">2</td>
+			<td>КТ315Г,BC172B, BF241 </td>
+	  </tr>
+  </tbody>
+</table>
+						<br>
+
+  <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	<hr>
+<h3>Источники:</h3>
+<p><a href="https://radiostorage.net/3011-neslozhnyj-tranzistornyj-lc-generator-zvukovoj-chastoty-zch.html" target="_blank">radiostorage.net - Несложный транзисторный LC-генератор звуковой частоты (ЗЧ)
+</a></p>
+
+<p><a href="https://www.radioingener.ru/universalnyj-lc-generator/" target="_blank">radioingener.ru - УНИВЕРСАЛЬНЫЙ L/C ГЕНЕРАТОР
+</a></p>
+
+  </div>
+	
+	
+  <div id="footer">    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2022</p>
+
+  </div>
+  
+</div>
+
+</body>
+</html>

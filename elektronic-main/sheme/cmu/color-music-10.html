@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ЦМУ на лампах накаливания-3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Цветомузыкальная установка на лампах накаливания (вариант 3)</h1>
+
+	<p>Цветомузыкальное устройство (рис. 1) состоит из трех основных блоков: </p>
+	<ul>
+	  <li>предварительного усилителя на транзисторах VТ1 и VТ2, необходимого для усиления звуковой частоты, </li>
+	  <li>трех фильтров на транзисторе VТЗ </li>
+	  <li>трех усилителей мощности, собранных по аналогичным составным схемам. </li>
+	  </ul>
+	<p>Нагрузками усилителей служат микролампочки  на 2,5 В, 75 мА.</p>
+
+  <figure>
+	<a href="color-music-10_files/cmu-10-shema.png" target="_blank">
+	  <img src="color-music-10_files/cmu-10-shema.png" width="860" border="0"></a>	
+	<figcaption>Рис. 1 - Схема электрическая принципиальная цветомузыкальной установки</figcaption>
+</figure>
+
+
+<p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Перечень элементов цветомузыкальной установки</caption>
+<thead>
+  <tr>
+	  <th>Обозначение</th>
+					<th>Тип</th>
+					<th>Номинал</th>
+					<th>Количество</th>
+					<th>Примечание</th></tr>
+</thead>
+<tbody>
+<tr><td align="left">C1</td>
+    <td align="left">Конденсатор электролитический </td>
+    <td align="center">5 мкФ - 10 В</td>
+    <td align="center">1</td>
+    <td align="left">&nbsp;</td>
+</tr><tr><td align="left">C2</td>
+    <td align="left">Конденсатор электролитический </td>
+    <td align="center">10 мкФ - 10 В</td>
+    <td align="center">1</td>
+    <td align="left">&nbsp;</td>
+</tr><tr><td align="left">C3-C5</td>
+    <td align="left">Конденсатор</td>
+    <td align="center">см. табл. 2 </td>
+    <td align="center">3</td>
+    <td align="left">&nbsp;</td>
+</tr><tr>
+  <td align="left">HL1</td>
+    <td align="left">Лампа накаливания</td>
+    <td align="center">2,5 В / 75 мА</td>
+    <td align="center">1</td>
+    <td>&nbsp;</td>
+		</tr>
+<tr><td align="left">R1</td>
+    <td align="left">Резистор</td>
+    <td align="center">620 кОм - 0,125 Вт </td>
+    <td align="center">1</td>
+    <td>&nbsp;</td>
+</tr><tr>
+  <td align="left">R2, R4</td>
+    <td align="left">Резистор</td>
+    <td align="center">10 кОм - 0,125 Вт</td>
+    <td align="center">2</td>
+    <td>&nbsp;</td>
+</tr><tr><td align="left">R3</td>
+    <td align="left">Резистор</td>
+    <td align="center">7,5 кОм - 0,125 Вт</td>
+    <td align="center">1</td>
+    <td>&nbsp;</td>
+</tr><tr>
+  <td align="left">R5</td>
+    <td align="left">Резистор</td>
+    <td align="center">470 кОм - 0,125 Вт</td>
+    <td align="center">1</td>
+    <td>&nbsp;</td>
+</tr><tr><td align="left">R6</td>
+    <td align="left">Резистор</td>
+    <td align="center">5,1 кОм - 0,125 Вт</td>
+    <td align="center">1</td>
+    <td>&nbsp;</td>
+</tr><tr><td align="left">R7</td>
+    <td align="left">Резистор</td>
+					<td align="center">4,7 кОм - 0,125 Вт</td>
+    <td align="center">1</td>
+    <td>&nbsp;</td>
+</tr><tr><td align="left">R8</td>
+    <td align="left">Резистор</td>
+    <td align="center">220 кОм - 0,125 Вт</td>
+    <td align="center">1</td>
+    <td>&nbsp;</td>
+</tr><tr><td align="left">R9</td>
+    <td align="left">Резистор</td>
+					<td align="center">3,3 кОм - 0,125 Вт</td>
+    <td align="center">1</td>
+    <td>&nbsp;</td>
+</tr><tr><td align="left">R10</td>
+    <td align="left">Резистор</td>
+    <td align="center">2 кОм - 0,125 Вт</td>
+    <td align="center">1</td>
+    <td>&nbsp;</td>
+</tr><tr><td align="left">R11</td>
+    <td align="left">Резистор</td>
+					<td align="center">2,2 кОм - 0,125 Вт</td>
+    <td align="center">1</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+  <td align="left">R12</td>
+  <td align="left">Резистор</td>
+  <td align="center">62 кОм - 0,125 Вт</td>
+  <td align="center">1</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td align="left">VТ1</td>
+    <td align="left">Биполярный транзистор</td>
+    <td align="center">МП40</td>
+    <td align="center">1</td>
+    <td>&nbsp;</td>
+</tr><tr>
+  <td align="left">VТ2-VТ5</td>
+    <td align="left">Биполярный транзистор</td>
+    <td align="center">МП16</td>
+    <td align="center">4</td>
+    <td>&nbsp;</td>
+</tr><tr>
+  <td align="left">VD1</td>
+    <td align="left">Диод</td>
+    <td align="center">Д220</td>
+    <td align="center">1</td>
+    <td>&nbsp;</td>
+</tr>
+		</tbody>
+		</table>
+<p>В зависимости от пропускаемых частот (выбранного числа каналов) в фильтре каждого канала емкости конденсаторов C3 - С5 имеют номиналы, указанные в табл.  2. Диод VD1 необходим для выделения на входе усилителя мощности отрицательной составляющей с тем, чтобы транзистор VТ4 был всегда открыт. </p>
+<p class="tab_num">Таблица 2</p>
+<table width="400" border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>
+Емкости конденсаторов C3—С5 в зависимости от числа каналов 
+</caption>
+  <tbody><tr>
+    <th colspan="2">3 канала </th>
+			<td rowspan="6" align="right">&nbsp;</td>
+			<th colspan="2">4 канала </th>
+		</tr>
+		<tr><th>Цвет</th>
+			<th>С, мкФ</th>
+			<th>Цвет</th>
+			<th>С, мкФ</th>
+		</tr><tr><td align="left">Красный</td>
+			<td align="center">0,1</td>
+			<td align="left">Красный</td>
+			<td align="center">0,1</td>
+		</tr><tr><td align="left">Зеленый</td>
+			<td align="center">0,03</td>
+			<td align="left">Желтый</td>
+			<td align="center">0,047</td>
+		</tr><tr><td align="left">Синий</td>
+			<td align="center">0,01</td>
+			<td align="left">Зеленый</td>
+			<td align="center">0,022</td>
+		</tr><tr><td align="center">&nbsp;</td>
+			<td align="center">&nbsp;</td>
+			<td align="left">Синий</td>
+			<td align="center">0,01</td>
+		</tr></tbody></table>
+<p>Для включения и выключения питания устройства служит клавишный выключатель SA1.<br>
+Транзисторы и диоды, за исключением транзистора VТ5, могут быть использованы любые низкочастотные.  </p>
+
+<p>Настройка цветомузыкальной установки сводится к подбору оптимальных режимов работы каскадов и полос пропускания  фильтров. Резистором R1 устанавливают  ток коллектора транзистора VТ1, равный 0,3 мА. Резистором R5 подбирают коллекторный ток транзистора VТ2, равный 0,5—0,8 мА. Затем устанавливают коэффициент усиления фильтров одинаковым для всех трех каналов. Полосу пропускания фильтров подбирают при помощи резисторов R10 и R11, вместо которых на время настройки ставятся подстроечные резисторы. В режиме отсутствия входного сигнала подбирают резистор R12 таким образом, чтобы лампа HL1 была на пороге загорания.</p>
+
+<p>Необходимо отметить сравнительно небольшой потребляемый ток (50—60 мА при напряжении 9 В), который позволяет успешно использовать описанное устройство в переносных устройствах.</p>
+
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	<hr>
+	
+	
+<h3>Источники:</h3>
+<p><a href="http://cxem.net/sound/light/light11.php"  target="_blank">cxem.net - Цветомузыкальное малогабаритное устройство</a></p>
+<p>В помощь радиолюбителю, №58, с.27 -31</p>
+
+<!--
+<p><a href=""></a></p>
+ -->
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2024</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

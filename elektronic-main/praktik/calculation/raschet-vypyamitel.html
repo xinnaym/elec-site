@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Расчет выпрямителей напряжения</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+
+  <h1>Расчет выпрямителей напряжения</h1>
+
+  <h2>Однополупериодный выпрямитель</h2>
+  <p>Основные параметры однополупериодного выпрямителя:</p>
+  <ul>
+    <li>Среднее значение выпрямленного напряжения: 
+      <p class="formula">U<sub>ср</sub>=0,45U<sub>вх</sub></p></li>
+    <li>Действующее значение входного напряжения:
+		<p class="formula">U<sub>вх</sub>&asymp;2,22U<sub>ср</sub></p>
+    </li>
+    <li>Среднее значение выпрямленного тока:
+		<p class="formula"><img src="raschet-vypyamitel_files/f01.png" width="130" height="55"></p></li>
+    <li>Действующее значение тока во вторичной обмотке трансформатора:
+		<p class="formula">I<sub>2</sub>&asymp;1,57I<sub>ср</sub></p>
+		</li>
+    <li>Коэффициент пульсаций:
+		<p class="formula">p=1,57</p>
+		</li>
+  </ul>
+	
+  <figure>
+	  <a href="raschet-vypyamitel_files/diagram-1.jpg"><img src="raschet-vypyamitel_files/diagram-1.jpg" width="853" height="521" border="0" title="однополупериодный выпрямитель"></a>
+	<figcaption>Рис. 1 - Диаграмма напряжений однополупериодного выпрямителя </figcaption>
+	</figure>  
+	
+ 
+  
+	<h2>Двухполупериодный выпрямитель</h2>
+	
+  <h3>Схема выпрямления с выводом от средней точки трансформатора</h3>
+  
+	<p>Основные параметры двухполупериодного выпрямителя с выводом от средней точки трансформатора:</p>
+  <ul>
+    <li>Среднее значение выпрямленного напряжения: 
+      <p class="formula">U<sub>н ср</sub>=0,9U<sub>вх</sub></p>
+    </li>
+    <li>Действующее значение входного напряжения:
+		<p class="formula">U<sub>вх</sub>&asymp;1,11U<sub>н ср</sub></p>
+    </li>
+    <li>Среднее значение выпрямленного тока:
+		<p class="formula"><img src="raschet-vypyamitel_files/f02.png" width="120" height="55"></p>
+    </li>
+    <li>Действующее значение тока во вторичной обмотке трансформатора:
+		<p class="formula">I<sub>2</sub>&asymp;0,78I<sub>ср</sub></p>
+		</li>
+    <li>Коэффициент пульсаций:
+		<p class="formula">p=0,67</p>
+		</li>
+  </ul>
+	
+  <figure>
+	  <a href="raschet-vypyamitel_files/diagram-2.jpg">
+		<img src="raschet-vypyamitel_files/diagram-2.jpg" width="902" height="522" border="0" title="выпрямитель со средней точкой"></a>
+	<figcaption>Рис. 2 - Диаграмма напряжений схемы выпрямителя с выводом от средней точки трансформатора</figcaption>	
+	</figure> 
+  
+	
+	<h3>Мостовая схема выпрямителя</h3>
+	
+  <p>Параметры мостовой схемы выпрямителя  такие же, как и двухполупериодной схемы со средним выводом, кроме обратного напряжения - оно в два раза меньше.</p>
+  
+	
+  <figure>
+	  <a href="raschet-vypyamitel_files/vyp-2f-most.png">
+		<img src="raschet-vypyamitel_files/vyp-2f-most.png" width="446" height="245" border="0" title="выпрямитель со средней точкой"></a>
+	<figcaption>Рис. 3 - Схема мостового выпрямителя</figcaption>	
+	</figure>
+
+
+	<br>
+
+  <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+	<hr>
+<h3>Источники:</h3>
+
+<p><a href="http://fn.bmstu.ru/images/FN7/lab/Metodich_Vypryamitel_2023.pdf?ysclid=lrf6g08pbe991210937" target="_blank">fn.bmstu.ru - Исследование неуправляемых и управляемых выпрямителей: учебно – методическое пособие по выполнению лабораторной работы по курсу «Электротехника и электроника» С.А.Васюков, О.И. Мисеюк – М.: Изд. – во МГТУ им. Н.Э.Баумана,
+2023 – ,[ ] с.: ил</a></p>
+
+
+<!--
+<p><a href=""></a></p>
+ -->
+  </div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2024</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

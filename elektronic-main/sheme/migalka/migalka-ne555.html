@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Мигалка на микросхеме NE555</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+
+  
+  <div id="content">
+	<h1>Мигалка на микросхеме NE555</h1>
+	
+	
+
+  <p>Схема мигалки (рис. 1) построена на основе мультивибратора на микросхеме NE555. В формировании повторяющихся импульсов  участвуют резисторы R1, R2 и конденсатор С1. Время импульса (<span class="formula2">t<sub>1</sub></span>), время  паузы(<span class="formula2">t<sub>2</sub></span>) и период (<span class="formula2">T</span>) рассчитывают по формулам:</p>
+  <p class="formula">t<sub>1</sub>=ln2(R<sub>1</sub>+R<sub>2</sub>)C=0,693(R<sub>1</sub>+R<sub>2</sub>)C</p>
+  <p class="formula">t<sub>2</sub>=ln2R<sub>2</sub>C=0,693R<sub>2</sub>C</p>
+  <p class="formula">T=ln2(R<sub>1</sub>+2R<sub>2</sub>)C=0,693(R<sub>1</sub>+2R<sub>2</sub>)C. </p>
+  <figure>
+	  <img src="migalka-ne555_files/migalka-ne555.png" width="800" height="480" border="0">
+	<figcaption>Рис. 1 - Схема  мигалки на микросхеме NE555</figcaption>
+	</figure>
+	
+	<p class="tab_num">Таблица 1</p>
+	
+  <table border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>Перечень элементов</caption>
+    <tr>
+      <th>Позиционное<br>
+        обозначение </th>
+      <th>Наименование</th>
+      <th>Номинал</th>
+      <th>Кол-во</th>
+      <th>Замена</th>
+    </tr>
+    <tr>
+      <td align="left">HL1, HL2 </td>
+      <td align="left"> Светодиод </td>
+      <td align="center">АЛ307 </td>
+      <td align="center">2</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">C1</td>
+      <td align="left">Конденсатор электролитический  </td>
+      <td align="center">1 мкФ / 10В </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">C2</td>
+      <td align="left">Конденсатор </td>
+      <td align="center">0, 01 мкФ</td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">D1</td>
+      <td align="left">Микросхема</td>
+      <td align="center">NE555</td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R1, R2 </td>
+      <td align="left">Резистор постоянный </td>
+      <td align="center">270 кОм </td>
+      <td align="center">2</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R1, R2 </td>
+      <td align="left">Резистор постоянный </td>
+      <td align="center">300 Ом </td>
+      <td align="center">2</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">SA1</td>
+      <td align="left">Выключатель</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+  </table>
+	
+	
+  <p>В  момент подачи питания конденсатор С1 разряжен, что переводит выход таймера в  состояние высокого уровня. Затем С1 начинает заряжаться, набирая ёмкость до  верхнего порогового значения 2/3U<sub>пит</sub>. Достигнув порога ИМС  переключается, и на выходе появляется низкий уровень сигнала. Начинается  процесс разряда конденсатора, который продолжается до нижнего  порогового значения 1/3U<sub>пит</sub>. По его достижении происходит обратное  переключение, и на выходе таймера устанавливается высокий уровень сигнала. В  результате схема переходит в автоколебательный режим. </p>
+  <p> Сопротивление резисторов R3 и R4 можно рассчитать по формуле:</p>
+  <p class="formula"> R=(U<sub>вых</sub>-U<sub>св</sub>)/I<sub>св</sub>,</p>
+  <p> где</p>
+  <p><span class="formula2">U<sub>вых</sub></span> – амплитудное значение  напряжения на выводе 3 таймера, В.</p>
+  <p><span class="formula2">U<sub>св</sub></span> – &nbsp;рабочее напряжение на светодиоде, В.</p>
+  <p><span class="formula2">I<sub>св</sub></span> – &nbsp;ток через светодиод, А. </p>
+  <p>В  зависимости от типа применяемой микросхемы NE555, её нагрузочной способности (КМОП  или ТТЛ) количество подключаемых светодиодов может быть уыеличено. Если использовать светодиоды мощностью более 0,5 Вт, то схему нужно дополнить транзистором, нагрузкой которого станет светодиод. </p>
+  <p>Если микросхему устанавливать на специальный разъем, то получится прибор для проверки микросхем NE555. </p>
+  <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+<hr>
+
+  <h3>Источники</h3>
+<p><a href="https://vip-cxema.org/index.php/home/obzory-i-testy/258-stend-dlya-testov-tajmerov-555"  target="_blank">vip-cxema.org - Стенд для тестирования таймеров 555</a></p>
+
+  <p><a href="https://dzen.ru/a/XPeyYziOIQCvBdSI?utm_referer=yandex.ru"  target="_blank">dzen.ru - Тестер для проверки микросхем NE555</a></p>
+
+  <p><a href="https://alldiy.top/samodelnye-izmeritelnye-ustrojstva-testery/tester-ne555-dlya-proverki-mikroshemy-555-tajmera.html"  target="_blank">alldiy.top - Тестер NE555</a></p>
+	
+<!--<h3>Источники</h3> -->
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+</div>
+	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2023</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

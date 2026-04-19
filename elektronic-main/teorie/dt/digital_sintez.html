@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Синтез цифровых схем</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+
+<h1>Синтез цифровых схем</h1>
+
+<P>В электронике довольно часто используют понятие «черный ящик». В электронике «черный ящик» – это некая схема, которая имеет некоторое количество входов и выходов, и мы точно знаем, как она себя ведет. То есть, можно предсказать, что получится на выходе, если  на вход подать определенный сигнал. Схема черного ящика описывается математическим выражением вида:  </P>
+    <P class="formula"><em>y</em> = f(<em>x</em>),</P>
+      <P>где <BR>
+        <em class="formula2">х</em> – входной сигнал <BR>
+        <span class="formula2"><em>y</em></span> – выходной сигнал. </P>
+				
+<figure>
+<IMG src="digital_sintez_files/black.png">
+<figcaption>Рис. 1 - Черный ящик</figcaption>
+</figure>
+
+<P>Пусть имеется некий элемент с двумя входами и одним выходом, и известна его таблица истинности (табл. 1). Необходимо разработать схему этого элемента на основе логических элементов.</P>
+<p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+        <tr>
+          <th width="50">X1</th>
+          <th width="50">X2</th>
+          <th width="50">Y</th>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+      </table>
+
+
+<P>Для этого необходимо рассмотреть позиции таблицы истинности, в которых выходной сигнал равен 1. </P>
+<P>Из таблицы 2 видно, что единица на входе <strong>X2</strong> в любом случае приводит к единице на выходе. </P>
+<p class="tab_num">Таблица 2</p>
+      <table width="150" border="1" align="center" cellpadding="3" cellspacing="0">
+        <tr>
+          <th>X1</th>
+          <th>X2</th>
+          <th>Y</th>
+        </tr>
+        <tr>
+          <td align="center" valign="middle">0</td>
+          <td align="center" valign="middle">0</td>
+          <td align="center" valign="middle">1</td>
+        </tr>
+        <tr>
+          <td align="center" valign="middle">0</td>
+          <td align="center" valign="middle" bgcolor="#FF0000">1</td>
+          <td align="center" valign="middle" bgcolor="#FF0000">1</td>
+        </tr>
+        <tr>
+          <td align="center" valign="middle">1</td>
+          <td align="center" valign="middle">0</td>
+          <td align="center" valign="middle">0</td>
+        </tr>
+        <tr>
+          <td align="center" valign="middle">1</td>
+          <td align="center" valign="middle" bgcolor="#FF0000">1</td>
+          <td align="center" valign="middle" bgcolor="#FF0000">1</td>
+        </tr>
+      </table>
+
+<P>Значит, мы можем соединить вход <STRONG>X2</STRONG> напрямую с выходом <STRONG>Y.</STRONG> Но есть еще одна единица на выходе – когда на оба входа поданы нули. Это можно реализовать с помощью элемента «ИЛИ-НЕ» (рис. 2).</P>
+			
+<figure>
+<IMG src="digital_sintez_files/sintez-1a.png">
+<figcaption>Рис. 2 - Составные части схемы по таблице 1</figcaption>
+</figure>
+
+<P>Объединим эти две схемы в одну. Необходимо помнить, что непосредственно соединять цифровые выходы нельзя. Значит надо их соединить через элемент, который должен выдавать 
+единицу на выход в случае, если хотя бы на одном входе есть единица. Для этого подходит элемент «ИЛИ». Результат показан на рисунке 3.</P>
+
+<figure>
+<img src="digital_sintez_files/sintez-1b.png">
+<figcaption>Рис. 3 - Схема синтезированная по таблице 1 </figcaption>
+</figure>
+
+
+
+<P>Рассмотрим синтез схемы имеющей три входа и один выход (табл. 3). </P>
+
+<p class="tab_num">Таблица 3</p>
+
+      <table border="1" align="center" cellpadding="3" cellspacing="0">
+        <tr>
+          <th width="50">X1</th>
+          <th width="50">X2</th>
+          <th width="50">X3</th>
+          <th width="50">Y</th>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+      </table>
+
+
+<P>Выделяем те строчки, в которых выходной сигнал равен 1 (табл. 4) и начертим для каждой выделенной строчки отдельную схему, используя только элементы «И» и «НЕ» (рис. 4).</P>
+<p class="tab_num">Таблица 4</p>
+  <table border="1" align="center" cellpadding="3" cellspacing="0">
+    <tr>
+      <th width="50">&nbsp;</th>
+      <th width="50">X1</th>
+      <th width="50">X2</th>
+      <th width="50">X3</th>
+      <th width="50">Y</th>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFF00" class="kodred">1</td>
+      <td bgcolor="#FFFF00">0</td>
+      <td bgcolor="#FFFF00">0</td>
+      <td bgcolor="#FFFF00">1</td>
+      <td bgcolor="#FFFF00">1</td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFF00" class="kodred">2</td>
+      <td bgcolor="#FFFF00">0</td>
+      <td bgcolor="#FFFF00">1</td>
+      <td bgcolor="#FFFF00">0</td>
+      <td bgcolor="#FFFF00">1</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFF00" class="kodred">3</td>
+      <td bgcolor="#FFFF00">1</td>
+      <td bgcolor="#FFFF00">0</td>
+      <td bgcolor="#FFFF00">0</td>
+      <td bgcolor="#FFFF00">1</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFF00" class="kodred">4</td>
+      <td bgcolor="#FFFF00">1</td>
+      <td bgcolor="#FFFF00">1</td>
+      <td bgcolor="#FFFF00">0</td>
+      <td bgcolor="#FFFF00">1</td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFF00" class="kodred">5</td>
+      <td bgcolor="#FFFF00">1</td>
+      <td bgcolor="#FFFF00">1</td>
+      <td bgcolor="#FFFF00">1</td>
+      <td bgcolor="#FFFF00">1</td>
+    </tr>
+  </table>
+
+
+<figure>
+<IMG src="digital_sintez_files/sintez-2a.png">
+<figcaption>Рис. 4 -  Составные части схемы по таблице 3 </figcaption>
+</figure>
+
+<P>Объединяем эти схемы в одну. При этом сокращается число инверторов (рис. 7).</P>
+
+<figure>
+<img src="digital_sintez_files/sintez-2b.png">
+<figcaption>Рис. 5 - Схема синтезированная по таблице 3 </figcaption>
+</figure>
+
+<P>В схеме имеется две группы входов – прямая и инверсная («обратная»). К ним  подключены элементы «И» согласно схемам, которые разработали до этого. Выходные сигналы элементов «И» объединяются при помощи пятивходового элемента «ИЛИ». </P>
+
+<p>При построении сложных логических схем с произвольной таблицей истинности   используется сочетание простейших схем "И" "ИЛИ" "НЕ".</p>
+<p>При построении схемы, реализующей произвольную таблицу истинности, каждый   выход анализируется (и строится схема) отдельно. Для реализации схемы можно   воспользоваться как схемами “И” так и схемами “ИЛИ”. Рассмотрим способ реализации   произвольной таблицы истинности основанный на логических элементах “И”.</p>
+<p>Для реализации таблицы истинности при помощи логических элементов "И"   достаточно рассмотреть только те строки таблицы истинности, которые содержат   логические "1" в выходном сигнале. Строки, содержащие в выходном сигнале   логический 0 в построении схемы не участвуют. Каждая строка, содержащая в   выходном сигнале логическую "1", реализуется схемой логического "И" с   количеством входов, совпадающим с количеством входных сигналов в таблице   истинности.</p>
+<p>Входные сигналы, описанные в таблице истинности логической единицей, подаются на вход этой схемы непосредственно, а входные сигналы, описанные в таблице истинности логическим нулем, подаются на вход этой же схемы "И" через инверторы.   Объединение сигналов с выходов схем "И", реализующих отдельные строки таблицы   истинности, производится при помощи схемы логического “ИЛИ”. Количество входов в схеме “ИЛИ” определяется количеством строк в таблице истинности, в которых в выходном сигнале присутствует логическая единица.</p>
+<p>Пусть необходимо реализовать таблицу   истинности, приведенную в таблице 5. </p>
+
+<p class="tab_num">Таблица 5</p>
+<table width="360" border="1" align="center" cellpadding="3" cellspacing="0">
+    <tr>
+      <th colspan="4">Входы</th>
+      <th colspan="2">Выходы</th>
+      </tr>
+    <tr>
+      <th>X0</th>
+      <th>X1</th>
+      <th>X2</th>
+      <th>X3</th>
+      <th>Y0</th>
+      <th>Y1</th>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle" bgcolor="#FF0000">0</td>
+      <td align="center" valign="middle" bgcolor="#FF0000">0</td>
+      <td align="center" valign="middle" bgcolor="#FF0000">0</td>
+      <td align="center" valign="middle" bgcolor="#FF0000">1</td>
+      <td align="center" valign="middle" bgcolor="#FF0000">1</td>
+      <td align="center" valign="middle">0</td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle" bgcolor="#00FF00">0</td>
+      <td align="center" valign="middle" bgcolor="#00FF00">1</td>
+      <td align="center" valign="middle" bgcolor="#00FF00">0</td>
+      <td align="center" valign="middle" bgcolor="#00FF00">1</td>
+      <td align="center" valign="middle" bgcolor="#00FF00">0</td>
+      <td align="center" valign="middle" bgcolor="#00FF00">1</td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle" bgcolor="#FF0000">0</td>
+      <td align="center" valign="middle" bgcolor="#FF0000">1</td>
+      <td align="center" valign="middle" bgcolor="#FF0000">1</td>
+      <td align="center" valign="middle" bgcolor="#FF0000">0</td>
+      <td align="center" valign="middle" bgcolor="#FF0000">1</td>
+      <td align="center" valign="middle">0</td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle" bgcolor="#00FF00">1</td>
+      <td align="center" valign="middle" bgcolor="#00FF00">0</td>
+      <td align="center" valign="middle" bgcolor="#00FF00">0</td>
+      <td align="center" valign="middle" bgcolor="#00FF00">1</td>
+      <td align="center" valign="middle" bgcolor="#00FF00">0</td>
+      <td align="center" valign="middle" bgcolor="#00FF00">1</td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle" bgcolor="#FF0000">1</td>
+      <td align="center" valign="middle" bgcolor="#FF0000">1</td>
+      <td align="center" valign="middle" bgcolor="#FF0000">0</td>
+      <td align="center" valign="middle" bgcolor="#FF0000">0</td>
+      <td align="center" valign="middle" bgcolor="#FF0000">1</td>
+      <td align="center" valign="middle">0</td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">1</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+      <td align="center" valign="middle">0</td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle" bgcolor="#00FF00">1</td>
+      <td align="center" valign="middle" bgcolor="#00FF00">1</td>
+      <td align="center" valign="middle" bgcolor="#00FF00">1</td>
+      <td align="center" valign="middle" bgcolor="#00FF00">1</td>
+      <td align="center" valign="middle" bgcolor="#00FF00">0</td>
+      <td align="center" valign="middle" bgcolor="#00FF00">1</td>
+    </tr>
+  </table>
+
+<p>Для построения схемы, реализующей сигнал Y1, необходимо  рассмотреть строки, выделенные красным цветом. Эти строки реализуются микросхемой DD2 на рисунке 6. Каждая строка реализуется своей схемой "И", затем выходы этих схем объединяются. Количество входов элемента "И" однозначно определяется количеством входных сигналов в таблице истинности. Количество этих элементов, а значит и количество входов в логическом элементе "ИЛИ" определяется количеством строк с единичным сигналом на реализуемом выходе схемы.</p>
+<p>Для построения схемы, реализующей сигнал Y2, рассматриваем строки, выделенные зеленым цветом. Эти строки реализуются микросхемой DD3.</p>
+
+<figure>
+  <img src="digital_sintez_files/sintez-3.png">
+ <figcaption>Рис. 6 - Схема синтезированная по таблице 5</figcaption>
+</figure>
+
+
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+<P><A href="https://radiokot.ru/start/digital/basics/06/" target=_blank>radiokot.ru - Синтез цифровых схем</A></P>
+  <p><a href="http://cxem.net/beginner/beginner41.php"  target="_blank">cxem.net - Синтез цифровых схем</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2024</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

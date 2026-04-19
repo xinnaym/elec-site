@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>C++ для  Arduino</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+<style>
+hr {
+margin:4px 10px;
+
+}
+</style>
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cdutt-str.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>C++ для  Arduino</h1>
+	<h1>Программирование Arduino</h1>
+	
+  <p>После сборки  схемы с Arduino  нужно составить и загрузить программу управления. <em>Программа</em> – это последовательность действий, которые необходимо выполнить  для решения поставленной задачи. <!--Смысл программирования Arduino состоит из следующих элементов:</p>
+  <ul>
+    <li>ввод информации;</li>
+    <li>обработка введенной информации;</li>
+    <li> вывод обработанной информации.</li>
+  </ul> -->
+  <p>Программа для Arduino называется <em>скетч</em> (<em>sketch</em>). Для программирования Arduino используется упрощенная версия языка программирования C++ адаптированная для Arduino. В скетче Arduino, операторы программы (команды, инструкции), выполняются сверху вниз. Эта последвательность может быть изменено  операторами управления.</p>
+  <p>Скетч состоит из двух основных функций:</p>
+  <ul>
+    <li><span class="kod2">setup()</span> -  это функция в которой задавются  основные настройки: режимы работы выводов (вход или выход),  подключение библиотек , инициализия переменных. Функция <span class="kod3">setup()</span>запускается только один раз в течение скетча, когда стартует выполнение программы.</li>
+    <li><span class="kod2">loop()</span> - это основная функция, которая выполняется после<span class="kod3"> setup()</span>. Это функция будет выполняться бесконечно, пока вы не выключите питание.</li>
+    </ul>
+<p>Как и в других языках программирования, есть ряд правил написания исходного кода. Основные из них:</p>
+  <ul>
+    <li>Ключевые слова, такие как <span class="kod3">if</span>, <span class="kod3">for</span> всегда записываются в нижнем регистре.</li>
+    <li>После каждого оператора необходимо ставить знак точки с запятой (<span class="kod2">;</span>).</li>
+    <li>Фигурные с кобки <span class="kod3">{..}</span> используются для обозначения программных блоков. Мы используем их для ограничения тела функции (см. ниже), циклов и условных операторов.</li>
+    <li>Перед объявлением функции необходимо указать тип данных, возвращаемый функцией или void если функция не возвращает значение.</li>
+    <li>Перед объявлением переменной необходимо указывать тип данных.</li>
+    <li>Хорошей привычкой является добавление комментариев к содержимому программы. Это помогает легко понять код.</li>
+  </ul>
+
+<p>Ниже представлены основные элементы упрощенной версии языка программирования C++ используемые для программирования микроконтроллеров Arduino. Кроме этих элементов, для упрощения разработки программ существует множество функций, классов, методов и библиотек.</p>
+<table width="100%" border="1" align="center" cellpadding="3" cellspacing="0">
+  <tr>
+    <th width="300"><a href="c_plus_operator.html" target="_blank">Операторы</a></th>
+    <th><a href="c_plus_data.html" target="_blank">Данные</a></th>
+    <th width="250"><a href="c_plus_func.html" target="_blank">Функции</a></th>
+  </tr>
+  <tr>
+    <td valign="top">
+      <ul>
+        <li><a href="c_plus_operator.html#m_setup">setup()</a></li>
+        <li><a href="c_plus_operator.html#m_loop">loop()</a></li>
+      </ul>
+			<hr>
+      <h4>Управляющие операторы</h4>
+      <ul>
+        <li><a href="c_plus_operator.html#m_if">if</a></li>
+        <li><a href="c_plus_operator.html#m_ifelse">if…else</a></li>
+        <li><a href="c_plus_operator.html#m_for">for</a></li>
+        <li><a href="c_plus_operator.html#m_switch">switch</a></li>
+        <li><a href="c_plus_operator.html#m_while">while</a></li>
+        <li><a href="c_plus_operator.html#m_dowhile">do… while</a></li>
+        <li><a href="c_plus_operator.html#m_break">break</a></li>
+        <li><a href="c_plus_operator.html#m_continue">continue</a></li>
+        <li><a href="c_plus_operator.html#m_return">return</a></li>
+        <li><a href="c_plus_operator.html#m_goto">goto</a></li>
+      </ul>
+			<hr>
+      <h4>Синтаксис</h4>
+      <ul>
+        <li><a href="c_plus_sintaksis.html#m_dot1">; (точка с запятой)</a></li>
+        <li><a href="c_plus_sintaksis.html#m_figskob">{} (фигурные скобки)</a></li>
+        <li><a href="c_plus_sintaksis.html#m_com1">// (одностроковый коментарий)</a></li>
+        <li><a href="c_plus_sintaksis.html#m_multcom">/* */ (многостроковый коментарий)</a></li>
+        <li><a href="c_plus_sintaksis.html#m_define">#define</a></li>
+        <li><a href="c_plus_sintaksis.html#m_include">#include</a></li>
+      </ul>
+			<hr>
+      <h4>Арифметические операторы</h4>
+      <ul>
+        <li><a href="c_plus_arifmet.html#m_let">= (оператор присваивания)</a></li>
+        <li><a href="c_plus_arifmet.html#m_op">+ (сложение)</a></li>
+        <li><a href="c_plus_arifmet.html#m_op">— (вычитание)</a></li>
+        <li><a href="c_plus_arifmet.html#m_op">* (умножение)</a></li>
+        <li><a href="c_plus_arifmet.html#m_op">/ (деление)</a></li>
+        <li><a href="c_plus_arifmet.html#m_mod">% (остаток от деления)</a></li>
+        <li><a href="c_plus_arifmet.html#m_inc">++ (инкремент)</a></li>
+        <li><a href="c_plus_arifmet.html#m_inc">-- (декремент)</a></li>
+        <li><a href="c_plus_arifmet.html#m_sop">+= (составное сложение)</a></li>
+        <li><a href="c_plus_arifmet.html#m_sop">-= (составное вычитание)</a></li>
+        <li><a href="c_plus_arifmet.html#m_sop">*= (составное умножение)</a></li>
+        <li><a href="c_plus_arifmet.html#m_sop">/= (составное деление)</a></li>
+      </ul>
+			<hr>
+      <h4>Операторы сравнения</h4>
+      <ul>
+        <li><a href="c_plus_logic.html#m_if">== (равно)</a></li>
+        <li><a href="c_plus_logic.html#m_if">!= (не равно)</a></li>
+        <li><a href="c_plus_logic.html#m_if">&lt; (меньше чем)</a></li>
+        <li><a href="c_plus_logic.html#m_if">&gt; (больше чем)</a></li>
+        <li><a href="c_plus_logic.html#m_if">&lt;= (меньше или равно)</a></li>
+        <li><a href="c_plus_logic.html#m_if">&gt;= (больше или равно)</a></li>
+      </ul>
+			<hr>
+      <h4>Логические операторы</h4>
+      <ul>
+        <li><a href="c_plus_logic.html#m_and">&amp;&amp; (И)</a></li>
+        <li><a href="c_plus_logic.html#m_or">|| (ИЛИ)</a></li>
+        <li><a href="c_plus_logic.html#m_not">! (НЕ)</a></li>
+      </ul>
+			<hr>
+      <h4>Указатели доступа</h4>
+      <ul>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/Pointer">* указатель</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/Pointer">&amp; ссылка</a></li>
+      </ul>
+			<hr>
+      <h4>Битовые операторы</h4>
+      <ul>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/BitwiseAnd">&amp; (побитовое И)</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/BitwiseAnd">| (побитовое ИЛИ)</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/BitwiseAnd">^ (побитовое XOR)</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/BitwiseCompoundAnd">&amp;= (составное побитовое И)</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/BitwiseCompoundOr">|= (составное побитовое ИЛИ)</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/BitwiseXorNot">~ (побитовое НЕ)</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/Bitshift">&lt;&lt; (побитовый сдвиг влево)</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/Bitshift">&gt;&gt; (побитовый сдвиг вправо)</a></li>
+      </ul>
+    </td>
+    <td valign="top">
+      <h4>Константы</h4>
+      <ul>
+        <li><a href="c_plus_data.html#m_high">HIGH</a> | <a href="c_plus_data.html#m_low">LOW</a></li>
+        <li><a href="c_plus_data.html#m_input">INPUT</a> | <a href="c_plus_data.html#m_output">OUTPUT</a>| <a href="c_plus_data.html#m_pullup">INPUT_PULLUP</a></li>
+        <li><a href="c_plus_data.html#m_true">true</a> | <a href="c_plus_data.html#m_false">false</a></li>
+        <li><a href="c_plus_data.html#m_intconst">целочисленные константы</a></li>
+        <li><a href="c_plus_data.html#m_constfloat">константы с плавающей точкой</a></li>
+      </ul>
+			<hr>
+      <h4>Типы данных</h4>
+      <ul>
+        <li><a href="c_plus_data.html#m_void">void</a></li>
+        <li><a href="c_plus_data.html#m_boolean">boolean</a></li>
+        <li><a href="c_plus_data.html#m_char">char</a></li>
+        <li><a href="c_plus_data.html#m_uchar">unsigned char</a></li>
+        <li><a href="c_plus_data.html#m_byte">byte</a></li>
+        <li><a href="c_plus_data.html#m_int">int</a></li>
+        <li><a href="c_plus_data.html#m_uint">unsigned int</a></li>
+        <li><a href="c_plus_data.html#m_word">word</a></li>
+        <li><a href="c_plus_data.html#m_long">long</a></li>
+        <li><a href="c_plus_data.html#m_ulong">unsigned long</a></li>
+        <li><a href="c_plus_data.html#m_short">short</a></li>
+        <li><a href="c_plus_data.html#m_float">float</a></li>
+        <li><a href="c_plus_data.html#m_double">double</a></li>
+        <li><a href="c_plus_data.html#m_string">string — массив символов</a></li>
+        <li><a href="c_plus_data.html#m_ostring">String — объект</a></li>
+        <li><a href="c_plus_data.html#m_array">массивы</a></li>
+      </ul>
+			<hr>
+      <h4>Преобразование типов</h4>
+      <ul>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/CharCast">char()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/ByteCast">byte()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/IntCast">int()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/WordCast">word()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/LongCast">long()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/FloatCast">float()</a></li>
+      </ul>
+      <h4>Область видимости переменной и спецификаторы</h4>
+      <ul>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/Scope">Область видимости переменной</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/Static">static</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/Volatile">volatile</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/Const">const</a></li>
+      </ul>
+			<hr>
+      <h4>Вспомогательная функция</h4>
+      <ul>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/Sizeof">sizeof()</a></li>
+      </ul></td>
+			<!-- Функции -->
+    <td valign="top">
+      <h4>Цифровой ввод/вывод</h4>
+      <ul>
+        <li><a href="c_plus_func.html#m_pinmode">pinMode()</a></li>
+        <li><a href="c_plus_func.html#m_dwrite">digitalWrite()</a></li>
+        <li><a href="c_plus_func.html#m_dread">digitalRead()</a></li>
+      </ul>
+			<hr>
+      <h4>Аналоговый ввод/вывод</h4>
+      <ul>
+        <li><a href="c_plus_func.html#a_arefrence">analogReference()</a></li>
+        <li><a href="c_plus_func.html#a_read">analogRead()</a></li>
+        <li><a href="c_plus_func.html#a_write">analogWrite()</a></li>
+      </ul>
+			<hr>
+      <h4>Расширенный ввод/вывод</h4>
+      <ul>
+        <li><a href="c_plus_func.html#m_tone">tone()</a></li>
+        <li><a href="c_plus_func.html#m_ntone">noTone()</a></li>
+        <li><a href="c_plus_func.html#m_sout">shiftOut()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/ShiftIn">shiftIn()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/PulseIn">pulseIn()</a></li>
+      </ul>
+			<hr>
+      <h4>Время</h4>
+      <ul>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/Millis">millis()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/Micros">micros()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/Delay">delay()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/DelayMicroseconds">delayMicroseconds()</a></li>
+      </ul>
+			<hr>
+      <h4>Математические вычисления</h4>
+      <ul>
+        <li><a href="c_plus_match.html#m_min">min()</a></li>
+        <li><a href="c_plus_match.html#m_max">max()</a></li>
+        <li><a href="c_plus_match.html#m_abs">abs()</a></li>
+        <li><a href="c_plus_match.html#m_csn">constrain()</a></li>
+        <li><a href="c_plus_match.html#m_map">map()</a></li>
+        <li><a href="c_plus_match.html#m_pow">pow()</a></li>
+        <li><a href="c_plus_match.html#m_sqrt">sqrt()</a></li>
+        <li><a href="c_plus_match.html#m_sq">sq()</a></li>
+      </ul>
+			<hr>
+      <h4>Тригонометрия</h4>
+      <ul>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/Sin">sin()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/Cos">cos()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/Tan">tan()</a></li>
+      </ul>
+			<hr>
+      <h4>Случайные числа</h4>
+      <ul>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/RandomSeed">randomSeed()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/Random">random()</a></li>
+      </ul>
+			<hr>
+      <h4>Биты и байты</h4>
+      <ul>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/LowByte">lowByte()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/HighByte">highByte()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/BitRead">bitRead()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/BitWrite">bitWrite()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/BitSet">bitSet()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/BitClear">bitClear()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/Bit">bit()</a></li>
+      </ul>
+			<hr>
+      <h4>Внешние прерывания</h4>
+      <ul>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/AttachInterrupt">attachInterrupt()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/DetachInterrupt">detachInterrupt()</a></li>
+      </ul>
+			<hr>
+      <h4>Прерывания</h4>
+      <ul>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/Interrupts">interrupts()</a></li>
+        <li><a href="https://all-arduino.ru/programmirovanie-arduino/NoInterrupts">noInterrupts()</a></li>
+      </ul></td>
+  </tr>
+<!--  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+ --></table>
+
+
+	
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+<p><a href="https://all-arduino.ru/programmirovanie-arduino/"  target="_blank">all-arduino.ru - Программирование Arduino</a></p>  
+<p><a href="https://arduinoplus.ru/coding-arduino/"  target="_blank">arduinoplus.ru - Справочник программиста Arduino
+</a></p>
+
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2023</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

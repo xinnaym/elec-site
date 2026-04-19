@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Модуль KY-040</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cdutt-str.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+<h1>Модуль датчика угла поворота (энкодер) KY-040</h1>
+
+
+<p>Модуль энкодера KY-040 — датчик, который преобразует угловое вращение ручки в цифровой сигнал.</p>
+
+<figure>
+  <img src="ky-040-encoder_files/ky-040-foto.jpg" width="430" height="340" border="0">
+  <figcaption>Рис. 1 - Внешний вид модуля KY-040</figcaption>
+</figure>
+
+<p>Каждый энкодер имеет фиксированное количество циклов переключений на оборот, у KY-040 это число 30. Внутри энкодера находится медный диск с отверстиями соединенный с общей землей, назовем этот вывод &laquo;C&raquo; (рис. 2). Чем больше отверстия тем, точнее энкодер. Так же, есть два вывода, назовем их &laquo;А&raquo; и &laquo;B&raquo;, с которых мы снимает сигнал, так же эти выводы подтянуты к 5 В с помощью резисторов на 10 кОм. Если контакты &laquo;А&raquo; и &laquo;B&raquo; не касаются вывода диска &laquo;B&raquo; на их выходе будет 5 В.  Когда мы начнем вращать энкодер по часовой стрелке, вывод &laquo;А&raquo; коснется диска и на выходе получим «0 В», если продолжить вращать энкодер вывод «B» так же коснется диска и на выходе будет «0 В».</p>
+
+<figure>
+	<img src="ky-040-encoder_files/enkoder-1.jpg" width="254" height="180" border="0">
+  <figcaption>Рис. 2 - Устройство энкодера</figcaption>
+</figure>
+
+<p>Таким образом, когда  ручка поворачивается по часовой стрелке, сначала подключается вывод &laquo;А&raquo;, а затем вывод &laquo;B&raquo;. Когда ручка поворачивается против часовой стрелки, сначала подключается вывод &laquo;B&raquo;, а затем штифт &laquo;А&raquo;. Отслеживая, когда каждый вывод соединяется с землей и отсоединяется от нее, можно понять в каком направлении вращается ручка.</p>
+
+<figure>
+	<img src="ky-040-encoder_files/ky-040-circut.jpg" width="500" height="300" border="0">
+  <figcaption>Рис. 2 - Схема модуля KY-040</figcaption>
+</figure>
+
+
+
+<h4>Технические характеристики KY-040:</h4>
+ <ul>
+   <li>Напряжение питания &#8212; 4,5...5,5 В.</li>
+	 <li>Предельное напряжение на контактах &#8212; 5В.</li>
+	 <li>Предельный ток через контакты &#8212; 10 мА.</li>
+	 <li>Количество импульсов на один оборот &#8212; 24.</li>
+	 <li>Формат выходного сигнала &#8212; квадратурный код 2 бит</li>
+   <li>Поворот &#8212; на: 360&deg; в обе стороны. </li>
+   <li>Наличие кнопки &#8212; да.</li>
+   <li>Размеры &#8212; 26,2 &times;18,7&times; 29 мм.</li>
+	 <li>Температура эксплуатации &#8212; -30…70&deg;C</li>
+ </ul>
+<!-- -->
+
+ <p>Назначение выводов модуля KY-040 (рис. 1) представлено в таблице 1.</p>
+ <p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+  <tr>
+    <th>Контакт</th>
+    <th>Назначение</th>
+  </tr>
+  <tr>
+    <th align="center">CLK</th>
+    <td align="left">Выход CLK (Выход A) &#8212;   импульсы отсчета</td>
+  </tr>
+  <tr>
+    <th align="center">DT</th>
+    <td align="left"> Выход  DT (Выход B) &#8212; импульсы направления</td>
+  </tr>
+  <tr>
+    <th align="center">SW</th>
+    <td align="left">Вывод кнопки, когда кнопка нажата, напряжение «0 В»</td>
+  </tr>
+  <tr>
+    <th align="center">+ (VСС)</th>
+    <td align="left">Напряжение питания+5 В </td>
+  </tr>
+  <tr>
+    <th align="center"><strong>GND</strong></th>
+    <td align="left">Общий минусовой контакт (GND) </td>
+  </tr>
+</table>
+<br>
+
+<figure>
+	<a href="ky-040-encoder_files/ky-040-connect.png" target="_blank">
+	<img src="ky-040-encoder_files/ky-040-connect.png" width="860" border="0"></a>
+  <figcaption>Рис. 3 - Схема подключения модуля KY-040 к Arduino UNO</figcaption>
+</figure>
+
+<h4>Скетч: </h4>
+
+<div class="kod">
+<pre>#define CLK 2 //вывод CLK энкодера подключен к выводу 2 Arduino
+#define DT 3  //вывод DT энкодера подключен к выводу 3 Arduino
+#define SW 4  //вывод SW энкодера подключен к выводу 4 Arduino
+ 
+int counter = 0;                      // Создаем переменную counter
+int currentStateCLK;                  // Создаем переменную currentStateCLK
+int lastStateCLK;                     // Создаем переменную lastStateCLK
+String currentDir ="";                // Создаем 
+unsigned long lastButtonPress = 0;    // Создаем переменную lastBut
+ 
+void setup() 
+{
+  pinMode(CLK, INPUT);       // Указываем вывод CLK как вход
+  pinMode(DT, INPUT);        // Указываем вывод DT как вход
+  pinMode(SW, INPUT_PULLUP); //Указываем вывод SW как вход и включаем подтягивающий резистор
+  Serial.begin(9600);                 // Создаем последовательную связь 
+  lastStateCLK = digitalRead(CLK);    // Считываем значение с CLK
+}
+void loop() 
+{
+  currentStateCLK = digitalRead(CLK); // Считываем значение с CLK
+ 
+// Проверяем изменилось ли состояние CLK
+  if (currentStateCLK != lastStateCLK  && currentStateCLK == 1){
+    if (digitalRead(DT) != currentStateCLK) {
+      counter --;
+      currentDir ="CCW";
+    } else {
+      counter ++;
+      currentDir ="CW";
+    }
+    Serial.print("Direction: ");
+    Serial.print(currentDir);
+    Serial.print(" | Counter: ");
+    Serial.println(counter);
+  }
+ 
+  lastStateCLK = currentStateCLK;         // Запопоследнее состояние CLK
+  int btnState = digitalRead(SW);         // Считываем состояние вывода SW
+ 
+ 
+  if (btnState == LOW){                   // Если LOW, кнопка нажата
+    if (millis() - lastButtonPress > 50){ // Если LOW в течении 50 мкс, кнопка нажата 
+      Serial.println("Button pressed!");  // Вывод сообщения
+    }
+    lastButtonPress = millis();
+  }
+  delay(1);                               // Пауза
+}
+</pre>
+</div>
+
+<br>
+<br>
+    <a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+
+ <hr>
+<h3>Источники</h3>
+<p><a href="https://robotchip.ru/podklyuchenie-enkodera-ky-040-k-arduino/"  target="_blank">robotchip.ru - Подключение энкодера KY-040 к Arduino</a></p>
+
+<p><a href="https://xn--18-6kcdusowgbt1a4b.xn--p1ai/%D1%8D%D0%BD%D0%BA%D0%BE%D0%B4%D0%B5%D1%80-%D0%B0%D1%80%D0%B4%D1%83%D0%B8%D0%BD%D0%BE/"  target="_blank">роботехника18.рф - Подключение энкодера к Ардуино (KY-040)</a></p>
+
+<p><a href="https://portal-pk.ru/news/243-podklyuchaem-enkoder-k-arduino.html"  target="_blank">portal-pk.ru - Урок 17. Подключаем энкодер к Arduino</a></p>
+
+<!--<p><a href="http://funnydiy.net/1003"  target="_blank">funnydiy.net - Датчик сердцебиения KY-039 для Ардуино. Обзор</a></p>
+	
+<p><a href="https://tehdoc-study.ru/product/modul-datchika-serdtsebieniya-ky-039/"  target="_blank">tehdoc-study.ru - Модуль датчика сердцебиения KY-039</a></p>
+   
+ 
+<p><a href="https://arduino-tex.ru/news/52/ky-017-modul-rtutnogo-datchika-naklona.html"  target="_blank">arduino-tex.ru - KY-017 – модуль ртутного датчика наклона. Подключение к Arduino</a></p>
+--> 
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2021</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

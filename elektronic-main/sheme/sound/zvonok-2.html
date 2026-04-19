@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Простой звонок</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Простой звонок</h1>
+	
+<p>Звонок (рис. 1) собран на двух транзисторах разной структуры по схеме несимметричного мультивибратора. Частоту генерируемого звука подбирают вращением оси переменного резистора R1 и изменением емкости конденсатора С1. </p>
+  <figure><img src="zvonok-2_files/zvonok-2a.jpg" width="461" height="375">
+    <figcaption>Рис. 1 - Схема электрическая принципиальная простого звонка</figcaption>
+	</figure>
+
+	<p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+  <caption>
+  Перечень элементов простого звонка 
+  </caption>
+  <thead>
+    <tr>
+		  <th>Обозначение</th>
+			<th>Наименование</th>
+			<th>Номинал</th>
+			<th>Количество</th>
+			<th>Примечание</th>
+		</tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left">ВА1</td>
+			<td align="left">Динамическая головка</td>
+			<td align="center"> 0,25ГД-10 </td>
+			<td align="center">1</td>
+			<td align="left">8 Ом, 0,5 Вт </td>
+		</tr>
+		<tr>
+			<td align="left">C1</td>
+			<td align="left">Конденсатор  </td>
+			<td align="center">0,01 мкФ </td>
+			<td align="center">1</td>
+			<td align="left">&nbsp;</td>
+		</tr>
+    <tr>
+      <td align="left">GB1</td>
+      <td align="left">Батарейка</td>
+      <td align="center">4,5 В </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R1</td>
+      <td align="left">Резистор переменный </td>
+      <td align="center">100 кОм</td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+		<tr>
+		  <td align="left">SB1</td>
+		  <td align="left">Кнопочный выключатель </td>
+		  <td align="center">&nbsp;</td>
+		  <td align="center">1</td>
+		  <td align="left">без фиксации </td>
+		  </tr>
+		<tr>
+			<td align="left">VT1</td>
+			<td align="left">Транзистор биполярный</td>
+			<td align="center">КТ315Г</td>
+			<td align="center">1</td>
+			<td align="left">&nbsp;</td>
+	  </tr>
+		<tr>
+      <td align="left">VT2</td>
+			<td align="left">Транзистор биполярный </td>
+			<td align="center">КТ814А</td>
+			<td align="center">1</td>
+			<td align="left">&nbsp;</td>
+	  </tr>
+  </tbody>
+</table>
+
+	
+<p>Питание звонка можно сделать от сети или гальванической батареи. </p>
+
+<p>Включение звонка можно сделать  от сенсорных контактов (рис. 2). Мультивибратор начинает работать, когда касаются пальцем сенсорных контактов Е1 и Е2. В этот момент между коллектором транзистора VT2 и базой транзистора VT1 оказывается включенным сопротивление участка кожи пальца, и между каскадами появляется положительная обратная связь.</p>
+
+  <figure><img src="zvonok-2_files/zvonok-2b.jpg" width="382" height="328">
+    <figcaption>Рис. 2 - Схема электрическая принципиальная простого звонка с сенсорным контактом </figcaption>
+	</figure>
+
+	<p class="tab_num">Таблица 1</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+  <caption>
+  Перечень элементов простого звонка с сенсорным контактом
+  </caption>
+  <thead>
+    <tr>
+		  <th>Обозначение</th>
+			<th>Наименование</th>
+			<th>Номинал</th>
+			<th>Количество</th>
+			<th>Примечание</th>
+		</tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left">ВА1</td>
+			<td align="left">Головка динамическая </td>
+			<td align="center"> 0,25ГД-10 </td>
+			<td align="center">1</td>
+			<td align="left">8 Ом, 0,5 Вт </td>
+		</tr>
+    <tr>
+      <td align="left">E1, E2 </td>
+      <td align="left"> Контакты сенсорные</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">2</td>
+      <td align="left">самодельные</td>
+    </tr>
+    <tr>
+      <td align="left">GB1</td>
+      <td align="left">Батарейка</td>
+      <td align="center">4,5 В </td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="left">R1</td>
+      <td align="left">Резистор постоянный </td>
+      <td align="center">91 кОм</td>
+      <td align="center">1</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+		<tr>
+			<td align="left">VT1</td>
+			<td align="left">Транзистор биполярный</td>
+			<td align="center">КТ315Г</td>
+			<td align="center">1</td>
+			<td align="left">&nbsp;</td>
+	  </tr>
+		<tr>
+      <td align="left">VT2</td>
+			<td align="left">Транзистор биполярный </td>
+			<td align="center">КТ814А</td>
+			<td align="center">1</td>
+			<td align="left">&nbsp;</td>
+	  </tr>
+  </tbody>
+</table>
+
+
+<p>Сенсорные контакты представляют собой два металлических кольца из медной или латунной фольги  разного диаметра, которые расположены одно внутри другого.  В качестве сенсорных контактов можно использовать  переменный резистор: удалить крышку  и ось с ползунком, а оставшуюся часть использовать как сенсорные контакты (рис. 3).</p>
+
+  <figure><img src="zvonok-2_files/sensor2.png" width="480" height="240">
+<figcaption>Рис. 3 - Конструкция сенсорных контактов на основе переменного резистора</figcaption>
+	</figure>
+
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+
+
+<hr>
+<h3>Источники</h3>	
+  <p><a href="http://radiostorage.net/1719-skhema-prostogo-melodichnogo-zvonoka-dlya-kvartiry.html"  target="_blank">radiostorage.net - Схема простого мелодичного звонока для квартиры</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2024</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

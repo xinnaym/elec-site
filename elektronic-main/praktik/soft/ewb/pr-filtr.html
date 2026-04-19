@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Исследование АЧХ фильтров</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../../index.html">Главная</a></li>
+      <li><a href="../../../teorie.html">Теория</a></li>
+      <li><a href="../../../praktik.html">Практика</a></li>
+      <li><a href="../../../help.html">Справочники</a></li>
+      <li><a href="../../../sheme.html">Схемы</a></li>
+      <li><a href="../../../arduino.html">Arduino</a></li>
+      <li><a href="../../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+
+<h2 class="ewb">Electronics Workbench</h2>
+
+	<h1>Исследование частотных характеристик фильтров в программе<br>
+	  Electronics Workbench</h1>
+
+<p>Узнать о фильтрах можно <a href="../../../teorie/shemotehnika/filtr-2.html" target="_blank"> здесь</a></p>
+<ol>
+  <li>Запустите программу Electronics Workbench.</li>
+  <li>Соберите для исследования модель RC-фильтра  (рис. 1).	
+    <div class="ris">
+  <img src="pr-filtr_files/model1.png" width="613" height="278">
+  <p>Рис. 1 - Модель RC-фильтра </p>
+</div>
+</li>
+  <li>Установите свойства элементов схемы (табл. 1). <br>
+    Для установки свойств:
+		<ul>
+		<li>сделайте двойной щелчок на элементе;</li>
+		<li>откройте вкладку (Label или Value);</li>
+		<li>установите значения.</li>
+		</ul>
+		<p class="tab_num">Таблица 1</p>
+	<table border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>Свойства элементов схемы</caption>
+  <tr>
+    <th>Обозначение <br>элемента</th>
+    <th>Вкладка Label<br>
+      (Свойство:Значение)</th>
+    <th>Вкладка Value<br>
+(Свойство:Значение) </th>
+    </tr>
+  <tr>
+    <td align="center" valign="middle">R1</td>
+    <td align="left" valign="middle">Label: R1</td>
+    <td align="left" valign="middle">Resistance (R): 560 &Omega;</td>
+    </tr>
+  <tr>
+    <td align="center" valign="middle">С1</td>
+    <td align="left" valign="middle">Label: С1 </td>
+    <td align="left" valign="middle">Capacitance (C): 2 &micro;F</td>
+    </tr>
+  <tr>
+    <td align="center" valign="middle">PV1</td>
+    <td align="left" valign="middle">Label: PV1</td>
+    <td align="left" valign="middle">Mode: AC </td>
+    </tr>
+</table>
+
+	 </li>
+  <li>Установите параметры генератора (рис. 2):
+	  <ul>
+	  <li>вид сигнала - синусоидальный;</li>
+	  <li>частота - 20 Гц;</li>
+	  <li>амплитуда - 1 В.  </li>
+	</ul>
+<div class="ris">
+  <img src="pr-filtr_files/gen-param.png" width="213" height="169">
+  <p>Рис. 2 - Параметры генератора</p>
+</div>
+	</li>
+  <li>Щелкните мышкой на кнопке <img width="45" height="23" src="btn.jpg" alt="Mchs1"> в верхнем правом углу, чтобы включить схему.</li>
+  <li>Дождитесь окончательной установки показаний вольтметра. </li>
+  <li>Щелкните мышкой на кнопке <img width="45" height="23" src="btn.jpg" alt="Mchs1"> в верхнем правом углу, чтобы выключить схему.</li>
+  <li>Запишите в рабочей тетради значение выходного напряжения  для данной частоты (табл. 2).</li>
+  <li>На генераторе установите частоту 50 Гц и запишите в рабочей тетради показания вольтметра для данной частоты.</li>
+  <li>Определите выходные напряжения для остальных частот (табл. 2).</li>
+  <li>По полученным данным постройте графики зависимости выходного напряжения  от частоты.</li>
+  <li>По графику определите экспериментальное значение частоты среза.</li>
+  <li>По формуле <img src="pr-filtr_files/f2.jpg" width="90" height="40" align="absmiddle"> вычислите  теоретическое значение частоты среза.</li>
+  <li>Проанализируйте полученные результаты. </li>
+</ol>
+<br>
+
+<p class="tab_num">Таблица 2</p>
+<table border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Результаты эксперимента</caption>
+  <tr>
+    <td align="left" valign="middle"><strong>№ изм </strong></td>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    <th>5</th>
+    <th>6</th>
+    <th>7</th>
+    <th>8</th>
+    <th>9</th>
+    <th>10</th>
+    <th>11</th>
+    <th>12</th>
+    <th>13</th>
+    <th>14</th>
+  </tr>
+  <tr>
+    <td align="left" valign="middle"><strong>Частота, Гц </strong></td>
+    <td>20 </td>
+    <td>50 </td>
+    <td>100</td>
+    <td>150</td>
+    <td>200</td>
+    <td>250</td>
+    <td>300</td>
+    <td>350</td>
+    <td>400</td>
+    <td>450</td>
+    <td>500</td>
+    <td>550</td>
+    <td>600</td>
+    <td>650</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle"><strong><span class="formula2">U<sub>вых</sub></span>, B (PV1) </strong></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+		
+<hr>
+
+
+<br>
+<a href="#top1"><img src="../../../images/up.png" width="24" height="24"></a>
+	
+<!--<hr>
+<h3>Источники</h3>	
+  <p><a href="http://cxem.net/arduino/arduino188.php"  target="_blank">cxem.net - Курс Arduino - Звук</a></p>
+ -->
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2020</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

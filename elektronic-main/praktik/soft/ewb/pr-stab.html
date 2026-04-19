@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Исследование стабилизатора</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../../index.html">Главная</a></li>
+      <li><a href="../../../teorie.html">Теория</a></li>
+      <li><a href="../../../praktik.html">Практика</a></li>
+      <li><a href="../../../help.html">Справочники</a></li>
+      <li><a href="../../../sheme.html">Схемы</a></li>
+      <li><a href="../../../arduino.html">Arduino</a></li>
+      <li><a href="../../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+
+<h2 class="ewb">Electronics Workbench</h2>
+
+	<h1>Исследование работы параметрического стабилизатора в программе<br>
+	  Electronics Workbench</h1>
+
+<p>Узнать о параметрических стабилизаторах напряжения можно <a href="../../../teorie/shemotehnika/stab-param.html" target="_blank"> здесь</a></p>
+
+<ol>
+  <li>Запустите программу Electronics Workbench.</li>
+  <li>Соберите для исследования модель схемы параметрического стабилизатора напряжения  (рис. 1).	<div class="ris">
+  <img src="pr-stab_files/shema-stab-1.png" width="805" height="297">
+  <p>Рис. 1 - Модель схемы параметрического стабилизатора напряжения </p>
+</div>
+</li>
+  <li>Установите свойства элементов схемы (табл. 1). <br>
+    Для установки свойств:
+		<ul>
+		<li>сделайте двойной щелчок на элементе;</li>
+		<li>откройте вкладку (Label или Value);</li>
+		<li>установите значения.</li>
+		</ul>
+		
+<p class="tab_num">Таблица 1</p>
+	<table border="1" align="center" cellpadding="3" cellspacing="0">
+	<caption>Свойства элементов схемы</caption>
+  <tr>
+    <th>Обозначение <br>
+      элемента </th>
+    <th>Вкладка Label<br>
+      (Свойство:Значение)</th>
+    <th>Вкладка Value<br>
+(Свойство:Значение) </th>
+    <th>Вкладка Models <br>
+(Свойство:Значение) </th>
+    </tr>
+  <tr>
+    <td align="center" valign="middle">GB1</td>
+    <td align="left" valign="middle">Label: GB1</td>
+    <td align="left" valign="middle">Voltage (V): 12 V </td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">R1</td>
+    <td align="left" valign="middle">Label: R1</td>
+    <td align="left" valign="middle">Key: R <br>
+      Resistance (R): 1 k&Omega;<br>
+      Setting: 35%<br>
+      Increment: 5% </td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">R2</td>
+    <td align="left" valign="middle">Label: R2</td>
+    <td align="left" valign="middle">Resistance (R): 470 &Omega;</td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">R3</td>
+    <td align="left" valign="middle">Label: R3</td>
+    <td align="left" valign="middle">Resistance (R): 1 k&Omega;</td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">PA1</td>
+    <td align="left" valign="middle">Label: PA1</td>
+    <td align="center" valign="middle">&#8212;</td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">PA2</td>
+    <td align="left" valign="middle">Label: PA2</td>
+    <td align="center" valign="middle">&#8212;</td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">PV1</td>
+    <td align="left" valign="middle">Label: PV1</td>
+    <td align="center" valign="middle">&#8212;</td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">PV2</td>
+    <td align="left" valign="middle">Label: PV2</td>
+    <td align="center" valign="middle">&#8212;</td>
+    <td align="center" valign="middle">&#8212;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">VD1</td>
+    <td align="left" valign="middle">Label: VD1 </td>
+    <td align="center" valign="middle">&#8212;</td>
+    <td align="left" valign="middle">Library: 1n<br>
+      Model: 1N4733 </td>
+  </tr>
+</table>
+
+	 </li>
+  <li>Нажмите кнопку <img width="45" height="23" src="btn.jpg" alt="btn.jpg"> в верхнем правом углу, чтобы включить схему.</li>
+  <li>Дождитесь окончания изменения показаний измерительных  приборов. </li>
+  <li>Запишите в рабочей тетради показания измерительных  приборов (табл. 2).</li>
+  <li>Нажатием клавиш [<strong>Shift</strong>]+[<strong>R</strong>] увеличьте положение движка  переменного резистора на 5%. (Нажатие клавиши [<strong>R</strong>] уменьшает положение движка переменного резистора  на 5%).</li>
+  <li>После завершения изменения показаний измерительных  приборов, запишите в рабочей тетради показания измерительных приборов.</li>
+  <li>Повторите пп.7, 8 до достижения 100% положение движка переменного  резистора.</li>
+  <li>По полученным данным постройте графики зависимости напряжения  на нагрузке от входного напряжения <span class="formula2"><em>U</em><sub>н</sub>=<em>f</em>(<em>U</em><sub>вх</sub>)</span>.</li>
+  <li>Проанализируйте полученные результаты. </li>
+</ol>
+<br>
+<p class="tab_num">Таблица 2</p>
+<table width="600" border="1" align="center" cellpadding="3" cellspacing="0">
+<caption>Результаты эксперимента</caption>
+  <tr>
+    <td align="left" valign="middle"><strong>№ изм </strong></td>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+    <td>5</td>
+    <td>…</td>
+    <td>12</td>
+    <td>13</td>
+    <td>14</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle"><strong>Положение движка R1, %</strong></td>
+    <td>35</td>
+    <td>40</td>
+    <td>45</td>
+    <td>50</td>
+    <td>55</td>
+    <td>…</td>
+    <td>90</td>
+    <td>95</td>
+    <td>100</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle"><strong><span class="formula2">I<sub>вх</sub></span>, мА (PA1)</strong></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle"><strong><span class="formula2">U<sub>вх</sub></span>, B (PV1) </strong></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle"><strong><span class="formula2">I<sub>н</sub></span>, мА (PA2) </strong></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle"><strong><span class="formula2">U<sub>н</sub></span>, B (PV2) </strong></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</div>	
+		
+<hr>
+
+
+<br>
+<a href="#top1"><img src="../../../images/up.png" width="24" height="24"></a>
+	
+<!--<hr>
+<h3>Источники</h3>	
+  <p><a href="http://cxem.net/arduino/arduino188.php"  target="_blank">cxem.net - Курс Arduino - Звук</a></p>
+ -->
+  </div>
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2020</p>
+  </div>
+  
+</div>
+
+</body>
+</html>

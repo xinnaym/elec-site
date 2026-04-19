@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Электронный метроном на Arduino</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cdutt-str.ru/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+	
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Электронный метроном на Arduino</h1>
+
+
+  <h3>Компоненты</h3>
+  <ul>
+    <li>микроконтроллер Arduino Uno;</li>
+    <li>светодиод (любых цветов) - 4 шт.;</li>
+    <li>резистор постоянный 220 Ом - 4 шт.;</li>
+    <li>пьезодинамик;</li>
+    <li>переменный (подстроечный) резистор;</li>
+    <li>макетная плата;</li>
+    <li>соединительные провода.</li>
+  </ul>
+<figure>
+	<a href="arduino-metronom_files/metronom-sheme.jpg" target="_blank"><img src="arduino-metronom_files/metronom-sheme.jpg" height="680" border="0"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="arduino-metronom_files/metronome_step3.png" target="_blank">
+	<img src="arduino-metronom_files/metronome_step3.png" height="650" border="0"></a>
+<figcaption>Рис. 1 - Схема электрическая принципиальная электронного метронома и его сборка  на макетной плате</figcaption>
+</figure>
+  <!-- -->
+
+<h3>Скетч</h3>
+<div class="kod">
+<pre><span class="ar-type">int</span> p, bpm, i;
+<span class="ar-type">void</span> setup() 
+
+{
+ <span class="ar-func">for</span>(p=10; p&lt;14; p++) <span class="ar-func">pinMode</span>(p,<span class="ar-type">OUTPUT</span>); <span class="comment1">// задаём режимы выводов с номерами 10-13 </span>
+}
+
+<span class="ar-type">void</span> loop() 
+{  
+ <span class="ar-type">int</span> bpm=analogRead(A5)/4; <span class="comment1">// сигнал потенциометра уменьшаем в 4 раза</span> 
+ <span class="ar-oper">if</span> (bpm&lt;10) bpm=10; <span class="comment1">//Предотвращаем деление на ноль</span> 
+ <span class="comment1">// Если потенциометр в нуле, поднимаем значение bpm до 10 ударов в минуту</span>
+ <span class="ar-type">for</span>(i=13; i&gt;9; i--)
+   {
+    <span class="ar-func">digitalWrite</span>(i,<span class="ar-type">HIGH</span>); <span class="comment1">// Включаем пин номер i</span>
+    <span class="ar-oper">if</span> (i==10) <span class="ar-func">tone</span>(2, 5000, 100); <span class="comment1">// Если доля сильная, звук на частоте 5000 Гц 100 мс,</span>
+      <span class="ar-oper">else</span> <span class="ar-func">tone</span>(2, 500, 100);      <span class="comment1">// если слабая - 500 Гц  100 мс</span>
+    <span class="ar-func">delay</span>(60000/bpm); <span class="comment1">    // Задержка равна 60 с делённым на количество ударов в минуту</span>
+    <span class="ar-func">digitalWrite</span>(i,<span class="ar-type">LOW</span>); <span class="comment1"> //Выключаем пин i</span>
+   }
+}
+</pre>
+</div>
+  <br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+<p><a href="https://kak.220-volt.ru/metronome_with_arduino" target="_blank">kak.220-volt.ru - Электронный метроном на Arduino</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+	
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2021</p>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

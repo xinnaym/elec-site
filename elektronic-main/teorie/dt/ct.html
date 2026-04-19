@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Счётчики</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="top">
+	<a name="top1"></a>
+	  <div id="logo">
+		  <a target="_blank" href="https://cduttstr.jimdo.com/"><img width="130" height="130" src="../../images/logo.png" /></a>
+		</div>
+		<div id="topname">
+      <h1>Электроника</h1>
+			<h2>учебно-справочное пособие</h2> 
+		</div>
+		<div id="toppic"><img src="../../images/banner1.png" /></div>
+  </div>
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li id="active"><a href="../../index.html">Главная</a></li>
+      <li><a href="../../teorie.html">Теория</a></li>
+      <li><a href="../../praktik.html">Практика</a></li>
+      <li><a href="../../help.html">Справочники</a></li>
+      <li><a href="../../sheme.html">Схемы</a></li>
+      <li><a href="../../arduino.html">Arduino</a></li>
+      <li><a href="../../tests.html">Тесты</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+	<h1>Счётчики</h1>
+<P><em>Счетчик импульсов</em> — это последовательностное цифровое устройство, обеспечивающее хранение слова информации и выполнение над ним микрооперации счета, заключающейся в изменении значения числа в счетчике на 1. По существу счетчик представляет собой совокупность соединенных определенным образом триггеров. Основной параметр счетчика — модуль счета. Это максимальное число единичных сигналов, которое может быть сосчитано счетчиком.</P>
+<P>Счётчики используются для построения таймеров или для выборки 
+  инструкций из ПЗУ в микропроцессорах. Они могут использоваться как делители 
+  частоты в управляемых генераторах частоты (синтезаторах). При использовании в 
+  цепи ФАП счётчики могут быть использованы для умножения частоты как в 
+  синтезаторах, так и в микропроцессорах. Счетчики импульсов - 
+  непременные узлы электронных часов, микрокалькуляторов, частотомеров и 
+  многих других приборов и устройств цифровой техники. Основой их служат 
+  триггеры со счетным входом. По логике действия и функциональному 
+  назначению счетчики импульсов подразделяют на <em>цифровые счетчики</em> и <em>делители 
+  частоты</em>. Первые из них обычно называют просто счетчиками.&nbsp;</P>
+<P>Простейшим одноразрядным 
+  счетчиком импульсов может быть JK-триггер и D-триггер, работающий в 
+  счетном режиме. Он считает входные импульсы по модулю 2-каждый импульс 
+  переключает триггер в противоположное состояние. Один триггер считает до 
+  двух, два соединенных последовательно считают до четырех, n 
+  триггеров - до 2<sup>n</sup> импульсов. Результат счета формируется в заданном коде, 
+  который может храниться в памяти счетчика или быть считанным другим 
+  устройством цифровой техники-дешифратором.</P>
+	<p>Счетчики импульсов классифицируют</p>
+	<p><em>по модулю счета</em>:</p>
+	<ul>
+	  <li>двоично-десятичные;</li>
+	  <li> двоичные; </li>
+	  <li> с произвольным постоянным модулем счета; </li>
+	  <li> с переменным модулем счета;</li>
+	</ul>
+	<p><em>по направлению счета</em>:</p>
+	<ul>
+	  <li> суммирующие; </li>
+	  <li> вычитающие; </li>
+	  <li> реверсивные; </li>
+	  </ul>
+	<p> <em>по способу формирования внутренних связей</em>:</p>
+	<ul>
+	  <li>  с последовательным переносом; </li>
+	  <li> с параллельным переносом;</li>
+	  <li>с комбинированным переносом;</li>
+	  <li>кольцевые. </li>
+	</ul>
+	<h2>Двоичные асинхронные счётчики</h2>
+<P>Простейший вид счётчика - двоичный может быть построен на основе T-триггера. 
+T-триггер изменяет своё состояние на прямо противоположное при поступлении на 
+его вход синхронизации импульсов. Для реализации T-триггера можно воспользоваться универсальным D-триггером с обратной связью, как это показано на рисунке 1.</P>
+
+<div class="ris">
+<IMG height=84 src="ct_files/Ttrg.gif" width=123 >
+    <P>Рис. 1 - Построение счетного T-триггера на универсальном D-триггере.</P>
+</div>
+
+<P>В этой схеме, так как на вход триггера подается сигнал с инверсного выхода 
+микросхемы, при поступлении тактовых импульсов сигнал на выходе будет меняться с 
+0 на 1 и наоборот. Временная диаграмма сигналов на входе и выходах триггера 
+приведена на рисунке 2.</P>
+
+<div class="ris">
+<IMG src="ct_files/DG_T_trg.gif">
+    <P>Рис. 2 - Временная диаграмма работы T-триггера</P>
+</div>
+
+<P>Таким образом у нас появился счётчик, считающий до двух. Обычно требуется 
+посчитать количество импульсов, которое больше двух. В этом случае можно 
+использовать выходной сигнал счетного триггера как входной сигнал для следующего 
+триггера, то есть соединить триггеры последовательно. Так можно построить любой 
+счётчик, считающий до максимального числа, кратного степени два.</P>
+
+<P>Схема счётчика, позволяющего посчитать до 16 импульсов приведена на рисунке 3, а временная диаграмма сигналов на входе и выходах этого счётчика приведена на рисунке 4.</P>
+
+<div class="ris">
+<IMG height=113 src="ct_files/CT2.gif" width=452 >
+<P>Рис. 3 - Схема четырёхразрядного счётчика, построенного на универсальных 
+D-триггерах.</P>
+</div>
+
+
+<div class="ris">
+<IMG height=422 src="ct_files/DG_CT16.gif" 
+width=424 border=0>
+<P>Рис. 4 - Временная диаграмма четырёхразрядного счётчика.</P>
+</div>
+
+<P>Как видно из временной диаграммы, на выходах этого двоичного счётчика 
+последовательно появляются цифры от 0 до 15. Естественно эти цифры записаны в 
+двоичном виде. Они приведены в таблице 1. То есть, при поступлении на счётный 
+вход очередного импульса, содержимое счётчика увеличивается на 1. Поэтому такие 
+счётчики получили название суммирующих двоичных счётчиков.</P>
+<P class="tab_num">Таблица 1</P>
+<TABLE width="400" border=1 align="center" cellpadding="3" cellSpacing=0>
+<caption>Изменение уровней на выходе суммирующего счётчика при поступлении 
+на его вход импульсов</caption>
+  <TBODY>
+  <TR>
+    <th>Номер входного импульса</th>
+    <th>Q3</th>
+    <th>Q2</th>
+    <th>Q1</th>
+    <th>Q0</th>
+  </TR>
+  <TR>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+  </TR>
+  <TR>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+  </TR>
+  <TR>
+    <TD align="center" valign="middle">2</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0 </TD>
+  <TR>
+    <TD align="center" valign="middle">3</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+  </TR>
+  <TR>
+    <TD align="center" valign="middle">4</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0 </TD>
+  <TR>
+    <TD align="center" valign="middle">5</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+  </TR>
+  <TR>
+    <TD align="center" valign="middle">6</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0 </TD>
+  <TR>
+    <TD align="center" valign="middle">7</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+  </TR>
+  <TR>
+    <TD align="center" valign="middle">8</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0 </TD>
+  <TR>
+    <TD align="center" valign="middle">9</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+  </TR>
+  <TR>
+    <TD align="center" valign="middle">10</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0 </TD>
+  <TR>
+    <TD align="center" valign="middle">11</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+  </TR>
+  <TR>
+    <TD align="center" valign="middle">12</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0 </TD>
+  <TR>
+    <TD align="center" valign="middle">13</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+  </TR>
+  <TR>
+    <TD align="center" valign="middle">14</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0 </TD>
+  <TR>
+    <TD align="center" valign="middle">15</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+  </TR></TBODY></TABLE>
+
+<P>Существуют готовые микросхемы асинхронных двоичных счётчиков. Классическим 
+примером такого счётчика является микросхема  К155ИЕ5, содержащая в своем составе четыре счетных триггера (рис. 5) .</p>
+<div class="ris">
+		<img src="ct_files/k155ie5.png" width="190" height="154">
+  <p>Рис. 5 - Двоичный четырехразрядный счетчик К155ИЕ5 </p>
+</div>
+
+<P>Входом первого триггера является вывод 14, а выходом - вывод 12. Три 
+остальных триггера соединены последовательно, входом первого триггера 
+является вывод 1, а выходами этих триггеров - выводы 9, 8, 11. Для 
+обеспечения последовательной работы всех четырех триггеров следует 
+соединить выводы 1 и 12. Триггеры переключаются спадом импульса (в отличие 
+от микросхемы К155ТМ2). Установку всех триггеров в нулевое состояние 
+осуществляют кратковременной подачей напряжения высокого уровня на оба 
+входа &amp; и R. Частота импульсов на выходах 1, 2, 4, 8 соответственно в 2, 
+4, 8, 16 раз меньше частоты входного сигнала. Таким образом, период работы 
+счетчика равен 16 входным импульсам.</p> 
+
+
+<h2>Двоичные вычитающие асинхронные счётчики
+</h2>
+<P>Счётчики могут не только увеличивать своё значение на единицу при поступлении 
+на вход импульсов но и уменьшать его. Такие счётчики получили название 
+вычитающих счётчиков. Для реализации вычитающего счётчика достаточно чтобы 
+T-триггер срабатывал по переднему фронту входного сигнала. Это можно осуществить 
+инвертированием этого сигнала. В схеме, приведенной на рисунке 6, для реализации 
+вычитающего счётчика сигнал на входы последующих триггеров подаются с инверсных 
+выводов предыдущих триггеров.</P>
+
+<div class="ris">
+<IMG height=113 src="ct_files/CT2_dec.gif" width=483>
+<P>Рис. 6 - Схема четырёхразрядного двоичного вычитающего счётчика на универсальных D-триггерах.</P>
+</div>
+
+<P>Временная диаграмма этого счётчика приведена на рисунке 7. По этой диаграмме видно, что при поступлении на вход счётчика первого же импульса на выходах появляется максимально возможное для четырёхразрядного счётчика число 15. При поступлении следующих импульсов содержимое счётчика уменьшается на единицу. Этот процесс продолжается до тех пор, пока содержимое счётчика не станет вновь равно 0.</P>
+
+<div class="ris">
+<IMG src="ct_files/DG_CT16v.gif">
+<P>Рис. 7 - Временная диаграмма четырёхразрядного вычитающего счётчика.</P>
+</div>
+
+<P>Все возможные состояния сигналов на выходах счётчика при поступлении 
+импульсов на вход микросхемы приведены в таблице 2.</P>
+
+<P class="tab_num">Таблица 2</P>
+<TABLE width="420" border=1 align="center" cellpadding="3" cellSpacing=0>
+<caption>Изменение уровней на выходе вычитающего счётчика при поступлении 
+на его вход импульсов</caption>
+  <TBODY>
+  <TR>
+    <th>Номер <br>
+      входного импульса</th>
+    <th>Q3</th>
+    <th>Q2</th>
+    <th>Q1</th>
+    <th>Q0</th>
+  </TR>
+  <TR>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+  </TR>
+  <TR>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+  </TR>
+  <TR>
+    <TD align="center" valign="middle">2</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0 </TD>
+  <TR>
+    <TD align="center" valign="middle">3</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+  </TR>
+  <TR>
+    <TD align="center" valign="middle">4</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0 </TD>
+  <TR>
+    <TD align="center" valign="middle">5</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+  </TR>
+  <TR>
+    <TD align="center" valign="middle">6</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0 </TD>
+  <TR>
+    <TD align="center" valign="middle">7</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+  </TR>
+  <TR>
+    <TD align="center" valign="middle">8</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0 </TD>
+  <TR>
+    <TD align="center" valign="middle">9</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+  </TR>
+  <TR>
+    <TD align="center" valign="middle">10</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0 </TD>
+  <TR>
+    <TD align="center" valign="middle">11</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+  </TR>
+  <TR>
+    <TD align="center" valign="middle">12</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0 </TD>
+  <TR>
+    <TD align="center" valign="middle">13</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">1</TD>
+  </TR>
+  <TR>
+    <TD align="center" valign="middle">14</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+    <TD align="center" valign="middle">0 </TD>
+  <TR>
+    <TD align="center" valign="middle">15</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">0</TD>
+    <TD align="center" valign="middle">1</TD>
+  </TR></TBODY></TABLE>
+<P>Для тех, кто привык работать с реально выпускаемыми микросхемами, следует 
+обратить внимание, что для примера были использованы D-триггеры, работающие по 
+заднему фронту. Микросхемы 1533ТМ2 (два D-триггера в одном корпусе) срабатывают 
+по переднему фронту, поэтому схемы для суммирующего и вычитающего счётчика 
+поменяются местами.</P>
+<h2>Недвоичные счётчики с обратной связью.</h2>
+<P>Если посмотреть на временную диаграмму сигналов на выходах двоичного 
+счётчика, приведённого на рисунке 4, то можно увидеть, что частота сигналов на 
+его выходах будет уменьшаться в два раза по отношению к предыдущему выходу. Это 
+позволяет использовать счетчики в качестве делителей частоты входного сигнала. 
+Эти делители частоты могут быть использованы в устройствах формирования 
+высокостабильных генераторов частоты (синтезаторов частот). Частоты могут быть 
+использованы либо для синхронизации цифровых устройств (в том числе и 
+микропроцессоров) либо в качестве задающих генераторов радиоприёмных и 
+радиопередающих устройств.</P>
+
+<P>При использовании цифровых счётчиков в качестве устройств формирования 
+опорных частот может потребоваться обеспечить коэффициент деления, отличающийся 
+от степени числа 2. Ещё одна ситуация, когда необходимо применять недвоичные 
+счётчики возникает при отображении информации, записанной в счётчике. Человек, 
+который работает с электронной техникой, привык работать с десятичной системой 
+счисления, поэтому возникает необходимость отображать хранящееся в счётчике 
+число в непосредственно десятичном виде. Это намного проще сделать, если и счет 
+вести сразу в двоично-десятичном коде. Иначе для индикации потребуется перекодировать информацию из двоичного в двоично-десятичный код.</P>
+<P>Построить недвоичный счётчик можно из двоичного за счёт выбрасывания лишних 
+комбинаций единиц и нулей. Это может быть осуществлено при помощи обратной 
+связи. Для этого при помощи дешифратора определяется 
+число, соответствующее коэффициенту счёта, и сигнал с выхода этого дешифратора 
+обнуляет содержимое двоичного счётчика. В качестве примера на рисунке 8 
+приведена схема двоично-десятичного счётчика.</P>
+<div class="ris">
+  <IMG height=149 src="ct_files/CT10.gif" width=168>
+  <P>Рис. 8 - Схема десятичного счётчика, построенного на основе двоичного счётчика.</P>
+</div>
+
+<P>В этой схеме дешифратор построен на двухвходовой схеме "2И", входящей в 
+состав микросхемы двоичного счётчика. Дешифратор декодирует число 10 (1010 в 
+двоичной системе счисления). В соответствии с принципами построения схем по 
+произвольной таблице истинности для построения дешифратора требуется ещё два 
+инвертора, подключённых к выходам 1 и 4. Однако после сброса счётчика числа, 
+большие 10 никогда не смогут появиться на выходах микросхемы. Поэтому схема 
+дешифратора упрощается и вместо четырёхвходовой схемы "4И" можно обойтись 
+двухвходовой схемой. Инверторы тоже оказываются лишними.</P>
+<P>При использовании счётчиков в качестве делителей частоты тоже можно 
+воспользоваться обратной связью. Приведём в качестве примера схему делителя 
+частоты на 1000. При разработке делителя прежде всего определим сколько 
+потребуется микросхем двоичных счётчиков. Для этого определим степень числа 2, 
+при которой число M=2<SUP>n</SUP> будет больше требуемого числа 1000. Это будет 
+число 10. При возведении основания системы счисления 2 в 10 степень получится 
+число 1024. То есть, при использовании для построения делителя частоты 
+непосредственно триггеров, достаточно будет десяти триггеров. Однако обычно для 
+построения делителей частоты используют готовые двоичные счётчики, поэтому 
+определим необходимое количество микросхем двоичных счётчиков. При использовании 
+четырёхразрядных двоичных счётчиков достаточно будет трёх микросхем, так как в 
+трёх микросхемах будет 3*4=12 триггеров, что заведомо больше минимального числа 
+триггеров.</P>
+<P>Следующим этапом построения делителя частоты будет перевод коэффициента 
+деления 1000 в двоичное представление. Десятичное число 1000 в двоичном виде 
+будет выглядеть как 0011 1110 1000. В этом числе шесть единиц, поэтому для 
+построения делителя будет достаточно шестивходовой схемы "И". Однако такие&nbsp; 
+схемы не выпускаются, поэтому воспользуемся микросхемой "8И-НЕ". Неиспользуемые 
+входы этой микросхемы подключим к питанию. Ненужную нам инверсию сигнала 
+скомпенсируем дополнительным инвертором. Получившаяся схема делителя на 1000 
+приведена на рисунке 9.</P>
+<div class="ris"><IMG height=191 src="ct_files/Div1000.gif" 
+width=598 border=0>
+    <P>Рис. 9 - Схема делителя на 1000, построенного на основе трёх двоичных 
+      счётчиков.</P>
+</div>
+<P>При использовании счётчиков в составе синтезаторов частот может потребоваться 
+формирование целого диапазона частот. В этом случае делитель должен обладать 
+возможностью изменения коэффициента деления (ДПКД). При использовании обратной 
+связи для этого потребуется полный дешифратор и переключатели его выходов на 
+вход сброса счётчика. Схема при этом получается сложной, а управление неудобным. 
+Пример двухразрядного делителя с переменным коэффициентом деления (ДПКД), 
+построенного на десятичных счётчиках приведён на рисунке 4.</P>
+<div class="ris"><IMG height=435 src="ct_files/DPKD.gif" width=518>
+<P>Рис. 10 - Схема делителя с переменным коэффициентом деления с максимальным 
+      коэффициентом деления 100,<br> 
+      построенного на основе двух десятичных счётчиков.</P>
+  </div>
+
+
+<br>
+<a href="#top1"><img src="../../images/up.png" width="24" height="24"></a>
+	
+<hr>
+<h3>Источники</h3>	
+<p><a href="http://www.diagram.com.ua/info/rad_nach/17.shtml"  target="_blank">diagram.com.ua - Счетчики и делители частоты</a></p>
+
+  </div>
+	
+<!--
+  <p><a href=""  target="_blank"></a></p>
+ -->	
+<!-- saved from url=(0048)http://www.diagram.com.ua/info/rad_nach/17.shtml -->
+  <div id="footer">
+    <p align=center>Электроника &copy; ЦДЮТТ &#8226; Марсель Арасланов &#8226; 2019</p>
+  </div>
+  
+</div>
+
+</body>
+</html>
