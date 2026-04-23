@@ -1,9 +1,8 @@
 ﻿<!DOCTYPE html>
-<html lang="ru">
 
 <head>
     <title>Азбука электроники</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -41,9 +40,19 @@
 
             <p>Приветствуем Вас на сайте для начинающих радиолюбителей.</p>
             <p>Вы уже приготовили Ваш главный инструмент - паяльник?</p>
-            <p>Но не спешите, наберитесь терпения и изучите материалы нашего сайта. Здесь найдется много полезной информации для Вашей будущей деятельности. </p>
+            <p>Но не спешите, наберитесь терпения и изучите материалы нашего сайта. Здесь найдется много полезной
+                информации для Вашей будущей деятельности. </p>
 
-            <img src="assets/images/kanifol.jpg" class="kanifol-img" alt="Канифоль">
+            <div class="slider-container">
+                <div class="slider">
+                    <img src="assets/images/slide-1.jpg" class="slide active" alt="1">
+                    <img src="assets/images/slide-2.jpg" class="slide" alt="2">
+                    <img src="assets/images/slide-3.jpg" class="slide" alt="3">
+                </div>
+
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
 
             <p>&nbsp;</p>
             <h4>Ссылки на сайты <a href="link.html">об электронике</a></h4>
@@ -54,5 +63,27 @@
         </div>
     </div>
 </body>
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+
+        if (index >= slides.length) currentSlide = 0;
+        else if (index < 0) currentSlide = slides.length - 1;
+        else currentSlide = index;
+
+        slides[currentSlide].classList.add('active');
+    }
+
+    function changeSlide(direction) {
+        showSlide(currentSlide + direction);
+    }
+
+    setInterval(() => {
+        changeSlide(1);
+    }, 10000);
+</script>
 
 </html>

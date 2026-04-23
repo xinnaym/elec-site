@@ -1,9 +1,0 @@
-void fader(int color1, int color2){
-
-for (int brightness=0;brightness<256;brightness++){
-analogWrite(color1, 255-brightness);
-analogWrite(color2, brightness);
-delay(10);
-}
-
-} 
